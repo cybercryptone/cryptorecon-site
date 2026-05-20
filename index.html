@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CryptoRecon | AML Консалтинг и Расследования</title><link href="assets/ChatGPT Image 1 апр. 2026 г., 19_41_06.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script>
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+const resetInitialScroll = () => {
+  if (!window.location.hash) {
+    window.scrollTo(0, 0);
+  }
+};
+
+window.addEventListener("pageshow", resetInitialScroll);
+window.addEventListener("load", resetInitialScroll);
+</script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-dim": "#41556d",
+              "secondary-fixed": "#d1e4ff",
+              "on-error": "#fff7f6",
+              "on-primary-container": "#3c5277",
+              "on-tertiary-fixed-variant": "#375774",
+              "on-tertiary-fixed": "#183b57",
+              "on-error-container": "#752121",
+              "surface-container-low": "#f0f4f7",
+              "error-dim": "#4e0309",
+              "surface-variant": "#d9e4ea",
+              "on-secondary-container": "#3f536c",
+              "primary-fixed-dim": "#c0d5ff",
+              "inverse-on-surface": "#9a9d9f",
+              "secondary": "#4d617a",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed": "#2d4158",
+              "secondary-fixed-dim": "#c1d6f3",
+              "surface-container-highest": "#d9e4ea",
+              "on-background": "#2a3439",
+              "surface": "#f7f9fb",
+              "on-surface-variant": "#566166",
+              "tertiary-fixed-dim": "#accdef",
+              "primary": "#495f84",
+              "surface-dim": "#cfdce3",
+              "on-secondary-fixed-variant": "#495d76",
+              "on-tertiary-container": "#2d4e6a",
+              "tertiary-fixed": "#badbfe",
+              "on-primary": "#f6f7ff",
+              "secondary-container": "#d1e4ff",
+              "outline": "#717c82",
+              "error-container": "#fe8983",
+              "surface-tint": "#495f84",
+              "tertiary-container": "#badbfe",
+              "on-surface": "#2a3439",
+              "surface-bright": "#f7f9fb",
+              "surface-container": "#e8eff3",
+              "background": "#f7f9fb",
+              "on-primary-fixed": "#294063",
+              "primary-container": "#d6e3ff",
+              "tertiary-dim": "#355673",
+              "tertiary": "#426280",
+              "outline-variant": "#a9b4b9",
+              "primary-fixed": "#d6e3ff",
+              "primary-dim": "#3d5377",
+              "error": "#9f403d",
+              "surface-container-high": "#e1e9ee",
+              "on-primary-fixed-variant": "#465c81",
+              "inverse-surface": "#0b0f10",
+              "inverse-primary": "#bcd2fe",
+              "on-secondary": "#f7f9ff",
+              "on-tertiary": "#f6f9ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hero-gradient { background: linear-gradient(135deg, #495f84 0%, #d6e3ff 100%); }
+        .glass-panel { backdrop-filter: blur(24px); background: rgba(255, 255, 255, 0.7); }
+        .hero-orb-shell { position: relative; isolation: isolate; }
+        .hero-orb {
+            transform-origin: center;
+            will-change: transform, opacity, filter;
+            animation: heroOrbFloat 12s ease-in-out infinite;
+        }
+        .hero-orb-shell::after {
+            content: "";
+            position: absolute;
+            inset: 12%;
+            z-index: 0;
+            border-radius: 9999px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 68%);
+            filter: blur(18px);
+            opacity: 0.55;
+            animation: heroOrbGlow 12s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes heroOrbFloat {
+            0%, 100% { transform: scale(1) translate3d(0, 0, 0); opacity: 0.58; }
+            50% { transform: scale(1.025) translate3d(0, -10px, 0); opacity: 0.72; }
+        }
+        @keyframes heroOrbGlow {
+            0%, 100% { transform: scale(0.98); opacity: 0.32; }
+            50% { transform: scale(1.03); opacity: 0.5; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-orb,
+            .hero-orb-shell::after {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="site-header fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-[0_32px_32px_-4px_rgba(42,52,57,0.04)]">
+<div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center w-full">
+<a class="flex items-center gap-3" href="#hero"><span class="grid h-12 w-12 place-items-center overflow-hidden rounded-[1.3rem] bg-white shadow-[inset_0_0_0_1px_rgba(113,124,130,0.1)]"><img alt="CryptoRecon" class="h-9 w-9 rounded-[0.8rem] object-contain" src="assets/ChatGPT Image 1 апр. 2026 г., 19_41_06.png"/></span><span class="text-xl font-black tracking-tighter text-[#001B3D]">CryptoRecon</span></a>
+<div class="site-nav hidden md:flex gap-8 items-center">
+<a class="text-[#566166] font-['Manrope'] font-semibold tracking-tight hover:text-[#495f84] transition-colors duration-300" href="#problems">Проблемы</a><a class="text-[#566166] font-['Manrope'] font-semibold tracking-tight hover:text-[#495f84] transition-colors duration-300" href="#services">Услуги</a>
+<a class="text-[#566166] font-['Manrope'] font-semibold tracking-tight hover:text-[#495f84] transition-colors duration-300" href="#process">Процесс</a>
+<a class="text-[#566166] font-['Manrope'] font-semibold tracking-tight hover:text-[#495f84] transition-colors duration-300" href="#benefits">Преимущества</a>
+<a class="text-[#566166] font-['Manrope'] font-semibold tracking-tight hover:text-[#495f84] transition-colors duration-300" href="#faq">FAQ</a><a class="text-[#566166] font-['Manrope'] font-semibold tracking-tight hover:text-[#495f84] transition-colors duration-300" href="#contact">Контакты</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="bg-primary text-on-primary px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-all scale-95 active:scale-90" href="#contact">Получить консультацию</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero pt-40 pb-32 px-8 overflow-hidden" id="hero">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-10">
+<div class="space-y-4">
+<span class="text-xs font-bold tracking-[0.2em] uppercase text-primary">Intelligence &amp; Security</span>
+<h1 class="text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] text-on-background">
+                        Расследование инцидентов и AML консалтинг
+                    </h1>
+</div>
+<p class="text-xl text-on-surface-variant leading-relaxed max-w-xl">
+                    Экспертный анализ и трассировка цифровых активов. Мы обеспечиваем безопасность ваших транзакций и помогаем вернуть контроль над утраченными средствами.
+                </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary text-on-primary px-10 py-5 rounded-full text-lg font-bold hover:opacity-90 transition-all shadow-lg" href="#contact">Начать расследование</a>
+<a class="flex items-center gap-2 px-10 py-5 rounded-full text-lg font-bold text-primary border-2 border-primary/10 hover:bg-primary-container/30 transition-all" data-contact="telegram-link" href="https://t.me/tracepoint_advisory" rel="noreferrer" target="_blank"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>Telegram</a>
+</div>
+</div>
+<div class="relative">
+<div class="hero-orb-shell aspect-square rounded-xl bg-gradient-to-tr from-primary-container to-surface-container overflow-hidden">
+<img alt="Blockchain visualization" class="hero-orb relative z-10 w-full h-full object-cover opacity-60 mix-blend-overlay" data-alt="Abstract complex network of blue glowing nodes and interconnected lines representing blockchain tracing and digital security data architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxABGy1vI5jnFP0he0tHaLs4IRz2WoHoovJhiyoXVhPq9Jr5ArcMq-keM_DKllfo0TyOQMooS4SDBZljP8QTEUWmpFDFLofTMYaypwBfNPQRmbFwfZ79fqyQFa6hunYpQj4WyFA152O47U8QXdef4KQ26kaVSaV-nXSnmTNgvByBW0bvCtRL7M7hRR_HtmTtVTioWhPnWbD46dyIYu4UJf9yU5fo9MaIrbw9sSM-bkZVlZrQU-DtSpU-WdMpqy_-R1kb1fTIQpgoo"/>
+</div>
+<!-- Floating Support Cards -->
+<div class="absolute -top-8 -left-8 bg-surface-container-lowest p-6 rounded-lg shadow-2xl border border-outline-variant/10 w-48">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary">security</span>
+</div>
+<div class="text-sm font-bold">AML скрининг</div>
+<div class="text-[10px] text-on-surface-variant mt-1">Проверка чистоты кошельков</div>
+</div>
+<div class="absolute top-1/2 -right-8 bg-surface-container-lowest p-6 rounded-lg shadow-2xl border border-outline-variant/10 w-48">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary">analytics</span>
+</div>
+<div class="text-sm font-bold">Трассировка средств</div>
+<div class="text-[10px] text-on-surface-variant mt-1">Визуализация цепочек</div>
+</div>
+<div class="absolute -bottom-8 left-1/4 bg-surface-container-lowest p-6 rounded-lg shadow-2xl border border-outline-variant/10 w-48">
+<div class="w-10 h-10 rounded-full bg-error-container/20 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-error">quick_reorder</span>
+</div>
+<div class="text-sm font-bold">Реагирование</div>
+<div class="text-[10px] text-on-surface-variant mt-1">Экстренная поддержка</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Problems Section -->
+<section class="py-32 bg-surface-container-low" id="problems">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-4xl font-extrabold text-center mb-20 tracking-tight">С какими проблемами мы работаем</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-10 rounded-lg hover:shadow-lg transition-all border border-outline-variant/5">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">block</span>
+<h3 class="text-xl font-bold mb-4">Блокировка средств</h3>
+<p class="text-on-surface-variant leading-relaxed">Разблокировка активов на биржах и помощь в подготовке доказательной базы для KYC/AML процедур.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-lg hover:shadow-lg transition-all border border-outline-variant/5">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">swap_horiz</span>
+<h3 class="text-xl font-bold mb-4">P2P диспуты</h3>
+<p class="text-on-surface-variant leading-relaxed">Разрешение сложных споров при прямых обменах и защита от мошеннических схем "треугольник".</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-lg hover:shadow-lg transition-all border border-outline-variant/5">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">group_remove</span>
+<h3 class="text-xl font-bold mb-4">Подозрительные контрагенты</h3>
+<p class="text-on-surface-variant leading-relaxed">Проверка юридических и физических лиц на причастность к незаконной деятельности перед сделкой.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-lg hover:shadow-lg transition-all border border-outline-variant/5">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">account_balance_wallet</span>
+<h3 class="text-xl font-bold mb-4">Похищенная криптовалюта</h3>
+<p class="text-on-surface-variant leading-relaxed">Полный цикл расследования краж: от отслеживания до взаимодействия с биржами для заморозки.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-lg hover:shadow-lg transition-all border border-outline-variant/5">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">gavel</span>
+<h3 class="text-xl font-bold mb-4">Правовое сопровождение</h3>
+<p class="text-on-surface-variant leading-relaxed">Формирование экспертных отчетов для правоохранительных органов и судов различных юрисдикций.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-lg hover:shadow-lg transition-all border border-outline-variant/5">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">hub</span>
+<h3 class="text-xl font-bold mb-4">Миксеры и обфускация</h3>
+<p class="text-on-surface-variant leading-relaxed">Деанонимизация транзакций, прошедших через сервисы смешивания и анонимные протоколы.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-32 px-8" id="services">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 text-center">
+<h2 class="text-5xl font-extrabold tracking-tight mb-4">Наши услуги</h2>
+<div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="group relative bg-surface-container-lowest p-1 px-1 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="bg-white p-12 rounded-[2.8rem] h-full flex flex-col">
+<div class="text-primary-dim font-bold mb-6 flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-xs">1</span>
+                            Форензика и анализ
+                        </div>
+<h3 class="text-3xl font-bold mb-6">Blockchain Investigation</h3>
+<p class="text-on-surface-variant text-lg mb-10 leading-relaxed">Глубокое техническое расследование движения средств в сетях BTC, ETH, BSC и др. Используем передовое ПО для выявления конечных получателей активов.</p>
+</div>
+</div>
+<div class="group relative bg-surface-container-lowest p-1 px-1 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="bg-white p-12 rounded-[2.8rem] h-full flex flex-col">
+<div class="text-primary-dim font-bold mb-6 flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-xs">2</span>
+                            Комплаенс аудит
+                        </div>
+<h3 class="text-3xl font-bold mb-6">AML/KYC Outsourcing</h3>
+<p class="text-on-surface-variant text-lg mb-10 leading-relaxed">Проверка бизнес-процессов на соответствие международным стандартам ПОД/ФТ. Разработка внутренних регламентов и политик безопасности.</p>
+</div>
+</div>
+<div class="group relative bg-surface-container-lowest p-1 px-1 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="bg-white p-12 rounded-[2.8rem] h-full flex flex-col">
+<div class="text-primary-dim font-bold mb-6 flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-xs">3</span>
+                            Аналитика рисков
+                        </div>
+<h3 class="text-3xl font-bold mb-6">Wallet Screening</h3>
+<p class="text-on-surface-variant text-lg mb-10 leading-relaxed">Моментальная оценка уровня риска (Risk Score) крипто-кошельков и транзакций. Предоставление детальных данных об источниках происхождения средств.</p>
+</div>
+</div>
+<div class="group relative bg-surface-container-lowest p-1 px-1 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="bg-white p-12 rounded-[2.8rem] h-full flex flex-col">
+<div class="text-primary-dim font-bold mb-6 flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-xs">4</span>
+                            Юридическая защита
+                        </div>
+<h3 class="text-3xl font-bold mb-6">Asset Recovery Support</h3>
+<p class="text-on-surface-variant text-lg mb-10 leading-relaxed">Сопровождение процесса возврата активов через взаимодействие с VASP (биржами) и правоохранительными органами. Подготовка Legal Opinion.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-32 bg-surface-container-low" id="process">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-4xl font-extrabold mb-20 text-center tracking-tight">Как мы работаем</h2>
+<div class="relative">
+<div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant/30 -translate-y-1/2"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="relative bg-surface p-8 rounded-lg z-10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center text-2xl font-bold mb-6 shadow-xl">1</div>
+<h4 class="text-xl font-bold mb-3">Сбор данных</h4>
+<p class="text-on-surface-variant text-sm">Первичный аудит инцидента, сбор всех хешей транзакций и адресов участников.</p>
+</div>
+<div class="relative bg-surface p-8 rounded-lg z-10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center text-2xl font-bold mb-6 shadow-xl">2</div>
+<h4 class="text-xl font-bold mb-3">Глубокий анализ</h4>
+<p class="text-on-surface-variant text-sm">Трассировка средств через кластерный анализ и деанонимизацию узлов.</p>
+</div>
+<div class="relative bg-surface p-8 rounded-lg z-10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center text-2xl font-bold mb-6 shadow-xl">3</div>
+<h4 class="text-xl font-bold mb-3">Формирование отчета</h4>
+<p class="text-on-surface-variant text-sm">Подготовка детального Forensic Report с доказательной базой экспертного уровня.</p>
+</div>
+<div class="relative bg-surface p-8 rounded-lg z-10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center text-2xl font-bold mb-6 shadow-xl">4</div>
+<h4 class="text-xl font-bold mb-3">Поддержка</h4>
+<p class="text-on-surface-variant text-sm">Взаимодействие с комплаенс-отделами бирж для окончательного решения вопроса.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="py-32 px-8 overflow-hidden" id="benefits">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
+<div class="lg:w-1/2">
+<h2 class="text-5xl font-extrabold tracking-tight mb-8 leading-tight">Почему доверяют<br/>CryptoRecon</h2>
+<p class="text-xl text-on-surface-variant mb-10 leading-relaxed">Мы объединяем глубокую техническую экспертизу с юридической грамотностью, создавая решения, которые имеют реальный вес в правовом поле.</p>
+<div class="p-8 rounded-xl bg-primary-container/30 border border-primary/10">
+<div class="text-3xl font-black text-primary mb-2">94%</div>
+<div class="text-on-surface-variant font-medium">Успешных идентификаций конечных владельцев кошельков в 2023 году.</div>
+</div>
+</div>
+<div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-surface-container p-8 rounded-lg">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">lock</span>
+<h4 class="text-lg font-bold mb-2">Конфиденциальность</h4>
+<p class="text-sm text-on-surface-variant">Строгое соблюдение NDA и протоколов защиты данных каждого клиента.</p>
+</div>
+<div class="bg-surface-container p-8 rounded-lg">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">verified</span>
+<h4 class="text-lg font-bold mb-2">Экспертный анализ</h4>
+<p class="text-sm text-on-surface-variant">Сертифицированные специалисты по AML и форензике цифровых активов.</p>
+</div>
+<div class="bg-surface-container p-8 rounded-lg">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">policy</span>
+<h4 class="text-lg font-bold mb-2">Юридическая сила</h4>
+<p class="text-sm text-on-surface-variant">Наши отчеты признаются крупнейшими биржами и следственными органами.</p>
+</div>
+<div class="bg-surface-container p-8 rounded-lg">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">bolt</span>
+<h4 class="text-lg font-bold mb-2">Скорость</h4>
+<p class="text-sm text-on-surface-variant">Оперативное реагирование 24/7 в случаях критических взломов и краж.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-32 bg-surface" id="faq">
+<div class="max-w-3xl mx-auto px-8">
+<h2 class="text-4xl font-extrabold mb-16 text-center tracking-tight">Часто задаваемые вопросы</h2>
+<div class="space-y-4">
+<details class="group bg-surface-container-lowest p-6 rounded-lg transition-all duration-300">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-lg">
+                        Какие шансы на возврат криптовалюты после кражи?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">Шансы зависят от того, насколько быстро были приняты меры. Если средства еще находятся на биржевых кошельках, вероятность заморозки и последующего возврата через полицию достигает 80%.</p>
+</details>
+<details class="group bg-surface-container-lowest p-6 rounded-lg transition-all duration-300">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-lg">
+                        Как работает AML-проверка?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">Мы анализируем всю историю транзакций адреса на глубину до 100+ прыжков, сопоставляя их с базой данных "грязных" кошельков, связанных с хакерскими атаками, даркнетом и миксерами.</p>
+</details>
+<details class="group bg-surface-container-lowest p-6 rounded-lg transition-all duration-300">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-lg">
+                        Может ли биржа проигнорировать ваш отчет?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">Мы составляем отчеты по международным стандартам, которые понятны комплаенс-офицерам бирж. Как правило, такие отчеты являются веским основанием для временной блокировки средств до выяснения обстоятельств.</p>
+</details>
+<details class="group bg-surface-container-lowest p-6 rounded-lg transition-all duration-300">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-lg">
+                        Работаете ли вы с анонимными монетами вроде Monero?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">Прямая трассировка Monero технически ограничена, однако мы используем OSINT-методы и анализ поведения на входах и выходах из анонимных сетей для идентификации владельцев.</p>
+</details>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 px-8" id="contact">
+<div class="max-w-7xl mx-auto">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col shadow-sm border border-outline-variant/10">
+<div class="w-full bg-primary p-16 text-on-primary flex flex-col justify-between">
+<div>
+<h2 class="text-4xl font-extrabold mb-8">Свяжитесь с нами</h2>
+<p class="text-on-primary/80 text-lg mb-12">Обсудите ваш кейс с экспертом. Мы гарантируем полную анонимность на этапе первичной консультации.</p>
+<div class="space-y-6"><a class="flex items-center gap-4 text-lg hover:opacity-90 transition-opacity" data-contact="telegram-link" href="https://t.me/tracepoint_advisory" rel="noreferrer" target="_blank"><span class="material-symbols-outlined">chat</span><span data-contact="telegram-handle">@tracepoint_advisory</span></a></div>
+</div>
+<div class="flex gap-6 mt-12">
+<span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">share</span>
+<span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">public</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 mt-20 bg-[#f0f4f7]">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start">
+<a class="flex items-center gap-3" href="#hero"><span class="grid h-12 w-12 place-items-center overflow-hidden rounded-[1.3rem] bg-white shadow-[inset_0_0_0_1px_rgba(113,124,130,0.1)]"><img alt="CryptoRecon" class="h-9 w-9 rounded-[0.8rem] object-contain" src="assets/ChatGPT Image 1 апр. 2026 г., 19_41_06.png"/></span><span class="text-xl font-black text-[#001B3D]">CryptoRecon</span></a>
+<p class="font-['Inter'] text-sm text-[#566166] mt-2">© <span id="year"></span> CryptoRecon. Все права защищены. AML &amp; Investigation Consulting.</p>
+</div>
+<div class="flex gap-8">
+
+</div>
+</div>
+</footer>
+<script src="script.js"></script></body></html>
