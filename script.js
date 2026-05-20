@@ -1,6 +1,6 @@
 const CONTACTS = {
-  telegramHandle: "@tracepoint_advisory",
-  telegramUrl: "https://t.me/tracepoint_advisory"
+  telegramHandle: "@crypto_recon",
+  telegramUrl: "https://t.me/crypto_recon"
 };
 
 const contactBindings = {
