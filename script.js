@@ -61,6 +61,34 @@ function setupYear() {
   }
 }
 
+function setupMobileMenu() {
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const bar1 = document.getElementById("bar1");
+  const bar2 = document.getElementById("bar2");
+  const bar3 = document.getElementById("bar3");
+  if (!btn || !menu) return;
+
+  btn.addEventListener("click", () => {
+    const isOpen = !menu.classList.contains("hidden");
+    menu.classList.toggle("hidden", isOpen);
+    menu.classList.toggle("flex", !isOpen);
+    bar1.style.transform = isOpen ? "" : "rotate(45deg) translate(4px, 4px)";
+    bar2.style.opacity = isOpen ? "" : "0";
+    bar3.style.transform = isOpen ? "" : "rotate(-45deg) translate(4px, -4px)";
+  });
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.classList.add("hidden");
+      menu.classList.remove("flex");
+      bar1.style.transform = "";
+      bar2.style.opacity = "";
+      bar3.style.transform = "";
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   syncMotionPreference();
 
@@ -74,4 +102,5 @@ document.addEventListener("DOMContentLoaded", () => {
   applyContactBindings();
   setupHeaderState();
   setupYear();
+  setupMobileMenu();
 });
