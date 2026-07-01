@@ -3,8 +3,4 @@ services:
     name: cryptorecon-site
     env: static
     staticPublishPath: .
-    buildCommand: ""
-    headers:
-      - path: /*
-        name: Cache-Control
-        value: public, max-age=3600
+    buildCommand: echo "static site, no build needed"
