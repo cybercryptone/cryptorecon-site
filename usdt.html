@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Разблокировка USDT | CryptoRecon</title>
+<meta name="description" content="Помогаем разблокировать USDT, замороженный эмитентом Tether. Анализ причин блокировки, формирование доказательной базы, юридическое сопровождение."/>
+<link href="assets/logo.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "secondary-dim": "#41556d",
+        "on-error": "#fff7f6",
+        "on-primary-container": "#3c5277",
+        "surface-container-low": "#f0f4f7",
+        "surface-variant": "#d9e4ea",
+        "on-secondary-container": "#3f536c",
+        "inverse-on-surface": "#9a9d9f",
+        "secondary": "#4d617a",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-highest": "#d9e4ea",
+        "on-background": "#2a3439",
+        "surface": "#f7f9fb",
+        "on-surface-variant": "#566166",
+        "primary": "#495f84",
+        "on-primary": "#f6f7ff",
+        "secondary-container": "#d1e4ff",
+        "outline": "#717c82",
+        "error-container": "#fe8983",
+        "surface-container": "#e8eff3",
+        "background": "#f7f9fb",
+        "primary-container": "#d6e3ff",
+        "on-surface": "#2a3439",
+        "outline-variant": "#c0cbd1",
+        "error": "#ba1a1a",
+        "on-error-container": "#752121",
+        "primary-strong": "#405474",
+      }
+    }
+  }
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; font-family: 'Material Symbols Outlined'; }
+  .fill-icon { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-['Inter']">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-[0_2px_24px_rgba(42,52,57,0.06)]">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+    <a class="flex items-center gap-3" href="/">
+      <span class="grid h-11 w-11 place-items-center overflow-hidden rounded-[1.1rem] bg-white shadow-[inset_0_0_0_1px_rgba(113,124,130,0.1)]">
+        <img alt="CryptoRecon" class="h-8 w-8 object-contain" src="assets/logo.png"/>
+      </span>
+      <span class="text-xl font-black tracking-tighter text-[#001B3D]">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-on-surface-variant font-['Manrope'] font-semibold hover:text-primary transition-colors" href="/#services">Услуги</a>
+      <a class="text-on-surface-variant font-['Manrope'] font-semibold hover:text-primary transition-colors" href="/#faq">FAQ</a>
+      <a class="text-on-surface-variant font-['Manrope'] font-semibold hover:text-primary transition-colors" href="/#contact">Контакты</a>
+    </div>
+    <a class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all" href="#contact">Получить консультацию</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-32 pb-16 px-4 md:px-8 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto text-center">
+    <span class="inline-block text-xs font-bold tracking-[0.2em] uppercase text-primary mb-4">Tether · USDT · TRC-20 · ERC-20</span>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.08] text-on-background mb-6">
+      USDT заблокирован эмитентом — что делать?
+    </h1>
+    <p class="text-xl text-on-surface-variant leading-relaxed max-w-2xl mx-auto mb-10">
+      Tether имеет техническую возможность заморозить любой адрес на уровне смарт-контракта. Средства остаются на кошельке, но становятся недоступны. Мы помогаем оспорить блокировку.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a class="bg-primary text-on-primary px-8 py-4 rounded-full text-lg font-bold hover:opacity-90 transition-all shadow-lg" href="#contact">Отправить кейс на оценку</a>
+      <a class="flex items-center gap-2 px-8 py-4 rounded-full text-lg font-bold text-primary border-2 border-primary/15 hover:bg-primary-container/30 transition-all" href="https://t.me/crypto_recon" target="_blank" rel="noreferrer">
+        <span class="material-symbols-outlined fill-icon">send</span>Telegram
+      </a>
+    </div>
+    <!-- Stats -->
+    <div class="mt-14 grid grid-cols-3 gap-6 max-w-xl mx-auto">
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-outline-variant/10">
+        <div class="text-2xl font-black text-primary">ERC-20</div>
+        <div class="text-xs text-on-surface-variant mt-1">Ethereum сеть</div>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-outline-variant/10">
+        <div class="text-2xl font-black text-primary">TRC-20</div>
+        <div class="text-xs text-on-surface-variant mt-1">Tron сеть</div>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-outline-variant/10">
+        <div class="text-2xl font-black text-primary">24ч</div>
+        <div class="text-xs text-on-surface-variant mt-1">Первый ответ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Что произошло -->
+<section class="py-16 md:py-24 px-4 md:px-8 bg-surface">
+  <div class="max-w-4xl mx-auto">
+    <div class="bg-surface-container-low rounded-3xl p-8 md:p-12 border border-outline-variant/10">
+      <span class="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-3 block">Механизм блокировки</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-5">Что произошло с вашими средствами</h2>
+      <p class="text-on-surface-variant leading-relaxed text-lg mb-6">
+        USDT — централизованный стейблкоин. Компания <strong class="text-on-surface">Tether Limited</strong> сохраняет техническую возможность заблокировать любой адрес на уровне смарт-контракта через функцию <code class="bg-primary-container/40 px-1.5 py-0.5 rounded text-sm font-mono text-primary">addBlackList</code>.
+      </p>
+      <p class="text-on-surface-variant leading-relaxed text-lg">
+        После блокировки средства физически остаются на адресе — но любые транзакции с ними отклоняются сетью. Это не взлом и не кража: блокировка — административная мера, которую можно оспорить при наличии законных оснований.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Причины блокировок -->
+<section class="py-16 md:py-24 px-4 md:px-8 bg-surface-container-low" id="reasons">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-3 block">Частые случаи</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Почему Tether блокирует кошельки</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white p-8 rounded-2xl border border-outline-variant/10 hover:shadow-md transition-all">
+        <div class="w-12 h-12 rounded-2xl bg-primary-container flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-primary">gavel</span>
+        </div>
+        <h3 class="text-lg font-bold mb-3">Запрос правоохранительных органов</h3>
+        <p class="text-on-surface-variant leading-relaxed">По требованию полиции, прокуратуры или суда в рамках уголовного или административного расследования.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl border border-outline-variant/10 hover:shadow-md transition-all">
+        <div class="w-12 h-12 rounded-2xl bg-secondary-container flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-secondary">account_balance</span>
+        </div>
+        <h3 class="text-lg font-bold mb-3">Гражданское судебное решение</h3>
+        <p class="text-on-surface-variant leading-relaxed">Адрес внесён в чёрный список по определению суда — даже если владелец не является участником спора.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl border border-outline-variant/10 hover:shadow-md transition-all">
+        <div class="w-12 h-12 rounded-2xl bg-primary-container/60 flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-primary">warning</span>
+        </div>
+        <h3 class="text-lg font-bold mb-3">AML-триггер</h3>
+        <p class="text-on-surface-variant leading-relaxed">Входящие средства содержали связь с помеченными адресами в транзакционной истории — даже если вы не знали об этом.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl border border-outline-variant/10 hover:shadow-md transition-all">
+        <div class="w-12 h-12 rounded-2xl bg-error-container/20 flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-error">error_outline</span>
+        </div>
+        <h3 class="text-lg font-bold mb-3">Ошибочная идентификация</h3>
+        <p class="text-on-surface-variant leading-relaxed">Адрес попал под блокировку вследствие совпадения паттернов или ошибки в алгоритмической разметке.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Кому помогаем -->
+<section class="py-16 md:py-24 px-4 md:px-8 bg-surface" id="who">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-3 block">Клиенты</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Кому мы помогаем</h2>
+      <p class="text-on-surface-variant mt-4 max-w-xl mx-auto">Работаем только с добросовестными владельцами. Кейсы с незаконной деятельностью, отмыванием средств или санкционными нарушениями не рассматриваем.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-surface-container-low p-8 rounded-2xl text-center border border-outline-variant/10">
+        <div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center mx-auto mb-5">
+          <span class="material-symbols-outlined text-primary text-2xl">person</span>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Частный держатель</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Получил USDT через P2P, деловой расчёт или продажу и оказался связан с нежелательным адресом без своего ведома.</p>
+      </div>
+      <div class="bg-surface-container-low p-8 rounded-2xl text-center border border-outline-variant/10">
+        <div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center mx-auto mb-5">
+          <span class="material-symbols-outlined text-secondary text-2xl">storefront</span>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Платёжный сервис / OTC</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Операционный кошелёк заморожен после получения проблемных средств — бизнес остановлен.</p>
+      </div>
+      <div class="bg-surface-container-low p-8 rounded-2xl text-center border border-outline-variant/10">
+        <div class="w-14 h-14 rounded-full bg-primary-container/60 flex items-center justify-center mx-auto mb-5">
+          <span class="material-symbols-outlined text-primary text-2xl">corporate_fare</span>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Бизнес под решением суда</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Адрес внесён в чёрный список по постановлению суда без прямого участия владельца.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Что мы делаем -->
+<section class="py-16 md:py-24 px-4 md:px-8 bg-surface-container-low" id="services">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-3 block">Наша работа</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Что мы делаем для вас</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white p-8 rounded-2xl border border-outline-variant/10">
+        <div class="w-12 h-12 rounded-2xl bg-primary-container flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-primary">analytics</span>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Аналитика блокировки</h3>
+        <p class="text-on-surface-variant leading-relaxed text-sm">Полное исследование транзакционной истории: контрагенты, кластеры, связи с биржами. Выявляем точную причину блокировки.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl border border-outline-variant/10">
+        <div class="w-12 h-12 rounded-2xl bg-secondary-container flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-secondary">folder_open</span>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Формирование доказательной базы</h3>
+        <p class="text-on-surface-variant leading-relaxed text-sm">Подтверждение добросовестного приобретения, источника средств. Документы для эмитента и суда.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl border border-outline-variant/10">
+        <div class="w-12 h-12 rounded-2xl bg-primary-container/60 flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-primary">balance</span>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Юридическое сопровождение</h3>
+        <p class="text-on-surface-variant leading-relaxed text-sm">On-chain доказательства и аналитическая поддержка в нужной юрисдикции. Ведём переписку с Tether и регуляторами.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Процесс -->
+<section class="py-16 md:py-24 px-4 md:px-8 bg-surface" id="process">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-3 block">Процесс</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Как мы работаем</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="flex flex-col items-center text-center">
+        <div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center text-2xl font-bold mb-5 shadow-lg">1</div>
+        <h4 class="font-bold text-lg mb-2">Приём кейса</h4>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Вы описываете ситуацию. Проводим предварительную оценку шансов — <strong>бесплатно</strong>.</p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center text-2xl font-bold mb-5 shadow-lg">2</div>
+        <h4 class="font-bold text-lg mb-2">Аналитика и досье</h4>
+        <p class="text-on-surface-variant text-sm leading-relaxed">On-chain расследование, формирование доказательной документации и позиции для Tether.</p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center text-2xl font-bold mb-5 shadow-lg">3</div>
+        <h4 class="font-bold text-lg mb-2">Сопровождение позиции</h4>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Стратегия ответа и поддержка на всех этапах до получения решения.</p>
+      </div>
+    </div>
+    <!-- Что мы не делаем -->
+    <div class="mt-14 bg-surface-container-low border border-outline-variant/20 rounded-2xl p-8">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="material-symbols-outlined text-error text-xl">block</span>
+        Чего мы не делаем
+      </h3>
+      <ul class="space-y-3 text-on-surface-variant">
+        <li class="flex items-start gap-3"><span class="material-symbols-outlined text-error text-base mt-0.5">close</span>Не помогаем в случаях с незаконной деятельностью, отмыванием, финансированием терроризма или санкционными нарушениями</li>
+        <li class="flex items-start gap-3"><span class="material-symbols-outlined text-error text-base mt-0.5">close</span>Не гарантируем отмену блокировки — решение принимает Tether или суд</li>
+        <li class="flex items-start gap-3"><span class="material-symbols-outlined text-error text-base mt-0.5">close</span>Никогда не запрашиваем seed-фразы или приватные ключи</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-16 md:py-24 px-4 md:px-8 bg-surface-container-low" id="faq">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Частые вопросы</h2>
+    </div>
+    <div class="space-y-3">
+      <details class="group bg-white p-6 rounded-2xl border border-outline-variant/10 transition-all">
+        <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base">
+          Вы гарантируете разблокировку?
+          <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary">expand_more</span>
+        </summary>
+        <p class="mt-4 text-on-surface-variant leading-relaxed text-sm">Нет — окончательное решение принимает Tether или суд. Мы формируем максимально сильную аналитическую и юридическую позицию, которая даёт наилучшие шансы на положительный исход.</p>
+      </details>
+      <details class="group bg-white p-6 rounded-2xl border border-outline-variant/10 transition-all">
+        <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base">
+          Сколько стоит работа?
+          <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary">expand_more</span>
+        </summary>
+        <p class="mt-4 text-on-surface-variant leading-relaxed text-sm">Стоимость рассчитывается индивидуально в зависимости от сложности кейса и суммы замороженных средств. Первичная оценка ситуации — бесплатно. Работаем по схеме частичного success fee.</p>
+      </details>
+      <details class="group bg-white p-6 rounded-2xl border border-outline-variant/10 transition-all">
+        <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base">
+          Что нужно для начала работы?
+          <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary">expand_more</span>
+        </summary>
+        <p class="mt-4 text-on-surface-variant leading-relaxed text-sm">Адрес замороженного кошелька, сеть (TRC-20 или ERC-20), сумма USDT и краткое описание источника средств. Этого достаточно для предварительной оценки.</p>
+      </details>
+      <details class="group bg-white p-6 rounded-2xl border border-outline-variant/10 transition-all">
+        <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base">
+          Можно ли снять блокировку без суда?
+          <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary">expand_more</span>
+        </summary>
+        <p class="mt-4 text-on-surface-variant leading-relaxed text-sm">Да — если причина блокировки AML-триггер или ошибочная разметка, возможна внесудебная процедура через прямое обращение к Tether с доказательной базой. Судебные блокировки требуют юридического сопровождения.</p>
+      </details>
+      <details class="group bg-white p-6 rounded-2xl border border-outline-variant/10 transition-all">
+        <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base">
+          Работаете с клиентами из других стран?
+          <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary">expand_more</span>
+        </summary>
+        <p class="mt-4 text-on-surface-variant leading-relaxed text-sm">Да, принимаем кейсы из любой юрисдикции. Работаем удалённо на русском и английском языках.</p>
+      </details>
+      <details class="group bg-white p-6 rounded-2xl border border-outline-variant/10 transition-all">
+        <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base">
+          Моя информация останется конфиденциальной?
+          <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary">expand_more</span>
+        </summary>
+        <p class="mt-4 text-on-surface-variant leading-relaxed text-sm">Да. Все материалы кейса рассматриваются конфиденциально. Мы никогда не передаём данные клиентов третьим лицам без прямого согласия.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="py-16 md:py-24 px-4 md:px-8 bg-surface" id="contact">
+  <div class="max-w-2xl mx-auto text-center">
+    <span class="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-3 block">Бесплатная оценка</span>
+    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Отправьте кейс на оценку</h2>
+    <p class="text-on-surface-variant text-lg mb-10">Расскажите о ситуации — эксперт свяжется с вами в течение нескольких часов. Первичная консультация бесплатна.</p>
+    <div class="bg-primary rounded-3xl p-8 md:p-12 text-left">
+      <div class="space-y-4 mb-8">
+        <a href="https://t.me/crypto_recon" target="_blank" rel="noreferrer"
+           class="flex items-center gap-4 text-on-primary text-lg hover:opacity-80 transition-opacity">
+          <span class="material-symbols-outlined fill-icon">send</span>
+          <div>
+            <div class="font-bold">Telegram</div>
+            <div class="text-on-primary/70 text-sm">@crypto_recon</div>
+          </div>
+        </a>
+      </div>
+      <div class="border-t border-on-primary/20 pt-6">
+        <p class="text-on-primary/70 text-sm">Для первичной оценки сообщите: адрес кошелька, сеть (TRC-20/ERC-20), сумму и краткое описание ситуации.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-10 px-4 md:px-8 bg-surface-container-low border-t border-outline-variant/10">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <a class="flex items-center gap-3" href="/">
+      <span class="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-white shadow-sm">
+        <img alt="CryptoRecon" class="h-7 w-7 object-contain" src="assets/logo.png"/>
+      </span>
+      <span class="font-black tracking-tighter text-[#001B3D]">CryptoRecon</span>
+    </a>
+    <div class="flex gap-6 text-sm text-on-surface-variant">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <a href="/#services" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/#contact" class="hover:text-primary transition-colors">Контакты</a>
+      <a href="/privacy.html" class="hover:text-primary transition-colors">Политика</a>
+    </div>
+    <p class="text-sm text-on-surface-variant">© <span id="year"></span> CryptoRecon</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
