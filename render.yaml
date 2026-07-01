@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: cryptorecon-site
-    env: static
-    staticPublishPath: .
-    buildCommand: echo "static site, no build needed"
