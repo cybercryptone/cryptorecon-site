@@ -56,13 +56,89 @@ tailwind.config = {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Разблокировка замороженного USDT",
-  "provider": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
-  "description": "Помогаем разблокировать USDT, замороженный Tether. Пошаговое сопровождение от анализа причин до получения доступа к средствам.",
-  "areaServed": "Worldwide",
-  "serviceType": "Crypto Asset Recovery",
-  "url": "https://cryptorecon.io/usdt-zablokirovan.html"
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Разблокировка USDT",
+          "item": "https://cryptorecon.io/usdt.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "USDT заблокирован — что делать",
+          "item": "https://cryptorecon.io/usdt-zablokirovan.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как понять, что мой USDT именно заблокирован, а не просто не проходит транзакция?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Проверьте адрес в Tronscan (TRC-20) или Etherscan (ERC-20). При блокировке Tether рядом с адресом появляется метка «Blacklisted», а попытки перевода возвращают ошибку смарт-контракта. Обычные сетевые проблемы не дают такой ошибки — транзакция просто «висит» в pending или отклоняется из-за нехватки газа."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли разблокировать USDT самостоятельно, написав в Tether?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Формально — да, Tether принимает обращения. Но на практике самостоятельные обращения без чёткого пакета документов и понимания того, что именно Tether хочет увидеть, почти никогда не приводят к успеху. Компания не объясняет, чего ей не хватает. Наша команда знает конкретные требования к формату и содержанию запросов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Могут ли заблокированные USDT «сгореть» или исчезнуть навсегда?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. Блокировка означает заморозку, а не уничтожение. Токены остаются на блокчейне и числятся на вашем адресе — просто ими нельзя управлять до снятия блокировки. При успешном разблокировании вы получаете доступ к полной сумме."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Влияет ли сумма заблокированных USDT на шансы разблокировки?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Сумма напрямую не влияет на вероятность успеха — она определяется причиной блокировки и качеством доказательной базы. Однако при крупных суммах Tether может запрашивать более детальное подтверждение источника средств. Подробнее: разблокировка крупной суммы USDT."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько стоят услуги CryptoRecon?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Первичная оценка ситуации — бесплатно. Стоимость работ зависит от сложности дела и суммы. Для большинства случаев мы работаем по модели success fee — вознаграждение только при успешном результате. Свяжитесь с нами для индивидуального расчёта."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Разблокировка замороженного USDT",
+      "provider": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "description": "Помогаем разблокировать USDT, замороженный Tether. Пошаговое сопровождение от анализа причин до получения доступа к средствам.",
+      "areaServed": "Worldwide",
+      "serviceType": "Crypto Asset Recovery",
+      "url": "https://cryptorecon.io/usdt-zablokirovan.html"
+    }
+  ]
 }
 </script>
 </head>

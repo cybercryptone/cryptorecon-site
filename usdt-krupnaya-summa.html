@@ -56,13 +56,89 @@ tailwind.config = {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Разблокировка крупных сумм USDT",
-  "provider": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
-  "description": "Специализированное сопровождение разблокировки крупных сумм USDT (от $100 000). Конфиденциально, с юридической поддержкой, модель success fee.",
-  "areaServed": "Worldwide",
-  "serviceType": "Crypto Asset Recovery",
-  "url": "https://cryptorecon.io/usdt-krupnaya-summa.html"
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Разблокировка USDT",
+          "item": "https://cryptorecon.io/usdt.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Разблокировка крупной суммы USDT",
+          "item": "https://cryptorecon.io/usdt-krupnaya-summa.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Есть ли максимальная сумма, с которой вы работаете?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Максимального порога нет. Мы работали с делами на несколько миллионов долларов. Чем крупнее сумма, тем больше ресурсов мы задействуем — международные юридические партнёры, независимая блокчейн-экспертиза, переговорный процесс на уровне топ-менеджмента Tether."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Влияет ли большая сумма на шансы разблокировки?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Сумма сама по себе не снижает шансы — они определяются причиной блокировки и качеством доказательной базы. Однако при крупных суммах Tether проводит более детальную проверку, что требует более полного пакета документов. Также выше внимание со стороны compliance-команды."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как долго занимает разблокировка крупной суммы?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Как правило, дольше, чем стандартные случаи — за счёт расширенной проверки Tether. Ориентировочно: 3–6 месяцев для AML-блокировок при чистой доказательной базе. Судебные блокировки — сроки определяются ходом расследования. Подробнее: сроки разморозки USDT."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Насколько конфиденциально ведётся работа?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Мы подписываем NDA на любую сумму. Для крупных дел используем зашифрованные каналы связи, минимизируем круг лиц, осведомлённых о деле. Информация о ходе работы раскрывается только вам как клиенту."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что если средства принадлежат компании, а не физлицу?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Работаем с корпоративными клиентами. Требования к документации расширяются: нужны корпоративные документы (устав, выписка из реестра, финансовая отчётность), а также подтверждение полномочий лица, подающего апелляцию. KYC проходят как компания, так и бенефициарные владельцы."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Разблокировка крупной суммы USDT",
+      "provider": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "description": "Специализируемся на разблокировке крупных сумм USDT: международные партнёры, NDA, расширенная экспертиза.",
+      "areaServed": "Worldwide",
+      "serviceType": "Crypto Asset Recovery",
+      "url": "https://cryptorecon.io/usdt-krupnaya-summa.html"
+    }
+  ]
 }
 </script>
 </head>

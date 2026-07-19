@@ -56,13 +56,89 @@ tailwind.config = {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Выход из чёрного списка Tether",
-  "provider": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
-  "description": "Помогаем выйти из чёрного списка Tether (blacklist). Анализ причин внесения, подготовка доказательной базы, профессиональное обращение в Tether.",
-  "areaServed": "Worldwide",
-  "serviceType": "Crypto Asset Recovery",
-  "url": "https://cryptorecon.io/tether-blacklist.html"
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Разблокировка USDT",
+          "item": "https://cryptorecon.io/usdt.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Чёрный список Tether (Blacklist)",
+          "item": "https://cryptorecon.io/tether-blacklist.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как проверить, находится ли мой адрес в blacklist Tether?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для ERC-20 (Ethereum): зайдите на Etherscan, найдите контракт USDT (0xdAC17F958D2ee523a2206206994597C13D831ec7), перейдите в раздел «Read Contract» и вызовите функцию isBlacklisted(), передав ваш адрес. Для TRC-20: на Tronscan откройте смарт-контракт USDT и аналогично проверьте через функцию isBlackListed. Ответ true означает блокировку."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Уведомляет ли Tether о добавлении в blacklist?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. Tether не присылает уведомлений и не объясняет причин блокировки. Пользователи узнают о ней, когда транзакция не проходит или при самостоятельной проверке. Это одна из основных проблем — без понимания причины невозможно правильно выстроить защиту."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Может ли Tether уничтожить мои замороженные токены?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Технически — да, функция destroyBlackFunds существует. Но на практике Tether применяет её только в исключительных случаях с доказанным криминальным происхождением средств и судебными решениями. Для добросовестных пользователей этот риск минимален, однако именно поэтому важно не затягивать с обращением."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько адресов сейчас в blacklist Tether?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "По данным публичного блокчейна, Tether заблокировал более 1 300 адресов на Ethereum и несколько сотен на Tron, совокупно удерживая замороженные средства на сотни миллионов долларов. Число блокировок растёт — Tether активно расширяет сотрудничество с правоохранителями."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Есть ли срок давности у блокировки?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. Блокировка бессрочна до тех пор, пока Tether не вызовет функцию removeBlackList. Сама по себе она не снимается. Именно поэтому без активных действий средства остаются замороженными неограниченно долго."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Разблокировка адреса из blacklist Tether",
+      "provider": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "description": "Помогаем выйти из чёрного списка Tether: анализ причин блокировки, подготовка доказательной базы, переговоры с эмитентом.",
+      "areaServed": "Worldwide",
+      "serviceType": "Crypto Asset Recovery",
+      "url": "https://cryptorecon.io/tether-blacklist.html"
+    }
+  ]
 }
 </script>
 </head>

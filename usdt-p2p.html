@@ -56,13 +56,89 @@ tailwind.config = {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Разблокировка USDT после P2P сделки",
-  "provider": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
-  "description": "Помогаем разблокировать USDT, полученный в P2P-сделке и оказавшийся «загрязнённым». Доказываем добросовестность покупателя.",
-  "areaServed": "Worldwide",
-  "serviceType": "Crypto Asset Recovery",
-  "url": "https://cryptorecon.io/usdt-p2p.html"
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Разблокировка USDT",
+          "item": "https://cryptorecon.io/usdt.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "USDT заблокирован после P2P",
+          "item": "https://cryptorecon.io/usdt-p2p.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Несу ли я ответственность за «грязные» деньги продавца?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "С точки зрения Tether и AML-систем — вы получили «загрязнённые» средства, и ваш адрес подлежит заморозке вне зависимости от вашей вины. С юридической точки зрения добросовестный приобретатель защищён законом большинства стран. Именно на этом строится стратегия защиты: доказать, что вы действовали в добросовестном неведении."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли заранее проверить USDT перед P2P-сделкой?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Частично — да. Сервисы вроде AMLBot, Crystal Blockchain или GetBlock позволяют проверить риск-скор адреса продавца до получения средств. Это не даёт 100% гарантии, но резко снижает риск. Мы рекомендуем проверять при суммах от $1 000."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Помогут ли записи из чата P2P-платформы?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, переписка в чате P2P-ордера — ценное доказательство. Она показывает контекст сделки: что вы обсуждали обычную коммерческую операцию, а не организовывали незаконную схему. Сохраните скриншоты переписки немедленно, пока доступ к ним не закрылся."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что если у меня было много P2P-сделок и я не помню конкретную?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Мы определяем конкретную проблемную транзакцию через анализ блокчейна — устанавливаем, откуда именно пришло «загрязнение» и когда. После этого запрашиваем историю ордеров за соответствующий период. Даже при большом объёме торгов конкретную сделку можно идентифицировать."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как долго разблокируют USDT после P2P?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "P2P-блокировки — один из наиболее решаемых типов при наличии документов. Типичный срок при полном пакете — 6–12 недель. Подробнее: разморозка USDT: сроки и процесс."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Разблокировка USDT после P2P-сделки",
+      "provider": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "description": "Специализируемся на разблокировке USDT, полученного в P2P-сделках: анализ происхождения средств, подготовка доказательной базы.",
+      "areaServed": "Worldwide",
+      "serviceType": "Crypto Asset Recovery",
+      "url": "https://cryptorecon.io/usdt-p2p.html"
+    }
+  ]
 }
 </script>
 </head>

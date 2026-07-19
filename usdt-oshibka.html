@@ -56,13 +56,81 @@ tailwind.config = {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Разблокировка USDT заблокированного по ошибке",
-  "provider": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
-  "description": "Помогаем доказать ошибочность блокировки USDT и добиться её снятия. Анализ ложных срабатываний AML, подготовка опровержения.",
-  "areaServed": "Worldwide",
-  "serviceType": "Crypto Asset Recovery",
-  "url": "https://cryptorecon.io/usdt-oshibka.html"
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Разблокировка USDT",
+          "item": "https://cryptorecon.io/usdt.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Ошибочная блокировка USDT",
+          "item": "https://cryptorecon.io/usdt-oshibka.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Какова вероятность успеха при ошибочной блокировке?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Среди всех типов блокировок ошибочные поддаются оспариванию лучше всего. При наличии полной документации и отсутствии реальных связей с незаконной деятельностью — шансы на успех высокие. По нашей практике, большинство подтверждённо ошибочных блокировок разрешается в пользу владельца."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Признаёт ли Tether свои ошибки?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tether не делает публичных признаний ошибок, но снимает блокировки при наличии достаточных доказательств. Функция removeBlackList применяется без объяснения причин — просто токены размораживаются. Важно именно получить этот результат, а не официальное извинение."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Могу ли я подать в суд на Tether за ошибочную блокировку?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Теоретически — да, в юрисдикции, где у Tether есть правовое присутствие. На практике — это дорого, долго и сложно. Судебные иски против Tether единичны. Как правило, прямые переговоры при поддержке профессионалов значительно эффективнее судебного пути."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Насколько быстро снимается ошибочная блокировка?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "При правильно поданном запросе — от 3 до 8 недель. Это самый быстрый сценарий среди всех типов блокировок. Подробнее о сроках: разморозка USDT: сроки и процесс."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Оспаривание ошибочной блокировки USDT",
+      "provider": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "description": "Помогаем доказать ошибочность блокировки USDT: сбор доказательств, подача апелляции, снятие блокировки от Tether.",
+      "areaServed": "Worldwide",
+      "serviceType": "Crypto Asset Recovery",
+      "url": "https://cryptorecon.io/usdt-oshibka.html"
+    }
+  ]
 }
 </script>
 </head>

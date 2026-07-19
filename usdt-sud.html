@@ -56,13 +56,81 @@ tailwind.config = {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Разблокировка USDT заблокированного по решению суда",
-  "provider": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
-  "description": "Помогаем в ситуациях, когда USDT заморожен по судебному решению или запросу правоохранительных органов. Юридическое сопровождение и стратегия защиты.",
-  "areaServed": "Worldwide",
-  "serviceType": "Crypto Asset Recovery",
-  "url": "https://cryptorecon.io/usdt-sud.html"
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Разблокировка USDT",
+          "item": "https://cryptorecon.io/usdt.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Блокировка USDT по решению суда",
+          "item": "https://cryptorecon.io/usdt-sud.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Может ли российский суд заставить Tether заморозить USDT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "На практике — крайне редко. Tether реагирует на запросы юрисдикций, в которых имеет операционное присутствие или банковские отношения. Российские суды не имеют прямого юрисдикционного влияния на Tether. Однако через международные механизмы сотрудничества (Интерпол, MLAT-договоры) опосредованное влияние возможно."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Узнаю ли я, что стал фигурантом расследования?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Не обязательно. Tether не уведомляет владельцев о причине блокировки. Но если ваш адрес заблокирован по запросу правоохранителей, вероятно, параллельно ведётся расследование, о котором вы можете не знать. Наши специалисты помогают установить это по косвенным признакам."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что будет с заблокированными средствами, если суд признает их легальными?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "При наличии решения суда или официального уведомления от органа, инициировавшего блокировку, о прекращении заморозки — Tether снимает блокировку. Средства в полном объёме возвращаются в ваше распоряжение."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Могут ли забрать мои USDT в счёт штрафа или конфискации?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "В теории — да, если суд вынесет решение о конфискации. Tether может воспользоваться функцией destroyBlackFunds для уничтожения токенов. Однако на практике это применяется только в отношении доказанных преступных активов. Для добросовестных владельцев задача — не допустить такого решения, вовремя заявив о своих правах."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Разблокировка USDT заблокированного по решению суда",
+      "provider": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "description": "Юридическое сопровождение при судебных блокировках USDT: оспаривание решений, переговоры с Tether, международное судопроизводство.",
+      "areaServed": "Worldwide",
+      "serviceType": "Crypto Asset Recovery",
+      "url": "https://cryptorecon.io/usdt-sud.html"
+    }
+  ]
 }
 </script>
 </head>

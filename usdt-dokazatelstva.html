@@ -56,13 +56,81 @@ tailwind.config = {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Подготовка доказательной базы для разблокировки USDT",
-  "provider": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
-  "description": "Помогаем собрать и структурировать доказательства законности USDT для подачи апелляции в Tether.",
-  "areaServed": "Worldwide",
-  "serviceType": "Crypto Asset Recovery",
-  "url": "https://cryptorecon.io/usdt-dokazatelstva.html"
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Разблокировка USDT",
+          "item": "https://cryptorecon.io/usdt.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Как доказать законность USDT",
+          "item": "https://cryptorecon.io/usdt-dokazatelstva.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Что делать, если часть документов не сохранилась?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Запрашиваем документы у первоисточников: биржи предоставляют архивные выписки, банки — историю переводов, налоговые органы — копии деклараций. В крайнем случае — объяснительная записка с описанием обстоятельств и максимально доступными подтверждениями лучше, чем умолчание."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Нужен ли перевод всех документов?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Обязателен нотариальный перевод документов, удостоверяющих личность, и официальных справок. Для банковских выписок и скриншотов платформ достаточно сопроводительного описания на английском. Мы помогаем определить, что именно требует перевода в каждом конкретном случае."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как Tether проверяет предоставленные документы?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tether не раскрывает детали проверки. На практике: проводится KYC-верификация личности, сопоставление данных с блокчейн-аналитикой, проверка подлинности ключевых документов. Иногда запрашиваются уточняющие сведения — важно оперативно реагировать."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Передаю ли я свои данные третьим лицам при работе с CryptoRecon?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ваши документы используются исключительно для подготовки и подачи запроса в Tether. Мы не передаём данные третьим лицам без вашего согласия. Документы хранятся в зашифрованном виде на период ведения дела."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Формирование доказательной базы для разблокировки USDT",
+      "provider": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "description": "Помогаем собрать и подготовить полный пакет документов для доказательства законности происхождения USDT и подачи в Tether.",
+      "areaServed": "Worldwide",
+      "serviceType": "Crypto Asset Recovery",
+      "url": "https://cryptorecon.io/usdt-dokazatelstva.html"
+    }
+  ]
 }
 </script>
 </head>

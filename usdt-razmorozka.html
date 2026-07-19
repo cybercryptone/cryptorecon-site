@@ -56,13 +56,81 @@ tailwind.config = {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Разморозка USDT от Tether",
-  "provider": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
-  "description": "Профессиональное сопровождение разморозки USDT: от анализа ситуации до получения доступа к средствам. Реалистичные сроки и прозрачный процесс.",
-  "areaServed": "Worldwide",
-  "serviceType": "Crypto Asset Recovery",
-  "url": "https://cryptorecon.io/usdt-razmorozka.html"
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Разблокировка USDT",
+          "item": "https://cryptorecon.io/usdt.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Разморозка USDT: сроки и процесс",
+          "item": "https://cryptorecon.io/usdt-razmorozka.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Можно ли ускорить процесс дополнительной оплатой?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. Tether не предлагает платного ускорения и не принимает неофициальных договорённостей. Единственный способ ускорить процесс — подать безупречный пакет документов с первого раза, не давая оснований для задержки. Любые предложения «ускорить за деньги» — мошенничество."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что будет, если мой запрос отклонили?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Отклонение — не окончательный ответ. Как правило, это означает, что пакет документов был неполным или неправильно оформленным. Мы анализируем причину отказа, дополняем доказательную базу и подаём повторный запрос. Повторные обращения успешны в значительном числе случаев."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tether не отвечает неделями — это нормально?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "К сожалению, да. Tether не даёт гарантий сроков ответа. Отсутствие ответа в течение 2–4 недель — обычная практика, а не сигнал отказа. Мы ведём мониторинг статуса и, при необходимости, направляем follow-up запросы."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Насколько реалистично разблокировать USDT в принципе?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "По нашей практике, при AML и P2P-блокировках с чистой историей — шансы высокие. Ошибочные блокировки разрешаются в большинстве случаев. Сложнее всего — судебные блокировки, где результат во многом зависит от хода расследования. Мы честно оцениваем шансы на начальном этапе и не берём безнадёжные дела."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Разморозка USDT — сопровождение процесса",
+      "provider": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "description": "Сопровождаем полный процесс разморозки USDT: от подачи заявки до получения доступа к средствам.",
+      "areaServed": "Worldwide",
+      "serviceType": "Crypto Asset Recovery",
+      "url": "https://cryptorecon.io/usdt-razmorozka.html"
+    }
+  ]
 }
 </script>
 </head>
