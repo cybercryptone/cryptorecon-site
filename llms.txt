@@ -1,0 +1,28 @@
+# CryptoRecon
+
+> Сервис по разблокировке USDT, замороженного эмитентом Tether, и восстановлению доступа к аккаунтам на криптобиржах.
+
+CryptoRecon помогает физическим лицам и компаниям, чьи USDT заморожены Tether Limited на уровне смарт-контракта (TRC-20, ERC-20). Также оказываем помощь при блокировках аккаунтов на Binance, Bybit, OKX, Kraken, Coinbase и других биржах.
+
+## Услуги
+
+- [Разблокировка USDT от эмитента](https://cryptorecon.io/usdt.html)
+- [Разблокировка USDT TRC-20 (Tron)](https://cryptorecon.io/usdt-trc20.html)
+- [Разблокировка USDT ERC-20 (Ethereum)](https://cryptorecon.io/usdt-erc20.html)
+- [Разморозка USDT: сроки и процесс](https://cryptorecon.io/usdt-razmorozka.html)
+- [Юридическая помощь при блокировке USDT](https://cryptorecon.io/usdt-yurist.html)
+- [Разблокировка крупных сумм USDT](https://cryptorecon.io/usdt-krupnaya-summa.html)
+
+## База знаний
+
+- [USDT заблокирован — что делать?](https://cryptorecon.io/usdt-zablokirovan.html)
+- [Чёрный список Tether: механизм addBlackList](https://cryptorecon.io/tether-blacklist.html)
+- [Блокировка USDT по AML](https://cryptorecon.io/usdt-aml.html)
+- [Блокировка USDT по решению суда](https://cryptorecon.io/usdt-sud.html)
+- [Ошибочная блокировка USDT](https://cryptorecon.io/usdt-oshibka.html)
+- [USDT заблокирован после P2P сделки](https://cryptorecon.io/usdt-p2p.html)
+- [Как доказать законность USDT](https://cryptorecon.io/usdt-dokazatelstva.html)
+
+## Контакты
+
+- Telegram: https://t.me/crypto_recon
