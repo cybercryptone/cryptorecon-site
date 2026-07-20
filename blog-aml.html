@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AML и USDT: как работает скоринг и что делать при блокировке | CryptoRecon</title>
+<meta name="description" content="Разбираем, как AML-системы присваивают риск-скор транзакциям с USDT, какой процент загрязнения критичен и почему добросовестный держатель может оказаться с заблокированными средствами."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-aml.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-aml.html"/>
+<meta property="og:title" content="AML и USDT: как работает скоринг и что делать при блокировке"/>
+<meta property="og:description" content="Как AML-системы присваивают риск-скор транзакциям с USDT и почему добросовестный держатель может оказаться с заблокированными средствами."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<link href="assets/logo.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-container-low": "#f0f4f7",
+        "surface": "#f7f9fb",
+        "on-surface-variant": "#566166",
+        "primary": "#495f84",
+        "on-primary": "#f6f7ff",
+        "secondary-container": "#d1e4ff",
+        "secondary": "#4d617a",
+        "outline-variant": "#c0cbd1",
+        "error": "#ba1a1a",
+        "surface-container": "#e8eff3",
+        "primary-container": "#d6e3ff",
+        "on-surface": "#2a3439",
+        "on-background": "#2a3439",
+      }
+    }
+  }
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; font-family: 'Material Symbols Outlined'; }
+  .fill-icon { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .prose h2 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.5rem; color: #001B3D; margin-top: 2.5rem; margin-bottom: 1rem; line-height: 1.3; }
+  .prose h3 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1.15rem; color: #001B3D; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+  .prose p { color: #2a3439; line-height: 1.8; margin-bottom: 1.25rem; }
+  .prose ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+  .prose ul li { color: #2a3439; line-height: 1.8; margin-bottom: 0.5rem; list-style-type: disc; }
+  .prose a { color: #495f84; text-decoration: underline; }
+  .prose strong { color: #001B3D; font-weight: 600; }
+  .prose blockquote { border-left: 3px solid #495f84; padding-left: 1.25rem; margin: 1.5rem 0; color: #566166; font-style: italic; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://cryptorecon.io/"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://cryptorecon.io/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "AML и USDT", "item": "https://cryptorecon.io/blog-aml.html"}
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "AML и USDT: как работает скоринг и что делать при блокировке по AML",
+      "description": "Разбираем, как AML-системы присваивают риск-скор транзакциям с USDT, какой процент загрязнения считается критическим и что делать при AML-блокировке.",
+      "url": "https://cryptorecon.io/blog-aml.html",
+      "publisher": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
+      "inLanguage": "ru"
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-['Inter']">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-[0_2px_24px_rgba(42,52,57,0.06)]">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+    <a class="flex items-center gap-3" href="/">
+      <span class="grid h-11 w-11 place-items-center overflow-hidden rounded-[1.1rem] bg-white shadow-[inset_0_0_0_1px_rgba(113,124,130,0.1)]">
+        <img alt="CryptoRecon" class="h-8 w-8 object-contain" src="assets/logo.png"/>
+      </span>
+      <span class="text-xl font-black tracking-tighter text-[#001B3D]">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-on-surface-variant font-['Manrope'] font-semibold hover:text-primary transition-colors" href="usdt.html">Разблокировка USDT</a>
+      <a class="text-primary font-['Manrope'] font-semibold hover:text-primary transition-colors" href="blog.html">Блог</a>
+      <a class="text-on-surface-variant font-['Manrope'] font-semibold hover:text-primary transition-colors" href="/#services">Услуги</a>
+      <a class="text-on-surface-variant font-['Manrope'] font-semibold hover:text-primary transition-colors" href="/#contact">Контакты</a>
+    </div>
+    <a class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all" href="/#contact">Получить консультацию</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-32 pb-10 px-4 md:px-8 bg-surface">
+  <div class="max-w-3xl mx-auto">
+    <nav class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
+      <a href="/" class="hover:text-primary">Главная</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <a href="blog.html" class="hover:text-primary">Блог</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <span class="text-on-surface">AML и USDT</span>
+    </nav>
+    <span class="text-xs font-bold tracking-[0.2em] uppercase text-primary">AML</span>
+    <h1 class="mt-4 text-3xl md:text-4xl font-black tracking-tight text-[#001B3D] font-['Manrope'] leading-tight">
+      AML и USDT: как работает скоринг и что делать при блокировке по AML
+    </h1>
+    <p class="mt-6 text-lg text-on-surface-variant leading-relaxed">
+      Большинство блокировок USDT происходит по AML-причинам. При этом под блокировку нередко попадают добросовестные держатели, получившие токены из «загрязненного» источника. Разбираем, как работают системы скоринга, что считается критическим уровнем риска и какова стратегия действий.
+    </p>
+  </div>
+</section>
+
+<!-- Article Body -->
+<section class="py-8 px-4 md:px-8">
+  <div class="max-w-3xl mx-auto prose">
+
+    <h2>Что такое AML применительно к криптовалютам</h2>
+
+    <p>AML расшифровывается как Anti-Money Laundering, противодействие отмыванию денег. В традиционной финансовой системе AML-проверки проводят банки перед открытием счетов и при обработке крупных транзакций. В криптовалютной сфере ситуация сложнее: публичный блокчейн позволяет отследить полную историю каждого токена, и эта прозрачность стала основой для автоматизированных систем скоринга.</p>
+
+    <p>Для USDT AML-контроль осуществляется на нескольких уровнях. Биржи и обменники проводят проверку при приеме и выводе средств. Tether как эмитент применяет собственные процедуры мониторинга. Независимые AML-платформы оказывают услуги проверки адресов. Все эти системы используют один принцип: анализ истории транзакций для оценки происхождения средств.</p>
+
+    <h2>Как работает риск-скоринг транзакций</h2>
+
+    <p>Системы AML-скоринга, такие как Chainalysis, Elliptic, Crystal Blockchain и другие, строят граф транзакций для каждого адреса. Они прослеживают, откуда поступили средства: через какие адреса прошли токены на пути к вашему кошельку.</p>
+
+    <p>Каждый источник в цепочке получает категорию риска. Источники делятся на несколько классов:</p>
+
+    <ul>
+      <li><strong>Высокий риск:</strong> адреса, напрямую связанные с хакерскими атаками, мошенническими схемами, даркнет-маркетплейсами, незаконными обменниками, санкционированными субъектами.</li>
+      <li><strong>Повышенный риск:</strong> адреса, связанные с нерегулируемыми обменниками, высокорисковыми P2P-платформами, азартными играми в юрисдикциях, где это запрещено.</li>
+      <li><strong>Нейтральный риск:</strong> адреса регулируемых бирж, известных сервисов, физических лиц без признаков незаконной деятельности.</li>
+    </ul>
+
+    <p>Риск-скор вашего адреса вычисляется как взвешенная сумма: какая доля поступивших средств прошла через источники разных категорий риска. Системы отслеживают несколько уровней глубины: прямые поступления, транзакции через одного посредника, через двух и более.</p>
+
+    <h3>Прямое и косвенное загрязнение</h3>
+
+    <p>Существует важное разграничение между прямым и косвенным загрязнением. Прямое: вы получили USDT непосредственно с адреса, связанного с незаконной деятельностью. Косвенное: вы получили USDT от посредника, который в свою очередь получил часть средств из подозрительного источника.</p>
+
+    <p>Прямое загрязнение рассматривается как значительно более серьезное. Косвенное на глубине двух-трех уровней дает меньший вклад в итоговый скор. Однако при крупных суммах или очень высоком риске первоисточника даже косвенное загрязнение может стать причиной блокировки.</p>
+
+    <h2>Какой процент загрязнения считается критическим</h2>
+
+    <p>Tether не публикует точных пороговых значений. Это намеренная политика: публикация пороговых значений позволила бы недобросовестным участникам «разводнять» средства так, чтобы оставаться ниже порога. Тем не менее по практике работы с заблокированными адресами можно выделить ориентиры.</p>
+
+    <p>При прямом загрязнении от 5-10% и выше риск блокировки значительно возрастает. При показателях выше 25% прямого загрязнения блокировка практически неизбежна. При косвенном загрязнении через одного посредника критический порог выше: значимым считается 15-20% и более. На более глубоких уровнях влияние уменьшается, но не исчезает полностью.</p>
+
+    <p>Важен не только процент, но и абсолютная сумма. При небольших транзакциях Tether может проигнорировать умеренное загрязнение. При крупных суммах даже относительно небольшой процент может привлечь внимание систем мониторинга. Подробнее о том, как сумма влияет на риск и процесс разблокировки: <a href="usdt-krupnaya-summa.html">«Разблокировка крупной суммы USDT»</a>.</p>
+
+    <h2>Почему добросовестный держатель попадает под блокировку</h2>
+
+    <p>Это один из наиболее часто задаваемых вопросов. Человек провел обычную P2P-сделку на легальной платформе, получил USDT по рыночному курсу. Никакого нарушения не было. Но через несколько дней транзакции перестают проходить.</p>
+
+    <p>Проблема в том, что AML-системы оценивают историю токенов, а не намерения получателя. Если продавец на P2P-платформе накануне сделки получил USDT, которые прошли через подозрительный адрес, часть этого «загрязнения» перейдет к вам как к следующему держателю. Вы ничего не знали об этом. Вы не совершили ничего противоправного. Тем не менее риск-скор вашего адреса вырос.</p>
+
+    <p>Это называют проблемой «innocent bystander» в криптовалютной аналитике. Добросовестный приобретатель оказывается под блокировкой из-за действий предыдущих участников цепочки. С юридической точки зрения вы не несете ответственности за деятельность третьих лиц. Но алгоритм не делает таких различий автоматически. Доказать добросовестность приобретения нужно самостоятельно, подав обоснованную апелляцию. О типичных ситуациях после P2P-сделок читайте подробнее в разделе <a href="usdt-p2p.html">«USDT заблокирован после P2P»</a>.</p>
+
+    <h2>Как Tether принимает решение о блокировке</h2>
+
+    <p>Процесс принятия решения о блокировке непрозрачен. Tether не раскрывает методологию и не дает комментариев по конкретным случаям. На основе практики можно описать общую схему.</p>
+
+    <p>Автоматические системы мониторинга непрерывно анализируют транзакции в сети. При обнаружении адреса с высоким риск-скором или прямой связи с известным инцидентом (хакерская атака, мошенническая схема) адрес помечается для проверки. Часть блокировок происходит автоматически; другие требуют ручного решения сотрудников compliance-службы Tether.</p>
+
+    <p>Отдельная категория: блокировки по запросам внешних сторон. Правоохранительный орган или пострадавший субъект направляет Tether запрос о заморозке конкретного адреса. В этом случае Tether оценивает запрос и принимает решение на его основе. Подробнее об этом в материале <a href="blog-pravoohraniteli.html">«USDT и правоохранительные органы»</a>.</p>
+
+    <h2>Что нельзя делать при AML-блокировке</h2>
+
+    <p>Есть несколько действий, которые категорически противопоказаны после обнаружения блокировки. Они не помогут разморозить средства и могут существенно осложнить ситуацию.</p>
+
+    <ul>
+      <li><strong>Использование миксеров и тумблеров:</strong> попытка «очистить» средства через сервисы смешивания транзакций является нарушением закона во многих юрисдикциях. Это автоматически увеличивает риск-скор и создает дополнительные основания для отказа в разблокировке.</li>
+      <li><strong>Попытки вывода через сторонние обменники:</strong> обменники проводят собственные AML-проверки. Заблокированные средства не пройдут транзакцию в любом случае, а попытка создаст дополнительный след в блокчейне.</li>
+      <li><strong>Дробление суммы:</strong> попытки разбить заблокированную сумму на части не работают, поскольку блокировка происходит на уровне адреса, а не транзакции.</li>
+      <li><strong>Самостоятельное обращение в Tether без подготовки:</strong> неполная или некорректно оформленная апелляция создаст запись об отказе, что усложнит последующие обращения.</li>
+    </ul>
+
+    <h2>Стратегия действий при AML-блокировке</h2>
+
+    <p>Правильная стратегия при AML-блокировке строится на двух ключевых элементах: понимании причины и подготовке доказательной базы.</p>
+
+    <h3>Шаг 1: профессиональный анализ блокчейна</h3>
+
+    <p>Необходимо установить, откуда именно поступило «загрязнение» и каков его процент. Это дает понимание: с каким типом блокировки вы имеете дело, насколько сложен случай и какие документы потребуются для апелляции. Для анализа используются специализированные AML-платформы с доступом к актуальным базам данных.</p>
+
+    <h3>Шаг 2: формирование доказательной базы</h3>
+
+    <p>Цель апелляции: доказать, что вы получили USDT в ходе законной деятельности, не знали и не могли знать о связи средств с незаконными источниками. Для этого нужны:</p>
+
+    <ul>
+      <li>Документы, подтверждающие сделку, в ходе которой получены токены (история ордеров с P2P-платформы, переписка, счета).</li>
+      <li>Документы, подтверждающие личность и законность деятельности (KYC-документы, подтверждение источника средств).</li>
+      <li>Профессиональный отчет блокчейн-аналитика, объясняющий природу «загрязнения» и добросовестность приобретения.</li>
+    </ul>
+
+    <p>О полном составе необходимой документации: <a href="usdt-dokazatelstva.html">«Как доказать законность USDT»</a>.</p>
+
+    <h3>Шаг 3: оформление и подача запроса в Tether</h3>
+
+    <p>Запрос в Tether должен быть составлен на английском языке в соответствии с внутренними требованиями компании. Неполные или некорректно оформленные запросы Tether может оставить без рассмотрения или отклонить без объяснения причин. Критически важно подать полный пакет с первого раза: время рассмотрения апелляции при AML-блокировках составляет от 4 до 16 недель при правильно оформленном запросе.</p>
+
+    <h2>Сколько времени занимает разблокировка при AML-причинах</h2>
+
+    <p>Сроки зависят от нескольких факторов: полноты поданного пакета документов, сложности случая, загрузки compliance-службы Tether на момент подачи. При правильно оформленном первичном запросе и наличии всех необходимых документов средний срок составляет 6-12 недель. Неполные запросы могут «зависнуть» на несколько месяцев без ответа.</p>
+
+    <p>Если запрос отклонен, это не окончательный ответ. Анализ причины отказа, дополнение доказательной базы и повторная подача дают шанс на положительный результат. О типичных сроках и этапах разморозки: <a href="usdt-razmorozka.html">«Разморозка USDT: сроки и процесс»</a>.</p>
+
+    <h2>Можно ли проверить USDT до получения</h2>
+
+    <p>Да, и это лучшее, что можно сделать для профилактики проблем. Сервисы AML-скоринга (AMLBot, Crystal Blockchain, GetBlock) позволяют проверить риск-скор адреса отправителя до совершения сделки. Если адрес показывает высокий процент загрязнения, от сделки лучше отказаться или запросить объяснения у контрагента.</p>
+
+    <p>Это особенно актуально для P2P-сделок, где вы не знаете историю контрагента. Регулярная проверка адресов при крупных транзакциях снижает вероятность получения «загрязненных» токенов и, как следствие, риск блокировки.</p>
+
+    <h2>Итог</h2>
+
+    <p>AML-блокировка USDT не означает автоматического обвинения в незаконной деятельности. Система скоринга оценивает историю токенов, а не намерения держателя, что неизбежно порождает ситуации, когда добросовестные участники оказываются под блокировкой.</p>
+
+    <p>Правильная стратегия: профессиональный анализ причины блокировки, грамотно сформированная доказательная база и корректно поданная апелляция в Tether. AML-блокировки при наличии чистой истории и правильно подготовленных документов относятся к наиболее решаемым типам случаев. Самостоятельные попытки без понимания требований компании, напротив, нередко заводят в тупик.</p>
+
+    <p>Если ваш USDT заблокирован по AML-причинам, свяжитесь с нами в Telegram для бесплатной первичной оценки ситуации. Также читайте полный разбор процесса разблокировки: <a href="blog-process.html">«Как проходит разблокировка USDT: реальный процесс»</a>.</p>
+
+  </div>
+</section>
+
+<!-- Related Articles -->
+<section class="py-16 px-4 md:px-8 bg-surface-container-low">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl font-black text-[#001B3D] font-['Manrope'] mb-8">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="blog-pochemu-tether.html" class="block bg-white p-6 rounded-2xl border border-outline-variant/20 hover:shadow-md transition-shadow">
+        <span class="text-xs font-bold uppercase text-primary tracking-widest">Механизм блокировки</span>
+        <p class="mt-2 font-bold text-[#001B3D]">Почему Tether блокирует USDT: механизм заморозки и основные причины</p>
+      </a>
+      <a href="usdt-aml.html" class="block bg-white p-6 rounded-2xl border border-outline-variant/20 hover:shadow-md transition-shadow">
+        <span class="text-xs font-bold uppercase text-primary tracking-widest">Сервис</span>
+        <p class="mt-2 font-bold text-[#001B3D]">Блокировка USDT по AML: наши услуги по разблокировке</p>
+      </a>
+      <a href="blog-process.html" class="block bg-white p-6 rounded-2xl border border-outline-variant/20 hover:shadow-md transition-shadow">
+        <span class="text-xs font-bold uppercase text-primary tracking-widest">Практика</span>
+        <p class="mt-2 font-bold text-[#001B3D]">Как проходит разблокировка USDT: реальный процесс</p>
+      </a>
+      <a href="usdt-p2p.html" class="block bg-white p-6 rounded-2xl border border-outline-variant/20 hover:shadow-md transition-shadow">
+        <span class="text-xs font-bold uppercase text-primary tracking-widest">P2P</span>
+        <p class="mt-2 font-bold text-[#001B3D]">USDT заблокирован после P2P-сделки: что делать</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="py-16 px-4 md:px-8 bg-surface">
+  <div class="max-w-2xl mx-auto text-center">
+    <span class="material-symbols-outlined text-5xl text-primary fill-icon">support_agent</span>
+    <h2 class="mt-4 text-3xl font-black tracking-tight text-[#001B3D] font-['Manrope']">Получите бесплатную оценку вашего случая</h2>
+    <p class="mt-4 text-on-surface-variant">Опишите ситуацию в Telegram. Мы разберём причину AML-блокировки и предложим оптимальный путь к разморозке.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" class="mt-8 inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-base hover:opacity-90 transition-all">
+      <span class="material-symbols-outlined">send</span>
+      Написать @crypto_recon
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-10 px-4 md:px-8 bg-surface-container-low border-t border-outline-variant/10">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <a class="flex items-center gap-3" href="/">
+      <span class="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-white shadow-sm">
+        <img alt="CryptoRecon" class="h-7 w-7 object-contain" src="assets/logo.png"/>
+      </span>
+      <span class="font-black tracking-tighter text-[#001B3D]">CryptoRecon</span>
+    </a>
+    <div class="flex gap-4 flex-wrap text-sm text-on-surface-variant">
+      <a href="/" class="hover:text-primary">Главная</a>
+      <a href="usdt.html" class="hover:text-primary">Разблокировка USDT</a>
+      <a href="blog.html" class="hover:text-primary">Блог</a>
+      <a href="usdt-trc20.html" class="hover:text-primary">TRC-20</a>
+      <a href="usdt-erc20.html" class="hover:text-primary">ERC-20</a>
+    </div>
+    <p class="text-sm text-on-surface-variant">© <span id="year"></span> CryptoRecon</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
