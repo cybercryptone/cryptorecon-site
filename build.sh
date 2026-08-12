@@ -7,3 +7,4 @@ cp sitemap.xml _site/
 cp robots.txt _site/
 cp llms.txt _site/
 cp -r assets _site/
+cp favicon.ico _site/
