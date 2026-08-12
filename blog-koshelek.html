@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>USDT заморожен на кошельке MetaMask, Trust Wallet | CryptoRecon</title>
+<meta name="description" content="USDT заморожен на MetaMask или Trust Wallet? Объясняем, как Tether блокирует токены на некастодиальных кошельках и что реально можно сделать."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-koshelek.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-koshelek.html"/>
+<meta property="og:title" content="USDT заморожен на некастодиальном кошельке | CryptoRecon"/>
+<meta property="og:description" content="USDT заморожен на MetaMask или Trust Wallet? Объясняем, как Tether блокирует токены на некастодиальных кошельках и что реально можно сделать."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-container-low": "#f0f4f7",
+        "surface": "#f7f9fb",
+        "on-surface-variant": "#566166",
+        "primary": "#495f84",
+        "on-primary": "#f6f7ff",
+        "secondary-container": "#d1e4ff",
+        "secondary": "#4d617a",
+        "outline-variant": "#c0cbd1",
+        "error": "#ba1a1a",
+        "surface-container": "#e8eff3",
+        "primary-container": "#d6e3ff",
+        "on-surface": "#2a3439",
+        "on-background": "#2a3439",
+      }
+    }
+  }
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; font-family: 'Material Symbols Outlined'; }
+  .fill-icon { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .prose h2 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.5rem; color: #001B3D; margin-top: 2.5rem; margin-bottom: 1rem; line-height: 1.3; }
+  .prose h3 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1.15rem; color: #001B3D; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+  .prose p { color: #2a3439; line-height: 1.8; margin-bottom: 1.25rem; }
+  .prose ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+  .prose ul li { color: #2a3439; line-height: 1.8; margin-bottom: 0.5rem; list-style-type: disc; }
+  .prose a { color: #495f84; text-decoration: underline; }
+  .prose strong { color: #001B3D; font-weight: 600; }
+  .prose blockquote { border-left: 3px solid #495f84; padding-left: 1.25rem; margin: 1.5rem 0; color: #566166; font-style: italic; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://cryptorecon.io/"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://cryptorecon.io/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "USDT на некастодиальном кошельке", "item": "https://cryptorecon.io/blog-koshelek.html"}
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "USDT заморожен на некастодиальном кошельке: что происходит и можно ли разблокировать",
+      "description": "USDT заморожен на MetaMask или Trust Wallet? Объясняем, как Tether блокирует токены на некастодиальных кошельках и что реально можно сделать.",
+      "url": "https://cryptorecon.io/blog-koshelek.html",
+      "publisher": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
+      "inLanguage": "ru",
+      "datePublished": "2026-08-01T00:00:00+00:00",
+      "dateModified": "2026-08-12T00:00:00+00:00",
+      "author": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"}
+    }
+  ]
+}
+</script>
+<meta property="article:published_time" content="2026-08-01T00:00:00+00:00"/>
+<meta property="article:modified_time" content="2026-08-12T00:00:00+00:00"/>
+<meta property="article:author" content="CryptoRecon"/>
+<meta property="article:section" content="Кошельки"/>
+</head>
+<body class="bg-surface text-on-surface font-['Inter']">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-[0_2px_24px_rgba(42,52,57,0.06)]">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+    <a class="flex items-center gap-3" href="/">
+      <span class="grid h-11 w-11 place-items-center overflow-hidden rounded-[1.1rem] bg-white shadow-[inset_0_0_0_1px_rgba(113,124,130,0.1)]">
+        <img alt="CryptoRecon" class="h-8 w-8 object-contain" src="assets/logo.png"/>
+      </span>
+      <span class="text-xl font-black tracking-tighter text-[#001B3D]">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-on-surface-variant font-['Manrope'] font-semibold hover:text-primary transition-colors" href="usdt.html">Разблокировка USDT</a>
+      <a class="text-primary font-['Manrope'] font-semibold hover:text-primary transition-colors" href="blog.html">Блог</a>
+      <a class="text-on-surface-variant font-['Manrope'] font-semibold hover:text-primary transition-colors" href="/#services">Услуги</a>
+      <a class="text-on-surface-variant font-['Manrope'] font-semibold hover:text-primary transition-colors" href="/#contact">Контакты</a>
+    </div>
+    <a class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all" href="/#contact">Получить консультацию</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-32 pb-10 px-4 md:px-8 bg-surface">
+  <div class="max-w-3xl mx-auto">
+    <nav class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
+      <a href="/" class="hover:text-primary">Главная</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <a href="blog.html" class="hover:text-primary">Блог</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <span class="text-on-surface">USDT на некастодиальном кошельке</span>
+    </nav>
+    <span class="text-xs font-bold tracking-[0.2em] uppercase text-primary">Кошельки</span>
+    <h1 class="mt-4 text-3xl md:text-4xl font-black tracking-tight text-[#001B3D] font-['Manrope'] leading-tight">
+      USDT заморожен на некастодиальном кошельке: что происходит и можно ли разблокировать
+    </h1>
+    <p class="mt-6 text-lg text-on-surface-variant leading-relaxed">
+      Многие пользователи уверены: если USDT хранится в MetaMask или Trust Wallet, то никто не может заблокировать доступ к средствам. Это распространённое заблуждение. Tether Limited сохраняет за собой право заморозить токены на любом адресе вне зависимости от того, какой кошелёк вы используете. Разбираем, как именно это работает и какие шаги действительно помогают.
+    </p>
+    <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-on-surface-variant border-t border-outline-variant/20 pt-5">
+      <span class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[1rem]">calendar_today</span>
+        <time datetime="2026-08-01">1 августа 2026</time>
+      </span>
+      <span class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[1rem]">update</span>
+        Обновлено: <time datetime="2026-08-12">12 августа 2026</time>
+      </span>
+      <span class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[1rem]">schedule</span>
+        7 мин. чтения
+      </span>
+      <span class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[1rem]">person</span>
+        Команда CryptoRecon
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- Article Body -->
+<section class="py-8 px-4 md:px-8">
+  <div class="max-w-3xl mx-auto prose">
+
+    <h2>Некастодиальный кошелёк: в чём принципиальное отличие</h2>
+    <p>
+      Некастодиальный кошелёк (non-custodial wallet) означает, что приватный ключ от адреса хранится исключительно у вас. Ни MetaMask, ни Trust Wallet, ни производители аппаратных устройств Ledger и Trezor не имеют доступа к вашим средствам и технически не способны ни заморозить их, ни перевести без вашего участия. Именно в этом состоит принципиальное преимущество некастодиального хранения перед биржевым аккаунтом.
+    </p>
+    <p>
+      Однако здесь важно понимать одну тонкость. Ваш кошелёк управляет приватными ключами, но он не управляет логикой токена. USDT является смарт-контрактом, развёрнутым в сети Ethereum или Tron. Именно смарт-контракт Tether определяет, может ли конкретный адрес совершать транзакции. И на уровне смарт-контракта компания сохраняет за собой административные полномочия, которые распространяются на любой адрес в сети, включая адреса некастодиальных кошельков.
+    </p>
+    <p>
+      Таким образом, при заморозке USDT на некастодиальном кошельке возникает парадоксальная ситуация: вы по-прежнему полностью контролируете адрес, можете подписывать транзакции и видите баланс. Но любая попытка перевести токены будет отклонена сетью, поскольку смарт-контракт Tether запрещает исходящие операции с этого адреса.
+    </p>
+
+    <h2>Как Tether технически замораживает USDT: функция blacklist и freeze</h2>
+    <p>
+      <a href="blog-smart-kontrakt.html">Смарт-контракт Tether</a> содержит специальные административные функции, встроенные при его создании. Ключевые из них: <strong>addBlacklist</strong> (добавление адреса в чёрный список) и <strong>destroyBlackFunds</strong> (уничтожение средств на адресе из чёрного списка). В сети Tron используется схожая функция <strong>freeze</strong>. Подробнее о том, как работает этот <a href="blog-pochemu-tether.html">механизм заморозки</a>, мы разбираем в отдельном материале.
+    </p>
+    <p>
+      После того как адрес добавляется в <a href="tether-blacklist.html">чёрный список Tether</a>, смарт-контракт начинает проверять статус адреса при каждой попытке совершить перевод. Функция <strong>transfer</strong> содержит условие: если адрес отправителя или получателя находится в чёрном списке, транзакция откатывается с ошибкой. Это происходит на уровне кода контракта, ещё до того как транзакция фактически изменяет какое-либо состояние в блокчейне.
+    </p>
+    <p>
+      Важно понимать: блокировка работает именно на уровне протокола. Кошелёк MetaMask или Trust Wallet лишь транслирует подписанную транзакцию в сеть. Он не может обойти проверку смарт-контракта, потому что проверка происходит уже после получения транзакции нодами сети. Сам факт, что вы держите приватный ключ, никак не влияет на выполнение кода контракта.
+    </p>
+
+    <h2>Почему самостоятельный вывод средств не работает</h2>
+    <p>
+      После обнаружения блокировки пользователи, как правило, пробуют несколько очевидных шагов. Каждый из них не даёт результата по конкретным техническим причинам.
+    </p>
+    <ul>
+      <li><strong>Переключение RPC-провайдера или VPN.</strong> Блокировка зафиксирована в состоянии смарт-контракта в блокчейне. Смена RPC-узла или использование VPN не меняет это состояние. Все полные ноды сети хранят одни и те же данные.</li>
+      <li><strong>Импорт seed-фразы в другой кошелёк.</strong> Seed-фраза генерирует тот же самый приватный ключ и тот же самый адрес. Адрес остаётся заблокированным вне зависимости от того, в каком приложении вы его открываете: в MetaMask, Trust Wallet, Exodus или аппаратном кошельке Ledger.</li>
+      <li><strong>Попытка перевода через другой смарт-контракт или DEX.</strong> Большинство DEX-агрегаторов при обмене USDT вызывают функцию <strong>transferFrom</strong> смарт-контракта Tether. Эта функция также проверяет статус адреса в чёрном списке. Транзакция будет отклонена так же, как и прямой перевод.</li>
+      <li><strong>Ожидание истечения срока блокировки.</strong> Смарт-контракт Tether не предусматривает автоматического снятия блокировки по времени. Адрес остаётся в чёрном списке до тех пор, пока Tether Limited не вызовет функцию <strong>removeBlacklist</strong> вручную.</li>
+    </ul>
+    <p>
+      Все эти попытки приводят лишь к потере времени и транзакционных комиссий. Средства при этом остаются нетронутыми: Tether не списывает их автоматически в момент блокировки. Функция <strong>destroyBlackFunds</strong> применяется отдельным решением и не является автоматическим следствием внесения в чёрный список.
+    </p>
+
+    <h2>Некастодиальный кошелёк vs. биржевой аккаунт: в чём разница при блокировке</h2>
+    <p>
+      Блокировка USDT на некастодиальном кошельке и блокировка аккаунта на централизованной бирже — принципиально разные ситуации, которые требуют разных подходов.
+    </p>
+    <p>
+      При блокировке биржевого аккаунта вы имеете дело с двумя независимыми ограничениями. Первое: политика самой биржи, которая ограничивает доступ к интерфейсу, выводу и торговле на уровне своей платформы. Второе: возможная заморозка конкретных адресов на уровне смарт-контракта Tether. Биржа является кастодианом ваших средств, и переговоры с ней ведутся напрямую через службу поддержки и compliance-отдел.
+    </p>
+    <p>
+      При блокировке некастодиального кошелька промежуточного звена нет. Биржа здесь вообще не при чём. Ограничение введено непосредственно Tether Limited на уровне кода контракта. Это означает, что единственной стороной, которая технически способна снять блокировку, является сама компания Tether. Все переговоры, запросы и юридические действия должны быть направлены именно туда. Подробнее о том, как строится процесс <a href="usdt.html">разблокировки USDT</a>, читайте в соответствующем разделе.
+    </p>
+    <p>
+      Есть и ещё одно существенное отличие. Биржа, как правило, имеет формализованный процесс обжалования, службу поддержки и обязана соблюдать определённые сроки по законодательству юрисдикции, в которой она зарегистрирована. У Tether Limited подобного публичного процесса нет. Компания реагирует на обращения в рамках собственной политики, и результат во многом зависит от того, насколько убедительно и правильно сформулированы ваши требования.
+    </p>
+
+    <h2>Чего категорически не следует делать</h2>
+    <p>
+      Вокруг темы разблокировки USDT сложилась целая индустрия мошенничества. Люди, оказавшиеся в трудной ситуации с заблокированными средствами, становятся мишенями для жуликов, которые предлагают быстрое решение за предоплату. Ниже перечислены действия, которые гарантированно приведут к потере либо оставшихся средств, либо самого кошелька.
+    </p>
+    <ul>
+      <li><strong>Передавать seed-фразу кому бы то ни было.</strong> Seed-фраза предоставляет полный и безвозвратный контроль над адресом. Никакой легитимный специалист или сервис никогда не попросит вас её передать. Если вы это сделаете, мошенник немедленно выведет все оставшиеся активы с кошелька, включая другие токены и нативную криптовалюту.</li>
+      <li><strong>Использовать сервисы "разблокировщиков" из Telegram и форумов.</strong> Эти сервисы не имеют никаких технических возможностей снять блокировку на уровне смарт-контракта Tether. Такой возможностью обладает только сама компания. Все подобные предложения являются мошенничеством: либо прямым, когда деньги берут и исчезают, либо косвенным, когда вас вынуждают совершить транзакцию, ведущую к потере средств.</li>
+      <li><strong>Платить "комиссии" для разблокировки.</strong> Широко распространённая схема: мошенники утверждают, что для снятия блокировки нужно сначала отправить определённую сумму в ETH или TRX в качестве "комиссии сети" или "залога". После перевода мошенники перестают выходить на связь. Никакой реальной "комиссии за разблокировку" не существует.</li>
+      <li><strong>Взаимодействовать с неизвестными смарт-контрактами.</strong> Мошенники могут предложить "специальный контракт для разблокировки", который при вызове запросит подтверждение транзакции. Такие контракты используют функции setApproval или delegateCall, позволяющие впоследствии вывести с вашего кошелька любые доступные активы.</li>
+    </ul>
+
+    <h2>Реальные варианты действий: что работает на практике</h2>
+    <p>
+      Признание реальной ситуации таково: снятие заморозки с некастодиального кошелька возможно, но требует правильно выстроенной процедуры. Простых и быстрых способов нет.
+    </p>
+    <h3>Прямое обращение в Tether Limited</h3>
+    <p>
+      Tether принимает запросы на разблокировку адресов по официальным каналам. Для этого требуется подготовить письменное обращение с описанием ситуации, доказательствами легитимного происхождения средств и подтверждением того, что вы являетесь законным владельцем адреса. Запрос направляется на официальный адрес compliance@tether.to. О том, какие именно <a href="usdt-dokazatelstva.html">документы для разблокировки</a> потребуются, читайте в нашем отдельном материале.
+    </p>
+    <p>
+      Tether рассматривает подобные запросы индивидуально и без публично установленных сроков. Как правило, первичный ответ приходит в течение нескольких недель. Однако само рассмотрение может занять значительно больше времени. О реальных <a href="usdt-razmorozka.html">сроках разморозки USDT</a> и от чего они зависят мы рассказываем отдельно.
+    </p>
+    <h3>Юридический маршрут</h3>
+    <p>
+      Если прямое обращение в Tether не дало результата, следующим шагом становится юридический путь. Это может включать несколько направлений в зависимости от конкретных обстоятельств дела.
+    </p>
+    <p>
+      Первое: взаимодействие с правоохранительными органами той юрисдикции, где предположительно произошло нарушение, ставшее причиной блокировки. Если блокировка наложена по запросу биржи или правоохранительных органов конкретной страны, именно там нужно оспаривать её правомерность.
+    </p>
+    <p>
+      Второе: гражданский иск против Tether Limited в юрисдикции, где это возможно с процессуальной точки зрения. Tether зарегистрирована на британских Виргинских островах и работает через различные юрисдикции. Этот путь технически сложен и затратен, но в ряде случаев является единственным инструментом воздействия.
+    </p>
+    <p>
+      Третье: работа через юридических посредников, которые имеют установленные каналы взаимодействия с compliance-службой Tether. <a href="blog-guide.html">Полное руководство по блокировке USDT</a> описывает эту процедуру подробнее.
+    </p>
+    <h3>Формирование доказательной базы</h3>
+    <p>
+      Вне зависимости от выбранного маршрута, первое, что необходимо сделать: зафиксировать все имеющиеся доказательства. Это включает историю транзакций на заблокированном адресе, документы о происхождении средств (выписки с бирж, подтверждения переводов), переписку с площадками, через которые поступали токены, а также любые KYC-документы, которые вы проходили на связанных платформах. Чем полнее доказательная база, тем выше шансы на положительный исход.
+    </p>
+
+    <h2>Когда разблокировка реалистична, а когда нет</h2>
+    <p>
+      Прямой ответ на этот вопрос зависит от причины блокировки. Tether не всегда раскрывает конкретные основания, однако по косвенным признакам можно определить, к какой категории относится ваш случай.
+    </p>
+    <p>
+      <strong>Разблокировка более реалистична</strong> в следующих ситуациях. Если средства поступили с верифицированной биржи и вы можете доказать их легитимное происхождение. Если блокировка произошла ошибочно, например, вследствие ложноположительного срабатывания систем мониторинга транзакций. Если причиной блокировки стало требование регулятора, которое впоследствии было снято или оспорено в суде.
+    </p>
+    <p>
+      <strong>Разблокировка маловероятна</strong> в случаях, когда средства прошли через адреса, напрямую связанные с санкционными списками OFAC. Когда адрес был использован в подтверждённых схемах отмывания денег или мошенничества. Когда блокировка наложена по решению суда в рамках уголовного дела. В таких ситуациях даже юридический маршрут имеет очень ограниченные перспективы.
+    </p>
+
+    <h2>TRC-20 и ERC-20: есть ли разница при блокировке на некастодиальном кошельке</h2>
+    <p>
+      USDT существует в двух основных вариантах: на блокчейне Tron (стандарт TRC-20) и на блокчейне Ethereum (стандарт ERC-20). При блокировке на некастодиальном кошельке сетевой стандарт влияет на несколько практических аспектов.
+    </p>
+    <p>
+      С технической точки зрения механизм блокировки схож, но реализован на разных блокчейнах. Смарт-контракт USDT на Ethereum содержит функцию <strong>addBlacklist</strong>, а контракт на Tron использует функцию <strong>freeze</strong>. Подробнее об особенностях <a href="usdt-trc20.html">разблокировки USDT TRC-20</a> и <a href="usdt-erc20.html">разблокировки USDT ERC-20</a> читайте в отдельных материалах.
+    </p>
+    <p>
+      На практике разница проявляется в следующем. Комиссии за транзакции в сети Tron значительно ниже, чем в сети Ethereum, поэтому при попытках "нащупать" способ вывода пользователи тратят меньше средств на неудачные транзакции. Скорость подтверждения транзакций в Tron выше, что означает более быстрое получение ошибки при попытке перевода.
+    </p>
+    <p>
+      Для адресов Ethereum существует более развитая инфраструктура аналитических сервисов, таких как Etherscan, что иногда упрощает сбор доказательной базы. В сети Tron данные также общедоступны через Tronscan, однако инструментарий несколько беднее.
+    </p>
+    <p>
+      С юридической и процессуальной точки зрения, обращение в Tether по поводу TRC-20 и ERC-20 адресов проходит через один и тот же compliance-отдел. Разница в сети не влияет на процедуру рассмотрения запроса. Главное значение имеет содержание обращения и качество предоставленных доказательств, а не технический стандарт токена.
+    </p>
+
+    <h2>Итог: что нужно сделать прямо сейчас</h2>
+    <p>
+      Если вы обнаружили, что USDT заморожен на вашем некастодиальном кошельке, действуйте по следующей последовательности. Сначала убедитесь в характере проблемы: попробуйте отправить небольшую сумму с заблокированного адреса и зафиксируйте текст ошибки. Это поможет понять, идёт ли речь о блокировке смарт-контракта или о другой технической проблеме.
+    </p>
+    <p>
+      Затем соберите всю доступную историю транзакций и документы о происхождении средств. Сделайте экспорт истории транзакций с блокчейн-эксплорера (Etherscan или Tronscan). Подготовьте выписки с бирж, подтверждающие легитимное происхождение средств.
+    </p>
+    <p>
+      Не предпринимайте никаких действий, которые могут ухудшить ситуацию: не передавайте seed-фразу, не взаимодействуйте с неизвестными контрактами, не переводите средства посторонним лицам под предлогом "помощи с разблокировкой".
+    </p>
+    <p>
+      Обратитесь за профессиональной консультацией. Ситуация с некастодиальным кошельком требует понимания технической стороны вопроса и знания актуальной практики взаимодействия с Tether. Специалисты CryptoRecon проанализировали сотни подобных кейсов и могут быстро оценить перспективы конкретной ситуации. Напишите нам в Telegram: предварительная оценка бесплатна.
+    </p>
+
+  </div>
+</section>
+
+<!-- Author & YMYL -->
+<section class="py-8 px-4 md:px-8 bg-white">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex items-start gap-5 p-6 bg-surface-container-low rounded-2xl border border-outline-variant/20">
+      <div class="flex-shrink-0 w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+        <span class="material-symbols-outlined text-3xl text-primary fill-icon">shield_person</span>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="font-bold text-on-surface text-sm">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специалисты по разблокировке цифровых активов. Занимаемся заморозками от Tether, Binance, Bybit, OKX и других платформ с 2021 года. Свыше 300 проанализированных кейсов блокировок USDT на TRC-20 и ERC-20.</p>
+        <p class="text-xs text-on-surface-variant/70 mt-3 pt-3 border-t border-outline-variant/20 leading-relaxed">Материал носит исключительно информационный характер и не является юридической, финансовой или инвестиционной консультацией. Конкретные действия в вашей ситуации рекомендуется согласовывать с квалифицированным юристом.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related Articles -->
+<section class="py-16 px-4 md:px-8 bg-surface-container-low">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl font-black text-[#001B3D] font-['Manrope'] mb-8">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="blog-smart-kontrakt.html" class="block bg-white p-6 rounded-2xl border border-outline-variant/20 hover:shadow-md transition-shadow">
+        <span class="text-xs font-bold uppercase text-primary tracking-widest">Технически</span>
+        <p class="mt-2 font-bold text-[#001B3D]">Смарт-контракт Tether: как технически осуществляется заморозка</p>
+      </a>
+      <a href="tether-blacklist.html" class="block bg-white p-6 rounded-2xl border border-outline-variant/20 hover:shadow-md transition-shadow">
+        <span class="text-xs font-bold uppercase text-primary tracking-widest">Blacklist</span>
+        <p class="mt-2 font-bold text-[#001B3D]">Чёрный список Tether: как работает и как выйти</p>
+      </a>
+      <a href="blog-guide.html" class="block bg-white p-6 rounded-2xl border border-outline-variant/20 hover:shadow-md transition-shadow">
+        <span class="text-xs font-bold uppercase text-primary tracking-widest">Руководство</span>
+        <p class="mt-2 font-bold text-[#001B3D]">Полное руководство по блокировке USDT</p>
+      </a>
+      <a href="usdt-dokazatelstva.html" class="block bg-white p-6 rounded-2xl border border-outline-variant/20 hover:shadow-md transition-shadow">
+        <span class="text-xs font-bold uppercase text-primary tracking-widest">Документы</span>
+        <p class="mt-2 font-bold text-[#001B3D]">Документы для разблокировки USDT</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="py-16 px-4 md:px-8 bg-surface">
+  <div class="max-w-2xl mx-auto text-center">
+    <span class="material-symbols-outlined text-5xl text-primary fill-icon">support_agent</span>
+    <h2 class="mt-4 text-3xl font-black tracking-tight text-[#001B3D] font-['Manrope']">USDT заморожен на кошельке?</h2>
+    <p class="mt-4 text-on-surface-variant">Опишите ситуацию в Telegram. Проверим, возможна ли разблокировка в вашем случае, и составим план действий.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" class="mt-8 inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-base hover:opacity-90 transition-all">
+      <span class="material-symbols-outlined">send</span>
+      Написать @crypto_recon
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-10 px-4 md:px-8 bg-surface-container-low border-t border-outline-variant/10">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <a class="flex items-center gap-3" href="/">
+      <span class="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-white shadow-sm">
+        <img alt="CryptoRecon" class="h-7 w-7 object-contain" src="assets/logo.png"/>
+      </span>
+      <span class="font-black tracking-tighter text-[#001B3D]">CryptoRecon</span>
+    </a>
+    <div class="flex gap-4 flex-wrap text-sm text-on-surface-variant">
+      <a href="/" class="hover:text-primary">Главная</a>
+      <a href="usdt.html" class="hover:text-primary">Разблокировка USDT</a>
+      <a href="blog.html" class="hover:text-primary">Блог</a>
+      <a href="usdt-trc20.html" class="hover:text-primary">TRC-20</a>
+      <a href="usdt-erc20.html" class="hover:text-primary">ERC-20</a>
+    </div>
+    <p class="text-sm text-on-surface-variant">© <span id="year"></span> CryptoRecon</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
