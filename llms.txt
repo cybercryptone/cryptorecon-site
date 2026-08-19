@@ -1,8 +1,10 @@
 # CryptoRecon
 
-> Сервис по разблокировке USDT, замороженного эмитентом Tether, и восстановлению доступа к аккаунтам на криптобиржах.
+> Сервис по разблокировке USDT, замороженного эмитентом Tether, и восстановлению доступа к аккаунтам на криптобиржах. Работаем с 2021 года, проанализировали свыше 300 кейсов блокировок USDT на TRC-20, ERC-20 и BEP-20.
 
-CryptoRecon помогает физическим лицам и компаниям, чьи USDT заморожены Tether Limited на уровне смарт-контракта (TRC-20, ERC-20). Также оказываем помощь при блокировках аккаунтов на Binance, Bybit, OKX, Kraken, Coinbase и других биржах.
+CryptoRecon помогает физическим лицам и компаниям, чьи USDT заморожены Tether Limited на уровне смарт-контракта (TRC-20, ERC-20, BEP-20). Также оказываем помощь при блокировках аккаунтов на Binance, Bybit, OKX, Kraken, Coinbase и других биржах.
+
+Контакт: Telegram @crypto_recon
 
 ## Услуги
 
@@ -12,17 +14,45 @@ CryptoRecon помогает физическим лицам и компания
 - [Разморозка USDT: сроки и процесс](https://cryptorecon.io/usdt-razmorozka.html)
 - [Юридическая помощь при блокировке USDT](https://cryptorecon.io/usdt-yurist.html)
 - [Разблокировка крупных сумм USDT](https://cryptorecon.io/usdt-krupnaya-summa.html)
-
-## База знаний
-
-- [USDT заблокирован — что делать?](https://cryptorecon.io/usdt-zablokirovan.html)
-- [Чёрный список Tether: механизм addBlackList](https://cryptorecon.io/tether-blacklist.html)
-- [Блокировка USDT по AML](https://cryptorecon.io/usdt-aml.html)
+- [Блокировка USDT по AML: помощь](https://cryptorecon.io/usdt-aml.html)
 - [Блокировка USDT по решению суда](https://cryptorecon.io/usdt-sud.html)
 - [Ошибочная блокировка USDT](https://cryptorecon.io/usdt-oshibka.html)
 - [USDT заблокирован после P2P сделки](https://cryptorecon.io/usdt-p2p.html)
 - [Как доказать законность USDT](https://cryptorecon.io/usdt-dokazatelstva.html)
+- [USDT заблокирован — что делать?](https://cryptorecon.io/usdt-zablokirovan.html)
+- [Чёрный список Tether: механизм addBlackList](https://cryptorecon.io/tether-blacklist.html)
+
+## Блог: полное руководство (пилотная статья)
+
+- [Блокировка и разблокировка USDT: полное руководство 2026](https://cryptorecon.io/blog-guide.html) — исчерпывающий обзор всех типов блокировок, механизмов, сроков и процессов разблокировки
+
+## Блог: механизмы блокировки
+
+- [Почему Tether замораживает USDT: причины и механизм](https://cryptorecon.io/blog-pochemu-tether.html)
+- [AML и USDT: как работает скоринг и почему блокируют](https://cryptorecon.io/blog-aml.html)
+- [Смарт-контракт Tether: как технически работает заморозка](https://cryptorecon.io/blog-smart-kontrakt.html)
+- [Chainalysis и Elliptic: как скоринговые провайдеры влияют на блокировки USDT](https://cryptorecon.io/blog-chainalysis.html)
+
+## Блог: типы блокировок по платформам и сетям
+
+- [USDT и правоохранительные органы: запросы и блокировки](https://cryptorecon.io/blog-pravoohraniteli.html)
+- [USDT и санкции OFAC: как попасть в список и что происходит с замороженными средствами](https://cryptorecon.io/blog-ofac.html)
+- [Блокировка USDT на биржах: Binance, Bybit, OKX](https://cryptorecon.io/blog-birzhi.html)
+- [USDT в некастодиальном кошельке: блокировка MetaMask, Trust Wallet, Ledger](https://cryptorecon.io/blog-koshelek.html)
+- [Разблокировка USDT BEP-20 (BNB Chain): особенности и отличия от TRC-20 и ERC-20](https://cryptorecon.io/blog-bep20.html)
+
+## Блог: процесс разблокировки
+
+- [Реальный процесс разблокировки USDT: что происходит за кулисами](https://cryptorecon.io/blog-process.html)
+- [Кейсы разблокировки USDT: разбор реальных ситуаций](https://cryptorecon.io/blog-cases.html)
+- [Документы для разблокировки USDT: полный список по ситуациям](https://cryptorecon.io/blog-dokumenty.html)
+
+## Блог: профилактика и юрисдикции
+
+- [Как не допустить блокировки USDT: профилактика и безопасная работа с токенами](https://cryptorecon.io/blog-profilaktika.html)
+- [USDT для граждан России: блокировки, санкции и правовой статус в 2026 году](https://cryptorecon.io/blog-jurisdictions.html)
 
 ## Контакты
 
 - Telegram: https://t.me/crypto_recon
+- Сайт: https://cryptorecon.io
