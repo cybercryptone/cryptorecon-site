@@ -1,0 +1,20 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": ".prose blockquote",
+        "createdAt": "2026-08-29T19:22:02.271Z",
+        "reason": "Site-wide prose blockquote left-border (3px) — standard typography convention, not a card accent, matches design system across all 15 articles"
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-08-29T19:22:03.657Z",
+        "reason": "Inter is the site-wide body font established across all 20+ pages — intentional design system choice, not per-file decision"
+      }
+    ]
+  }
+}

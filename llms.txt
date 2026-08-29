@@ -52,6 +52,17 @@ CryptoRecon помогает физическим лицам и компания
 - [Как не допустить блокировки USDT: профилактика и безопасная работа с токенами](https://cryptorecon.io/blog-profilaktika.html)
 - [USDT для граждан России: блокировки, санкции и правовой статус в 2026 году](https://cryptorecon.io/blog-jurisdictions.html)
 
+## Блог: апелляция и биржи
+
+- [Апелляция в Tether: как написать письмо, которое не проигнорируют](https://cryptorecon.io/blog-appeal.html)
+- [Разблокировка USDT на Bybit: пошаговое руководство 2026](https://cryptorecon.io/blog-bybit.html)
+- [Разблокировка USDT на Binance: что делать и куда обращаться](https://cryptorecon.io/blog-binance.html)
+
+## Блог: AML-категории и DeFi
+
+- [Категории риска AML для USDT: gambling, darknet, mixer и что с ними делать](https://cryptorecon.io/blog-aml-kategorii.html)
+- [USDT в DeFi: заморозка в пулах ликвидности Uniswap и PancakeSwap](https://cryptorecon.io/blog-defi.html)
+
 ## Контакты
 
 - Telegram: https://t.me/crypto_recon
