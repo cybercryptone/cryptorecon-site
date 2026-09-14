@@ -68,9 +68,24 @@ tailwind.config = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://cryptorecon.io/"},
-        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://cryptorecon.io/blog.html"},
-        {"@type": "ListItem", "position": 3, "name": "Почему Tether блокирует USDT", "item": "https://cryptorecon.io/blog-pochemu-tether.html"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://cryptorecon.io/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Почему Tether блокирует USDT",
+          "item": "https://cryptorecon.io/blog-pochemu-tether.html"
+        }
       ]
     },
     {
@@ -78,7 +93,17 @@ tailwind.config = {
       "headline": "Почему Tether блокирует USDT: механизм заморозки и основные причины",
       "description": "Разбираем, как работает функция blacklist в смарт-контракте USDT, по каким причинам Tether замораживает средства и каков реальный масштаб проблемы.",
       "url": "https://cryptorecon.io/blog-pochemu-tether.html",
-      "publisher": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
+      "publisher": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cryptorecon.io/assets/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
       "inLanguage": "ru",
       "datePublished": "2026-07-07T00:00:00+00:00",
       "dateModified": "2026-07-21T00:00:00+00:00",
@@ -86,7 +111,8 @@ tailwind.config = {
         "@type": "Organization",
         "name": "CryptoRecon",
         "url": "https://cryptorecon.io"
-      }
+      },
+      "image": "https://cryptorecon.io/assets/logo.png"
     }
   ]
 }

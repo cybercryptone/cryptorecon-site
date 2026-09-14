@@ -62,9 +62,24 @@ tailwind.config = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://cryptorecon.io/"},
-        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://cryptorecon.io/blog.html"},
-        {"@type": "ListItem", "position": 3, "name": "USDT в TON и Telegram Wallet", "item": "https://cryptorecon.io/blog-ton.html"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://cryptorecon.io/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "USDT в TON и Telegram Wallet",
+          "item": "https://cryptorecon.io/blog-ton.html"
+        }
       ]
     },
     {
@@ -73,9 +88,24 @@ tailwind.config = {
       "description": "Разбираем механизм блокировок USDT в TON блокчейне и Telegram Wallet, отличия от TRC-20, два типа заморозки и пошаговый алгоритм апелляции.",
       "datePublished": "2026-09-14",
       "dateModified": "2026-09-14",
-      "author": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
-      "publisher": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
-      "mainEntityOfPage": "https://cryptorecon.io/blog-ton.html"
+      "author": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cryptorecon.io/assets/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "mainEntityOfPage": "https://cryptorecon.io/blog-ton.html",
+      "image": "https://cryptorecon.io/assets/logo.png"
     },
     {
       "@type": "FAQPage",
@@ -83,27 +113,42 @@ tailwind.config = {
         {
           "@type": "Question",
           "name": "Может ли Tether заморозить USDT на TON?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Да. Tether Ltd официально выпустила нативный USDT на TON в 2023 году. Смарт-контракт токена содержит функцию freeze, аналогичную TRC-20 и ERC-20. Tether вправе заморозить конкретный адрес на основании AML-проверки, решения суда или запроса правоохранительных органов."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Tether Ltd официально выпустила нативный USDT на TON в 2023 году. Смарт-контракт токена содержит функцию freeze, аналогичную TRC-20 и ERC-20. Tether вправе заморозить конкретный адрес на основании AML-проверки, решения суда или запроса правоохранительных органов."
+          }
         },
         {
           "@type": "Question",
           "name": "Чем блокировка в Telegram Wallet отличается от заморозки Tether?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Telegram Wallet (@wallet) является кастодиальным сервисом: средства хранятся на счетах Wallet in Telegram, а не напрямую на вашем адресе TON. Блокировка платформы означает, что вы не можете пользоваться интерфейсом @wallet, но ваши средства технически хранятся у оператора. Заморозка Tether действует на уровне смарт-контракта TON USDT и затрагивает конкретный блокчейн-адрес."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Telegram Wallet (@wallet) является кастодиальным сервисом: средства хранятся на счетах Wallet in Telegram, а не напрямую на вашем адресе TON. Блокировка платформы означает, что вы не можете пользоваться интерфейсом @wallet, но ваши средства технически хранятся у оператора. Заморозка Tether действует на уровне смарт-контракта TON USDT и затрагивает конкретный блокчейн-адрес."
+          }
         },
         {
           "@type": "Question",
           "name": "Как проверить, заморожен ли USDT на TON адресе?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Откройте tonscan.org или tonviewer.com и введите адрес кошелька. Если Jetton-токен USDT помечен флагом frozen или статус адреса указывает на ограничения, адрес заморожен на уровне контракта Tether. Для кастодиальных аккаунтов @wallet статус в блокчейн-эксплорере не отражает ограничений платформы."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Откройте tonscan.org или tonviewer.com и введите адрес кошелька. Если Jetton-токен USDT помечен флагом frozen или статус адреса указывает на ограничения, адрес заморожен на уровне контракта Tether. Для кастодиальных аккаунтов @wallet статус в блокчейн-эксплорере не отражает ограничений платформы."
+          }
         },
         {
           "@type": "Question",
           "name": "Куда обращаться при блокировке USDT в Telegram Wallet?",
-          "acceptedAnswer": {"@type": "Answer", "text": "При блокировке кастодиального аккаунта @wallet обращайтесь в поддержку через бота @wallet_supportbot. При заморозке адреса на уровне блокчейна Tether направляйте апелляцию на legal@tether.to с подтверждением личности и объяснением происхождения средств."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "При блокировке кастодиального аккаунта @wallet обращайтесь в поддержку через бота @wallet_supportbot. При заморозке адреса на уровне блокчейна Tether направляйте апелляцию на legal@tether.to с подтверждением личности и объяснением происхождения средств."
+          }
         },
         {
           "@type": "Question",
           "name": "TON USDT это тот же Tether, что и на Tron или Ethereum?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Да, это официальный токен от Tether Ltd, выпущенный в 2023 году по стандарту Jetton (TEP-74) на блокчейне TON. Это не обёрнутый токен и не сторонняя эмиссия. Tether контролирует контракт, ведёт резервы и обладает правом заморозки. Механизм freeze идентичен TRC-20 и ERC-20."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, это официальный токен от Tether Ltd, выпущенный в 2023 году по стандарту Jetton (TEP-74) на блокчейне TON. Это не обёрнутый токен и не сторонняя эмиссия. Tether контролирует контракт, ведёт резервы и обладает правом заморозки. Механизм freeze идентичен TRC-20 и ERC-20."
+          }
         }
       ]
     }

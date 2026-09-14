@@ -62,9 +62,24 @@ tailwind.config = {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://cryptorecon.io/"},
-        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://cryptorecon.io/blog.html"},
-        {"@type": "ListItem", "position": 3, "name": "Разблокировка USDT на KuCoin", "item": "https://cryptorecon.io/blog-kucoin.html"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://cryptorecon.io/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Разблокировка USDT на KuCoin",
+          "item": "https://cryptorecon.io/blog-kucoin.html"
+        }
       ]
     },
     {
@@ -73,9 +88,24 @@ tailwind.config = {
       "description": "Пошаговое руководство по разблокировке USDT и аккаунта на KuCoin: типы блокировок, документы, реальные сроки обработки апелляции.",
       "datePublished": "2026-09-13",
       "dateModified": "2026-09-13",
-      "author": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
-      "publisher": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
-      "mainEntityOfPage": "https://cryptorecon.io/blog-kucoin.html"
+      "author": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cryptorecon.io/assets/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "mainEntityOfPage": "https://cryptorecon.io/blog-kucoin.html",
+      "image": "https://cryptorecon.io/assets/logo.png"
     },
     {
       "@type": "FAQPage",
@@ -83,27 +113,42 @@ tailwind.config = {
         {
           "@type": "Question",
           "name": "Сколько времени будут заблокированы средства после подачи апелляции на KuCoin?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Стандартный срок рассмотрения апелляции на KuCoin составляет 7-30 рабочих дней. При дополнительном запросе документов срок продлевается ещё на 14-21 день. Блокировки по подозрению в мошенничестве могут рассматриваться до 90 дней."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Стандартный срок рассмотрения апелляции на KuCoin составляет 7-30 рабочих дней. При дополнительном запросе документов срок продлевается ещё на 14-21 день. Блокировки по подозрению в мошенничестве могут рассматриваться до 90 дней."
+          }
         },
         {
           "@type": "Question",
           "name": "Что делать, если KuCoin заблокировал USDT по AML?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Немедленно запросите причину блокировки через службу поддержки KuCoin. Получите AML-отчёт, подготовьте документы о происхождении средств (банковские выписки, договоры, скриншоты P2P-сделок) и подайте апелляцию через официальную форму KuCoin Support Center."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Немедленно запросите причину блокировки через службу поддержки KuCoin. Получите AML-отчёт, подготовьте документы о происхождении средств (банковские выписки, договоры, скриншоты P2P-сделок) и подайте апелляцию через официальную форму KuCoin Support Center."
+          }
         },
         {
           "@type": "Question",
           "name": "Чем KuCoin отличается от Binance при блокировках USDT?",
-          "acceptedAnswer": {"@type": "Answer", "text": "KuCoin работает через собственный AML-отдел и не использует Chainalysis напрямую как обязательный инструмент. Это означает, что решение о блокировке более гибкое, но и апелляция требует более детального объяснения происхождения средств."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "KuCoin работает через собственный AML-отдел и не использует Chainalysis напрямую как обязательный инструмент. Это означает, что решение о блокировке более гибкое, но и апелляция требует более детального объяснения происхождения средств."
+          }
         },
         {
           "@type": "Question",
           "name": "Можно ли разблокировать KuCoin без юриста?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Небольшие суммы и стандартные KYC-блокировки можно разблокировать самостоятельно, загрузив документы в KuCoin Support. Для блокировок от $5000 и выше, а также AML-блокировок рекомендуется привлечь специалистов для составления правильного пакета документов."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Небольшие суммы и стандартные KYC-блокировки можно разблокировать самостоятельно, загрузив документы в KuCoin Support. Для блокировок от $5000 и выше, а также AML-блокировок рекомендуется привлечь специалистов для составления правильного пакета документов."
+          }
         },
         {
           "@type": "Question",
           "name": "Что значит статус 'Under Review' на KuCoin?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Статус 'Under Review' означает, что аккаунт или транзакция находится на проверке комплаенс-отделом KuCoin. Активные действия в этот период (повторные апелляции, попытки вывода) могут навредить. Лучше ждать официального ответа или уточнить через поддержку примерный срок завершения проверки."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Статус 'Under Review' означает, что аккаунт или транзакция находится на проверке комплаенс-отделом KuCoin. Активные действия в этот период (повторные апелляции, попытки вывода) могут навредить. Лучше ждать официального ответа или уточнить через поддержку примерный срок завершения проверки."
+          }
         }
       ]
     }

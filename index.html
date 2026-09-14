@@ -29,12 +29,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "CryptoRecon",
-  "url": "https://cryptorecon.io",
-  "logo": "https://cryptorecon.io/assets/logo.png",
-  "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "availableLanguage": ["Russian", "English"]},
-  "sameAs": ["https://t.me/crypto_recon"]
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "CryptoRecon",
+      "url": "https://cryptorecon.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptorecon.io/assets/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "Russian",
+          "English"
+        ]
+      },
+      "sameAs": [
+        "https://t.me/crypto_recon"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "name": "CryptoRecon",
+      "url": "https://cryptorecon.io",
+      "inLanguage": "ru",
+      "description": "Сервис по разблокировке USDT и восстановлению доступа к криптоаккаунтам. Работаем с 2021 года.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      }
+    }
+  ]
 }
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
