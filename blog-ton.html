@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>USDT в TON и Telegram Wallet: блокировки, заморозка и что делать | CryptoRecon</title>
+<meta name="description" content="Заблокировали USDT в Telegram Wallet или TON кошельке? Разбираем механизм блокировок в TON блокчейне, отличия от TRC-20, как работает @wallet и куда обращаться."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-ton.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-ton.html"/>
+<meta property="og:title" content="USDT в TON и Telegram Wallet: блокировки и разблокировка | CryptoRecon"/>
+<meta property="og:description" content="Заблокировали USDT в Telegram Wallet или TON кошельке? Разбираем механизм блокировок, отличия от TRC-20, и что делать."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://cryptorecon.io/"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://cryptorecon.io/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "USDT в TON и Telegram Wallet", "item": "https://cryptorecon.io/blog-ton.html"}
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "USDT в TON и Telegram Wallet: блокировки, заморозка и что делать",
+      "description": "Разбираем механизм блокировок USDT в TON блокчейне и Telegram Wallet, отличия от TRC-20, два типа заморозки и пошаговый алгоритм апелляции.",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "author": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
+      "publisher": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
+      "mainEntityOfPage": "https://cryptorecon.io/blog-ton.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Может ли Tether заморозить USDT на TON?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Да. Tether Ltd официально выпустила нативный USDT на TON в 2023 году. Смарт-контракт токена содержит функцию freeze, аналогичную TRC-20 и ERC-20. Tether вправе заморозить конкретный адрес на основании AML-проверки, решения суда или запроса правоохранительных органов."}
+        },
+        {
+          "@type": "Question",
+          "name": "Чем блокировка в Telegram Wallet отличается от заморозки Tether?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Telegram Wallet (@wallet) является кастодиальным сервисом: средства хранятся на счетах Wallet in Telegram, а не напрямую на вашем адресе TON. Блокировка платформы означает, что вы не можете пользоваться интерфейсом @wallet, но ваши средства технически хранятся у оператора. Заморозка Tether действует на уровне смарт-контракта TON USDT и затрагивает конкретный блокчейн-адрес."}
+        },
+        {
+          "@type": "Question",
+          "name": "Как проверить, заморожен ли USDT на TON адресе?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Откройте tonscan.org или tonviewer.com и введите адрес кошелька. Если Jetton-токен USDT помечен флагом frozen или статус адреса указывает на ограничения, адрес заморожен на уровне контракта Tether. Для кастодиальных аккаунтов @wallet статус в блокчейн-эксплорере не отражает ограничений платформы."}
+        },
+        {
+          "@type": "Question",
+          "name": "Куда обращаться при блокировке USDT в Telegram Wallet?",
+          "acceptedAnswer": {"@type": "Answer", "text": "При блокировке кастодиального аккаунта @wallet обращайтесь в поддержку через бота @wallet_supportbot. При заморозке адреса на уровне блокчейна Tether направляйте апелляцию на legal@tether.to с подтверждением личности и объяснением происхождения средств."}
+        },
+        {
+          "@type": "Question",
+          "name": "TON USDT это тот же Tether, что и на Tron или Ethereum?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Да, это официальный токен от Tether Ltd, выпущенный в 2023 году по стандарту Jetton (TEP-74) на блокчейне TON. Это не обёрнутый токен и не сторонняя эмиссия. Tether контролирует контракт, ведёт резервы и обладает правом заморозки. Механизм freeze идентичен TRC-20 и ERC-20."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">USDT в TON и Telegram Wallet</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">TON / Telegram</span>
+      <span class="text-on-surface-variant text-xs">14 сентября 2026</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">
+      USDT в TON и Telegram Wallet: блокировки, заморозка и что делать
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">
+      Telegram Wallet заморозили USDT или перестал работать @wallet? Разбираем два разных механизма блокировки в экосистеме TON, чем нативный TON USDT отличается от TRC-20, и как правильно подавать апелляцию в каждом случае.
+    </p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">
+        В экосистеме TON существует два типа блокировки USDT. Первый: заморозка на уровне смарт-контракта Tether, которая применяется к конкретному адресу TON через механизм Jetton-токена. Второй: платформенная блокировка кастодиального сервиса Telegram Wallet (@wallet), которая не затрагивает блокчейн напрямую. При заморозке Tether апелляция направляется на legal@tether.to, при блокировке @wallet обращайтесь через @wallet_supportbot. Проверить статус адреса можно на tonscan.org или tonviewer.com.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4 prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Что такое USDT на TON: технический контекст</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Прежде чем разбирать механизм блокировок, важно понять природу токена. USDT на блокчейне TON является Jetton-токеном, выпущенным по стандарту TEP-74. Это официальная эмиссия Tether Ltd, запущенная в 2023 году. Речь идёт не об обёрнутом токене, не о бриджованной версии и не о стороннем проекте.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Tether самостоятельно развернул контракт на TON, обеспечивает резервы и контролирует список уполномоченных адресов. Это означает, что компания обладает теми же правами на заморозку, что и в случае TRC-20 на Tron или <a href="/usdt-erc20.html" class="text-primary hover:underline">ERC-20 на Ethereum</a>. Ключевое отличие от TRC-20: архитектура TON использует модель акторов, а не глобальный стейт-аккаунт. Каждый Jetton-кошелёк является отдельным смарт-контрактом, привязанным к адресу владельца. Заморозка применяется именно к этому дочернему контракту.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для пользователя практически важно следующее: если ваш адрес <a href="/usdt.html" class="text-primary hover:underline">USDT TON заблокирован</a>, это либо заморозка конкретного Jetton-кошелька на уровне Tether, либо ограничение на уровне кастодиального сервиса. Это два принципиально разных сценария с разными каналами апелляции.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Telegram Wallet: кастодиальный сервис, не блокчейн-кошелёк</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Telegram Wallet, доступный через бота @wallet, является кастодиальным сервисом. Это означает, что приватные ключи хранятся у оператора, которым является компания Wallet in Telegram (юридически обособленная от TON Foundation и от Telegram Messenger). Когда вы храните USDT в @wallet, вы являетесь не блокчейн-владельцем адреса, а держателем баланса в базе данных платформы.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Различие принципиально. Блокировка в @wallet означает, что платформа ограничила доступ к вашему кастодиальному счёту внутри своей системы. При этом реальные токены технически хранятся на адресах, принадлежащих самой платформе. Изучение блокчейн-эксплорера TON в таком случае покажет активные адреса Wallet in Telegram, а не замороженные пользовательские кошельки.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Причины платформенных блокировок @wallet включают: нарушение условий использования, KYC-требования, подозрительные паттерны транзакций, страновые ограничения. Wallet in Telegram работает по лицензии и обязан соблюдать требования юрисдикций, в которых предоставляет услуги. Подробнее о правилах кастодиальных кошельков читайте в статье <a href="/blog-koshelek.html" class="text-primary hover:underline">про типы криптокошельков и их риски</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Два типа блокировок в экосистеме TON USDT</h2>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Тип 1: Заморозка Tether на уровне смарт-контракта</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Это прямой аналог заморозки TRC-20 или <a href="/usdt-erc20.html" class="text-primary hover:underline">ERC-20</a>. Tether Ltd вызывает функцию freeze на мастер-контракте Jetton, которая блокирует конкретный Jetton-кошелёк (дочерний контракт) на адресе владельца. Результат: токены физически находятся на адресе, но недоступны для отправки или других операций.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Признаки заморозки Tether: попытка отправить USDT завершается ошибкой на уровне контракта, статус токена в блокчейн-эксплорере показывает ограничения. При этом нативные TON-токены (Toncoin) на том же адресе остаются незатронутыми. Заморозка применяется исключительно к USDT Jetton.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Основания для заморозки Tether: запрос от правоохранительных органов, решение суда, выявленная связь адреса с мошенничеством или санкционными лицами. Порог для автоматического мониторинга ниже, чем принято считать: Tether публично сообщает о сотрудничестве с более чем 200 правоохранительными органами по всему миру. О механизме заморозки подробнее в статье про <a href="/blog-smart-kontrakt.html" class="text-primary hover:underline">смарт-контракты и функцию freeze</a>.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Тип 2: Платформенная блокировка Telegram Wallet</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Когда блокировка USDT в Telegram происходит на уровне @wallet, картина принципиально иная. Кастодиальный сервис ограничивает доступ к вашему аккаунту: вы не можете отправлять, получать или выводить средства через интерфейс бота. В блокчейне при этом никаких заморозок нет.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Характерный признак платформенной блокировки: боту @wallet недоступны операции с вашим аккаунтом, при этом другие функции Telegram работают нормально. Если вы видите сообщения о верификации или ограничении аккаунта именно в боте, это платформенная блокировка.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Важное следствие для апелляции: при платформенной блокировке обращение в Tether бессмысленно, блокчейн не затронут. Единственный актуальный канал: поддержка Wallet in Telegram через @wallet_supportbot. Если блокировка связана с AML-проверкой, платформа запросит подтверждение личности и документы о происхождении средств. Аналогичный процесс описан в нашем <a href="/blog-guide.html" class="text-primary hover:underline">общем руководстве по разблокировке USDT</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как проверить статус адреса TON USDT</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для самостоятельной диагностики используйте блокчейн-эксплореры TON. Основные инструменты: tonscan.org и tonviewer.com. Оба работают без регистрации и дают полную картину по любому адресу TON.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Алгоритм проверки. Введите адрес TON-кошелька в строку поиска эксплорера. Перейдите на вкладку Jettons или Tokens. Найдите USDT в списке токенов. Статус frozen или отметка об ограничениях рядом с токеном указывает на заморозку Tether. Если статус нормальный, а операции всё равно невозможны, причина платформенная: либо блокировка @wallet, либо ограничение другого кастодиального сервиса.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Дополнительный признак заморозки: на странице Jetton-кошелька будет видна транзакция freeze от мастер-адреса USDT Tether. Это прямое доказательство действия со стороны Tether, полезное при составлении апелляции. О принципах <a href="/blog-aml.html" class="text-primary hover:underline">AML-проверок и их отражении в блокчейне</a> читайте в отдельном материале.
+    </p>
+
+    <!-- Comparison table -->
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Сравнение механизмов блокировки USDT на разных сетях</h2>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Параметр</th>
+            <th class="text-left p-4 font-semibold text-primary">TON USDT</th>
+            <th class="text-left p-4 font-semibold text-on-surface">TRC-20</th>
+            <th class="text-left p-4 font-semibold text-on-surface">ERC-20</th>
+            <th class="text-left p-4 font-semibold text-on-surface">BEP-20</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Стандарт токена</td>
+            <td class="p-4 text-on-surface">Jetton (TEP-74)</td>
+            <td class="p-4 text-on-surface">TRC-20</td>
+            <td class="p-4 text-on-surface">ERC-20</td>
+            <td class="p-4 text-on-surface">BEP-20</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Эмитент</td>
+            <td class="p-4 text-on-surface">Tether Ltd (с 2023)</td>
+            <td class="p-4 text-on-surface">Tether Ltd</td>
+            <td class="p-4 text-on-surface">Tether Ltd</td>
+            <td class="p-4 text-on-surface">Tether Ltd</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Механизм заморозки</td>
+            <td class="p-4 text-on-surface">Freeze на Jetton-кошельке</td>
+            <td class="p-4 text-on-surface">addBlackList в контракте</td>
+            <td class="p-4 text-on-surface">blacklist в контракте</td>
+            <td class="p-4 text-on-surface">addBlackList (форк TRC-20)</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Проверка заморозки</td>
+            <td class="p-4 text-on-surface">tonscan.org / tonviewer.com</td>
+            <td class="p-4 text-on-surface">tronscan.org</td>
+            <td class="p-4 text-on-surface">etherscan.io</td>
+            <td class="p-4 text-on-surface">bscscan.com</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Канал апелляции</td>
+            <td class="p-4 text-on-surface">legal@tether.to</td>
+            <td class="p-4 text-on-surface">legal@tether.to</td>
+            <td class="p-4 text-on-surface">legal@tether.to</td>
+            <td class="p-4 text-on-surface">legal@tether.to</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Частота блокировок</td>
+            <td class="p-4 text-on-surface">Растёт с 2024 г.</td>
+            <td class="p-4 text-on-surface">Высокая (популярная сеть)</td>
+            <td class="p-4 text-on-surface">Умеренная</td>
+            <td class="p-4 text-on-surface">Низкая</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Сравнение с <a href="/usdt-trc20.html" class="text-primary hover:underline">TRC-20</a> показывает: технический механизм заморозки схожий, но архитектура TON устроена иначе. В TRC-20 существует единый контракт с маппингом адресов. В TON каждый Jetton-кошелёк отдельный контракт. Это означает несколько иной процесс верификации заморозки через эксплорер. Подробное сравнение сетей также в статье про <a href="/blog-bep20.html" class="text-primary hover:underline">BEP-20 и другие сети USDT</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Алгоритм действий при заморозке TON USDT (Tether)</h2>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 1: Диагностика через эксплорер</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Откройте tonscan.org или tonviewer.com. Введите адрес вашего TON-кошелька. Перейдите в раздел Jettons и проверьте статус USDT. Если токен помечен как frozen, перейдите на страницу самого Jetton-кошелька и найдите транзакцию freeze. Дата и хэш этой транзакции понадобятся для апелляции.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 2: Подготовьте документы о происхождении средств</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Tether требует те же документы, что и при апелляции по TRC-20. Базовый пакет: удостоверяющий личность документ (загранпаспорт предпочтительнее внутреннего), описание происхождения средств с подтверждающими документами (выписки из банков, квитанции обменников, история сделок на биржах), пояснение к конкретным транзакциям, вызвавшим подозрение.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Документы готовятся на английском языке. Для русскоязычных пользователей это принципиальный момент: Tether не принимает апелляции на русском. Переводы должны быть точными и юридически корректными. Полный список необходимых документов с примерами в статье про <a href="/usdt-aml.html" class="text-primary hover:underline">разблокировку USDT при AML-заморозке</a>.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 3: Направьте апелляцию в Tether</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Адрес для апелляции по заморозке на TON: legal@tether.to. Это тот же канал, что используется для TRC-20 и ERC-20. В теме письма укажите: "Frozen USDT Appeal - TON Network - [ваш адрес]". В тексте письма чётко укажите адрес TON, сумму замороженных USDT, хэш транзакции freeze (из эксплорера), описание происхождения средств и конкретный запрос (разморозить адрес или перевести средства на другой адрес после верификации).
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Стандартный срок первичного ответа Tether: 14-30 рабочих дней. При запросе дополнительных документов срок продлевается. Не отправляйте повторные письма раньше чем через 21 рабочий день без ответа: это не ускорит процесс. Подробный шаблон апелляции в нашем материале про <a href="/blog-profilaktika.html" class="text-primary hover:underline">профилактику блокировок и правила гигиены USDT-кошельков</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Алгоритм действий при блокировке Telegram Wallet (@wallet)</h2>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 1: Обратитесь через @wallet_supportbot</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Официальный канал поддержки Wallet in Telegram: бот @wallet_supportbot в Telegram. Опишите ситуацию, укажите аккаунт Telegram и последние операции, которые выполнялись перед блокировкой. В первом сообщении запросите причину ограничения и номер тикета.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Важный момент: не путайте поддержку Wallet in Telegram с общей поддержкой Telegram Messenger. Последняя не имеет доступа к данным кастодиального кошелька и не сможет помочь в вопросах USDT. Блокировка в @wallet решается только через @wallet_supportbot.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 2: Пройдите идентификацию</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Wallet in Telegram работает по лицензии и при AML-блокировках обязан провести KYC. Подготовьте загранпаспорт или удостоверение личности, а также документы о происхождении заблокированных средств. Требования схожи с требованиями бирж: источник USDT, история транзакций, подтверждение личности владельца аккаунта Telegram.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 3: Запросите вывод средств при невозможности разблокировки</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если платформа не может разблокировать аккаунт по политическим или регуляторным причинам, но ваша личность верифицирована, у вас есть право запросить вывод средств на другой адрес, который вы контролируете. Это стандартная практика для кастодиальных сервисов: даже при закрытии аккаунта средства должны быть возвращены владельцу после надлежащей верификации. Если платформа отказывает без объяснений, сохраните всю переписку: это может понадобиться для дальнейших шагов.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Почему TON USDT блокировки участились в 2024-2026 годах</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Рост числа блокировок USDT в TON прямо связан с ростом популярности экосистемы. TON стал одним из самых быстрорастущих блокчейнов по объёму транзакций с 2023 года: миллионы пользователей Telegram получили доступ к встроенному кошельку @wallet и начали активно использовать USDT для P2P-переводов, оплаты услуг и обмена.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      С ростом объёма транзакций выросло и внимание регуляторов. Tether активно взаимодействует с правоохранительными органами разных стран. По данным отчётов компании, число заморозок растёт ежегодно. При этом TON как молодая сеть привлекла часть пользователей именно ожиданием меньшей AML-строгости в сравнении с Tron или Ethereum. Это ожидание не соответствует реальности: Tether применяет единый механизм заморозки ко всем сетям, где выпущен USDT.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Отдельный фактор: P2P-рынок внутри Telegram. Значительная часть USDT-транзакций в TON проходит через неформальные P2P-схемы в Telegram-каналах и ботах. Часть этих транзакций попадает в поле зрения AML-систем по причине связи с адресами, ранее отмеченными в базах скоринговых провайдеров. Это механизм "заражённых монет": даже один шаг в цепочке транзакций через рисковый адрес может поднять ваш AML-балл до критического значения. О принципах AML-скоринга подробнее в статье <a href="/usdt-aml.html" class="text-primary hover:underline">про AML и USDT</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Специфика для пользователей из России</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Telegram Wallet активно используется в России, особенно с 2022 года после ужесточения ограничений на криптоопераций для россиян на западных биржах. @wallet фактически стал для многих основным инструментом хранения и перевода USDT. Это создаёт специфический профиль риска.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Во-первых, российские телефонные номера и аккаунты Telegram потенциально проходят дополнительную проверку при работе кастодиальных сервисов в юрисдикциях, соблюдающих западные санкционные режимы. Wallet in Telegram работает по лицензии и обязан соблюдать санкционные требования. Во-вторых, популярные в России P2P-схемы обмена рублей на USDT через Telegram-боты нередко включают адреса с высоким AML-риском.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Практический совет: проверяйте AML-риск каждого адреса, с которого получаете USDT в TON, точно так же, как делаете это для TRC-20. Инструменты AMLBot и Crystal поддерживают проверку адресов TON. Один проблемный перевод может привести к тому, что ваш @wallet или ваш личный TON-адрес попадёт в поле зрения комплаенс-систем.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Когда нужна профессиональная помощь</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Самостоятельная апелляция при блокировке TON USDT работает при нескольких условиях: вы понимаете происхождение всех средств на адресе, у вас есть подтверждающие документы на английском языке и сумма блокировки не превышает $3000-5000. В этом случае апелляция в Tether или обращение в @wallet_supportbot может решить вопрос без посредников.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Профессиональная помощь оправдана при следующих обстоятельствах. Первое: сумма блокировки превышает $5000. При крупных суммах Tether проводит более детальную проверку и ошибки в апелляции обходятся дороже. Второе: цепочка транзакций сложная, несколько контрагентов, история перемещения USDT через несколько адресов и платформ. В таком случае самостоятельно объяснить происхождение средств значительно сложнее. Третье: апелляция ушла без ответа более 30 рабочих дней. Стандартный канал не работает, нужны другие подходы.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      CryptoRecon работает с блокировками USDT на TON, TRC-20 и других сетях. Анализируем конкретный адрес и цепочку транзакций, помогаем сформировать документальную базу и составить апелляцию с учётом специфики TON Jetton-архитектуры. Ознакомьтесь с нашим <a href="/blog-guide.html" class="text-primary hover:underline">общим руководством по разблокировке</a> или обратитесь напрямую за оценкой вашего кейса.
+    </p>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы о блокировках USDT в TON и Telegram Wallet</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Может ли Tether заморозить USDT на TON?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Да. Tether Ltd официально выпустила нативный USDT на TON в 2023 году. Смарт-контракт токена содержит функцию freeze, аналогичную TRC-20 и ERC-20. Tether вправе заморозить конкретный адрес на основании AML-проверки, решения суда или запроса правоохранительных органов. Это не сторонний токен и не обёртка: у Tether есть прямой контроль над контрактом.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Чем блокировка в Telegram Wallet отличается от заморозки Tether?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Telegram Wallet (@wallet) является кастодиальным сервисом: средства хранятся на счетах Wallet in Telegram, а не напрямую на вашем адресе TON. Блокировка платформы означает, что вы не можете пользоваться интерфейсом @wallet, но ваши средства технически хранятся у оператора. Заморозка Tether действует на уровне смарт-контракта TON USDT и затрагивает конкретный блокчейн-адрес. Канал апелляции разный: для @wallet это @wallet_supportbot, для Tether это legal@tether.to.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Как проверить, заморожен ли USDT на TON адресе?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Откройте tonscan.org или tonviewer.com и введите адрес кошелька. Перейдите в раздел Jettons и проверьте статус USDT. Если токен помечен флагом frozen или на странице Jetton-кошелька видна транзакция freeze от мастер-адреса USDT Tether, адрес заморожен. Для кастодиальных аккаунтов @wallet статус в блокчейн-эксплорере не отражает ограничений платформы.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Куда обращаться при блокировке USDT в Telegram Wallet?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">При блокировке кастодиального аккаунта @wallet обращайтесь в поддержку через бота @wallet_supportbot. При заморозке адреса на уровне блокчейна Tether направляйте апелляцию на legal@tether.to с подтверждением личности и объяснением происхождения средств. Обращение в Tether при кастодиальной блокировке бессмысленно: блокчейн при этом не затронут.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            TON USDT это тот же Tether, что и на Tron или Ethereum?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Да, это официальный токен от Tether Ltd, выпущенный в 2023 году по стандарту Jetton (TEP-74) на блокчейне TON. Это не обёрнутый токен и не сторонняя эмиссия. Tether контролирует контракт, ведёт резервы и обладает правом заморозки. Механизм freeze идентичен TRC-20 и ERC-20, хотя техническая реализация отличается в рамках архитектуры TON. Апелляция по всем сетям направляется на один адрес: legal@tether.to.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<!-- Author + YMYL block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специалисты по разблокировке USDT и аккаунтов криптобирж. Более 300 кейсов с 2021 года. Статья подготовлена на основе практики работы с блокировками USDT на TON, TRC-20, ERC-20 и кастодиальными сервисами, включая Telegram Wallet.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Tether, TON, TRC-20</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="/usdt-trc20.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">lock</span>
+          <span class="text-xs text-on-surface-variant">Блокировки</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Блокировка USDT TRC-20: механизм заморозки и апелляция</h3>
+      </a>
+      <a href="/usdt-erc20.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">lock</span>
+          <span class="text-xs text-on-surface-variant">Блокировки</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">USDT ERC-20: заморозка на Ethereum и как разблокировать</h3>
+      </a>
+      <a href="/blog-smart-kontrakt.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">code</span>
+          <span class="text-xs text-on-surface-variant">Технологии</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Смарт-контракт USDT: как работает функция freeze</h3>
+      </a>
+      <a href="/usdt-aml.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">security</span>
+          <span class="text-xs text-on-surface-variant">AML</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">AML и USDT: почему замораживают и что с этим делать</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">USDT заблокирован в TON или Telegram Wallet?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Разберём ваш кейс бесплатно. Определим тип блокировки: заморозка Tether или платформенное ограничение. Предложим алгоритм действий и оценим шансы.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="/usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="/usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="/usdt-trc20.html" class="hover:text-white transition-colors">TRC-20 заморозка</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Сети</p>
+          <ul class="space-y-1">
+            <li><a href="/blog-ton.html" class="hover:text-white transition-colors text-white">TON / Telegram</a></li>
+            <li><a href="/usdt-trc20.html" class="hover:text-white transition-colors">TRC-20 (Tron)</a></li>
+            <li><a href="/usdt-erc20.html" class="hover:text-white transition-colors">ERC-20 (Ethereum)</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Контакт</p>
+          <ul class="space-y-1">
+            <li><a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @crypto_recon</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-xs text-center">
+      <p>© 2026 CryptoRecon. Сайт носит информационный характер.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

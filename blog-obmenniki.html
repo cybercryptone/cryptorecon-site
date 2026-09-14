@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>USDT завис в обменнике: что делать, если платёж задержан или заблокирован | CryptoRecon</title>
+<meta name="description" content="USDT завис в обменнике или WebMoney? Разбираем 4 причины задержки, отличие обменника от блокировки Tether, куда обращаться и какие документы нужны."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-obmenniki.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-obmenniki.html"/>
+<meta property="og:title" content="USDT завис в обменнике: что делать, если платёж задержан | CryptoRecon"/>
+<meta property="og:description" content="USDT завис в обменнике или WebMoney? 4 типа задержки, пошаговый алгоритм действий и документы."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://cryptorecon.io/"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://cryptorecon.io/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "USDT завис в обменнике", "item": "https://cryptorecon.io/blog-obmenniki.html"}
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "USDT завис в обменнике: что делать, если платёж задержан или заблокирован",
+      "description": "4 типа задержки USDT в обменниках и WebMoney, отличие технической задержки от реальной заморозки Tether, пошаговый алгоритм действий и нужные документы.",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "author": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
+      "publisher": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
+      "mainEntityOfPage": "https://cryptorecon.io/blog-obmenniki.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Чем отличается «USDT завис» от «USDT заблокирован» в обменнике?",
+          "acceptedAnswer": {"@type": "Answer", "text": "«Завис» означает временную задержку на стороне обменника: AML-проверка, техническая обработка или запрос KYC-документов. Средства доступны, но выплата временно приостановлена. «Заблокирован» означает заморозку адреса самим Tether на уровне смарт-контракта: токены технически существуют на адресе, но любые переводы с него невозможны до снятия блокировки Tether. Это принципиально разные ситуации с разными алгоритмами решения."}
+        },
+        {
+          "@type": "Question",
+          "name": "Что делать, если WebMoney задержал USDT?",
+          "acceptedAnswer": {"@type": "Answer", "text": "WebMoney не работает с USDT напрямую: операции с Tether проходят через партнёрские обменники, подключённые к системе WM. При задержке нужно обращаться в службу поддержки конкретного обменника, через который проводилась операция, и указывать номер WM-транзакции, хеш блокчейн-транзакции и сумму операции. Если обменник не отвечает более 24 часов, следующий шаг: обращение в арбитраж WebMoney."}
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько времени обменник может держать USDT на проверке?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Легитимный обменник проводит AML-проверку за 15 минут до 4 часов. Запрос KYC-документов при крупной сумме занимает 1-3 рабочих дня. Если обменник держит средства более 24 часов без объяснений, это тревожный сигнал. Более 72 часов без ответа поддержки, это основание для официальной претензии или обращения в мониторинг обменников."}
+        },
+        {
+          "@type": "Question",
+          "name": "Что такое AML-проверка в обменнике и почему она останавливает платёж?",
+          "acceptedAnswer": {"@type": "Answer", "text": "AML-проверка (Anti-Money Laundering) в обменнике: автоматический анализ блокчейн-истории входящего USDT. Лицензированный обменник обязан проверять источник средств перед выплатой. Если AML-система выставила риск-скоринг выше порогового значения, обменник приостанавливает операцию и запрашивает объяснение у клиента. Это стандартная процедура, а не признак мошенничества."}
+        },
+        {
+          "@type": "Question",
+          "name": "Обменник не отвечает уже два дня. Что делать?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Шаг 1: отправьте повторное обращение через все доступные каналы (email, Telegram-бот, форма на сайте). Шаг 2: проверьте статус обменника на мониторингах (bestchange.ru, exnode.com). Шаг 3: оставьте отзыв с деталями ситуации на мониторинге: лицензированные обменники дорожат репутацией и реагируют. Шаг 4: если обменник исчез из мониторингов или его контакты недоступны, это признак мошенничества. Зафиксируйте все данные операции и обратитесь к специалистам."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">USDT завис в обменнике</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">Обменники</span>
+      <span class="text-on-surface-variant text-xs">14 сентября 2026</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">
+      USDT завис в обменнике: что делать, если платёж задержан или заблокирован
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">
+      Обменник держит USDT больше часа и не отвечает. WebMoney показывает статус «в обработке» вторые сутки. P2P-платёж завис без объяснений. Разбираем 4 реальных причины, как различить техническую задержку и настоящую блокировку, и что конкретно делать в каждом случае.
+    </p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">
+        Если USDT завис в обменнике: сначала проверьте транзакцию в блокчейн-проводнике (tronscan.org или etherscan.io). Если транзакция подтверждена, но обменник не выплачивает, причина на стороне обменника (AML-холд, KYC-запрос или техническая задержка). Если у адреса стоит статус freeze в Tether-контракте, это уже заморозка уровня Tether, и обменник здесь бессилен. Обратитесь в поддержку с хешем транзакции в течение первых 4 часов.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4 prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Почему USDT зависает в обменнике: 4 реальных сценария</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Словосочетание «USDT завис обменник» описывает минимум четыре принципиально разных ситуации. Путаница между ними приводит к неверным действиям: пользователь тратит время на жалобы обменнику, когда реальная проблема находится на уровне Tether, или наоборот, часами ждёт разблокировки от Tether, хотя достаточно ответить на KYC-запрос обменника. Ниже разбор каждого сценария по порядку.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Сценарий 1. AML-холд: обменник проверяет историю входящего USDT</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Это наиболее частая причина задержки завис платёж USDT AML обменник в современных условиях. Лицензированный обменник обязан проводить AML-проверку входящих средств до их выплаты клиенту. Автоматическая система сканирует блокчейн-историю USDT: с какими адресами он взаимодействовал, не входит ли в цепочке хотя бы один адрес из санкционных списков OFAC, не связан ли с известными миксерами или даркнет-площадками.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если система выставляет риск-скоринг выше порогового значения, операция автоматически приостанавливается. Комплаенс-специалист обменника вручную изучает кейс. В большинстве случаев задержка составляет от 15 минут до 4 часов. При пограничных показателях скоринга обменник направляет клиенту запрос с объяснением причины приостановки.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Важно: AML-холд в обменнике не означает, что средства заблокированы навсегда. Это стандартная процедура добросовестного участника рынка. Подробнее о том, как работает AML-скоринг и какие показатели считаются критическими, читайте в статье про <a href="/blog-aml.html" class="text-primary hover:underline">AML-проверки USDT</a>.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Сценарий 2. Техническая задержка: обработка, а не блокировка</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Часть задержек не связана ни с AML, ни с KYC. Обменник просто медленно обрабатывает операцию по техническим причинам: высокая загрузка сети, обслуживание горячего кошелька, техработы на стороне платёжной системы для выплаты. Транзакция от клиента в блокчейне подтверждена, USDT поступил на адрес обменника, но автоматическая выплата не прошла.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Признаки технической задержки: статус транзакции в блокчейне «подтверждено», но обменник показывает статус «в обработке» или «ожидание» более 30 минут. При этом в личном кабинете нет запросов документов и нет уведомлений о блокировке.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Решение в этом случае простое: подождать до 2 часов и написать в поддержку с хешем транзакции. Большинство технических задержек разрешаются без участия клиента после технической обработки со стороны обменника. Это принципиально не блокировка: действовать нужно спокойно, без паники.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Сценарий 3. KYC-запрос: обменник просит документы при крупной сумме</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      При операциях выше определённого порога (обычно от 1000 до 5000 USDT, в зависимости от политики обменника) система автоматически запрашивает подтверждение личности. Обменник задержал USDT и одновременно направил на email или в чат запрос с перечнем необходимых документов.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Стандартный пакет для KYC-верификации в обменнике: фото паспорта (разворот с фото и разворот с пропиской), селфи с паспортом на фоне сегодняшней даты, иногда: подтверждение источника средств (банковская выписка или скриншот сделки на бирже, с которой пришел USDT). Срок обработки документов: 1-3 рабочих дня у добросовестных обменников.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Ключевой момент: если обменник запросил документы, но не указал конкретный перечень или запрос выглядит нестандартно, уточните через официальный канал (не через ссылки из писем). О полном перечне документов для разных ситуаций с USDT читайте в нашей статье <a href="/blog-dokumenty.html" class="text-primary hover:underline">документы для разблокировки USDT</a>.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Сценарий 4. Заморозка уровня Tether: не задержка, а реальная блокировка</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Это принципиально другая ситуация. Tether Ltd. имеет техническую возможность заморозить любой адрес на уровне смарт-контракта USDT. При заморозке токены на адресе физически существуют, их видно в блокчейн-проводнике, но любая попытка перевода возвращает ошибку: транзакция отклоняется контрактом.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Обменник в этой ситуации действительно бессилен: даже если он хочет выплатить средства, смарт-контракт не позволит провести операцию. Разблокировка возможна только через официальное обращение к Tether Ltd. с предоставлением документов о легальности средств.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Как проверить: откройте tronscan.org (для USDT TRC-20) или etherscan.io (для USDT ERC-20), введите адрес кошелька. На странице адреса посмотрите раздел с токенами или найдите взаимодействие с контрактом Tether. Статус «frozen» или «blacklisted» подтверждает заморозку уровня Tether. Подробнее о механизме заморозки и процессе разблокировки через Tether читайте в статье <a href="/usdt-aml.html" class="text-primary hover:underline">блокировка USDT по AML</a>.
+    </p>
+
+    <!-- Comparison table -->
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Таблица: тип задержки, причина, сроки, куда обращаться</h2>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Тип ситуации</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Типичная причина</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Срок разрешения</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Куда обращаться</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">AML-холд в обменнике</td>
+            <td class="p-4 text-on-surface">Риск-скоринг выше порога по истории USDT</td>
+            <td class="p-4 text-on-surface">15 мин. до 4 часов</td>
+            <td class="p-4 text-on-surface">Поддержка обменника, запрос AML-отчёта</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Техническая задержка</td>
+            <td class="p-4 text-on-surface">Перегрузка, техработы на стороне обменника</td>
+            <td class="p-4 text-on-surface">До 2 часов</td>
+            <td class="p-4 text-on-surface">Поддержка обменника с хешем транзакции</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">KYC-запрос документов</td>
+            <td class="p-4 text-on-surface">Крупная сумма, новый клиент, высокий риск</td>
+            <td class="p-4 text-on-surface">1-3 рабочих дня</td>
+            <td class="p-4 text-on-surface">Предоставить паспорт и документы об источнике</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Заморозка Tether</td>
+            <td class="p-4 text-on-surface">Адрес внесён в чёрный список Tether Ltd.</td>
+            <td class="p-4 text-on-surface">Недели и месяцы, требует апелляции</td>
+            <td class="p-4 text-on-surface">Tether Ltd., нужны документы о легальности</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как отличить задержку от реальной блокировки: пошаговая проверка</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Прежде чем предпринимать какие-либо действия, нужно точно диагностировать ситуацию. Разные проблемы требуют разных решений, и неверный шаг может усложнить положение.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 1. Проверьте статус транзакции в блокчейне</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Откройте tronscan.org (TRC-20) или etherscan.io (ERC-20) и введите хеш транзакции. Если транзакция показывает статус «Success» и количество подтверждений больше 20, USDT физически дошёл до адреса обменника. Проблема точно на стороне обменника: техническая задержка, AML-холд или KYC-запрос.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если транзакция показывает «Pending» или вообще не находится, это другая ситуация: либо транзакция ещё не отправлена, либо застряла из-за слишком низкой комиссии в сети. Подробнее об этом сценарии читайте в статье про <a href="/usdt-oshibka.html" class="text-primary hover:underline">ошибки при переводе USDT</a>.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 2. Проверьте статус адреса на предмет заморозки Tether</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      На той же странице адреса в блокчейн-проводнике проверьте, нет ли взаимодействий с функцией «freeze» или «addBlacklist» от контракта Tether. Для быстрой проверки можно воспользоваться инструментами AML-скоринга, которые сразу показывают статус адреса. Как пользоваться такими инструментами, описано в статье <a href="/blog-proverka-aml.html" class="text-primary hover:underline">проверка USDT на AML</a>.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 3. Свяжитесь с поддержкой обменника с полными данными</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Не пишите просто «где мои деньги». Укажите: хеш транзакции, номер заявки в обменнике (если есть), точную сумму и время отправки, сеть (TRC-20 или ERC-20), адрес, с которого отправляли. Чёткое обращение с конкретными данными решается быстрее размытых запросов.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 4. При отсутствии ответа более 24 часов: эскалация</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Легитимный лицензированный обменник отвечает на запрос в течение нескольких часов. Отсутствие ответа более 24 часов без объяснений: повод для эскалации. Порядок действий: проверить статус обменника на мониторингах bestchange.ru и exnode.com, оставить отзыв с деталями ситуации, обратиться через альтернативные каналы (Telegram, VK, если есть). При суммах от $500 и отсутствии реакции обменника более 48 часов: привлечение специалистов.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">WebMoney USDT: как работает система и куда обращаться при задержке</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      WebMoney USDT заблокировали или задержали, это отдельная ситуация, которую часто путают с прямой работой с криптокошельками. WebMoney не является криптобиржей и не хранит USDT напрямую. Операции с Tether в экосистеме WebMoney проходят через партнёрские сервисы, авторизованные системой WM.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      При задержке операции через WebMoney нужно чётко понять, на каком этапе застряли средства. Если операция оформлена через конкретный обменник, интегрированный с WM, обращаться нужно в этот обменник, указывая WM-номер транзакции. Если операция проходила непосредственно через WM-кошелёк с типом активов WMT (WM Tether), обращение направляется в службу поддержки WebMoney с указанием WM-TXID.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Особенность WebMoney: система предусматривает механизм арбитража. Если один из участников сделки нарушил условия, можно подать заявку в арбитраж WM. Срок рассмотрения арбитражного запроса: 3-10 рабочих дней. Арбитраж работает при наличии зафиксированных претензий с обеих сторон и документальных подтверждений.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если задержка WebMoney USDT связана с AML-проверкой средств на уровне партнёрского обменника, алгоритм действий тот же, что и для любого другого обменника: предоставить документы, подтверждающие происхождение средств. Подробнее о том, какие именно документы нужны, в разделе про <a href="/blog-aml-kategorii.html" class="text-primary hover:underline">категории AML-рисков USDT</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">P2P-платформы: когда USDT завис в эскроу</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      На P2P-платформах (Binance P2P, Bybit P2P, независимые P2P-сервисы) USDT во время сделки находится в эскроу: заблокирован платформой на период обмена. Если платёж завис на этапе эскроу, причины могут быть разными.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Первая причина: контрагент не подтвердил получение оплаты. Действие: открыть спор через функцию «Апелляция» на платформе, приложив подтверждение платежа. Вторая причина: платформа приостановила сделку по AML. Действие: ответить на запрос платформы, предоставить документы. Третья причина: технический сбой на стороне платформы. Действие: написать в поддержку с номером сделки.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Принципиальное отличие P2P-задержки от обменной: USDT в P2P-эскроу юридически принадлежит продавцу до момента подтверждения сделки. Платформа выступает гарантом. При корректном открытии спора средства возвращаются продавцу в течение 24-72 часов в большинстве случаев. Алгоритм работы с P2P-блокировками подробно разобран в статье <a href="/usdt-p2p.html" class="text-primary hover:underline">USDT на P2P</a>.
+    </p>
+
+    <!-- Warning block -->
+    <div class="bg-error/5 border-l-4 border-error rounded-r-xl p-6 my-8">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-error">warning</span>
+        <span class="font-display font-bold text-error text-sm uppercase tracking-wide">Мошенники под видом обменников</span>
+      </div>
+      <p class="text-on-surface leading-relaxed text-sm">
+        Не все задержки обмена USDT объясняются легитимными причинами. Мошеннические обменники имитируют AML-запросы, чтобы выиграть время или вынудить клиента заплатить «комиссию за разблокировку». Признаки мошеннического обменника: отсутствие на крупных мониторингах (bestchange.ru, exnode.com), запрос оплаты за «AML-сбор» или «комиссию платёжной системы» после заморозки, отключение контактов после получения USDT, невозможность проверить реквизиты компании. Легитимный обменник никогда не берёт дополнительную плату после уже проведённой транзакции. Если обменник требует доплату за выдачу ваших средств, немедленно прекратите общение и зафиксируйте все данные.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Что делать с завис USDT: итоговый алгоритм действий</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Алгоритм действий зависит от диагноза, который вы поставили после проверки на шагах 1-2 выше. Для большинства случаев с задержкой в обменнике он выглядит так.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Первый час: проверить транзакцию в блокчейне, убедиться, что USDT дошёл до адреса обменника. Написать в поддержку с хешем транзакции и номером заявки. Большинство технических задержек и простых AML-холдов разрешаются на этом этапе.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Через 4-8 часов при отсутствии ответа: отправить повторное обращение через все доступные каналы. Проверить статус обменника на мониторингах. Если обменник в реестре, у него нормальный рейтинг и отзывы без жалоб на невыплаты, скорее всего речь о стандартной AML-задержке с ручной проверкой.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Через 24 часа: оставить подробный отзыв на мониторинге с деталями ситуации (без персональных данных). Для большинства добросовестных обменников это стимулирует ответ. Если обменник запросил документы, предоставить их в полном объёме.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Через 48 часов при сумме от $300 и отсутствии движения по кейсу: время привлекать специалистов. Запустите первичную бесплатную проверку, чтобы понять, с каким сценарием вы имеете дело и есть ли перспектива возврата средств. О превентивных мерах, которые помогут избежать подобных ситуаций в будущем, читайте в статье <a href="/blog-profilaktika.html" class="text-primary hover:underline">профилактика блокировок USDT</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Документы, которые нужны при AML-запросе обменника</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если обменник запросил подтверждение источника средств, базовый пакет документов выглядит так. Паспорт или иной документ, удостоверяющий личность (разворот с фото). Документ, подтверждающий происхождение USDT: если USDT куплен на бирже, скриншот операции покупки с биржи с датой, суммой и именем аккаунта; если получен от физического лица, документальное подтверждение основания перевода (договор, расписка, скриншот переписки с описанием сделки).
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Объяснительное письмо в свободной форме с описанием происхождения средств и цели операции. Для сумм выше $5000 обменник может дополнительно запросить банковскую выписку или более детальные документы по цепочке движения средств.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Подготовка документов заблаговременно сокращает срок AML-проверки с нескольких дней до нескольких часов. Полный перечень документов для разных ситуаций в нашей <a href="/blog-dokumenty.html" class="text-primary hover:underline">статье о документах для разблокировки USDT</a>. Общий гайд по действиям при любом типе блокировки: <a href="/blog-guide.html" class="text-primary hover:underline">руководство по разблокировке USDT</a>.
+    </p>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы об обменниках и задержках USDT</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Чем отличается «USDT завис» от «USDT заблокирован» в обменнике?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">«Завис» означает временную задержку на стороне обменника: AML-проверка, техническая обработка или запрос KYC-документов. Средства технически доступны, но выплата приостановлена. «Заблокирован» означает заморозку адреса самим Tether на уровне смарт-контракта: любые переводы с адреса невозможны до снятия заморозки. Первая ситуация решается через обменник, вторая требует апелляции к Tether Ltd.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Что делать, если WebMoney задержал USDT?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">WebMoney работает с USDT через партнёрские обменники. Обратитесь в службу поддержки конкретного сервиса, через который проходила операция. Укажите WM-номер транзакции, хеш блокчейн-операции и сумму. Если партнёрский обменник не отвечает, следующий шаг: обращение в арбитраж WebMoney с документальным подтверждением ситуации.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Сколько времени обменник может держать USDT на проверке?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Стандартная AML-проверка занимает 15 минут до 4 часов. При ручной проверке спорных случаев: до 24 часов. KYC-верификация при запросе документов: 1-3 рабочих дня. Задержка более 24 часов без объяснений от обменника, тревожный сигнал. Более 72 часов без ответа, основание для официальной претензии.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Что такое AML-проверка в обменнике и почему она останавливает платёж?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">AML-проверка в обменнике: автоматический анализ блокчейн-истории входящего USDT на предмет связи с санкционными адресами, миксерами и нелегальными площадками. Лицензированный обменник обязан проводить такую проверку. Если скоринг превысил порог, операция приостанавливается до ручной проверки. Это стандартная процедура, не признак мошенничества со стороны обменника. Подробнее: <a href="/blog-aml.html" class="text-primary hover:underline">как работает AML для USDT</a>.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Обменник не отвечает уже два дня. Что делать?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Шаг 1: повторное обращение через все каналы (email, Telegram, форма на сайте). Шаг 2: проверить статус обменника на bestchange.ru и exnode.com. Шаг 3: оставить отзыв с деталями ситуации на мониторинге. Шаг 4: если обменник исчез из мониторингов или требует доплату за выдачу средств, немедленно зафиксировать все данные операции и обратиться к специалистам. Не переводить дополнительные суммы под любыми предлогами.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<!-- Author + YMYL block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специалисты по разблокировке USDT и криптоаккаунтов. Более 300 кейсов с 2021 года, включая работу с задержками в обменниках, WebMoney и P2P-платформах. Статья подготовлена на основе реальной практики.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Обменники, P2P, Tether</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего конкретного кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="/usdt.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">lock_open</span>
+          <span class="text-xs text-on-surface-variant">Услуги</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT: все способы и с чего начать</h3>
+      </a>
+      <a href="/blog-guide.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">menu_book</span>
+          <span class="text-xs text-on-surface-variant">Руководство</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Полное руководство: что делать при блокировке USDT</h3>
+      </a>
+      <a href="/blog-aml.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">policy</span>
+          <span class="text-xs text-on-surface-variant">AML</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">AML-блокировки USDT: причины, механизм, апелляция</h3>
+      </a>
+      <a href="/blog-dokumenty.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">description</span>
+          <span class="text-xs text-on-surface-variant">Документы</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Документы для разблокировки USDT: полный список</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">USDT завис в обменнике или WebMoney?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Разберём ваш кейс бесплатно. Определим причину задержки, оценим перспективу возврата и предложим конкретный алгоритм действий.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="/usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="/usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="/usdt-p2p.html" class="hover:text-white transition-colors">USDT на P2P</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Материалы</p>
+          <ul class="space-y-1">
+            <li><a href="/blog-guide.html" class="hover:text-white transition-colors">Руководство</a></li>
+            <li><a href="/blog-aml.html" class="hover:text-white transition-colors">AML-блокировки</a></li>
+            <li><a href="/blog-obmenniki.html" class="hover:text-white transition-colors text-white">Обменники</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Контакт</p>
+          <ul class="space-y-1">
+            <li><a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @crypto_recon</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-xs text-center">
+      <p>© 2026 CryptoRecon. Сайт носит информационный характер.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

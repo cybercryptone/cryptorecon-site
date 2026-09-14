@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Разблокировка USDT на OKX: причины блокировки и пошаговая апелляция | CryptoRecon</title>
+<meta name="description" content="Заблокировали USDT или аккаунт на OKX? Разбираем типы блокировок, реальные сроки апелляции, нужные документы и сравнение с Binance, Bybit, KuCoin. Опыт CryptoRecon."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-okx.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-okx.html"/>
+<meta property="og:title" content="Разблокировка USDT на OKX: апелляция и сроки | CryptoRecon"/>
+<meta property="og:description" content="Заблокировали USDT или аккаунт на OKX? Типы блокировок, реальные сроки, документы и пошаговый алгоритм."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://cryptorecon.io/"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://cryptorecon.io/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "Разблокировка USDT на OKX", "item": "https://cryptorecon.io/blog-okx.html"}
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Разблокировка USDT на OKX: причины блокировки и пошаговая апелляция",
+      "description": "Пошаговое руководство по разблокировке USDT и аккаунта на OKX: типы блокировок, документы, реальные сроки рассмотрения апелляции.",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "author": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
+      "publisher": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
+      "mainEntityOfPage": "https://cryptorecon.io/blog-okx.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Сколько времени занимает апелляция на OKX после блокировки USDT?",
+          "acceptedAnswer": {"@type": "Answer", "text": "KYC-блокировки на OKX рассматриваются за 3-7 рабочих дней. AML-блокировки занимают 14-45 рабочих дней. Если к делу подключились правоохранительные органы, срок может достигать 90 дней. Точный срок зависит от типа блокировки и полноты предоставленных документов."}
+        },
+        {
+          "@type": "Question",
+          "name": "Что такое AML на OKX и почему он блокирует USDT?",
+          "acceptedAnswer": {"@type": "Answer", "text": "OKX использует двухуровневый AML-скоринг: Chainalysis KYT для автоматической проверки транзакций плюс собственный комплаенс-слой. При получении USDT с адресов, связанных с рисковыми категориями (P2P-обменники с плохой репутацией, миксеры, санкционные адреса), система автоматически приостанавливает операции и передаёт кейс в комплаенс-отдел."}
+        },
+        {
+          "@type": "Question",
+          "name": "Какие документы нужны для апелляции на OKX?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Базовый пакет для апелляции на OKX: паспорт или иной документ, удостоверяющий личность; банковские выписки, подтверждающие источник средств; история P2P-сделок с подтверждением платежей; объяснение конкретных транзакций, вызвавших блокировку. Для AML-кейсов дополнительно могут запросить договоры, налоговые декларации или письмо от работодателя."}
+        },
+        {
+          "@type": "Question",
+          "name": "Работает ли OKX с гражданами России в 2026 году?",
+          "acceptedAnswer": {"@type": "Answer", "text": "OKX не ввёл полного запрета для граждан России после 2022 года, в отличие от ряда западных бирж. Российские пользователи могут проходить KYC, однако для них действует режим расширенной верификации. Требования к подтверждению источника средств строже, чем для граждан других юрисдикций."}
+        },
+        {
+          "@type": "Question",
+          "name": "Чем апелляция на OKX отличается от апелляции на Binance?",
+          "acceptedAnswer": {"@type": "Answer", "text": "OKX строже Bybit, но мягче Binance. Binance напрямую интегрирован с Chainalysis и имеет более автоматизированную систему блокировок с длительными сроками рассмотрения (до 45 рабочих дней). OKX использует Chainalysis KYT плюс собственный слой, что даёт немного больше гибкости при апелляции: комплаенс-команда работает в юрисдикции Сейшельских островов и Мальты, что влияет на регуляторное давление и скорость ответов."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">Разблокировка на OKX</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">Биржи</span>
+      <span class="text-on-surface-variant text-xs">14 сентября 2026</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">
+      Разблокировка USDT на OKX: причины блокировки и пошаговая апелляция
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">
+      OKX блокирует USDT по двум сценариям: KYC/верификационные ограничения и AML-блокировки по подозрительным транзакциям. Разбираем каждый тип, реальные сроки рассмотрения апелляции, нужные документы и ключевые отличия от Binance, Bybit и KuCoin.
+    </p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">
+        OKX рассматривает апелляции по USDT за 7-21 рабочий день (KYC) или 14-45 дней (AML). Биржа использует Chainalysis KYT плюс собственный комплаенс-слой: строже Bybit, но мягче Binance. При блокировке нужно запросить официальный тикет через support.okx.com, не выводить средства и собрать документы об источнике USDT. Для сложных кейсов предусмотрен канал compliance@okx.com.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4 prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как OKX проверяет транзакции USDT</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      OKX занимает третье место по объёму торгов среди централизованных бирж и обслуживает миллионы пользователей по всему миру. Комплаенс-отдел биржи работает в юрисдикции Сейшельских островов и Мальты, что определяет регуляторную рамку для принятия решений о блокировках.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      AML-система OKX работает на двух уровнях. Первый: Chainalysis KYT (Know Your Transaction) проверяет входящие и исходящие транзакции в режиме реального времени. Второй: собственный комплаенс-слой OKX анализирует поведенческие паттерны аккаунта, историю транзакций и соответствие заявленного профиля пользователя его реальной активности.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      По строгости AML-политики OKX находится между Bybit и Binance. Bybit исторически был более гибким, Binance, напрямую интегрированный с Chainalysis на уровне торговой инфраструктуры, отличается наиболее жёстким автоматическим скринингом. OKX использует Chainalysis как инструмент, но оставляет больше пространства для ручной проверки и апелляции.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Важная техническая деталь: OKX не блокирует USDT на уровне смарт-контракта TRC-20 или ERC-20. Биржа замораживает средства внутри своей системы. Это означает, что успешная апелляция освобождает средства именно в рамках OKX, но не устраняет риски при выводе на внешний адрес с высоким AML-скорингом.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Два типа блокировок на OKX</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Практика показывает, что блокировки на OKX чётко делятся на два типа с разными алгоритмами решения и сроками рассмотрения.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Тип 1: KYC и верификационные блокировки</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Наиболее распространённый и технически простой тип. OKX запрашивает расширенную верификацию при нескольких обстоятельствах: первый крупный вывод с аккаунта, смена IP-адреса или устройства, активность с нового региона, превышение дневного лимита транзакций без подтверждённого KYC Level 2.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Признаки KYC-блокировки: вход в аккаунт работает, но функции вывода средств и торговли заблокированы. В уведомлении OKX, как правило, явно указывает требование пройти верификацию или загрузить дополнительные документы.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Решение: загрузить запрошенные документы через раздел Identity Verification в личном кабинете. Стандартный срок рассмотрения: 3-7 рабочих дней. При корректных документах часто быстрее. Российские паспорта OKX принимает, однако для граждан из юрисдикций под санкционным мониторингом требует расширенный пакет.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Тип 2: AML-блокировки по подозрительным транзакциям</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Значительно сложнее по процессу и дольше по срокам. Эти блокировки инициируются автоматически, когда Chainalysis KYT или собственный модуль OKX фиксируют транзакции с высоким риском: получение USDT с адресов, связанных с P2P-платформами с плохой репутацией, криптомиксерами, даркнет-маркетплейсами или адресами из санкционных списков OFAC, ЕС или ООН.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Статус "Account Under Review" на OKX означает, что аккаунт передан в комплаенс-отдел для ручной проверки. Вход в аккаунт, как правило, возможен, но все операции заблокированы. Уведомление чаще всего содержит общую формулировку о необходимости проверки без указания конкретных транзакций.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Срок рассмотрения AML-блокировок: 14-45 рабочих дней в стандартных случаях. Если к делу подключаются правоохранительные органы или биржа получает запрос от регулятора, срок может достигать 90 дней. При этом OKX не всегда уведомляет пользователя о факте такого запроса: длительное молчание после апелляции может косвенно указывать именно на этот сценарий.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Сравнение OKX, Binance, Bybit и KuCoin при блокировках USDT</h2>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Параметр</th>
+            <th class="text-left p-4 font-semibold text-primary">OKX</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Binance</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Bybit</th>
+            <th class="text-left p-4 font-semibold text-on-surface">KuCoin</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">AML-инструмент</td>
+            <td class="p-4 text-on-surface">Chainalysis KYT + собственный слой</td>
+            <td class="p-4 text-on-surface">Chainalysis KYT</td>
+            <td class="p-4 text-on-surface">Elliptic + собственный</td>
+            <td class="p-4 text-on-surface">Собственный + партнёрский</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Срок апелляции (KYC)</td>
+            <td class="p-4 text-on-surface">3-7 раб. дней</td>
+            <td class="p-4 text-on-surface">5-14 раб. дней</td>
+            <td class="p-4 text-on-surface">3-7 раб. дней</td>
+            <td class="p-4 text-on-surface">1-7 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Срок апелляции (AML)</td>
+            <td class="p-4 text-on-surface">14-45 раб. дней</td>
+            <td class="p-4 text-on-surface">14-45 раб. дней</td>
+            <td class="p-4 text-on-surface">7-21 раб. день</td>
+            <td class="p-4 text-on-surface">7-30 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Российские пользователи</td>
+            <td class="p-4 text-on-surface">Расширенная KYC, работают</td>
+            <td class="p-4 text-on-surface">Ограниченный доступ</td>
+            <td class="p-4 text-on-surface">Ограниченный доступ</td>
+            <td class="p-4 text-on-surface">Расширенная KYC, работают</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Максимальный срок заморозки</td>
+            <td class="p-4 text-on-surface">До 90 дней при участии ПО</td>
+            <td class="p-4 text-on-surface">До 180 дней</td>
+            <td class="p-4 text-on-surface">До 60 дней</td>
+            <td class="p-4 text-on-surface">До 90 дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Канал апелляции</td>
+            <td class="p-4 text-on-surface">support.okx.com + compliance@okx.com</td>
+            <td class="p-4 text-on-surface">Форма + email</td>
+            <td class="p-4 text-on-surface">Live chat + тикет</td>
+            <td class="p-4 text-on-surface">Support Center + тикет</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Пошаговый алгоритм апелляции на OKX</h2>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 1: Зафиксируйте блокировку и получите тикет</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Войдите в аккаунт и сделайте скриншоты всех уведомлений о блокировке, сообщений от OKX и текущего статуса аккаунта. Если уведомлений нет, но операции недоступны, обратитесь в поддержку через support.okx.com с конкретным запросом: "My account has been restricted. Please provide the reason for the restriction and assign a support ticket number."
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Номер тикета критически важен для всей дальнейшей переписки. Без него сложно отслеживать статус и ссылаться на конкретный кейс при эскалации. Сохраните номер тикета и все email-уведомления от OKX.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 2: Определите тип блокировки</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Запросите у поддержки конкретную причину блокировки. Первый ответ часто содержит общую формулировку. Уточните: является ли блокировка KYC-проблемой или AML/комплаенс-проверкой, какие именно транзакции или действия её вызвали, на каком этапе проверки находится кейс.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Понимание типа блокировки определяет весь дальнейший алгоритм. KYC-проблема решается загрузкой документов напрямую в личном кабинете. AML-кейс требует подробного объяснения происхождения средств и может потребовать обращения на compliance@okx.com для сложных случаев.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 3: Соберите документы об источнике USDT</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Базовый пакет для AML-апелляции на OKX включает несколько категорий документов. Первое: удостоверение личности, паспорт или другой официальный документ с фотографией. Второе: доказательства источника средств. Если USDT получен с P2P-сделки на другой бирже, нужна история сделок с подтверждёнными платежами. Если через обменник, необходима квитанция обменника с реквизитами и суммой. Если от работодателя или контрагента, подойдёт договор и платёжное подтверждение.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Третье: объяснение конкретных транзакций. Если OKX указал на определённые входящие переводы, нужно объяснить их происхождение по каждой транзакции отдельно с хэш-идентификаторами. Четвёртое: банковские выписки, подтверждающие движение средств, которые стали источником криптовалюты.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      OKX принимает документы на русском языке при наличии перевода. Для стандартных KYC-кейсов нотариальный перевод необязателен. Для сложных AML-разбирательств нотариально заверенный перевод повышает шансы на положительный результат и ускоряет рассмотрение.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 4: Подайте апелляцию через support.okx.com</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Апелляция подаётся через официальный портал поддержки OKX. При создании тикета выберите категорию "Account" или "Compliance Issue". В теме сообщения укажите: номер исходного тикета (если уже есть), тип проблемы и примерную сумму заблокированных средств.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Структура апелляционного письма: краткое изложение ситуации в 2-3 предложениях, объяснение источника каждой подозрительной транзакции, список прикреплённых документов с кратким описанием каждого, конкретный запрос действия (разблокировка аккаунта, разрешение на вывод средств на определённый адрес, или частичная разблокировка).
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для сложных AML-кейсов, где стандартный тикет не даёт результата, предусмотрен прямой канал для compliance-команды: compliance@okx.com. Этот адрес используется для кейсов с крупными суммами, юридическими запросами или ситуациями, требующими эскалации выше стандартного уровня поддержки.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 5: Ожидание и мониторинг статуса</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Статус "Account Under Review" означает, что кейс передан комплаенс-команде. В этот период крайне нежелательно повторно подавать апелляции по тому же тикету раньше чем через 14 рабочих дней: это создаёт путаницу и может фактически обнулить очередь рассмотрения.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Не пытайтесь выводить средства или проводить транзакции с заблокированного аккаунта. Такие попытки фиксируются системой и могут интерпретироваться как попытка обойти комплаенс-проверку, что существенно усложнит ситуацию.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Через 14-21 рабочий день, если ответа не поступило, отправьте вежливый follow-up по тому же тикету с запросом обновления статуса. Ссылайтесь на конкретный номер тикета и дату первоначальной апелляции.
+    </p>
+
+    <!-- Timing table -->
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Реальные сроки рассмотрения апелляций на OKX</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Данные из практики CryptoRecon по кейсам 2024-2026 годов:
+    </p>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Тип блокировки</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Минимальный срок</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Типичный срок</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Максимальный срок</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">KYC/верификация</td>
+            <td class="p-4 text-on-surface">1-2 раб. дня</td>
+            <td class="p-4 text-on-surface">3-7 раб. дней</td>
+            <td class="p-4 text-on-surface">14 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">AML, стандартный</td>
+            <td class="p-4 text-on-surface">7 раб. дней</td>
+            <td class="p-4 text-on-surface">14-21 раб. день</td>
+            <td class="p-4 text-on-surface">45 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">AML, запрос доп. документов</td>
+            <td class="p-4 text-on-surface">21 раб. день</td>
+            <td class="p-4 text-on-surface">30-45 раб. дней</td>
+            <td class="p-4 text-on-surface">90 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Запрос правоохранительных органов</td>
+            <td class="p-4 text-on-surface">45 раб. дней</td>
+            <td class="p-4 text-on-surface">60-90 раб. дней</td>
+            <td class="p-4 text-on-surface">Неопределённо</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Принципиальный момент: вопрос "сколько времени будут заблокированы средства после подачи апелляции на OKX" не имеет одного ответа. Сроки определяются категорией блокировки, полнотой документов и наличием внешних запросов к бирже. Если срок рассмотрения превысил 45 рабочих дней без конкретного ответа, это признак нестандартного кейса, требующего другой стратегии.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">OKX и российские пользователи в 2026 году</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      OKX не ввёл полного запрета для граждан России после 2022 года, что выгодно отличает биржу от ряда западных платформ. Регистрация, прохождение KYC с российским паспортом и торговля в целом доступны. Однако режим для российских пользователей существенно ужесточился.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Начиная с 2022 года OKX ввёл обязательную расширенную верификацию для граждан из юрисдикций под санкционным мониторингом. Для российских пользователей это означает более строгую проверку источника средств при первом крупном пополнении или выводе, а также повышенную вероятность AML-флага при транзакциях, типичных для российского P2P-рынка.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Практический риск связан с особенностями российского рынка P2P. Значительная часть рублёвых P2P-сделок проходит через посредников и платёжные системы, которые скоринговые агенты относят к категории повышенного риска. Получение USDT через такие каналы автоматически повышает вероятность AML-проверки при последующем зачислении на OKX.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для снижения рисков: проверяйте AML-скоринг адреса перед получением USDT, сохраняйте историю P2P-сделок с подтверждениями платежей, при суммах от $2000 и выше заблаговременно запрашивайте у контрагента документы о происхождении средств. Подробнее об AML-категориях рисков в нашей статье про <a href="blog-aml-kategorii.html" class="text-primary hover:underline">категории AML-рисков и как они влияют на блокировки</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Разблокировка USDT на OKX: когда нужна профессиональная помощь</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Самостоятельная апелляция работает в большинстве KYC-кейсов и в стандартных AML-случаях с чёткими документами. Профессиональная помощь оправдана в нескольких ситуациях.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Сумма блокировки превышает $5000-10000. При таких суммах ошибки в апелляции обходятся дорого, а правильно составленный пакет документов принципиально влияет на исход. OKX запросил юридическое письмо или нотариально заверенные документы: это нестандартный запрос, указывающий на серьёзность кейса.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Апелляция не получила конкретного ответа более 45 рабочих дней. Это сигнал о необходимости эскалации: либо через compliance@okx.com, либо через внешних специалистов. Кейс связан с транзакциями из санкционного списка или подозрением в мошенничестве: здесь стандартный алгоритм апелляции заведомо недостаточен.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      CryptoRecon работает с блокировками на OKX: анализируем конкретный кейс, помогаем с формированием доказательной базы и составлением апелляционных документов. Подробнее о процессе апелляции в статье про <a href="blog-appeal.html" class="text-primary hover:underline">апелляцию в Tether</a> и в руководстве по <a href="blog-dokumenty.html" class="text-primary hover:underline">документам для разблокировки USDT</a>.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для понимания общего контекста блокировок на биржах читайте сравнительный обзор в статье <a href="blog-birzhi.html" class="text-primary hover:underline">блокировки USDT на биржах</a> и материал про <a href="usdt-aml.html" class="text-primary hover:underline">блокировку USDT по AML</a>. Если вы только разбираетесь в теме, начните с <a href="blog-guide.html" class="text-primary hover:underline">полного руководства по разблокировке USDT</a>.
+    </p>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы о блокировках OKX</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Сколько времени занимает апелляция на OKX после блокировки USDT?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">KYC-блокировки рассматриваются 3-7 рабочих дней. AML-блокировки: 14-45 рабочих дней. При запросе дополнительных документов срок продлевается ещё на 14-21 день. Если к делу подключились правоохранительные органы, срок может достигать 90 дней без гарантии конкретного результата.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Что такое AML на OKX и почему он блокирует USDT?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">OKX использует Chainalysis KYT плюс собственный комплаенс-слой для проверки транзакций. При получении USDT с адресов, связанных с рисковыми категориями (миксеры, санкционные адреса, P2P-обменники с плохой репутацией), система автоматически останавливает операции. Порог срабатывания зависит от риск-профиля конкретного адреса и истории аккаунта.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Какие документы нужны для апелляции на OKX?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Базовый пакет: паспорт, доказательства источника средств (банковские выписки, история P2P-сделок с подтверждениями платежей, квитанции обменников), объяснение подозрительных транзакций с хэшами. Для AML-кейсов могут дополнительно запросить налоговые документы, договоры или письмо от работодателя. Подробный список в статье о <a href="blog-dokumenty.html" class="text-primary hover:underline">документах для разблокировки USDT</a>.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Работает ли OKX с гражданами России в 2026 году?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">OKX не ввёл полного запрета для российских пользователей. Регистрация и KYC с российским паспортом доступны, однако действует режим расширенной верификации. Требования к подтверждению источника средств строже, чем для граждан других юрисдикций. Транзакции, типичные для российского P2P-рынка, повышают вероятность AML-проверки.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Чем апелляция на OKX отличается от апелляции на Binance?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">OKX строже Bybit, но мягче Binance по автоматизации блокировок. Binance имеет более жёсткий скрининг и длинные сроки рассмотрения. OKX оставляет больше пространства для ручной проверки и апелляции. Комплаенс-команда OKX работает в юрисдикции Сейшелей и Мальты, Binance имеет более сложную корпоративную структуру. Сравнение подходов в статье о <a href="blog-binance.html" class="text-primary hover:underline">разблокировке на Binance</a>.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<!-- Author + YMYL block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специалисты по разблокировке USDT и аккаунтов криптобирж. Более 300 кейсов с 2021 года. Статья подготовлена на основе реальной практики работы с блокировками на OKX, Binance, Bybit и KuCoin.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">OKX, Binance, Bybit, KuCoin</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="blog-binance.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">account_balance</span>
+          <span class="text-xs text-on-surface-variant">Биржи</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT на Binance: что делать и куда обращаться</h3>
+      </a>
+      <a href="blog-bybit.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">account_balance</span>
+          <span class="text-xs text-on-surface-variant">Биржи</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT на Bybit: пошаговое руководство</h3>
+      </a>
+      <a href="blog-kucoin.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">account_balance</span>
+          <span class="text-xs text-on-surface-variant">Биржи</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT на KuCoin: сроки, апелляция и пошаговый алгоритм</h3>
+      </a>
+      <a href="blog-appeal.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">mail</span>
+          <span class="text-xs text-on-surface-variant">Апелляция</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Апелляция в Tether: как написать письмо, которое не проигнорируют</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">USDT заблокирован на OKX?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Разберём ваш кейс бесплатно. Определим тип блокировки, оценим шансы и предложим алгоритм действий.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="usdt-yurist.html" class="hover:text-white transition-colors">Юридическая помощь</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Биржи</p>
+          <ul class="space-y-1">
+            <li><a href="blog-binance.html" class="hover:text-white transition-colors">Binance</a></li>
+            <li><a href="blog-bybit.html" class="hover:text-white transition-colors">Bybit</a></li>
+            <li><a href="blog-kucoin.html" class="hover:text-white transition-colors">KuCoin</a></li>
+            <li><a href="blog-okx.html" class="hover:text-white transition-colors text-white">OKX</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Контакт</p>
+          <ul class="space-y-1">
+            <li><a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @crypto_recon</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-xs text-center">
+      <p>© 2026 CryptoRecon. Сайт носит информационный характер.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

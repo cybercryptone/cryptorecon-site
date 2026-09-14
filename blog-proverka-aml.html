@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Как проверить AML-скоринг USDT адреса до получения: инструменты и инструкция | CryptoRecon</title>
+<meta name="description" content="Как проверить AML-риск USDT адреса перед P2P сделкой: AMLBot, Crystal Blockchain, Chainalysis Go AML. Что значат уровни риска и что делать если адрес рисковый."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-proverka-aml.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-proverka-aml.html"/>
+<meta property="og:title" content="Как проверить AML-скоринг USDT адреса до получения | CryptoRecon"/>
+<meta property="og:description" content="Пошаговая инструкция: проверить AML USDT адреса через AMLBot, Crystal Blockchain, Chainalysis Go перед P2P сделкой. Таблица инструментов и уровни риска."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://cryptorecon.io/"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://cryptorecon.io/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "Как проверить AML-скоринг USDT адреса", "item": "https://cryptorecon.io/blog-proverka-aml.html"}
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Как проверить AML-скоринг USDT адреса до получения: инструменты и инструкция",
+      "description": "Пошаговое руководство по проверке AML-риска USDT адреса перед P2P сделкой. AMLBot, Crystal Blockchain, Chainalysis Go: сравнение, уровни риска, алгоритм действий.",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "author": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
+      "publisher": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io"},
+      "mainEntityOfPage": "https://cryptorecon.io/blog-proverka-aml.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Что такое AML-скоринг криптоадреса?",
+          "acceptedAnswer": {"@type": "Answer", "text": "AML-скоринг (Anti-Money Laundering scoring) - это числовая оценка риска конкретного блокчейн-адреса от 0 до 100%. Инструменты вроде AMLBot, Crystal Blockchain или Chainalysis анализируют историю транзакций адреса и его связи с адресами из категорий высокого риска: миксеры, даркнет, санкционные кошельки, мошеннические схемы. Чем выше процент риска, тем выше вероятность, что биржа заблокирует USDT при получении."}
+        },
+        {
+          "@type": "Question",
+          "name": "Какой инструмент лучше для проверки адреса перед P2P сделкой?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Для быстрой проверки перед P2P сделкой оптимален AMLBot в Telegram (@amlbot): бесплатные тарифы есть, проверка занимает секунды. Для более глубокого анализа с детализацией по категориям риска используйте Crystal Blockchain или Chainalysis Go (бесплатный инструмент на сайте chainalysis.com/free-tools). Перед крупными суммами от $5000 рекомендуется проверка двумя разными инструментами."}
+        },
+        {
+          "@type": "Question",
+          "name": "При каком проценте риска биржа заблокирует USDT?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Единого порога нет: разные биржи применяют разные пороги. Binance и Bybit автоматически блокируют транзакции при риске от 50-60% по Chainalysis. KuCoin и ряд других платформ ориентируются на риск выше 75%. Пороги также зависят от конкретной категории риска: адрес с 40% риска по категории 'даркнет' может вызвать блокировку, тогда как 40% по категории 'P2P обменник' - нет."}
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли получить USDT с адреса с риском 30%?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Риск 30% находится в жёлтой зоне. Большинство крупных бирж не блокируют автоматически при таком уровне, однако при наличии прямых связей с категориями высокого риска (даркнет, миксеры) даже 25-30% могут вызвать ручную проверку. Рекомендуется изучить, из каких именно категорий складывается этот процент, прежде чем принимать средства."}
+        },
+        {
+          "@type": "Question",
+          "name": "Как часто нужно проверять адрес контрагента?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Перед каждой новой P2P сделкой, если прошло более 2 недель с последней проверки. AML-скоринг адреса меняется: к нему могут поступить средства от рисковых источников уже после предыдущей проверки. При регулярной работе с одним контрагентом достаточно еженедельной проверки."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">Проверка AML-скоринга USDT адреса</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">AML</span>
+      <span class="text-on-surface-variant text-xs">14 сентября 2026</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">
+      Как проверить AML-скоринг USDT адреса до получения: инструменты и инструкция
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">
+      Перед P2P сделкой или получением USDT от незнакомого контрагента проверка AML-скоринга адреса занимает 30 секунд и может спасти от блокировки на бирже. Разбираем конкретные инструменты, уровни риска и что делать, если адрес оказался рисковым.
+    </p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">
+        Проверить AML-скоринг USDT адреса можно тремя способами: через Telegram-бот @amlbot (быстро, есть бесплатные проверки), через Crystal Blockchain (детальный анализ по категориям риска) или через Chainalysis Go на сайте chainalysis.com/free-tools (бесплатно, без регистрации). Адрес с риском до 25% считается чистым. Риск 25-50% требует анализа категорий. Риск выше 50% означает высокую вероятность блокировки на Binance, Bybit и других крупных биржах.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4 prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Зачем проверять AML-скоринг до получения USDT</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Большинство пользователей узнают об AML-скоринге после того, как биржа уже заблокировала их аккаунт или задержала вывод. К тому моменту деньги уже приняты, документов о происхождении нет, а разблокировка занимает недели. Проверка до получения требует 30 секунд и стоит в среднем от 0 до 0.5 доллара за запрос.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Логика AML-скоринга проста: каждый USDT-адрес в сети TRON (TRC-20) или Ethereum (ERC-20) имеет историю транзакций. Если по этой цепочке прослеживаются связи с адресами, которые ранее использовались в нелегальных схемах, миксерах, даркнет-маркетах или попали в санкционные списки, скоринговые инструменты присваивают адресу высокий процент риска.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Биржи, подключённые к скоринговым системам (Binance через Chainalysis, Bybit через Elliptic, ряд других платформ через собственные решения), автоматически проверяют каждый входящий перевод. Если скоринг превышает установленный порог, транзакция задерживается или аккаунт получателя блокируется. Подробнее о механике блокировок по AML описано в нашей статье <a href="/usdt-aml.html" class="text-primary hover:underline">блокировка USDT по AML</a>.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Особенно актуально это для P2P сделок. При работе через P2P-платформы контрагент может быть случайным пользователем, чей кошелёк прошёл через сомнительные обменники. Подробно о специфике P2P рисков написано в материале <a href="/usdt-p2p.html" class="text-primary hover:underline">USDT и P2P риски</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Инструмент 1: AMLBot в Telegram (@amlbot)</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      AMLBot - наиболее доступный инструмент для быстрой проверки адресов без технических навыков. Работает как Telegram-бот, что делает его удобным для проверки прямо во время P2P переговоров.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Как проверить адрес через AMLBot: пошаговая инструкция</h3>
+    <ol class="list-decimal list-outside pl-6 space-y-3 mb-6 text-on-surface leading-relaxed">
+      <li>Откройте Telegram и найдите бот @amlbot (официальный, проверьте количество подписчиков и верификацию).</li>
+      <li>Запустите бота командой /start.</li>
+      <li>Введите или вставьте адрес USDT кошелька контрагента. Для TRC-20 адрес начинается с буквы T и содержит 34 символа. Для ERC-20 адрес начинается с 0x.</li>
+      <li>Бот запросит выбор сети: выберите TRON для TRC-20 или ETH для ERC-20 USDT.</li>
+      <li>Через 5-15 секунд бот выдаст результат: процент риска, разбивку по категориям (миксеры, даркнет, P2P обменники, биржи, и другие), а также общий вердикт.</li>
+    </ol>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Бесплатный тариф AMLBot позволяет выполнять ограниченное количество проверок в месяц. Платные тарифы начинаются от нескольких долларов за пакет проверок. Для регулярных P2P сделок имеет смысл рассмотреть платный пакет: стоимость одной проверки ниже, чем потенциальный ущерб от заблокированного перевода.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      AMLBot использует собственную базу данных рисковых адресов и алгоритмы кластеризации. Результаты могут незначительно отличаться от данных Crystal или Chainalysis, поскольку каждый провайдер использует собственную методологию и базы данных. Для высоких ставок рекомендуется перекрёстная проверка двумя инструментами.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Инструмент 2: Crystal Blockchain</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Crystal Blockchain - профессиональный инструмент анализа блокчейн-транзакций, используемый биржами и комплаенс-командами. Предоставляет детальную разбивку по категориям риска, визуализацию цепочки транзакций и отчёты в формате PDF.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Как проверить адрес через Crystal Blockchain</h3>
+    <ol class="list-decimal list-outside pl-6 space-y-3 mb-6 text-on-surface leading-relaxed">
+      <li>Перейдите на сайт crystalblockchain.com и зарегистрируйтесь для получения доступа к базовым функциям (пробный период доступен).</li>
+      <li>В поисковой строке введите адрес USDT кошелька. Crystal автоматически определяет сеть.</li>
+      <li>Изучите отчёт: общий Risk Score (0-100%), разбивку по категориям источников средств, граф связей адреса с другими кошельками.</li>
+      <li>Обратите внимание на раздел "Direct Exposure" (прямые связи) и "Indirect Exposure" (косвенные). Прямые связи с рисковыми адресами критичнее косвенных.</li>
+      <li>При необходимости выгрузите PDF-отчёт для документирования или апелляции.</li>
+    </ol>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Crystal Blockchain особенно ценен для ситуаций, когда биржа уже заблокировала средства и требует AML-отчёт о происхождении. В этом контексте Crystal выступает не только инструментом превентивной проверки, но и источником официальной документации для апелляции. Подробнее о связи Crystal с процедурой разблокировки написано в материале о <a href="/blog-chainalysis.html" class="text-primary hover:underline">Chainalysis и инструментах AML</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Инструмент 3: Chainalysis Go (бесплатно)</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Chainalysis - наиболее известный игрок рынка блокчейн-аналитики, чьи данные используют Binance, Coinbase и многие другие крупные биржи. Компания предоставляет бесплатный публичный инструмент для базовой проверки адресов.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Как проверить адрес через Chainalysis Go</h3>
+    <ol class="list-decimal list-outside pl-6 space-y-3 mb-6 text-on-surface leading-relaxed">
+      <li>Перейдите на chainalysis.com/free-tools в браузере.</li>
+      <li>Найдите раздел Address Screening или воспользуйтесь прямой формой ввода адреса на странице.</li>
+      <li>Вставьте адрес кошелька. Сервис поддерживает Bitcoin, Ethereum, TRON и другие основные сети.</li>
+      <li>Chainalysis Go покажет принадлежность адреса к известным кластерам (биржам, сервисам) и наличие санкционных связей. Детальный скоринг по подкатегориям доступен в платной версии Chainalysis KYT.</li>
+      <li>Если адрес ассоциирован с биржей (например, это депозитный адрес Binance), скоринг будет низким независимо от истории средств.</li>
+    </ol>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Важное ограничение Chainalysis Go: бесплатная версия показывает принадлежность адреса к кластерам и наличие санкций, но не даёт развёрнутого процентного скоринга, как платные продукты. Для предварительной проверки на наличие прямых "красных флагов" этого достаточно. Для углублённого анализа нужен либо платный Chainalysis KYT, либо Crystal Blockchain.
+    </p>
+
+    <!-- Tool comparison table -->
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Сравнение инструментов проверки AML-скоринга</h2>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Инструмент</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Стоимость</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Точность</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Глубина анализа</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Как использовать</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 font-medium text-on-surface">AMLBot (@amlbot)</td>
+            <td class="p-4 text-on-surface">Бесплатно (лимит) / от $5 пакет</td>
+            <td class="p-4 text-on-surface">Средняя</td>
+            <td class="p-4 text-on-surface">Процент риска, категории источников</td>
+            <td class="p-4 text-on-surface">Telegram-бот, результат за 10-15 сек</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 font-medium text-on-surface">Crystal Blockchain</td>
+            <td class="p-4 text-on-surface">Пробный период / платные тарифы</td>
+            <td class="p-4 text-on-surface">Высокая</td>
+            <td class="p-4 text-on-surface">Граф связей, прямое и косвенное воздействие, PDF-отчёт</td>
+            <td class="p-4 text-on-surface">Web-интерфейс, регистрация обязательна</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 font-medium text-on-surface">Chainalysis Go</td>
+            <td class="p-4 text-on-surface">Бесплатно</td>
+            <td class="p-4 text-on-surface">Высокая (по санкциям), ограниченная (по скорингу)</td>
+            <td class="p-4 text-on-surface">Принадлежность кластеру, санкционные связи</td>
+            <td class="p-4 text-on-surface">Web, без регистрации</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 font-medium text-on-surface">CoinPath (BitQuery)</td>
+            <td class="p-4 text-on-surface">API, платно по запросам</td>
+            <td class="p-4 text-on-surface">Высокая</td>
+            <td class="p-4 text-on-surface">Полная история транзакций, граф потоков средств</td>
+            <td class="p-4 text-on-surface">API-интеграция, требует технических знаний</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Risk levels table -->
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Таблица уровней риска: что означает каждый диапазон</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Скоринговые системы присваивают адресам числовой показатель риска от 0 до 100%. Вот как интерпретировать разные диапазоны применительно к реальной практике бирж.
+    </p>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Уровень риска</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Что означает</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Реакция бирж</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Рекомендация</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4">
+              <span class="inline-flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-green-500 flex-shrink-0"></span>
+                <span class="font-semibold text-on-surface">0-25%</span>
+              </span>
+            </td>
+            <td class="p-4 text-on-surface">Чистый адрес. Большинство средств прошло через биржи, p2p-платформы с хорошей репутацией или прямые переводы</td>
+            <td class="p-4 text-on-surface">Транзакция проходит без задержек на всех крупных биржах</td>
+            <td class="p-4 text-green-700 font-medium">Принимать без ограничений</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4">
+              <span class="inline-flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-yellow-400 flex-shrink-0"></span>
+                <span class="font-semibold text-on-surface">25-50%</span>
+              </span>
+            </td>
+            <td class="p-4 text-on-surface">Повышенный риск. Косвенные связи с рисковыми категориями или прямые с P2P обменниками средней репутации</td>
+            <td class="p-4 text-on-surface">Автоблокировки редки, но возможна ручная проверка. Binance может запросить документы</td>
+            <td class="p-4 text-yellow-700 font-medium">Изучить категории риска, при необходимости запросить у отправителя источник средств</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4">
+              <span class="inline-flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-orange-500 flex-shrink-0"></span>
+                <span class="font-semibold text-on-surface">50-75%</span>
+              </span>
+            </td>
+            <td class="p-4 text-on-surface">Высокий риск. Прямые или значительные косвенные связи с миксерами, тёмными рынками, сервисами высокого риска</td>
+            <td class="p-4 text-on-surface">Автоматическая блокировка на Binance, Bybit, Coinbase. KuCoin - с вероятностью 60-70%. Ручная проверка обязательна</td>
+            <td class="p-4 text-orange-700 font-medium">Принимать только при наличии документов о происхождении средств и готовности к апелляции</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4">
+              <span class="inline-flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-red-600 flex-shrink-0"></span>
+                <span class="font-semibold text-on-surface">75-100%</span>
+              </span>
+            </td>
+            <td class="p-4 text-on-surface">Критический риск. Прямые связи с санкционными адресами, известными мошенническими схемами, даркнет-маркетами</td>
+            <td class="p-4 text-on-surface">Блокировка на всех регулируемых платформах. Возможна заморозка аккаунта получателя. Tether может заморозить адрес напрямую</td>
+            <td class="p-4 text-red-700 font-medium">Отказаться от сделки. Принятие таких средств создаёт серьёзные юридические и операционные риски</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Важная оговорка: процентный показатель не единственный критерий. Критически важна категория риска. Адрес с 30% риска по категории "гемблинг" (азартные игры) воспринимается биржами мягче, чем адрес с 20% риска по категории "даркнет". Всегда смотрите на детализацию, а не только на итоговый процент. Подробнее о том, как биржи классифицируют категории рисков, написано в статье <a href="/blog-aml-kategorii.html" class="text-primary hover:underline">категории AML-риска для USDT</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Что делать, если адрес показал высокий риск</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Получив результат проверки с риском выше 50%, у вас есть три варианта действий. Выбор зависит от суммы, характера отношений с контрагентом и вашей готовности к возможным осложнениям.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Вариант 1: Отказаться от сделки</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Наиболее безопасный сценарий. Просто сообщите контрагенту, что не можете принять средства с данного адреса, и предложите перевод с другого кошелька или через другую платформу. Добросовестный контрагент, как правило, согласится. Отказ от сделки без объяснений или с требованием альтернативного кошелька - стандартная практика в P2P торговле.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Вариант 2: Запросить у отправителя документы о происхождении средств</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если сделка для вас важна и контрагент вызывает доверие, запросите подтверждение источника средств. Это могут быть: выписки с биржи, где был куплен USDT, квитанция обменника, история P2P сделки. Эти документы не гарантируют отсутствия проблем на бирже, но существенно упрощают апелляцию, если блокировка всё же произойдёт.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Храните эти документы. В случае блокировки биржа именно эти материалы попросит предоставить при апелляции. Подробнее о документах для разблокировки написано в нашем общем руководстве по <a href="/blog-guide.html" class="text-primary hover:underline">разблокировке USDT</a>.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Вариант 3: Принять средства с осознанием рисков</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      В ряде случаев пользователи принимают решение принять средства даже при повышенном скоринге, например, при доверенном контрагенте и ясном происхождении средств. В этом случае рекомендуется: использовать для получения биржу с более мягким AML-порогом, хранить все документы о сделке, не переводить средства на регулируемые платформы с высоким порогом до получения дополнительных документов.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Это осознанный выбор с принятием риска блокировки. Если блокировка произошла, алгоритм действий описан в статье <a href="/blog-aml.html" class="text-primary hover:underline">что делать при блокировке USDT по AML</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как AML-скоринг связан с защитой USDT от блокировки</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Проверка адреса перед получением - это первый уровень защиты. Второй уровень - понимание того, почему конкретные категории средств становятся рисковыми. Основные источники проблем в P2P торговле: обменники без должной политики AML, адреса, прошедшие через криптомиксеры для "отмывания" средств, и цепочки транзакций, в которых где-то участвовали скомпрометированные адреса.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Превентивные меры описаны детально в материале <a href="/blog-profilaktika.html" class="text-primary hover:underline">профилактика блокировок USDT</a>. Если вас интересует, почему именно USDT (Tether) чаще других стейблкоинов оказывается в центре AML-проверок, читайте статью <a href="/blog-pochemu-tether.html" class="text-primary hover:underline">почему Tether блокируют чаще других</a>.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для углублённого понимания того, что такое AML применительно к криптовалютам и как работает система проверок на уровне биржи, рекомендуем материал <a href="/blog-aml.html" class="text-primary hover:underline">AML в криптовалюте: полный разбор</a>. Там же описан алгоритм действий при уже состоявшейся блокировке.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Особенности проверки для разных сетей USDT</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      USDT существует в нескольких сетях, и скоринг для каждой имеет нюансы. TRC-20 (TRON) - наиболее популярная сеть для P2P торговли в СНГ из-за низких комиссий. AMLBot и Crystal поддерживают TRC-20 в полном объёме.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      ERC-20 (Ethereum) - старейшая сеть для USDT. Chainalysis изначально разрабатывался именно для Ethereum, поэтому покрытие и точность для ERC-20 адресов несколько выше. Для TRC-20 все три основных инструмента также работают корректно, однако база данных Chainalysis по TRON транзакциям исторически менее полная, чем по Ethereum.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      При проверке всегда убедитесь, что указываете правильную сеть. Один и тот же адрес может технически существовать в нескольких сетях (особенно для Ethereum-совместимых), но история транзакций и, соответственно, скоринг будут разными. Перепутать сеть при проверке означает получить нерелевантный результат.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Практические советы по регулярной проверке адресов</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для тех, кто ведёт регулярную P2P торговлю, разовая проверка перед каждой сделкой становится рутиной. Несколько практических рекомендаций, которые упрощают процесс.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Проверяйте адрес отправителя, а не адрес платёжной системы. Ошибка: проверять адрес банка или P2P-платформы. Правильно: проверять конкретный USDT-адрес, с которого придут средства. Если контрагент говорит, что пришлёт с другого адреса, проверяйте тот, который он назовёт непосредственно перед переводом.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Не проверяйте задним числом. Если вы уже получили USDT и хотите проверить адрес отправителя, вы всё равно узнаете полезную информацию для документации, но предотвратить возможную блокировку уже не сможете. Проверка работает только превентивно.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Сохраняйте скриншоты результатов проверки. Если биржа впоследствии заблокирует перевод, скриншот AML-проверки с датой и результатами служит доказательством вашей добросовестности при апелляции. Подробнее об апелляционном процессе написано в руководстве <a href="/usdt.html" class="text-primary hover:underline">разблокировка USDT</a>.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для нерегулярных пользователей достаточно бесплатных инструментов: AMLBot для быстрой первичной проверки, Chainalysis Go для проверки санкционных связей. Для профессионального уровня, когда суммы исчисляются десятками тысяч долларов, Crystal Blockchain с платным тарифом оправдывает инвестицию. Детальный анализ по AML-инструментам и тому, как они работают на уровне биржи, представлен в статье <a href="/blog-chainalysis.html" class="text-primary hover:underline">Chainalysis в системе AML-контроля</a>.
+    </p>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы о проверке AML-скоринга USDT</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Что такое AML-скоринг криптоадреса?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">AML-скоринг - числовая оценка риска блокчейн-адреса от 0 до 100%. Инструменты анализируют историю транзакций и связи адреса с категориями высокого риска: миксеры, даркнет, санкционные кошельки, мошеннические схемы. Чем выше процент риска, тем выше вероятность, что биржа заблокирует USDT при получении.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Какой инструмент лучше для проверки адреса перед P2P сделкой?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Для быстрой проверки оптимален AMLBot в Telegram (@amlbot): есть бесплатные проверки, результат за 10-15 секунд. Для глубокого анализа с детализацией по категориям используйте Crystal Blockchain или Chainalysis Go (chainalysis.com/free-tools, бесплатно, без регистрации). При суммах от $5000 рекомендуется проверка двумя разными инструментами.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            При каком проценте риска биржа заблокирует USDT?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Единого порога нет. Binance и Bybit автоматически блокируют при риске от 50-60% по Chainalysis. KuCoin ориентируется на риск выше 75%. Пороги также зависят от конкретной категории: 40% по категории "даркнет" может вызвать блокировку, тогда как 40% по категории "P2P обменник" - нет. Подробнее читайте в статье о категориях AML-риска.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Можно ли получить USDT с адреса с риском 30%?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Риск 30% находится в жёлтой зоне. Большинство крупных бирж не блокируют автоматически при таком уровне, однако при наличии прямых связей с категориями высокого риска (даркнет, миксеры) даже 25-30% могут вызвать ручную проверку. Рекомендуется изучить, из каких именно категорий складывается этот процент, прежде чем принимать средства.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Как часто нужно проверять адрес контрагента?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Перед каждой новой P2P сделкой, если прошло более 2 недель с последней проверки. AML-скоринг адреса меняется: к нему могут поступить средства от рисковых источников уже после предыдущей проверки. При регулярной работе с одним контрагентом достаточно еженедельной проверки.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<!-- Author + YMYL block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специалисты по разблокировке USDT и AML-анализу криптовалютных транзакций. Более 300 кейсов с 2021 года. Статья подготовлена на основе практики работы с инструментами AMLBot, Crystal Blockchain и Chainalysis при разборе случаев блокировки USDT на Binance, KuCoin, Bybit.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">AMLBot, Crystal, Chainalysis</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. AML-скоринговые данные актуальны на дату публикации и могут изменяться. Для оценки конкретного кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="/blog-aml.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">shield</span>
+          <span class="text-xs text-on-surface-variant">AML</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">AML в криптовалюте: полный разбор механизма блокировок USDT</h3>
+      </a>
+      <a href="/blog-aml-kategorii.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">category</span>
+          <span class="text-xs text-on-surface-variant">AML</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Категории AML-риска для USDT: как биржи классифицируют источники средств</h3>
+      </a>
+      <a href="/blog-profilaktika.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">health_and_safety</span>
+          <span class="text-xs text-on-surface-variant">Профилактика</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Профилактика блокировок USDT: как снизить риски заранее</h3>
+      </a>
+      <a href="/blog-guide.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">menu_book</span>
+          <span class="text-xs text-on-surface-variant">Руководство</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Полное руководство по разблокировке USDT: от апелляции до документов</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">USDT заблокирован после P2P сделки?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Разберём ваш кейс бесплатно. Определим причину блокировки, проведём AML-анализ адресов и предложим конкретный алгоритм разблокировки.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="/usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="/usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="/usdt-p2p.html" class="hover:text-white transition-colors">P2P риски</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">AML</p>
+          <ul class="space-y-1">
+            <li><a href="/blog-aml.html" class="hover:text-white transition-colors">Что такое AML</a></li>
+            <li><a href="/blog-aml-kategorii.html" class="hover:text-white transition-colors">Категории риска</a></li>
+            <li><a href="/blog-proverka-aml.html" class="hover:text-white transition-colors text-white">Проверка адреса</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Контакт</p>
+          <ul class="space-y-1">
+            <li><a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @crypto_recon</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-xs text-center">
+      <p>© 2026 CryptoRecon. Сайт носит информационный характер.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
