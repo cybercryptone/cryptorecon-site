@@ -14,6 +14,22 @@
         "value": "inter",
         "createdAt": "2026-08-29T19:22:03.657Z",
         "reason": "Inter is the site-wide body font established across all 20+ pages — intentional design system choice, not per-file decision"
+      },
+      {
+        "rule": "blog-pochemu-tether.html",
+        "value": "side-tab",
+        "createdAt": "2026-09-13T20:37:53.999Z"
+      },
+      {
+        "rule": "blog-kucoin.html",
+        "value": "side-tab",
+        "createdAt": "2026-09-13T20:37:54.088Z"
+      },
+      {
+        "rule": "side-tab",
+        "value": ".bg-primary\\/5.border-l-4",
+        "createdAt": "2026-09-14T00:00:00.000Z",
+        "reason": "Korotko quick-answer box: border-l-4 border-primary is the site-wide AEO pattern used in all blog articles — intentional design element, not an AI-generated card accent"
       }
     ]
   }
