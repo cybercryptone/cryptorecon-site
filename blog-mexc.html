@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MEXC заблокировал аккаунт: причины блокировки P2P USDT и разблокировка | CryptoRecon</title>
+<meta name="description" content="MEXC заблокировал аккаунт или USDT после P2P? Разбираем типы блокировок, почему MEXC агрессивнее других бирж по AML, реальные сроки апелляции и пошаговый алгоритм разблокировки."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-mexc.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-mexc.html"/>
+<meta property="og:title" content="MEXC заблокировал аккаунт: P2P блокировка USDT и разблокировка | CryptoRecon"/>
+<meta property="og:description" content="MEXC заблокировал аккаунт или USDT после P2P? Типы блокировок, реальные сроки, документы и пошаговый алгоритм разблокировки."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://cryptorecon.io/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Разблокировка аккаунта и USDT на MEXC",
+          "item": "https://cryptorecon.io/blog-mexc.html"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Разблокировка USDT и аккаунта на MEXC: причины блокировки после P2P, апелляция, сроки",
+      "description": "Пошаговое руководство по разблокировке USDT и аккаунта на MEXC после P2P-сделок: типы блокировок, почему MEXC жёстче других бирж по AML, документы и реальные сроки рассмотрения апелляции.",
+      "datePublished": "2026-09-24",
+      "dateModified": "2026-09-24",
+      "author": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cryptorecon.io/assets/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "mainEntityOfPage": "https://cryptorecon.io/blog-mexc.html",
+      "image": "https://cryptorecon.io/assets/logo.png"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Почему MEXC заблокировал аккаунт без предупреждения?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MEXC использует собственную AML-систему с более низкими порогами срабатывания, чем большинство других бирж. Блокировка происходит автоматически при достижении риск-балла 25-30%, тогда как на OKX или Gate.io порог составляет 50%+. Именно поэтому MEXC может заморозить аккаунт без предупреждения сразу после получения USDT с P2P-сделки."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько времени занимает разблокировка аккаунта на MEXC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "KYC-блокировки на MEXC рассматриваются за 5-14 рабочих дней. AML-блокировки после P2P занимают 21-60 рабочих дней. Может потребоваться видеоверификация, что продлевает срок. При повторных нарушениях MEXC вправе заблокировать аккаунт постоянно."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Куда обращаться при блокировке USDT на MEXC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Первый шаг: открыть тикет через support.mexc.com. Для сложных AML-кейсов и эскалации предусмотрен прямой канал compliance@mexc.com. У MEXC есть русскоязычная служба поддержки, однако все решения о разблокировке принимает отдел комплаенса, а не операторы поддержки."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие документы нужны для разблокировки MEXC после P2P?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для разблокировки MEXC после P2P-блокировки потребуются: паспорт или иной документ, удостоверяющий личность; история P2P-сделок с подтверждёнными платежами; банковские выписки по транзакциям, связанным с покупкой USDT; объяснение источника средств для каждого депозита свыше 1000 долларов. MEXC требует документацию об источнике средств для всех депозитов от 1000 долларов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Чем MEXC P2P блокировка отличается от блокировки на Binance или Gate.io?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MEXC применяет собственную AML-систему с порогом блокировки 25-30% по риск-баллу, что значительно ниже стандарта 50%+ на Binance, Gate.io и OKX. Это делает MEXC P2P блокировки более частыми и менее предсказуемыми. При этом MEXC остаётся основной P2P-платформой для российских пользователей после ухода Binance P2P с российского рынка, что создаёт высокую концентрацию рисков."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">Разблокировка на MEXC</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">Биржи</span>
+      <span class="text-on-surface-variant text-xs">24 сентября 2026</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">
+      Разблокировка USDT и аккаунта на MEXC: причины блокировки после P2P, апелляция, сроки
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">
+      MEXC заблокировал аккаунт или USDT после P2P-сделки? Биржа использует собственную AML-систему с порогом срабатывания 25-30%, что делает её агрессивнее большинства конкурентов. Разбираем типы блокировок, реальные сроки апелляции, нужные документы и ключевые отличия MEXC P2P блокировки от Gate.io, OKX и Binance.
+    </p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">
+        MEXC рассматривает апелляции за 5-14 дней (KYC) или 21-60 дней (AML/P2P). Биржа применяет собственную AML-систему с порогом блокировки 25-30% по риск-баллу, что значительно ниже стандарта других платформ. Блокировки часто происходят без предупреждения сразу после зачисления P2P USDT. При блокировке: открыть тикет через support.mexc.com, не пытаться выводить средства, собрать документы об источнике средств для каждого депозита свыше 1000 долларов. Для эскалации: compliance@mexc.com.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4"><div class="prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как MEXC проверяет транзакции USDT</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      MEXC Global занимает особое место на российском P2P-рынке: после того как Binance P2P прекратил работу с российскими пользователями, MEXC стал основной площадкой для обмена рублей на USDT. Этот статус определяет как объём операций, так и специфику рисков для пользователей из России.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      В отличие от OKX или Gate.io, которые интегрируют внешние инструменты наподобие Chainalysis KYT, MEXC использует собственную внутреннюю AML-систему. Принципиальное отличие этой системы: порог срабатывания блокировки установлен на уровне 25-30% по риск-баллу транзакции, тогда как у большинства других крупных бирж этот порог составляет 50% и выше.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Это означает, что транзакции, которые спокойно проходят на Binance, OKX или Gate.io, могут автоматически заблокировать аккаунт на MEXC. При этом система срабатывает без предупреждения: никакого письма с запросом документов, никакого временного ограничения с предложением пройти дополнительную верификацию. Аккаунт просто замораживается.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Особую роль в MEXC AML-скоринге играет источник USDT. Биржа уделяет повышенное внимание P2P-транзакциям, поскольку значительная часть P2P USDT на MEXC поступает через непроверенных посредников и платёжные системы с неустановленным происхождением средств. Для российского рынка это критично: типичная цепочка рублевого P2P на MEXC включает несколько промежуточных адресов, каждый из которых добавляет риск-баллы к итоговому скорингу получателя.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Отдельный триггер для MEXC: все депозиты свыше 1000 долларов требуют документального подтверждения источника средств. Это не просто формальность: отсутствие таких документов при последующей проверке становится основанием для блокировки задним числом, даже если транзакция прошла без проблем в момент зачисления. Подробнее о том, какие документы подготовить заранее, в статье о <a href="blog-dokumenty.html" class="text-primary hover:underline">документах для разблокировки USDT</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Типы блокировок на MEXC</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Практика работы с кейсами MEXC показывает три принципиально разных типа блокировок с разными алгоритмами решения, сроками и вероятностью положительного исхода.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">KYC-верификация</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Наиболее управляемый тип. MEXC запрашивает расширенную верификацию при нескольких обстоятельствах: первое крупное пополнение или вывод, активность с нового IP-адреса или устройства, превышение дневных лимитов без подтверждённого KYC Level 2, смена персональных данных или контактной информации.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Признаки KYC-блокировки: вход в аккаунт возможен, в личном кабинете есть уведомление о необходимости верификации, функции вывода и торговли заблокированы. MEXC, как правило, явно указывает, какие документы нужно загрузить. Срок рассмотрения: 5-14 рабочих дней. При корректных документах часто быстрее.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Российские паспорта MEXC принимает. Для пользователей из юрисдикций под санкционным мониторингом биржа может запросить расширенный пакет: доказательства места проживания (utility bill или банковская выписка), а иногда и видеоверификацию через систему MEXC.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">AML-блокировка по P2P-транзакциям</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Наиболее распространённый и сложный тип для российских пользователей. Блокировка происходит автоматически, когда AML-система MEXC фиксирует превышение риск-порога по входящей транзакции. Характерная особенность: блокировка наступает без предупреждения, часто в момент или сразу после зачисления USDT с P2P-сделки.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Типичный сценарий: пользователь купил USDT на MEXC P2P у продавца, который получил криптовалюту через цепочку посредников с плохим AML-рейтингом. В момент зачисления система MEXC присвоила транзакции риск-балл 28-35%, что превысило внутренний порог биржи в 25%. Аккаунт заморозился без какого-либо предупреждения.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Срок рассмотрения AML-блокировок на MEXC: 21-60 рабочих дней. В отличие от KYC-кейсов, здесь потребуется подробное объяснение каждой подозрительной транзакции с доказательствами источника средств. MEXC может дополнительно запросить видеоверификацию, что продлевает срок ещё на 5-10 рабочих дней. Подробнее о механике AML-проверок в материале про <a href="blog-aml.html" class="text-primary hover:underline">AML-блокировки и как с ними работать</a>.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Важный момент для понимания: MEXC не блокирует USDT на уровне блокчейна. Биржа замораживает доступ к средствам внутри своей системы. Это означает, что успешная апелляция освобождает средства в рамках MEXC, однако при последующем выводе на внешний адрес AML-риски остаются. Подробнее о проверке AML-чистоты адреса перед получением USDT в статье про <a href="blog-proverka-aml.html" class="text-primary hover:underline">проверку AML-рисков транзакций</a>.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Постоянная блокировка аккаунта</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Наиболее серьёзный исход. MEXC вправе навсегда заблокировать аккаунт при повторных AML-нарушениях, выявлении признаков мошенничества или получении официального запроса от правоохранительных органов. В отличие от стандартной AML-блокировки, постоянная блокировка означает прекращение отношений с биржей.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      При постоянной блокировке MEXC обязан обеспечить возможность вывода средств после завершения комплаенс-проверки, однако сроки и условия этого процесса значительно сложнее. В таких кейсах без профессиональной юридической помощи обойтись крайне сложно.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Сравнительная таблица: MEXC, Gate.io, OKX и Binance при блокировках USDT</h2>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Параметр</th>
+            <th class="text-left p-4 font-semibold text-primary">MEXC</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Gate.io</th>
+            <th class="text-left p-4 font-semibold text-on-surface">OKX</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Binance</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">AML-инструмент</td>
+            <td class="p-4 text-on-surface">Собственная система</td>
+            <td class="p-4 text-on-surface">Собственный + партнёрский</td>
+            <td class="p-4 text-on-surface">Chainalysis KYT + собственный</td>
+            <td class="p-4 text-on-surface">Chainalysis KYT</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Порог блокировки по риску</td>
+            <td class="p-4 text-on-surface font-semibold text-error">25-30%</td>
+            <td class="p-4 text-on-surface">50%+</td>
+            <td class="p-4 text-on-surface">50%+</td>
+            <td class="p-4 text-on-surface">50%+</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Срок апелляции (KYC)</td>
+            <td class="p-4 text-on-surface">5-14 раб. дней</td>
+            <td class="p-4 text-on-surface">3-7 раб. дней</td>
+            <td class="p-4 text-on-surface">3-7 раб. дней</td>
+            <td class="p-4 text-on-surface">5-14 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Срок апелляции (AML/P2P)</td>
+            <td class="p-4 text-on-surface font-semibold text-error">21-60 раб. дней</td>
+            <td class="p-4 text-on-surface">14-30 раб. дней</td>
+            <td class="p-4 text-on-surface">14-45 раб. дней</td>
+            <td class="p-4 text-on-surface">14-45 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">P2P-риск для РФ</td>
+            <td class="p-4 text-on-surface font-semibold text-error">Очень высокий</td>
+            <td class="p-4 text-on-surface">Средний</td>
+            <td class="p-4 text-on-surface">Средний</td>
+            <td class="p-4 text-on-surface">Высокий</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Порог документации SOF</td>
+            <td class="p-4 text-on-surface font-semibold text-error">от $1 000</td>
+            <td class="p-4 text-on-surface">от $2 000</td>
+            <td class="p-4 text-on-surface">от $2 000</td>
+            <td class="p-4 text-on-surface">от $5 000</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Канал апелляции</td>
+            <td class="p-4 text-on-surface">support.mexc.com + compliance@mexc.com</td>
+            <td class="p-4 text-on-surface">Support Center + тикет</td>
+            <td class="p-4 text-on-surface">support.okx.com + compliance@okx.com</td>
+            <td class="p-4 text-on-surface">Форма + email</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Русскоязычная поддержка</td>
+            <td class="p-4 text-on-surface">Есть (решения у комплаенса)</td>
+            <td class="p-4 text-on-surface">Частично</td>
+            <td class="p-4 text-on-surface">Частично</td>
+            <td class="p-4 text-on-surface">Ограниченно</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Пошаговый алгоритм апелляции на MEXC</h2>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 1: Зафиксируйте блокировку и получите тикет</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Войдите в аккаунт MEXC и немедленно сделайте скриншоты всех уведомлений о блокировке, текущего статуса аккаунта и любых сообщений от биржи. Если блокировка произошла без уведомления (что для MEXC типично), обратитесь в поддержку через support.mexc.com с конкретным запросом: укажите, что аккаунт заблокирован, когда произошла блокировка и какие операции недоступны.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Получите номер тикета и сохраните его. Это обязательное условие для отслеживания статуса и дальнейшей эскалации. У MEXC есть русскоязычная команда поддержки, что упрощает первичное взаимодействие. Однако важно понимать: операторы поддержки не принимают решений о разблокировке. Все решения принимает отдел комплаенса.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 2: Определите тип и причину блокировки</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Запросите у поддержки конкретную причину блокировки. Первый ответ MEXC нередко содержит стандартную формулировку о проверке безопасности без деталей. Задайте уточняющие вопросы: является ли блокировка KYC-проблемой или AML-проверкой; какие транзакции или действия её вызвали; на каком этапе проверки находится кейс.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Тип блокировки принципиально влияет на алгоритм действий. KYC-проблема решается загрузкой документов в личном кабинете MEXC. AML-кейс после P2P требует детального объяснения источника средств и, как правило, более развёрнутого документального пакета.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 3: Соберите документы об источнике USDT</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      MEXC требует документацию об источнике средств для всех депозитов от 1000 долларов. Это самый низкий порог среди крупных бирж, что делает подготовку документов особенно важной при работе с MEXC.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Базовый пакет для AML-апелляции на MEXC включает несколько категорий. Первое: документ, удостоверяющий личность (паспорт). Второе: история P2P-сделок с подтверждёнными платежами. Если USDT куплен на MEXC P2P, нужна полная история сделок из личного кабинета с подтверждениями банковских переводов или переводов через СБП. Третье: банковские выписки, подтверждающие движение рублей, которые стали источником USDT.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Четвёртое: объяснение конкретных транзакций. Если MEXC указал на определённые входящие переводы, нужно объяснить их происхождение по каждой транзакции с указанием хэшей. Пятое: при крупных суммах или нестандартных источниках могут потребоваться договоры, налоговые декларации или письмо от работодателя. Полный список необходимых документов доступен в статье о <a href="blog-dokumenty.html" class="text-primary hover:underline">документах для разблокировки USDT</a>.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 4: Подайте апелляцию через support.mexc.com</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Апелляция подаётся через официальный портал поддержки MEXC. При создании тикета выберите категорию "Безопасность аккаунта" или "Верификация". В обращении укажите: номер заблокированного аккаунта (email), дату и время блокировки, предположительный тип блокировки (KYC или AML), сумму заблокированных средств.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Структура апелляционного письма для MEXC P2P блокировки: краткое описание ситуации в 3-4 предложениях, конкретное объяснение каждой подозрительной транзакции с датами и суммами, список прикреплённых документов с кратким описанием каждого, конкретный запрос действия (разблокировка аккаунта, разрешение на вывод конкретных средств).
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для сложных AML-кейсов, где стандартный тикет не даёт результата, используется прямой канал комплаенса: compliance@mexc.com. Этот адрес предназначен для эскалации кейсов с крупными суммами, юридических запросов и ситуаций, требующих вмешательства сверх уровня первичной поддержки. Общие принципы составления апелляционных писем в статье об <a href="blog-appeal.html" class="text-primary hover:underline">апелляции по блокировке USDT</a>.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 5: Ожидание, мониторинг и последующие действия</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      После подачи апелляции аккаунт находится в статусе проверки. В этот период крайне нежелательно предпринимать попытки вывода средств, регистрировать новые аккаунты MEXC на те же данные, отправлять повторные апелляции по тому же тикету раньше чем через 21 рабочий день: это может сбросить очередь рассмотрения.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Через 14-21 рабочий день, если ответа по существу не поступило, отправьте вежливый запрос статуса по исходному тикету. Ссылайтесь на номер тикета и дату подачи апелляции. Если после 30 рабочих дней нет содержательного ответа, это сигнал для эскалации через compliance@mexc.com или привлечения специалистов.
+    </p>
+
+    <!-- Timing table -->
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Реальные сроки рассмотрения апелляций на MEXC</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Данные из практики CryptoRecon по кейсам MEXC 2024-2026 годов:
+    </p>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Тип блокировки</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Минимальный срок</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Типичный срок</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Максимальный срок</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">KYC/верификация</td>
+            <td class="p-4 text-on-surface">3-5 раб. дней</td>
+            <td class="p-4 text-on-surface">5-14 раб. дней</td>
+            <td class="p-4 text-on-surface">21 раб. день</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">AML/P2P, стандартный</td>
+            <td class="p-4 text-on-surface">14 раб. дней</td>
+            <td class="p-4 text-on-surface">21-45 раб. дней</td>
+            <td class="p-4 text-on-surface">60 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">AML/P2P + видеоверификация</td>
+            <td class="p-4 text-on-surface">21 раб. день</td>
+            <td class="p-4 text-on-surface">30-60 раб. дней</td>
+            <td class="p-4 text-on-surface">90 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Постоянная блокировка</td>
+            <td class="p-4 text-on-surface">45 раб. дней</td>
+            <td class="p-4 text-on-surface">60-90 раб. дней</td>
+            <td class="p-4 text-on-surface">Неопределённо</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Ключевой вывод из практики: MEXC P2P блокировка занимает значительно больше времени, чем аналогичные кейсы на Gate.io или OKX. При этом русскоязычная поддержка MEXC отвечает оперативно, создавая ложное ощущение прогресса. Реальные решения принимаются в отделе комплаенса, который работает по собственному графику и нечасто раскрывает промежуточный статус рассмотрения.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">MEXC и P2P в России: почему блокировок стало больше</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      После того как Binance P2P прекратил работу с российскими пользователями, объёмы P2P-торговли на MEXC резко возросли. Биржа стала основным каналом обмена рублей на USDT для российского рынка, аккумулировав значительную долю транзакций, которые раньше распределялись между несколькими платформами.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Это создало специфическую проблему: концентрация объёмов на одной платформе с низким AML-порогом привела к тому, что MEXC P2P USDT стал де-факто проходить через меньшее число адресов с более высокой нагрузкой. Чем больше транзакций проходит через конкретный адрес или кошелёк, тем выше вероятность, что часть из них имеет рисковое происхождение. Это повышает AML-скор даже для пользователей, которые торгуют только с проверенными контрагентами.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Дополнительный фактор: MEXC P2P USDT нередко поступает через непроверенных посредников. В российском P2P-рынке сложилась практика, когда крупные продавцы агрегируют USDT от множества источников для обеспечения ликвидности. Покупатель, приобретающий USDT у такого продавца, получает криптовалюту с накопленным AML-историей нескольких источников. Собственная система MEXC фиксирует это как риск, даже если конкретная P2P-сделка выглядит полностью легитимно.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для снижения рисков при работе с MEXC P2P: проверяйте AML-скоринг адреса перед получением USDT с помощью специализированных инструментов; сохраняйте полную историю каждой P2P-сделки с подтверждениями платежей; при покупке USDT на суммы свыше 1000 долларов заблаговременно запрашивайте у продавца документы об источнике средств. Подробнее о работе с P2P-рисками в материале про <a href="usdt-p2p.html" class="text-primary hover:underline">разблокировку USDT после P2P</a> и в руководстве по <a href="blog-proverka-aml.html" class="text-primary hover:underline">проверке AML-рисков USDT</a>.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Общая картина блокировок на криптобиржах, включая сравнение MEXC с другими платформами, подробно разобрана в обзоре <a href="blog-birzhi.html" class="text-primary hover:underline">блокировок USDT на биржах</a>. Механику AML-проверок и категории рисков объясняет статья про <a href="usdt-aml.html" class="text-primary hover:underline">блокировку USDT по AML</a>. Если вы только начинаете разбираться в теме, начните с <a href="blog-guide.html" class="text-primary hover:underline">полного руководства по разблокировке USDT</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Когда нужна профессиональная помощь</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Самостоятельная апелляция на MEXC работает в большинстве KYC-кейсов и в стандартных AML-случаях, где источник средств документально подтверждён. Профессиональная помощь оправдана в нескольких ситуациях.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Сумма блокировки превышает 3000-5000 долларов. При таких суммах ошибки в апелляции обходятся слишком дорого. Ненадлежащим образом составленный документальный пакет может не просто затянуть процесс, но и дать MEXC основания для постоянной блокировки аккаунта.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      MEXC запросил видеоверификацию или юридические документы: это нестандартный запрос, указывающий на серьёзность кейса. Апелляция не получила содержательного ответа более 45 рабочих дней: это сигнал для эскалации. Кейс связан с повторной блокировкой или подозрением в мошеннических операциях: здесь стандартный алгоритм апелляции заведомо недостаточен.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      CryptoRecon работает с блокировками MEXC: анализируем конкретный кейс, проверяем AML-историю задействованных адресов, помогаем с формированием доказательной базы и составлением апелляционных документов на русском и английском языках. Процесс апелляции разобран подробно в статье про <a href="blog-appeal.html" class="text-primary hover:underline">апелляцию по блокировке USDT</a>.
+    </p>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы о блокировках MEXC</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Почему MEXC заблокировал аккаунт без предупреждения?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">MEXC использует собственную AML-систему с порогом срабатывания 25-30% по риск-баллу транзакции. Большинство других бирж устанавливают этот порог на уровне 50%+. При превышении внутреннего порога система автоматически замораживает аккаунт без предварительного уведомления пользователя. Это типичное поведение MEXC при P2P-транзакциях с рисковой историей.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Сколько времени занимает разблокировка аккаунта на MEXC?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">KYC-блокировки на MEXC рассматриваются за 5-14 рабочих дней при корректных документах. AML-блокировки после P2P занимают 21-60 рабочих дней. Если MEXC запросил видеоверификацию, срок продлевается ещё на 5-10 дней. При постоянной блокировке сроки значительно дольше и зависят от обстоятельств конкретного кейса.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Куда обращаться при блокировке USDT на MEXC?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Первый шаг: тикет через support.mexc.com. У MEXC есть русскоязычная поддержка, которая поможет зафиксировать обращение. Для эскалации сложных AML-кейсов предусмотрен прямой канал: compliance@mexc.com. Важно понимать: операторы поддержки не принимают решений о разблокировке. Все решения принимает отдел комплаенса.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Какие документы нужны для разблокировки MEXC после P2P?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Базовый пакет: паспорт; история P2P-сделок с подтверждёнными платежами; банковские выписки по транзакциям, связанным с покупкой USDT; объяснение источника средств для каждого депозита свыше 1000 долларов. MEXC устанавливает самый низкий порог документации SOF среди крупных бирж: 1000 долларов против 2000-5000 у конкурентов. Полный список в статье о <a href="blog-dokumenty.html" class="text-primary hover:underline">документах для разблокировки</a>.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Чем MEXC P2P блокировка отличается от блокировки на Gate.io или OKX?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Главное отличие: порог блокировки у MEXC (25-30%) вдвое ниже, чем у Gate.io и OKX (50%+). Это означает, что MEXC блокирует транзакции, которые спокойно проходят на других платформах. Сроки AML-апелляции на MEXC (21-60 дней) также длиннее, чем у Gate.io (14-30 дней). При этом MEXC остаётся основной P2P-площадкой для российских пользователей, что создаёт высокий объём при повышенных рисках.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+</article>
+
+<!-- Author + YMYL block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специалисты по разблокировке USDT и аккаунтов криптобирж. Более 300 кейсов с 2021 года. Статья подготовлена на основе реальной практики работы с блокировками на MEXC, Binance, OKX, Gate.io и других платформах.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">MEXC, Binance, OKX, Gate.io</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="blog-gate.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">account_balance</span>
+          <span class="text-xs text-on-surface-variant">Биржи</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT на Gate.io: причины, апелляция и сроки</h3>
+      </a>
+      <a href="blog-okx.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">account_balance</span>
+          <span class="text-xs text-on-surface-variant">Биржи</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT на OKX: причины блокировки и пошаговая апелляция</h3>
+      </a>
+      <a href="usdt-p2p.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">swap_horiz</span>
+          <span class="text-xs text-on-surface-variant">P2P</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT после P2P: что делать и как предотвратить</h3>
+      </a>
+      <a href="blog-proverka-aml.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">shield_check</span>
+          <span class="text-xs text-on-surface-variant">AML</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Проверка AML-рисков USDT: как проверить транзакцию до получения</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">USDT заблокирован на MEXC?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Разберём ваш кейс бесплатно. Определим тип блокировки, проверим AML-историю транзакций и предложим алгоритм действий.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="usdt-yurist.html" class="hover:text-white transition-colors">Юридическая помощь</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Биржи</p>
+          <ul class="space-y-1">
+            <li><a href="blog-binance.html" class="hover:text-white transition-colors">Binance</a></li>
+            <li><a href="blog-okx.html" class="hover:text-white transition-colors">OKX</a></li>
+            <li><a href="blog-gate.html" class="hover:text-white transition-colors">Gate.io</a></li>
+            <li><a href="blog-mexc.html" class="hover:text-white transition-colors text-white">MEXC</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Контакт</p>
+          <ul class="space-y-1">
+            <li><a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @crypto_recon</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-xs text-center">
+      <p>© 2026 CryptoRecon. Сайт носит информационный характер.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
