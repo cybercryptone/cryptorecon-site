@@ -53,6 +53,7 @@ CryptoRecon помогает физическим лицам и компания
 
 - [Как не допустить блокировки USDT: профилактика и безопасная работа с токенами](https://cryptorecon.io/blog-profilaktika.html)
 - [USDT для граждан России: блокировки, санкции и правовой статус в 2026 году](https://cryptorecon.io/blog-jurisdictions.html)
+- [AML-комплаенс для бизнеса: как ИП, ООО и трейдерам безопасно работать с USDT](https://cryptorecon.io/blog-compliance-biznes.html)
 
 ## Блог: апелляция и биржи
 
@@ -63,6 +64,7 @@ CryptoRecon помогает физическим лицам и компания
 - [Разблокировка USDT на OKX: причины блокировки и пошаговая апелляция](https://cryptorecon.io/blog-okx.html)
 - [Разблокировка USDT на Gate.io: причины блокировки и пошаговая апелляция](https://cryptorecon.io/blog-gate.html)
 - [Разблокировка USDT на MEXC: причины блокировки после P2P и апелляция](https://cryptorecon.io/blog-mexc.html)
+- [Разблокировка USDT на HTX (Huobi): причины блокировки и апелляция](https://cryptorecon.io/blog-htx.html)
 - [Сроки разблокировки USDT: сколько времени рассматривает Tether и биржи](https://cryptorecon.io/blog-sroki.html)
 - [Сколько стоит разблокировка USDT: цены, факторы и как не попасть на скамеров](https://cryptorecon.io/blog-stoimost.html)
 
@@ -71,6 +73,7 @@ CryptoRecon помогает физическим лицам и компания
 - [Категории риска AML для USDT: gambling, darknet, mixer и что с ними делать](https://cryptorecon.io/blog-aml-kategorii.html)
 - [USDT прошёл через миксер: что делать при блокировке из-за AML-риска](https://cryptorecon.io/blog-mixer.html)
 - [USDT в DeFi: заморозка в пулах ликвидности Uniswap и PancakeSwap](https://cryptorecon.io/blog-defi.html)
+- [USDT застрял на кросс-чейн бридже: что делать при заморозке между сетями](https://cryptorecon.io/blog-bridge.html)
 - [Как проверить AML-скоринг USDT адреса до получения: инструменты и инструкция](https://cryptorecon.io/blog-proverka-aml.html)
 
 ## Блог: платформы и специальные случаи
