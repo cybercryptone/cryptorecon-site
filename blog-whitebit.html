@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Разблокировка USDT на WhiteBIT: причины блокировки и пошаговая апелляция | CryptoRecon</title>
+<meta name="description" content="WhiteBIT использует HAPI-протокол для AML. Разбираем почему Tether заморозил 870 000 USDT на адресах WhiteBIT и как вернуть средства."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-whitebit.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-whitebit.html"/>
+<meta property="og:title" content="Разблокировка USDT на WhiteBIT: апелляция и сроки | CryptoRecon"/>
+<meta property="og:description" content="WhiteBIT использует HAPI-протокол для AML. Разбираем причины блокировок, сроки, документы и пошаговый алгоритм апелляции."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://cryptorecon.io/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Разблокировка USDT на WhiteBIT",
+          "item": "https://cryptorecon.io/blog-whitebit.html"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Разблокировка USDT на WhiteBIT: причины блокировки и пошаговая апелляция",
+      "description": "Пошаговое руководство по разблокировке USDT на WhiteBIT: HAPI Protocol, типы блокировок, документы, реальные сроки апелляции.",
+      "datePublished": "2026-10-20",
+      "dateModified": "2026-10-20",
+      "author": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cryptorecon.io/assets/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "mainEntityOfPage": "https://cryptorecon.io/blog-whitebit.html",
+      "image": "https://cryptorecon.io/assets/logo.png"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "WhiteBIT заморозил USDT из-за HAPI Protocol — как работает система?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HAPI Protocol — это on-chain AML-решение, которое WhiteBIT использует для автоматической проверки адресов и транзакций. Система присваивает каждому адресу risk score от 0 до 100 по нескольким категориям: тёмные рынки, взломанные биржи, миксеры, скамы, санкционные адреса. Если входящий адрес получает score выше 50, HAPI автоматически блокирует вывод средств и передаёт кейс в внутреннюю AML-команду биржи. При score выше 70 блокируется и возможность торговли. HAPI работает поверх данных нескольких провайдеров и обновляется в режиме реального времени. Это означает, что адрес, который три месяца назад не имел рисков, сегодня может иметь score выше порога, если его контрагенты попали в санкционные списки или стали источником расследования. Подробнее о типах блокировок по AML: cryptorecon.io/usdt-aml.html."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Нужен ли европейский адрес для апелляции на WhiteBIT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WhiteBIT зарегистрирована в Эстонии и работает под юрисдикцией ЕС. Это означает, что комплаенс-требования биржи значительно строже, чем у азиатских платформ: действует обязательный стандарт подтверждения адреса проживания (proof of address). Европейский адрес не является обязательным условием для российских пользователей, однако его наличие существенно упрощает процесс апелляции. Если вы проживаете в России или другой стране СНГ, WhiteBIT принимает национальную документацию, однако она требует нотариально заверенного перевода. Также потребуется source of funds — подтверждение источника средств: банковские выписки, договоры, история P2P-сделок. Российские пользователи относятся к категории EDD (Enhanced Due Diligence) в силу санкционного давления на ЕС-юрисдикции, что увеличивает объём запрашиваемых документов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что означает заморозка 870 000 USDT на WhiteBIT — мои средства в безопасности?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Заморозка 870 000 USDT на трёх адресах, связанных с WhiteBIT, — это задокументированный кейс применения заморозки Tether на уровне блокчейна. Tether Ltd имеет право заморозить USDT напрямую на любом адресе по запросу регулятора или по собственной инициативе в рамках AML-политики. Такая заморозка не означает, что WhiteBIT как биржа потеряла средства клиентов: биржа продолжает работу, а заморозка касается конкретных адресов в рамках расследований. Для пользователей, чьи средства находятся внутри платформы, это сигнал о том, что определённые транзакции попали под проверку. Ваши средства безопасны в том смысле, что они не похищены, однако доступ к ним ограничен до завершения комплаенс-процедуры. Эскалация через compliance@whitebit.com с полным пакетом документов — правильный следующий шаг."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько времени занимает разблокировка на WhiteBIT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Сроки разблокировки на WhiteBIT зависят от типа блокировки. KYC-верификация занимает от 3 до 14 рабочих дней при корректно поданных документах. AML-расследование, инициированное HAPI Protocol или внутренней командой, занимает от 14 до 60 рабочих дней. Этот диапазон объясняется тем, что WhiteBIT работает под европейским регулированием: комплаенс-процедуры строже, чем на азиатских биржах, и требуют более детального разбора каждого кейса. Если к делу подключились правоохранительные органы или Tether Ltd, срок может выйти за рамки 60 дней. Практически важно: запрос EU proof of address и source of funds обязателен в большинстве AML-кейсов. Промедление с предоставлением документов автоматически продлевает сроки. При суммах выше $5 000 рекомендуется профессиональное сопровождение: это сокращает вероятность отказа из-за неполного пакета."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "WhiteBIT более строгий чем Gate.io для россиян?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, WhiteBIT объективно строже Gate.io и большинства азиатских бирж для российских пользователей. Причина в юрисдикции: WhiteBIT зарегистрирована в Эстонии и входит в программу European Crypto Regulation, что обязывает биржу применять EDD-процедуры к клиентам из юрисдикций под санкционным давлением, включая Россию. Gate.io, работающая через Каймановы острова и другие офшорные юрисдикции, имеет значительно меньше регуляторных требований к источнику средств. На практике это означает: WhiteBIT запрашивает EU proof of address или нотариально заверенный аналог, тогда как Gate.io часто ограничивается стандартным KYC. Также HAPI Protocol, используемый WhiteBIT, более чувствителен к транзакциям из СНГ-региона, чем инструменты Gate.io. Сравнение всех бирж: cryptorecon.io/blog-birzhi.html."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">Разблокировка на WhiteBIT</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">Биржи</span>
+      <span class="text-on-surface-variant text-xs">20 октября 2026</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">
+      Разблокировка USDT на WhiteBIT: причины блокировки и пошаговая апелляция
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">
+      WhiteBIT блокирует USDT через HAPI Protocol и внутреннюю AML-команду. Разбираем задокументированный кейс заморозки 870 000 USDT, два типа блокировок, реальные сроки апелляции и ключевые отличия от Gate.io, MEXC и HTX.
+    </p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">
+        WhiteBIT рассматривает апелляции за 3-14 дней (KYC) или 14-60 дней (AML). Биржа зарегистрирована в Эстонии и применяет HAPI Protocol для on-chain скоринга: адреса с risk score выше 50 блокируются автоматически. Российские пользователи относятся к группе EDD. При блокировке: не пытайтесь выводить средства, напишите на support@whitebit.com, соберите EU proof of address и source of funds. Для сложных кейсов предусмотрен канал compliance@whitebit.com.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4"><div class="prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как WhiteBIT проверяет транзакции USDT</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      WhiteBIT — одна из крупнейших бирж в СНГ и среди русскоязычных пользователей, однако юридически она зарегистрирована в Эстонии и работает под европейским регулированием. Это ключевое отличие от азиатских и офшорных конкурентов: комплаенс-требования определяются стандартами ЕС, а не более мягким законодательством Сейшелей или Каймановых островов.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      AML-система WhiteBIT работает на двух уровнях. Первый уровень: HAPI Protocol — on-chain AML-решение, которое присваивает каждому адресу risk score на основе истории транзакций, связей с тёмными рынками, санкционными адресами, миксерами и взломанными платформами. Второй уровень: внутренняя AML-команда биржи, которая вручную проверяет кейсы, флагнутые автоматической системой.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Практическое значение этой архитектуры: HAPI работает в режиме реального времени и обновляет оценки адресов постоянно. Адрес, который вы использовали шесть месяцев назад без проблем, сегодня может получить score выше порога блокировки, если его контрагенты попали в санкционные списки или стали объектом расследования. Именно это делает блокировки на WhiteBIT неожиданными для пользователей, давно работающих с биржей.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Участие WhiteBIT в программе European Crypto Regulation означает, что биржа обязана применять стандарты AMLD6 и требования FATF. Для клиентов из юрисдикций под санкционным давлением, включая Россию, автоматически применяется режим EDD (Enhanced Due Diligence). Это прямо влияет на объём документов, которые потребуются при апелляции.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Задокументированный кейс: заморозка 870 000 USDT</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      В практике расследований блокировок USDT зафиксирован случай заморозки 870 000 USDT на трёх адресах, связанных с WhiteBIT. Заморозка была выполнена Tether Ltd напрямую на уровне блокчейна, что является одним из ключевых инструментов AML-контроля эмитента USDT.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Tether Ltd имеет право заморозить USDT на любом адресе ERC-20 или TRC-20 по запросу правоохранительных органов, по собственной инициативе в рамках AML-политики, или по запросу регулятора. Этот механизм работает независимо от того, является ли адрес горячим кошельком биржи или персональным кошельком пользователя. Биржа при этом продолжает работать в штатном режиме.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для пользователей WhiteBIT важно понимать: заморозка на уровне адресов биржи не означает, что ваши средства внутри платформы также заморожены. Однако если ваш кейс связан с теми же расследованиями, которые инициировали заморозку, вы можете столкнуться с AML-проверкой. Самостоятельная апелляция в таких случаях значительно сложнее, чем при стандартной KYC-блокировке. Детальный разбор апелляционного процесса: <a href="blog-appeal.html" class="text-primary hover:underline">апелляция в Tether</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Два типа блокировок на WhiteBIT</h2>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Тип 1: KYC и верификационные блокировки</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Наиболее частый тип. WhiteBIT запрашивает расширенную верификацию при нескольких обстоятельствах: первый крупный вывод, смена IP-адреса или страны, превышение дневных лимитов без подтверждённого KYC Level 2, а также при активности, несоответствующей заявленному профилю пользователя.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Признаки KYC-блокировки на WhiteBIT: аккаунт доступен, вход работает, но вывод средств и конвертация заблокированы. В личном кабинете обычно есть явное уведомление с требованием пройти верификацию. Для российских пользователей KYC дополнительно требует proof of address: коммунальная квитанция или банковская выписка не старше трёх месяцев. EU-документы принимаются без перевода, российские требуют нотариально заверенного перевода.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Стандартный срок рассмотрения KYC-апелляции на WhiteBIT: 3-14 рабочих дней. При полном и корректно оформленном пакете документов срок обычно ближе к нижней границе. Если WhiteBIT запрашивает дополнительные документы, срок продлевается ещё на 5-10 рабочих дней.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Тип 2: AML-блокировки через HAPI Protocol</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Значительно сложнее и дольше по срокам. Эти блокировки инициируются автоматически при получении USDT с адресов с risk score выше 50 по шкале HAPI Protocol. Категории риска включают: связь с даркнет-маркетплейсами, криптомиксерами, взломанными биржами, скам-адресами, а также адресами из санкционных списков OFAC, ЕС и ООН.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      При score выше 50 система автоматически блокирует вывод. При score выше 70 дополнительно блокируется торговля. Кейс передаётся во внутреннюю AML-команду для ручной проверки. Уведомление от WhiteBIT при таких блокировках обычно содержит общую формулировку о нарушении Terms of Service без указания конкретных транзакций.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Срок рассмотрения AML-блокировок: 14-60 рабочих дней. Поскольку WhiteBIT работает под европейским регулированием, комплаенс-процедуры требуют более детального разбора каждого кейса по сравнению с азиатскими биржами. Если к расследованию подключились правоохранительные органы, срок может выйти за 60 рабочих дней. Подробнее об AML-механизмах: <a href="blog-birzhi.html" class="text-primary hover:underline">блокировки USDT на биржах</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Сравнение WhiteBIT, Gate.io, MEXC и HTX при блокировках USDT</h2>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Параметр</th>
+            <th class="text-left p-4 font-semibold text-primary">WhiteBIT</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Gate.io</th>
+            <th class="text-left p-4 font-semibold text-on-surface">MEXC</th>
+            <th class="text-left p-4 font-semibold text-on-surface">HTX</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">AML-инструмент</td>
+            <td class="p-4 text-on-surface">HAPI Protocol + внутренний AML</td>
+            <td class="p-4 text-on-surface">Собственный + партнёрский</td>
+            <td class="p-4 text-on-surface">Собственный</td>
+            <td class="p-4 text-on-surface">Chainalysis + собственный</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Юрисдикция</td>
+            <td class="p-4 text-on-surface">Эстония (ЕС)</td>
+            <td class="p-4 text-on-surface">Каймановы острова</td>
+            <td class="p-4 text-on-surface">Сейшельские острова</td>
+            <td class="p-4 text-on-surface">Гонконг</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Срок апелляции (KYC)</td>
+            <td class="p-4 text-on-surface">3-14 раб. дней</td>
+            <td class="p-4 text-on-surface">3-10 раб. дней</td>
+            <td class="p-4 text-on-surface">2-7 раб. дней</td>
+            <td class="p-4 text-on-surface">3-10 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Срок апелляции (AML)</td>
+            <td class="p-4 text-on-surface">14-60 раб. дней</td>
+            <td class="p-4 text-on-surface">14-60 раб. дней</td>
+            <td class="p-4 text-on-surface">7-30 раб. дней</td>
+            <td class="p-4 text-on-surface">14-45 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Российские пользователи</td>
+            <td class="p-4 text-on-surface">EDD-группа, работают</td>
+            <td class="p-4 text-on-surface">Расширенная KYC, работают</td>
+            <td class="p-4 text-on-surface">Доступ сохранён</td>
+            <td class="p-4 text-on-surface">Ограниченный доступ</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Proof of address</td>
+            <td class="p-4 text-on-surface">Обязателен (EU предпочтителен)</td>
+            <td class="p-4 text-on-surface">Требуется</td>
+            <td class="p-4 text-on-surface">Не всегда требуется</td>
+            <td class="p-4 text-on-surface">Требуется</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Канал апелляции</td>
+            <td class="p-4 text-on-surface">support@whitebit.com / compliance@whitebit.com</td>
+            <td class="p-4 text-on-surface">Форма + email</td>
+            <td class="p-4 text-on-surface">Live chat + тикет</td>
+            <td class="p-4 text-on-surface">Support Center</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Пошаговый алгоритм апелляции на WhiteBIT</h2>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 1: Зафиксируйте блокировку и получите тикет</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Войдите в аккаунт и сделайте скриншоты всех уведомлений, статуса аккаунта и доступных сообщений от WhiteBIT. Если уведомлений нет, но операции недоступны, обратитесь в поддержку через support@whitebit.com с запросом: "My account operations have been restricted. Please provide the reason and a support ticket number." Номер тикета критически важен для всей дальнейшей переписки и эскалации.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Важный момент: не пытайтесь выводить средства или конвертировать активы во время активной проверки. WhiteBIT фиксирует такие попытки, и они могут быть интерпретированы как попытка обойти комплаенс-процедуру, что существенно усложнит ваш кейс и продлит сроки.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 2: Определите, является ли блокировка KYC или AML</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Запросите у поддержки конкретную причину. KYC-блокировка обычно сопровождается явным запросом документов в личном кабинете. AML-блокировка, инициированная HAPI Protocol, чаще приходит с общей формулировкой о "подозрительной активности" без деталей. Уточните у поддержки: является ли блокировка верификационной или комплаенс-расследованием, какие именно транзакции или адреса её вызвали.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Понимание типа определяет всю дальнейшую стратегию. KYC-проблема решается загрузкой документов через личный кабинет. AML-кейс, связанный с HAPI Protocol, требует подробного объяснения происхождения средств по конкретным транзакциям и, как правило, обращения через compliance@whitebit.com.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 3: Соберите документы</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Базовый пакет для апелляции на WhiteBIT включает несколько обязательных компонентов. Первое: удостоверение личности с фотографией (паспорт или национальный ID). Второе: EU proof of address (предпочтителен) или нотариально заверенный аналог с переводом для российских пользователей. Коммунальная квитанция или банковская выписка не старше трёх месяцев.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Третье: source of funds (источник средств) — обязателен в большинстве AML-кейсов на WhiteBIT. Это могут быть банковские выписки, договоры, история P2P-сделок с подтверждёнными платежами, квитанции обменников или налоговые декларации. Четвёртое: объяснение конкретных транзакций, которые могли вызвать HAPI-флаг, с хэш-идентификаторами и обоснованием происхождения средств. Подробный список документов: <a href="blog-guide.html" class="text-primary hover:underline">полное руководство по разблокировке USDT</a>.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 4: Подайте апелляцию через правильный канал</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для стандартных KYC-кейсов апелляция подаётся через support@whitebit.com или форму в личном кабинете. Укажите в теме письма: тип проблемы, номер тикета (если уже есть) и примерную сумму заблокированных средств. Структура апелляционного письма: краткое описание ситуации в 2-3 предложениях, список прикреплённых документов с кратким описанием каждого, конкретный запрос разблокировки с указанием нужного действия.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для сложных AML-кейсов, связанных с HAPI Protocol, и при суммах выше $5 000 используйте прямой канал compliance@whitebit.com. Этот адрес предназначен для кейсов, требующих эскалации выше стандартного уровня поддержки: юридических запросов, крупных сумм или ситуаций, где стандартный тикет не даёт результата. Обращение должно быть структурированным и содержать полный пакет документов.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 5: Ожидание и мониторинг</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      После подачи апелляции не повторяйте запрос раньше чем через 14 рабочих дней: это создаёт путаницу в кейсе. Через 14-21 рабочий день, если ответа не поступило, отправьте вежливый follow-up по тому же тикету с запросом статуса. Ссылайтесь на дату первоначальной апелляции и номер тикета.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если в течение 45 рабочих дней не получен конкретный ответ, это сигнал нестандартного кейса. Возможные причины: запрос от правоохранительных органов, связь с расследованием по 870 000 USDT или иным крупным кейсом, вовлечённость адресов из санкционных списков. В таких ситуациях необходима иная стратегия. Описание вашего кейса: <a href="usdt-whitebit.html" class="text-primary hover:underline">профессиональная помощь с WhiteBIT</a>.
+    </p>
+
+    <!-- Timing table -->
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Реальные сроки рассмотрения апелляций на WhiteBIT</h2>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Тип блокировки</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Минимальный срок</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Типичный срок</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Максимальный срок</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">KYC/верификация</td>
+            <td class="p-4 text-on-surface">3 раб. дня</td>
+            <td class="p-4 text-on-surface">5-10 раб. дней</td>
+            <td class="p-4 text-on-surface">14 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">AML (HAPI Protocol), стандартный</td>
+            <td class="p-4 text-on-surface">14 раб. дней</td>
+            <td class="p-4 text-on-surface">21-35 раб. дней</td>
+            <td class="p-4 text-on-surface">60 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">AML, запрос доп. документов</td>
+            <td class="p-4 text-on-surface">25 раб. дней</td>
+            <td class="p-4 text-on-surface">35-50 раб. дней</td>
+            <td class="p-4 text-on-surface">90 раб. дней</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Запрос правоохранительных органов</td>
+            <td class="p-4 text-on-surface">60 раб. дней</td>
+            <td class="p-4 text-on-surface">90+ раб. дней</td>
+            <td class="p-4 text-on-surface">Неопределённо</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">WhiteBIT и российские пользователи в 2026 году</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      WhiteBIT продолжает работать с российскими пользователями, однако с 2022 года требования к ним значительно ужесточились. Биржа находится под европейским регулированием, что обязывает её применять EDD-процедуры к клиентам из юрисдикций, находящихся под санкционным давлением.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      На практике EDD для российских пользователей означает: обязательный EU proof of address или нотариально заверенный перевод документа, расширенный source of funds при любых суммах выше $1 000, повышенное внимание к P2P-транзакциям с российских обменников. HAPI Protocol дополнительно чувствителен к адресам из СНГ-региона, поскольку часть из них исторически связана с категориями высокого риска по международным базам данных.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Практический совет для снижения рисков: проверяйте AML-скоринг адреса перед получением USDT, сохраняйте историю P2P-сделок с подтверждениями платежей, запрашивайте у контрагента документы об источнике средств при суммах от $2 000. Подробнее о защите от блокировок: <a href="usdt.html" class="text-primary hover:underline">разблокировка USDT</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Когда нужна профессиональная помощь</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Самостоятельная апелляция эффективна в большинстве KYC-кейсов и простых AML-случаях. Профессиональная помощь оправдана в нескольких конкретных ситуациях.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Первое: сумма блокировки превышает $5 000. При таких суммах ошибки в документах или формулировках обходятся слишком дорого, а правильно составленный пакет принципиально влияет на исход. Второе: WhiteBIT запросил юридическое письмо или нотариально заверенные переводы — это нестандартный запрос, указывающий на серьёзность кейса.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Третье: апелляция не получила конкретного ответа более 45 рабочих дней. Четвёртое: кейс связан с HAPI risk score выше 70, транзакциями из санкционного списка или подозрением в участии в схемах. CryptoRecon работает с блокировками на WhiteBIT через <a href="usdt-whitebit.html" class="text-primary hover:underline">профессиональную помощь по WhiteBIT</a>. Общий обзор услуг: <a href="usdt.html" class="text-primary hover:underline">разблокировка USDT</a> и <a href="blog-appeal.html" class="text-primary hover:underline">апелляция в Tether</a>.
+    </p>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы о блокировках WhiteBIT</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            WhiteBIT заморозил USDT из-за HAPI Protocol — как работает система?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">HAPI Protocol присваивает каждому адресу risk score от 0 до 100 по нескольким категориям: тёмные рынки, миксеры, санкционные адреса, взломанные платформы, скам-схемы. При score выше 50 вывод блокируется автоматически, при score выше 70 блокируется и торговля. Система работает в режиме реального времени и обновляет оценки постоянно, что означает: адрес без рисков несколько месяцев назад сегодня может получить score выше порога. Кейс передаётся во внутреннюю AML-команду WhiteBIT для ручной проверки. Разблокировка требует объяснения происхождения конкретных транзакций и подтверждения source of funds. Подробнее о механизмах AML-проверки читайте в разделе <a href="usdt-aml.html" class="text-primary hover:underline">блокировка USDT по AML</a>.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Нужен ли европейский адрес для апелляции на WhiteBIT?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">EU proof of address предпочтителен, но не является абсолютно обязательным условием. WhiteBIT работает под юрисдикцией ЕС и применяет стандарт AMLD6, который требует подтверждения адреса проживания. Для российских пользователей это означает: российские документы принимаются, однако они должны сопровождаться нотариально заверенным переводом. Коммунальная квитанция или банковская выписка не старше трёх месяцев на русском языке плюс нотариально заверенный перевод — стандартный допустимый формат. Европейский адрес, если он есть, упрощает процесс: документы принимаются без перевода и дополнительных формальностей. Российские пользователи относятся к EDD-группе, что увеличивает объём запрашиваемых документов в целом.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Что означает заморозка 870 000 USDT на WhiteBIT — мои средства в безопасности?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Заморозка 870 000 USDT на трёх адресах, связанных с WhiteBIT, — задокументированный кейс прямого применения заморозки Tether Ltd на уровне блокчейна. Tether может заморозить USDT на любом ERC-20 или TRC-20 адресе по запросу регулятора или в рамках собственной AML-политики. Это не означает, что WhiteBIT как платформа нестабильна или что средства всех клиентов заморожены. Биржа работает в штатном режиме. Для клиентов, чьи транзакции связаны с теми же расследованиями, это сигнал о повышенном риске AML-проверки. Ваши средства внутри платформы физически сохранены, однако доступ к ним ограничен до завершения комплаенс-процедуры. Обратитесь через compliance@whitebit.com с полным пакетом документов.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Сколько времени занимает разблокировка на WhiteBIT?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">KYC-верификация: 3-14 рабочих дней при корректно поданных документах. AML-расследование (HAPI Protocol): 14-60 рабочих дней. WhiteBIT работает под европейским регулированием, что делает комплаенс-процедуры строже и длиннее, чем на азиатских биржах. Если WhiteBIT запрашивает дополнительные документы, срок продлевается ещё на 10-20 рабочих дней. При участии правоохранительных органов или Tether Ltd срок может выйти за 60 рабочих дней. Критически важно: промедление с предоставлением EU proof of address и source of funds автоматически продлевает сроки. При суммах выше $5 000 рекомендуется профессиональное сопровождение для минимизации ошибок в документах.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            WhiteBIT более строгий чем Gate.io для россиян?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Да. WhiteBIT объективно строже Gate.io, MEXC и большинства азиатских бирж для российских пользователей. Главная причина — европейская юрисдикция: Эстония обязывает биржу применять AMLD6 и EDD-процедуры к клиентам из юрисдикций под санкционным давлением. Gate.io и MEXC работают через Каймановы острова и Сейшели — значительно менее жёсткие регуляторные среды. На практике это означает разницу в требованиях к документам: WhiteBIT запрашивает EU proof of address и source of funds в большинстве кейсов, тогда как Gate.io и MEXC часто ограничиваются стандартным паспортом. HAPI Protocol также более чувствителен к СНГ-транзакциям, чем инструменты большинства азиатских конкурентов. Сравнение бирж: <a href="blog-birzhi.html" class="text-primary hover:underline">блокировки USDT на биржах</a>.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+</article>
+
+<!-- Author + YMYL block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специалисты по разблокировке USDT и аккаунтов криптобирж. Более 300 кейсов с 2021 года. Статья подготовлена на основе реальной практики работы с блокировками на WhiteBIT, Gate.io, MEXC и других биржах.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">WhiteBIT, Gate.io, MEXC, HTX</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="blog-gate.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">account_balance</span>
+          <span class="text-xs text-on-surface-variant">Биржи</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT на Gate.io: причины и пошаговое руководство</h3>
+      </a>
+      <a href="blog-mexc.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">account_balance</span>
+          <span class="text-xs text-on-surface-variant">Биржи</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT на MEXC: сроки и апелляция</h3>
+      </a>
+      <a href="blog-appeal.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">mail</span>
+          <span class="text-xs text-on-surface-variant">Апелляция</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Апелляция в Tether: как написать письмо, которое не проигнорируют</h3>
+      </a>
+      <a href="blog-guide.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">menu_book</span>
+          <span class="text-xs text-on-surface-variant">Руководство</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Полное руководство по разблокировке USDT: все случаи</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">USDT заблокирован на WhiteBIT?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Разберём ваш кейс бесплатно. Определим тип блокировки, оценим шансы и предложим алгоритм действий.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="usdt-whitebit.html" class="hover:text-white transition-colors">Разблокировка WhiteBIT</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Биржи</p>
+          <ul class="space-y-1">
+            <li><a href="blog-gate.html" class="hover:text-white transition-colors">Gate.io</a></li>
+            <li><a href="blog-mexc.html" class="hover:text-white transition-colors">MEXC</a></li>
+            <li><a href="blog-whitebit.html" class="hover:text-white transition-colors text-white">WhiteBIT</a></li>
+            <li><a href="blog-birzhi.html" class="hover:text-white transition-colors">Все биржи</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Контакт</p>
+          <ul class="space-y-1">
+            <li><a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @crypto_recon</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-xs text-center">
+      <p>© 2026 CryptoRecon. Сайт носит информационный характер.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
