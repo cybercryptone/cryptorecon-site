@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CryptoRecon — демонстрационный лендинг о расследовании криптоинцидентов и AML-консультациях.">
+  <title>CryptoRecon — расследование криптоинцидентов и AML-консультации</title>
+  <script>
+    document.documentElement.classList.add("js");
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("reduce-motion");
+    }
+
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    const resetInitialScroll = () => {
+      if (!window.location.hash) {
+        window.scrollTo(0, 0);
+      }
+    };
+
+    window.addEventListener("pageshow", resetInitialScroll);
+    window.addEventListener("load", resetInitialScroll);
+    resetInitialScroll();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/Cyber_Target_Logo_E11iUnKA.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container shell">
+      <a class="brand" href="#hero" aria-label="CryptoRecon — на главную">
+        <span class="brand-mark" aria-hidden="true"><img src="assets/Cyber_Target_Logo_E11iUnKA.png" alt="" width="48" height="48"></span>
+        <span class="brand-text"><strong>CryptoRecon</strong></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <a href="#problems">Проблемы</a>
+        <a href="#services">Услуги</a>
+        <a href="#process">Как работаем</a>
+        <a href="#benefits">Преимущества</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-icon-link" data-contact="email-link" href="mailto:hello@tracepoint.demo" aria-label="Написать на email">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 7h16v10H4z"></path>
+            <path d="M4 8l8 6 8-6"></path>
+          </svg>
+        </a>
+        <a class="header-icon-link" data-contact="telegram-link" href="https://t.me/tracepoint_advisory" target="_blank" rel="noreferrer" aria-label="Связаться в Telegram">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M21 4L3 11l6.2 2.1L17 7.8l-5.5 6 1.6 5.2L21 4z"></path>
+          </svg>
+        </a>
+        <a class="button button-secondary header-cta" href="#contacts">Получить консультацию</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Криптоаналитика · AML · incident response</p>
+          <h1>Расследование криптоинцидентов <span class="hero-nowrap">и AML-консультации</span></h1>
+          <p class="hero-lead">
+            Помогаем разобраться в случаях хищения цифровых активов, блокировки средств,
+            споров с контрагентами и сложных ситуаций в криптовалютной сфере.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contacts">Получить консультацию</a>
+            <a class="button button-ghost" data-contact="telegram-link" href="https://t.me/tracepoint_advisory" target="_blank" rel="noreferrer">Связаться в Telegram</a>
+          </div>
+
+          <ul class="trust-list" aria-label="Ключевые преимущества">
+            <li>Анализ транзакций и маршрутов средств</li>
+            <li>Поддержка по AML и взаимодействию с биржами</li>
+            <li>Понятные рекомендации по дальнейшим действиям</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-stage">
+            <img src="assets/asset3.png" alt="Иконка защиты криптоактивов" width="700" height="620">
+            <article class="floating-card card-a">
+              <span class="card-label">AML screening</span>
+              <strong>Проверка контрагентов</strong>
+              <p>Маршруты, адреса риска, подозрительные кластеры и первичная оценка сценария.</p>
+            </article>
+            <article class="floating-card card-b">
+              <span class="card-label">Tracing</span>
+              <strong>Chain-of-funds обзор</strong>
+              <p>Фиксируем точки движения активов и готовим базу для следующих действий.</p>
+            </article>
+            <article class="floating-card card-c">
+              <span class="card-label">Response</span>
+              <strong>Конфиденциальный разбор</strong>
+              <p>Структурируем вводные данные и собираем рабочую картину без лишнего шума.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="problems">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">С какими запросами обращаются чаще всего</p>
+          <h2>Помогаем в ситуациях, где нужна ясность, аккуратный анализ и понятный план действий</h2>
+          <p>Фокусируемся на реальной картине происходящего: от блокировок и споров до случаев хищения и вопросов сопровождения.</p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="problem-card reveal">
+            <div class="problem-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <rect x="8" y="16" width="48" height="34" rx="12"></rect>
+                <path d="M20 16v-4a12 12 0 0 1 24 0v4M32 28v10"></path>
+              </svg>
+            </div>
+            <h3>Блокировка средств</h3>
+            <p>Разбираем причину ограничения, подготавливаем позицию для коммуникации с сервисом или биржей.</p>
+          </article>
+
+          <article class="problem-card reveal">
+            <div class="problem-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M14 20h36l-8 24H6z"></path>
+                <circle cx="20" cy="48" r="4"></circle>
+                <circle cx="40" cy="48" r="4"></circle>
+                <path d="M24 12h24"></path>
+              </svg>
+            </div>
+            <h3>Споры на P2P-платформах</h3>
+            <p>Помогаем структурировать доказательства, проверить риски и выбрать корректный сценарий эскалации.</p>
+          </article>
+
+          <article class="problem-card reveal">
+            <div class="problem-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <circle cx="32" cy="24" r="10"></circle>
+                <path d="M16 48c4-8 12-12 16-12s12 4 16 12"></path>
+                <path d="M48 14l8 8M56 14l-8 8"></path>
+              </svg>
+            </div>
+            <h3>Подозрительные контрагенты</h3>
+            <p>Проводим первичную AML-оценку адресов, следов активности и признаков потенциального риска.</p>
+          </article>
+
+          <article class="problem-card reveal">
+            <div class="problem-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M16 18h24a8 8 0 0 1 8 8v20H24a8 8 0 0 1-8-8z"></path>
+                <path d="M30 30h12"></path>
+                <path d="M40 16l8 8-8 8"></path>
+              </svg>
+            </div>
+            <h3>Кража криптовалюты</h3>
+            <p>Анализируем цепочку транзакций и фиксируем доступные следы для дальнейшего сопровождения.</p>
+          </article>
+
+          <article class="problem-card reveal">
+            <div class="problem-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M18 14h28v36H18z"></path>
+                <path d="M24 24h16M24 32h16M24 40h10"></path>
+                <path d="M42 14v12h12"></path>
+              </svg>
+            </div>
+            <h3>Необходимость сопровождения</h3>
+            <p>Подготавливаем аккуратную рабочую базу для переговоров, консультаций и дальнейших юридических шагов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Форматы работы</p>
+          <h2>Услуги, которые помогают быстро оценить ситуацию и перейти к осмысленным действиям</h2>
+          <p>Подбираем глубину вовлечения под реальную задачу: от первичного разбора до комплексного сопровождения.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <span class="service-index">01</span>
+            <h3>Экспресс-анализ криптоинцидента</h3>
+            <p>Быстрая первичная оценка ситуации: анализ вводных данных, просмотр транзакций, определение возможного направления движения средств и рекомендации по следующим шагам.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-index">02</span>
+            <h3>Глубокое расследование криптоинцидентов</h3>
+            <p>Подробный анализ транзакционной цепочки, поиск взаимосвязей, фиксация маршрута движения активов, подготовка материалов для дальнейшего сопровождения.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-index">03</span>
+            <h3>Комплексная AML-консультация</h3>
+            <p>Проверка транзакций и контрагентов, помощь при блокировке средств, сопровождение при взаимодействии с криптобиржами и сервисами.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-index">04</span>
+            <h3>Консультация по вопросам криптовалют</h3>
+            <p>Поддержка по спорным ситуациям, безопасности активов, проверке рисков, структуре дальнейших действий и общим вопросам криптоиндустрии.</p>
+          </article>
+        </div>
+
+        <div class="section-actions reveal">
+          <a class="button button-primary" href="#contacts">Обсудить задачу</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-lined" id="process">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Как проходит работа</p>
+          <h2>Понятный процесс без лишней перегрузки</h2>
+          <p>Каждый этап нужен для того, чтобы собрать достоверную картину, а не делать поспешные выводы.</p>
+        </div>
+
+        <ol class="timeline" aria-label="Этапы работы">
+          <li class="timeline-card reveal">
+            <span class="timeline-number">1</span>
+            <h3>Получение вводных данных</h3>
+            <p>Фиксируем исходную информацию, контекст инцидента и критичные детали по активам и платформам.</p>
+          </li>
+          <li class="timeline-card reveal">
+            <span class="timeline-number">2</span>
+            <h3>Интервью и верификация</h3>
+            <p>Сверяем факты, уточняем временные метки, адреса, переписки и логи взаимодействий.</p>
+          </li>
+          <li class="timeline-card reveal">
+            <span class="timeline-number">3</span>
+            <h3>Анализ блокчейн-транзакций</h3>
+            <p>Изучаем цепочку операций, кластеры и потенциальные точки дальнейшего движения средств.</p>
+          </li>
+          <li class="timeline-card reveal">
+            <span class="timeline-number">4</span>
+            <h3>Подготовка стратегии</h3>
+            <p>Формируем рекомендации, приоритеты и возможные направления дальнейшей коммуникации.</p>
+          </li>
+          <li class="timeline-card reveal">
+            <span class="timeline-number">5</span>
+            <h3>Сопровождение по следующим шагам</h3>
+            <p>Помогаем двигаться дальше структурно: без лишних обещаний, но с понятной рабочей логикой.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-accent" id="benefits">
+      <div class="container benefits-layout">
+        <div class="benefits-intro reveal">
+          <p class="eyebrow">Почему выбирают нас</p>
+          <h2>Собираем рабочую картину так, чтобы ей можно было пользоваться дальше</h2>
+          <p>CryptoRecon задуман как аккуратный, экспертный интерфейс доверия: без громких обещаний, с приоритетом на ясность, аккуратность и конфиденциальность.</p>
+          <img src="assets/contact-secure.svg" alt="Абстрактная иллюстрация про безопасность данных и сопровождение" width="560" height="480">
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit-card reveal">
+            <h3>Комплексный подход</h3>
+            <p>Соединяем аналитику, проверку рисков и сопровождение в одной понятной траектории.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <h3>Коммуникация без лишней “воды”</h3>
+            <p>Объясняем ситуацию простым языком и не перегружаем клиента лишними терминами.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <h3>Поддержка на каждом этапе</h3>
+            <p>Не ограничиваемся разовым комментариями, а помогаем выстроить последовательность действий.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <h3>Индивидуальный разбор</h3>
+            <p>Каждый кейс рассматривается отдельно, с учетом платформ, цепочек и контрагентов.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <h3>Экспертность в AML и крипторисках</h3>
+            <p>Фокус на проверке маршрутов, типовых триггеров и признаков потенциальной проблемности.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <h3>Конфиденциальность данных</h3>
+            <p>Работа строится вокруг аккуратного обращения с вводными данными и чувствительной информацией.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Частые вопросы до начала работы</h2>
+          <p>Ответы сформулированы спокойно и реалистично, без обещаний, которые нельзя контролировать.</p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item reveal">
+            <div class="faq-heading">
+              <h3 class="faq-question">Можно ли гарантировать возврат средств?</h3>
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-1" id="faq-trigger-1" aria-label="Открыть ответ на вопрос: Можно ли гарантировать возврат средств?"></button>
+            </div>
+            <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1" hidden>
+              <p>Нет. Корректно говорить о возможности проанализировать ситуацию, найти следы движения активов и подготовить рекомендации по следующим шагам. Итог зависит от множества внешних факторов.</p>
+            </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <div class="faq-heading">
+              <h3 class="faq-question">Какая информация нужна для старта?</h3>
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-2" id="faq-trigger-2" aria-label="Открыть ответ на вопрос: Какая информация нужна для старта?"></button>
+            </div>
+            <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2" hidden>
+              <p>Обычно полезны адреса кошельков, хеши транзакций, временные метки, переписка, скриншоты и краткое описание сценария. Чем точнее вводные данные, тем лучше первичная оценка.</p>
+            </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <div class="faq-heading">
+              <h3 class="faq-question">Сколько времени занимает первичный анализ?</h3>
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-3" id="faq-trigger-3" aria-label="Открыть ответ на вопрос: Сколько времени занимает первичный анализ?"></button>
+            </div>
+            <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3" hidden>
+              <p>Срок зависит от объема вводных данных и сложности маршрута средств. Для демо-сценария разумно ориентироваться на первичный разбор в течение 1–4 дней после получения полного набора материалов.</p>
+            </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <div class="faq-heading">
+              <h3 class="faq-question">Помогаете ли вы при блокировке средств на бирже?</h3>
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-4" id="faq-trigger-4" aria-label="Открыть ответ на вопрос: Помогаете ли вы при блокировке средств на бирже?"></button>
+            </div>
+            <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4" hidden>
+              <p>Да, в рамках аналитической и консультационной части: можно подготовить структуру обращения, собрать нужные данные и оценить, какие аргументы и документы понадобятся для дальнейшей коммуникации.</p>
+            </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <div class="faq-heading">
+              <h3 class="faq-question">Можно ли обратиться просто за консультацией?</h3>
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-5" id="faq-trigger-5" aria-label="Открыть ответ на вопрос: Можно ли обратиться просто за консультацией?"></button>
+            </div>
+            <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5" hidden>
+              <p>Да. Не каждая ситуация требует глубокого расследования. Иногда достаточно первичной консультации, чтобы понять риски, приоритеты и оптимальную последовательность действий.</p>
+            </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <div class="faq-heading">
+              <h3 class="faq-question">Насколько конфиденциально проходит работа?</h3>
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-6" id="faq-trigger-6" aria-label="Открыть ответ на вопрос: Насколько конфиденциально проходит работа?"></button>
+            </div>
+            <div class="faq-panel" id="faq-panel-6" role="region" aria-labelledby="faq-trigger-6" hidden>
+              <p>Конфиденциальность рассматривается как базовое условие работы. В демо-версии это отражено на уровне коммуникации, формы и структуры страницы; в реальном проекте правила и каналы согласуются отдельно.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contacts">
+      <div class="container contact-layout">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Контактный блок</p>
+          <h2>Опишите ситуацию — подскажем, с чего начать</h2>
+          <p>Демо-форма показывает, как может выглядеть первое касание: спокойно, структурно и без перегруженного интерфейса.</p>
+
+          <div class="contact-sidecard">
+            <p class="sidecard-title">Связь напрямую</p>
+            <a class="sidecard-link" data-contact="telegram-link" href="https://t.me/tracepoint_advisory" target="_blank" rel="noreferrer">
+              <span>Telegram</span>
+              <strong data-contact="telegram-handle">@tracepoint_advisory</strong>
+            </a>
+            <a class="sidecard-link" data-contact="email-link" href="mailto:hello@tracepoint.demo">
+              <span>Email</span>
+              <strong data-contact="email-text">hello@tracepoint.demo</strong>
+            </a>
+            <p class="sidecard-note">Конфиденциальность вводных данных и аккуратная коммуникация являются базовым стандартом взаимодействия.</p>
+          </div>
+        </div>
+
+        <div class="contact-panel reveal">
+          <form class="contact-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Имя</label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
+                <p class="field-error" id="name-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+                <p class="field-error" id="email-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field field-full">
+                <label for="telegram">Telegram</label>
+                <input id="telegram" name="telegram" type="text" autocomplete="off" placeholder="@username">
+                <p class="field-hint">Необязательное поле, если удобнее продолжить общение в Telegram.</p>
+              </div>
+
+              <div class="field field-full">
+                <label for="message">Краткое описание ситуации</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <p class="field-error" id="message-error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <label class="consent-row" for="consent">
+              <input id="consent" name="consent" type="checkbox" required>
+              <span>Я ознакомился с <a href="privacy.html">политикой конфиденциальности</a> и понимаю, что это демонстрационная форма без фактической отправки данных.</span>
+            </label>
+            <p class="field-error consent-error" id="consent-error" aria-live="polite"></p>
+
+            <div class="form-actions">
+              <button class="button button-primary" type="submit">Получить консультацию</button>
+              <p class="form-caption">После отправки форма покажет демо-подтверждение и предложит перейти к прямому контакту.</p>
+            </div>
+
+            <div class="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="#hero" aria-label="CryptoRecon — на главную">
+          <span class="brand-mark" aria-hidden="true"><img src="assets/Cyber_Target_Logo_E11iUnKA.png" alt="" width="48" height="48"></span>
+          <span class="brand-text"><strong>CryptoRecon</strong></span>
+        </a>
+        <p class="footer-copy">Демонстрационная презентационная версия лендинга для компании из сферы криптоаналитики, расследований и AML-консультаций.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Навигация в подвале">
+        <a href="#problems">Проблемы</a>
+        <a href="#services">Услуги</a>
+        <a href="#process">Как работаем</a>
+        <a href="#benefits">Преимущества</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacts">Контакты</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> CryptoRecon. Демо-концепт.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
