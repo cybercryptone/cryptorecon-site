@@ -32,6 +32,8 @@ CryptoRecon помогает физическим лицам и компания
 - [Разблокировка USDT Kraken: профессиональная помощь](https://cryptorecon.io/usdt-kraken.html)
 - [Разблокировка USDT BingX: профессиональная помощь](https://cryptorecon.io/usdt-bingx.html)
 - [Разблокировка USDT Phemex: профессиональная помощь](https://cryptorecon.io/usdt-phemex.html)
+- [Разблокировка USDT HTX (Huobi): профессиональная помощь](https://cryptorecon.io/usdt-htx.html)
+- [Разблокировка USDT KuCoin: профессиональная помощь](https://cryptorecon.io/usdt-kucoin.html)
 
 ## Блог: полное руководство (пилотная статья)
 
@@ -49,6 +51,12 @@ CryptoRecon помогает физическим лицам и компания
 - [Bybit P2P для россиян: 7 правил безопасной торговли без AML-блокировки](https://cryptorecon.io/blog-bybit-p2p-rossiya.html)
 - [OTC-сделки с USDT и AML-риски: как крупные суммы попадают под проверку](https://cryptorecon.io/blog-usdt-otc.html)
 - [Биржа обанкротилась и заблокировала USDT: уроки FTX и как защититься в 2026](https://cryptorecon.io/blog-ftx-bankrotstvo.html)
+- [Travel Rule 2026: как правило FATF влияет на переводы USDT и блокировки](https://cryptorecon.io/blog-travel-rule.html)
+- [FATF и криптовалюта: как 40 рекомендаций влияют на блокировки USDT в 2026](https://cryptorecon.io/blog-fatf.html)
+- [Blacklist USDT: как Tether блокирует адреса и что делать владельцу](https://cryptorecon.io/blog-blacklist-usdt.html)
+- [USDT со скама: что делать если получили загрязнённые монеты в 2026](https://cryptorecon.io/blog-usdt-scam.html)
+- [P2P-арбитраж и AML: риски блокировки USDT при торговле спредом в 2026](https://cryptorecon.io/blog-p2p-arbitrazh.html)
+- [Автоматические AML-фильтры: как работают системы блокировки USDT в 2026](https://cryptorecon.io/blog-aml-avtomatizaciya.html)
 
 ## Блог: типы блокировок по платформам и сетям
 
@@ -96,6 +104,13 @@ CryptoRecon помогает физическим лицам и компания
 - [OKX для россиян в 2026: верификация, ограничения и риски заморозки USDT](https://cryptorecon.io/blog-okx-rossiya.html)
 - [Bybit KYC и россияне: почему отклоняют верификацию и как пройти с первого раза](https://cryptorecon.io/blog-bybit-kyc.html)
 - [Bybit заблокировал аккаунт россиянина: причины и восстановление доступа](https://cryptorecon.io/blog-bybit-blok.html)
+- [Binance P2P AML-риски: 7 правил безопасной торговли для россиян в 2026](https://cryptorecon.io/blog-binance-p2p.html)
+- [Kraken заблокировал аккаунт россиянина: причины и апелляция в 2026](https://cryptorecon.io/blog-kraken-blok.html)
+- [WhiteBIT KYC и блокировка аккаунта: полное руководство для россиян 2026](https://cryptorecon.io/blog-whitebit-kyc.html)
+- [KuCoin заблокировал USDT: AML-причины и пошаговая апелляция в 2026](https://cryptorecon.io/blog-kucoin-blok.html)
+- [HTX (Huobi) заблокировал аккаунт россиянина: AML-причины и апелляция 2026](https://cryptorecon.io/blog-htx-blok.html)
+- [Gate.io KYC и блокировка аккаунта: что делать россиянам в 2026](https://cryptorecon.io/blog-gate-kyc.html)
+- [USDT на DEX: Uniswap, Curve и риски заморозки в 2026](https://cryptorecon.io/blog-usdt-dex.html)
 - [Сроки разблокировки USDT: сколько времени рассматривает Tether и биржи](https://cryptorecon.io/blog-sroki.html)
 - [Сколько стоит разблокировка USDT: цены, факторы и как не попасть на скамеров](https://cryptorecon.io/blog-stoimost.html)
 

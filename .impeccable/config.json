@@ -29,6 +29,11 @@
         "rule": "side-tab",
         "value": "border-l-4 border-primary rounded-r-xl",
         "createdAt": "2026-09-14T16:56:23.873Z"
+      },
+      {
+        "rule": "side-tab",
+        "value": "border-left:3px solid #495f84",
+        "createdAt": "2026-11-04T22:45:07.093Z"
       }
     ]
   }

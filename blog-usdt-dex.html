@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>USDT на DEX: Uniswap, Curve и риски заморозки в 2026 | CryptoRecon</title>
+<meta name="description" content="USDT работает на DEX без KYC, но on-chain история остаётся навсегда. Разбираем как использование Uniswap/Curve влияет на AML-скоринг, когда DEX-операции вызывают блокировку на централизованных биржах."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-usdt-dex.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-usdt-dex.html"/>
+<meta property="og:title" content="USDT на DEX: Uniswap, Curve и риски заморозки в 2026 | CryptoRecon"/>
+<meta property="og:description" content="USDT работает на DEX без KYC, но on-chain история остаётся навсегда. Разбираем как использование Uniswap/Curve влияет на AML-скоринг, когда DEX-операции вызывают блокировку на централизованных биржах."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta property="og:image:width" content="512"/>
+<meta property="og:image:height" content="512"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="USDT на DEX: Uniswap, Curve и риски заморозки в 2026"/>
+<meta name="twitter:description" content="USDT работает на DEX без KYC, но on-chain история остаётся навсегда. Разбираем как DEX-активность влияет на AML-скоринг и когда это вызывает блокировку."/>
+<meta name="twitter:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta property="article:published_time" content="2026-11-05T00:00:00+03:00"/>
+<meta property="article:modified_time" content="2026-11-05T00:00:00+03:00"/>
+<meta property="article:section" content="DeFi и сети"/>
+<meta property="article:author" content="https://cryptorecon.io"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://cryptorecon.io/"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://cryptorecon.io/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "USDT на DEX", "item": "https://cryptorecon.io/blog-usdt-dex.html"}
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "USDT на DEX: Uniswap, Curve и риски заморозки в 2026",
+      "description": "USDT работает на DEX без KYC, но on-chain история остаётся навсегда. Разбираем как использование Uniswap/Curve влияет на AML-скоринг, когда DEX-операции вызывают блокировку на централизованных биржах.",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io", "sameAs": ["https://t.me/crypto_recon"]},
+      "publisher": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io", "logo": {"@type": "ImageObject", "url": "https://cryptorecon.io/assets/logo.png", "width": 512, "height": 512}},
+      "mainEntityOfPage": "https://cryptorecon.io/blog-usdt-dex.html",
+      "image": "https://cryptorecon.io/assets/logo.png",
+      "inLanguage": "ru",
+      "wordCount": 2000
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Анонимен ли Uniswap для AML-систем?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет, Uniswap полностью не анонимен для AML-систем. Blockchain Ethereum является публичным реестром: каждая транзакция доступна всем желающим. Chainalysis, Elliptic и другие AML-провайдеры давно проиндексировали все смарт-контракты Uniswap (v2, v3) как известные сущности. Когда вы совершаете своп на Uniswap, AML-система видит ваш Ethereum-адрес (отправитель), адрес смарт-контракта Uniswap (посредник) и выходной адрес (получатель токенов). Вся эта цепочка сохраняется в блокчейне навсегда. Единственное, что не видно AML-системе автоматически: ваша реальная личность, если вы не прошли KYC нигде. Но как только вы попытаетесь вывести средства на CEX с KYC (Binance, Coinbase, Bybit), ваша личность будет связана с историей адреса. С этого момента вся история DEX-операций этого адреса становится частью вашего AML-профиля на бирже."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tornado Cash заблокирован: что будет если я случайно взаимодействовал с ним?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Случайное взаимодействие с Tornado Cash возможно в двух сценариях. Первый: вы сознательно использовали сервис до его попадания под санкции в августе 2022 года. Второй: вам отправили «dust» транзакцию с адреса Tornado Cash без вашего ведома, что происходило массово как атака на пользователей после санкций. В обоих случаях ваш адрес будет флагирован AML-системами. Последствия при депозите на CEX: вероятная заморозка средств, compliance-запрос с объяснением взаимодействия. Для защиты необходимо документально подтвердить: если это было до санкций OFAC (до 8 августа 2022 года), взаимодействие было законным на момент совершения. Если это была dust-атака, нужно показать что вы не инициировали транзакцию и не извлекали из неё выгоду. Это сложная ситуация требующая профессиональной помощи, но не является безнадёжной при правильном подходе к документированию."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "USDT из Curve Finance вызывает проблемы на Binance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Сам факт использования Curve Finance не является автоматическим триггером для блокировки. Curve Finance не находится в санкционных списках и является легальным DeFi-протоколом. Однако несколько ситуаций создают реальные риски при дальнейшем депозите на Binance. Первое: если в пулах Curve присутствовали токены от OFAC-санкционированных адресов, ваши выведенные токены могут унаследовать часть этого риска. Это особенно актуально для пулов с высоким оборотом где ликвидность постоянно меняется. Второе: если вы использовали Curve как промежуточный шаг после операций с высокорисковыми токенами, это будет обнаружено. Третье: паттерн многочисленных свопов через разные DEX-протоколы создаёт сигнал layering. Рекомендация: перед крупным депозитом на Binance после работы с Curve запустите AML-проверку своего адреса."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как проверить не взаимодействовал ли мой адрес с OFAC-адресами?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Несколько способов проверки. Самый простой: Ethereum-сканер Etherscan.io. Перейдите на страницу вашего адреса, раздел Transactions. Вручную или через поиск проверьте наличие транзакций с адресами из SDN-листа. Список адресов Tornado Cash публично доступен на сайте OFAC. Автоматизированный вариант: AMLBot и аналогичные сервисы автоматически проверяют все взаимодействия адреса с OFAC-листом и дают итоговый риск-скор. GetBlock AML также предоставляет такую проверку. Crystal Blockchain через API позволяет получить полный отчёт о связях адреса. Важный нюанс: «взаимодействие» в понимании Chainalysis включает не только прямые транзакции, но и косвенные связи через 2-3 прыжка. Поэтому даже если ваш адрес никогда не отправлял средства напрямую на Tornado Cash, могли существовать косвенные связи. Профессиональная AML-проверка покажет полную картину."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">USDT на DEX</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">DeFi и сети</span>
+      <span class="text-on-surface-variant text-xs">5 ноября 2026</span>
+      <span class="text-on-surface-variant text-xs">8 мин.</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">USDT на DEX: Uniswap, Curve и риски заморозки в 2026</h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">DEX-биржи привлекают пользователей отсутствием KYC и прямым доступом к ликвидности. Но операции на Uniswap, Curve и PancakeSwap оставляют неизгладимый след в блокчейне. Разбираем как AML-системы читают DEX-активность, когда использование DEX приводит к блокировке на CEX и какова реальная угроза заморозки USDT на уровне смарт-контракта.</p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">DEX не обеспечивает анонимность: все операции на Uniswap, Curve и PancakeSwap видны Chainalysis и Elliptic. Проблему создают: операции через Tornado Cash (заблокирован OFAC в 2022, все адреса в SDN-листе), связь с OFAC-санкционированными адресами через пулы ликвидности, использование DEX как промежуточного хопа при перемещении высокорисковых токенов. Tether может заморозить USDT непосредственно на ERC-20 адресе, в том числе на адресе DEX-пула. Проверяйте AML-скор перед переводом на CEX.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4"><div class="prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">DEX и USDT: три главных платформы</h2>
+    <p class="text-on-surface leading-relaxed mb-4">Uniswap: крупнейший DEX на Ethereum с оборотом в миллиарды долларов ежедневно. USDT здесь торгуется как токен ERC-20 через автоматизированные пулы ликвидности без обязательного KYC. Пользователь подключает кошелёк (MetaMask, Trust Wallet) и совершает своп напрямую со смарт-контрактом. Curve Finance специализируется на торговле стейблкоинами: пул 3pool (USDT/USDC/DAI) является одним из самых ликвидных пулов в DeFi. Curve популярен для конвертации стейблкоинов с минимальным проскальзыванием. PancakeSwap: аналог Uniswap на BNB Smart Chain, работает с BEP-20 версией USDT (Binance-Peg USDT).</p>
+    <p class="text-on-surface leading-relaxed mb-4">Все три платформы управляются автономными смарт-контрактами без централизованного оператора. Это означает что ни одна компания не может напрямую запретить конкретному пользователю использовать протокол. Именно поэтому DEX воспринимается как инструмент обхода ограничений. Однако это не означает анонимности операций. Смарт-контракты работают в публичных блокчейнах, и каждое взаимодействие с ними полностью видно любому наблюдателю, включая AML-аналитиков. Отсутствие централизованного оператора не стирает цифровой след.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Почему DEX не означает анонимность для AML</h2>
+    <p class="text-on-surface leading-relaxed mb-4">Ключевое заблуждение среди пользователей: "DEX = анонимность". В реальности блокчейн Ethereum и BNB Smart Chain полностью публичен. Каждый своп на Uniswap записывается в блокчейн навсегда: адрес отправителя, адрес получателя, сумма токенов, время, хеш транзакции. Chainalysis, Elliptic и Crystal Intelligence давно идентифицировали смарт-контракты всех крупных DEX как известные сущности в своих графах транзакций. Любой DEX-своп между вашим адресом и адресом Uniswap/Curve мгновенно атрибутируется AML-системой как взаимодействие с соответствующим протоколом.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Иллюзия анонимности возникает из-за отсутствия KYC на самом DEX. Это правда: Uniswap не требует документов. Но AML-система работает иначе: она не проверяет вас в момент свопа на DEX, она анализирует историю вашего адреса в момент депозита на CEX. К этому моменту вся история DEX-операций уже зафиксирована в блокчейне, и AML-алгоритм прочитает её за секунды. Связь между вашей реальной личностью (через KYC на бирже) и историей DEX-адреса устанавливается в момент первого депозита.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как DEX-активность читается AML-системами</h2>
+    <p class="text-on-surface leading-relaxed mb-4">AML-система анализирует DEX-активность на нескольких уровнях. Первый уровень: прямое взаимодействие с известными контрактами. Если ваш адрес обращался к контракту Tornado Cash, это немедленно создаёт красный флаг максимального уровня. Второй уровень: происхождение токенов из пулов ликвидности. Если вы извлекли токены из пула, в который кто-то вносил USDT с высоким риск-скором, ваши выведенные токены могут унаследовать часть этого риска через механизм пропорционального загрязнения. Смотрите подробнее: <a href="blog-defi.html" class="text-primary hover:underline">DeFi и AML</a>.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Третий уровень анализа: паттерны использования DEX как layering инструмента. Серия последовательных свопов через несколько DEX без очевидной экономической цели является классическим сигналом попытки запутать след происхождения средств. AML-алгоритмы обучены распознавать такие паттерны: например, цепочку A-to-B на Uniswap, затем B-to-C на Curve, затем C-to-A на PancakeSwap. Это называется circular trading и является одним из признаков отмывания. Подробнее о смарт-контрактах: <a href="blog-smart-kontrakt.html" class="text-primary hover:underline">смарт-контракты и USDT</a>.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Tornado Cash и OFAC: максимальный красный флаг</h2>
+    <p class="text-on-surface leading-relaxed mb-4">В августе 2022 года OFAC (Управление по контролю за иностранными активами Министерства финансов США) внесло смарт-контракты Tornado Cash в SDN-список (Specially Designated Nationals). Это первый в истории случай санкций против неизменяемого смарт-контракта. Все адреса контрактов Tornado Cash теперь находятся в SDN-листе. Любое взаимодействие с этими адресами: отправка токенов, получение токенов, даже принудительное получение "dust" транзакции, является красным флагом максимального уровня для любой AML-системы. Подробнее: <a href="blog-ofac.html" class="text-primary hover:underline">OFAC и USDT</a>.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Chainalysis моментально идентифицирует любой адрес, взаимодействовавший с Tornado Cash. При попытке вывести такие токены на CEX (Binance, Coinbase, Bybit) они автоматически блокируются. Даже если взаимодействие было случайным или произошло давно, след в блокчейне остаётся навсегда. Пользователи, получившие "dust" транзакции от Tornado Cash без своего ведома, также попадают под флагирование. Для разблокировки необходимо доказать случайность взаимодействия и отсутствие умысла, что является крайне сложной задачей требующей профессионального подхода.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">USDT freeze на ERC-20: заморозка на уровне контракта</h2>
+    <p class="text-on-surface leading-relaxed mb-4">USDT в версии ERC-20 является токеном стандарта ERC-20 с дополнительной привилегированной функцией: Tether LLC имеет возможность вызвать функцию freeze(address) для любого адреса в блокчейне Ethereum. Это означает что Tether может заморозить USDT непосредственно на вашем адресе, независимо от того, находится ли он на DEX, в смарт-контракте пула ликвидности или в обычном кошельке. Исторически заморозки на DEX-адресах происходили в нескольких документированных случаях: 2022 год (адреса, взаимодействовавшие с Tornado Cash), 2023-2024 годы (адреса, связанные с санкционными расследованиями). Подробнее: <a href="blog-mixer.html" class="text-primary hover:underline">криптомиксеры и AML</a>.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Важно понимать: заморозка на уровне контракта означает что токены физически блокируются на адресе и не могут быть никуда переведены. Если ваши USDT находятся в пуле ликвидности Curve в момент заморозки, ваши LP-токены продолжают существовать, но при попытке вывести базовые USDT из пула транзакция будет отклонена контрактом. BEP-20 версия USDT на BNB Smart Chain технически управляется Binance, а не Tether, поэтому функция прямой заморозки работает иначе и менее предсказуемо с точки зрения пользователя.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Безопасное использование DEX с USDT</h2>
+    <p class="text-on-surface leading-relaxed mb-4">Три правила безопасного использования DEX для минимизации AML-рисков при последующем переводе на CEX. Первое: проверяйте AML-скор своего адреса через AMLBot или GetBlock AML перед каждым крупным депозитом на CEX после работы на DEX. Это занимает несколько минут и позволяет выявить проблемы заранее, до того как биржа заморозит средства. Второе: не взаимодействуйте с любыми адресами из SDN-листа OFAC, даже если они выглядят как нейтральные DEX-контракты. Проверяйте адреса контрактов перед одобрением транзакций через etherscan.io или sanctionslist.ofac.treas.gov.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Третье правило: избегайте деятельности, которая создаёт паттерн запутывания следа. Множество последовательных свопов через разные DEX без очевидной экономической цели является классическим сигналом layering для AML-алгоритмов. Если вы совершаете арбитраж или предоставляете ликвидность для получения yield, это легитимные цели. Но если вы совершаете свопы исключительно для изменения "следа" токенов, AML-система это обнаружит. Дополнительное правило: при работе с большими суммами через DEX используйте последовательно один и тот же адрес, документируйте экономическую цель каждой операции.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Сравнение DEX: AML-видимость и специфические риски</h2>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">DEX</th>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">Сеть</th>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">USDT версия</th>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">AML-видимость</th>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">Специфические риски</th>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">Рекомендации</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="px-4 py-3 font-medium text-on-surface">Uniswap</td>
+            <td class="px-4 py-3 text-on-surface-variant">Ethereum</td>
+            <td class="px-4 py-3 text-on-surface-variant">ERC-20</td>
+            <td class="px-4 py-3 text-on-surface-variant">Полная (Chainalysis/Elliptic)</td>
+            <td class="px-4 py-3 text-on-surface-variant">Tornado Cash в той же сети</td>
+            <td class="px-4 py-3 text-on-surface-variant">Проверять адреса перед свопом</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="px-4 py-3 font-medium text-on-surface">Curve Finance</td>
+            <td class="px-4 py-3 text-on-surface-variant">Ethereum</td>
+            <td class="px-4 py-3 text-on-surface-variant">ERC-20</td>
+            <td class="px-4 py-3 text-on-surface-variant">Полная (Chainalysis/Elliptic)</td>
+            <td class="px-4 py-3 text-on-surface-variant">Пулы с OFAC-связанными LP</td>
+            <td class="px-4 py-3 text-on-surface-variant">Проверять историю пула</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="px-4 py-3 font-medium text-on-surface">PancakeSwap</td>
+            <td class="px-4 py-3 text-on-surface-variant">BNB Chain</td>
+            <td class="px-4 py-3 text-on-surface-variant">BEP-20</td>
+            <td class="px-4 py-3 text-on-surface-variant">Полная (Crystal/Elliptic)</td>
+            <td class="px-4 py-3 text-on-surface-variant">Нет встроенного freeze на BEP-20</td>
+            <td class="px-4 py-3 text-on-surface-variant">Осторожно: CEX конвертируют в ERC-20</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FAQ -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы о USDT на DEX</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Анонимен ли Uniswap для AML-систем?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Нет, Uniswap полностью не анонимен для AML-систем. Blockchain Ethereum является публичным реестром: каждая транзакция доступна всем желающим. Chainalysis, Elliptic и другие AML-провайдеры давно проиндексировали все смарт-контракты Uniswap (v2, v3) как известные сущности. Когда вы совершаете своп на Uniswap, AML-система видит ваш Ethereum-адрес (отправитель), адрес смарт-контракта Uniswap (посредник) и выходной адрес (получатель токенов). Вся эта цепочка сохраняется в блокчейне навсегда. Единственное, что не видно AML-системе автоматически: ваша реальная личность, если вы не прошли KYC нигде. Но как только вы попытаетесь вывести средства на CEX с KYC (Binance, Coinbase, Bybit), ваша личность будет связана с историей адреса. С этого момента вся история DEX-операций этого адреса становится частью вашего AML-профиля на бирже.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Tornado Cash заблокирован: что будет если я случайно взаимодействовал с ним?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Случайное взаимодействие с Tornado Cash возможно в двух сценариях. Первый: вы сознательно использовали сервис до его попадания под санкции в августе 2022 года. Второй: вам отправили "dust" транзакцию с адреса Tornado Cash без вашего ведома, что происходило массово как атака на пользователей после санкций. В обоих случаях ваш адрес будет флагирован AML-системами. Последствия при депозите на CEX: вероятная заморозка средств, compliance-запрос с объяснением взаимодействия. Для защиты необходимо документально подтвердить: если это было до санкций OFAC (до 8 августа 2022 года), взаимодействие было законным на момент совершения. Если это была dust-атака, нужно показать что вы не инициировали транзакцию и не извлекали из неё выгоду. Это сложная ситуация требующая профессиональной помощи, но не является безнадёжной при правильном подходе к документированию.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            USDT из Curve Finance вызывает проблемы на Binance?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Сам факт использования Curve Finance не является автоматическим триггером для блокировки. Curve Finance не находится в санкционных списках и является легальным DeFi-протоколом. Однако несколько ситуаций создают реальные риски при дальнейшем депозите на Binance. Первое: если в пулах Curve присутствовали токены от OFAC-санкционированных адресов, ваши выведенные токены могут унаследовать часть этого риска. Это особенно актуально для пулов с высоким оборотом где ликвидность постоянно меняется. Второе: если вы использовали Curve как промежуточный шаг после операций с высокорисковыми токенами, это будет обнаружено. Третье: паттерн многочисленных свопов через разные DEX-протоколы создаёт сигнал layering. Рекомендация: перед крупным депозитом на Binance после работы с Curve запустите AML-проверку своего адреса.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Как проверить не взаимодействовал ли мой адрес с OFAC-адресами?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Несколько способов проверки. Самый простой: Ethereum-сканер Etherscan.io. Перейдите на страницу вашего адреса, раздел "Transactions". Вручную или через поиск проверьте наличие транзакций с адресами из SDN-листа. Список адресов Tornado Cash публично доступен на сайте OFAC. Автоматизированный вариант: AMLBot и аналогичные сервисы автоматически проверяют все взаимодействия адреса с OFAC-листом и дают итоговый риск-скор. GetBlock AML также предоставляет такую проверку. Crystal Blockchain через API позволяет получить полный отчёт о связях адреса. Важный нюанс: "взаимодействие" в понимании Chainalysis включает не только прямые транзакции, но и косвенные связи через 2-3 прыжка. Поэтому даже если ваш адрес никогда не отправлял средства напрямую на Tornado Cash, могли существовать косвенные связи. Профессиональная AML-проверка покажет полную картину.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div></div>
+</article>
+
+<!-- Author block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специализируемся на анализе DeFi-операций и их влиянии на AML-скоринг. Работаем с кейсами связанными с Uniswap, Curve, Tornado Cash и другими DEX-протоколами с 2021 года.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">AML-анализ</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="blog-defi.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">currency_bitcoin</span>
+          <span class="text-xs text-on-surface-variant">DeFi и сети</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">DeFi и AML: риски при использовании децентрализованных протоколов</h3>
+      </a>
+      <a href="blog-smart-kontrakt.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">code</span>
+          <span class="text-xs text-on-surface-variant">DeFi и сети</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Смарт-контракты и USDT: как работает заморозка на уровне контракта</h3>
+      </a>
+      <a href="blog-ofac.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">gavel</span>
+          <span class="text-xs text-on-surface-variant">Санкции</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">OFAC и USDT: санкционные списки США и заморозка криптоактивов</h3>
+      </a>
+      <a href="blog-mixer.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">shuffle</span>
+          <span class="text-xs text-on-surface-variant">AML и риски</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Криптомиксеры и AML: последствия использования для USDT</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">Проблемы после работы с DEX?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Поможем разобраться с AML-рисками после операций на Uniswap, Curve и других DEX. Проведём профессиональную проверку адреса и поможем при блокировке на CEX.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="usdt-yurist.html" class="hover:text-white transition-colors">Юридическая помощь</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Биржи</p>
+          <ul class="space-y-1">
+            <li><a href="blog-binance.html" class="hover:text-white transition-colors">Binance</a></li>
+            <li><a href="blog-bybit.html" class="hover:text-white transition-colors">Bybit</a></li>
+            <li><a href="blog-okx.html" class="hover:text-white transition-colors">OKX</a></li>
+            <li><a href="blog-coinbase.html" class="hover:text-white transition-colors">Coinbase</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Контакты</p>
+          <ul class="space-y-1">
+            <li><a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-xs text-center">
+      &copy; <span id="year"></span> CryptoRecon. Все права защищены.
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

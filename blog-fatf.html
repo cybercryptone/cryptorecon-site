@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FATF и криптовалюта: как 40 рекомендаций влияют на блокировки USDT в 2026 | CryptoRecon</title>
+<meta name="description" content="FATF (Financial Action Task Force) разработала стандарты AML/CFT для крипторынка. Разбираем ключевые рекомендации: Travel Rule (R.16), VASP-регулирование, серый список и как это влияет на россиян."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-fatf.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-fatf.html"/>
+<meta property="og:title" content="FATF и криптовалюта: как 40 рекомендаций влияют на блокировки USDT в 2026 | CryptoRecon"/>
+<meta property="og:description" content="FATF разработала стандарты AML/CFT для крипторынка. Разбираем Travel Rule, VASP-регулирование, серый список и влияние на россиян."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta property="og:image:width" content="512"/>
+<meta property="og:image:height" content="512"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:published_time" content="2026-11-05T00:00:00+03:00"/>
+<meta property="article:modified_time" content="2026-11-05T00:00:00+03:00"/>
+<meta property="article:section" content="AML и риски"/>
+<meta property="article:author" content="https://cryptorecon.io"/>
+<meta name="twitter:title" content="FATF и криптовалюта: 40 рекомендаций и блокировки USDT в 2026"/>
+<meta name="twitter:description" content="Как стандарты FATF влияют на владельцев USDT: Travel Rule, VASP, серый список и особое положение россиян."/>
+<meta name="twitter:image" content="https://cryptorecon.io/assets/logo.png"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://cryptorecon.io/"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://cryptorecon.io/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "FATF и криптовалюта", "item": "https://cryptorecon.io/blog-fatf.html"}
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "FATF и криптовалюта: как 40 рекомендаций влияют на блокировки USDT в 2026",
+      "description": "FATF (Financial Action Task Force) разработала стандарты AML/CFT для крипторынка. Разбираем ключевые рекомендации: Travel Rule (R.16), VASP-регулирование, серый список и как это влияет на россиян.",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io", "sameAs": ["https://t.me/crypto_recon"]},
+      "publisher": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io", "logo": {"@type": "ImageObject", "url": "https://cryptorecon.io/assets/logo.png", "width": 512, "height": 512}},
+      "mainEntityOfPage": "https://cryptorecon.io/blog-fatf.html",
+      "image": "https://cryptorecon.io/assets/logo.png",
+      "inLanguage": "ru",
+      "wordCount": 2000
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Что такое FATF простыми словами?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FATF (Financial Action Task Force) создана в 1989 году при G7 как инструмент борьбы с отмыванием денег. Это межправительственная организация, которая разрабатывает стандарты и оценивает их выполнение государствами-членами. 40 рекомендаций FATF охватывают весь финансовый сектор: банки, страховые компании, рынок ценных бумаг, нотариусов, брокеров по недвижимости. С 2019 года в этот список попали провайдеры виртуальных активов (биржи, кошельки, обменники). Если страна не выполняет рекомендации, она попадает в серый или чёрный список. Это сигнал для всех финансовых институтов мира: клиенты из этой страны несут повышенный риск. Практически это означает дополнительные проверки, запросы документов и возможные отказы в обслуживании. Для владельцев USDT понимание FATF важно: именно эти стандарты определяют что именно проверяет биржа при каждой крупной транзакции."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Россия в FATF: что это значит для владельцев USDT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Исключение России из FATF в феврале 2023 года имеет практические последствия для всех россиян, работающих с криптовалютой. Формально россияне не внесены в санкционные списки FATF, но биржи в FATF-юрисдикциях (ЕС, США, Великобритания, Сингапур, Япония) вправе применять повышенные меры проверки. На практике это означает: запрос документов при депозите от определённой суммы, более строгий мониторинг транзакций, повышенная вероятность автоматической блокировки при любых признаках риска. Дополнительно к этому санкции OFAC против Garantex и других российских обменников закрыли многие привычные каналы. Россияне, использующие P2P на нерегулируемых платформах, несут двойной риск: и от FATF-статуса страны, и от потенциальной связи токенов с санкционированными адресами. Это не означает невозможность работы, но требует более тщательной документации каждой операции."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что такое Enhanced Due Diligence и когда биржа его применяет?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enhanced Due Diligence (EDD): расширенная проверка клиента, применяемая к пользователям повышенного риска. Стандартная проверка (CDD) включает KYC-верификацию и базовый мониторинг транзакций. EDD идёт значительно дальше. Биржа может запросить: документальное подтверждение источника средств (банковские выписки, договоры, счета), документы о деловой деятельности клиента, подтверждение легальности крипто-операций за предыдущий период, налоговые декларации или справки. EDD применяется при нескольких триггерах: клиент из страны серого или чёрного списка FATF, крупные транзакции от суммы установленной биржей (обычно от $10,000-50,000), нестандартная активность по сравнению с историей аккаунта, связь транзакций с высокорисковыми адресами. Если клиент не проходит EDD или не предоставляет документы в срок, биржа вправе заморозить средства и закрыть аккаунт."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как FATF Travel Rule влияет на P2P-переводы USDT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Travel Rule создаёт существенные трудности именно для P2P-переводов. Суть проблемы: Travel Rule работает между двумя зарегистрированными VASP, которые обмениваются данными об отправителе и получателе по специальным протоколам. P2P-платформы, Telegram-боты и независимые обменники не являются зарегистрированными VASP в большинстве юрисдикций. Это означает, что при переводе USDT через P2P данные Travel Rule просто не передаются. Когда получатель пытается завести эти токены на регулируемую биржу, принимающая биржа фиксирует отсутствие Travel Rule информации. Это автоматический триггер для запроса документов. При суммах от $1000 биржа попросит объяснить источник средств. Если пользователь не может документально подтвердить P2P-сделку (нет переписки, нет истории ордеров, нет банковского следа), биржа может заморозить средства до прояснения ситуации."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">FATF и криптовалюта</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">AML и риски</span>
+      <span class="text-on-surface-variant text-xs">5 ноября 2026</span>
+      <span class="text-on-surface-variant text-xs">8 мин.</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">FATF и криптовалюта: как 40 рекомендаций влияют на блокировки USDT в 2026</h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">FATF устанавливает глобальные стандарты борьбы с отмыванием денег и финансированием терроризма. С 2019 года эти стандарты распространяются на криптовалютный рынок. Разбираем как 40 рекомендаций FATF превратились в конкретные правила для бирж, почему Россия оказалась в особом положении и как требования FATF напрямую влияют на блокировки USDT.</p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">FATF: межправительственная организация, устанавливающая стандарты AML/CFT для 39 государств-членов. В 2019 году FATF распространила требования на криптовалюту через Руководство для VASP. Россия исключена из FATF в феврале 2023 года. Для бирж, работающих в юрисдикциях FATF, российские пользователи считаются повышенным риском и подпадают под Enhanced Due Diligence. Travel Rule (Рекомендация 16) требует передачи данных отправителя при переводах от $1000.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4"><div class="prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Что такое FATF: история и структура</h2>
+    <p class="text-on-surface leading-relaxed mb-4">FATF (Financial Action Task Force) создана в 1989 году по инициативе G7 для разработки международных стандартов противодействия отмыванию денег. Сегодня организация объединяет 39 государств-членов плюс ЕС в качестве наблюдателя, штаб-квартира находится в Париже. Основная миссия FATF: разработка, продвижение и оценка выполнения международных стандартов AML/CFT (Anti-Money Laundering и Countering the Financing of Terrorism). 40 рекомендаций FATF являются де-факто обязательными для всех государств-членов: они переносятся в национальное законодательство, а соответствие им оценивается в ходе регулярных взаимных проверок.</p>
+    <p class="text-on-surface leading-relaxed mb-4">FATF не является регулятором в прямом смысле слова и не может напрямую штрафовать компании или государства. Однако её оценки имеют огромный практический вес: страна, получившая негативную оценку, рискует попасть в серый или чёрный список, что влечёт за собой повышенные проверки для всех её граждан и компаний со стороны финансовых институтов по всему миру. Именно поэтому государства серьёзно относятся к выполнению рекомендаций FATF: репутационные и финансовые последствия нарушений крайне значительны.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Россия и FATF: исключение 2023 года</h2>
+    <p class="text-on-surface leading-relaxed mb-4">В феврале 2023 года Россия была исключена из FATF в связи с вторжением в Украину. До этого момента Россия являлась членом организации с 2003 года и активно участвовала в разработке международных стандартов. Исключение несёт два ключевых последствия: российское законодательство AML больше не признаётся FATF как соответствующее международным стандартам, а биржи в FATF-юрисдикциях получили правовое основание для применения усиленных мер проверки к российским клиентам. Это не автоматический запрет на обслуживание россиян, но существенное ужесточение условий работы.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Практически это означает следующее: россиянин, открывающий счёт на западной бирже, автоматически попадает в категорию повышенного риска. Биржа обязана применить к нему более строгие процедуры проверки, чем к гражданину страны-члена FATF. При этом каждая биржа самостоятельно определяет политику в отношении российских пользователей: одни полностью прекратили обслуживание (Binance, Coinbase, Kraken), другие продолжают работу с дополнительными ограничениями (OKX, Bybit). Итог один: любая транзакция россиянина находится под повышенным вниманием compliance-систем.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Ключевые рекомендации FATF для крипторынка</h2>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Рекомендация 15: регулирование VASP</h3>
+    <p class="text-on-surface leading-relaxed mb-4">Рекомендация 15, обновлённая в 2019 году, стала ключевым документом, распространившим AML-требования на криптовалютный рынок. Государства-члены обязали провайдеров виртуальных активов (VASP) регистрироваться или лицензироваться в надзорных органах, проводить KYC-верификацию клиентов, вести учёт транзакций, сообщать о подозрительных операциях в финансовую разведку. Крупные централизованные биржи (Binance, Coinbase, Bybit, OKX) однозначно являются VASP и обязаны выполнять все эти требования в каждой из юрисдикций своего присутствия.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Нерегулируемые P2P-платформы и обменники в юрисдикциях без VASP-регулирования создают пробел в цепочке соответствия. Когда USDT проходит через такой нерегулируемый узел, след AML прерывается: данные не собираются, Travel Rule не применяется. Для получателя токенов, пришедших через такой канал, это означает риск вопросов при попытке завести средства на регулируемую биржу. Compliance-система видит разрыв в цепочке и может запросить дополнительные документы.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Travel Rule (Рекомендация 16) в деталях</h2>
+    <p class="text-on-surface leading-relaxed mb-4">Рекомендация 16: прямое применение банковского Travel Rule к криптовалюте. VASP обязан при транзакции от $1000 передавать принимающей стороне данные об отправителе: полное имя, номер счёта или адрес кошелька, а также минимум один дополнительный идентификатор: физический адрес, дату рождения или национальный идентификационный номер. О получателе требуется передать имя и номер счёта. Правило применяется к переводам между двумя зарегистрированными VASP, которые используют специализированные протоколы обмена данными (Notabene, TRISA, Sygna Bridge).</p>
+    <p class="text-on-surface leading-relaxed mb-4">Для unhosted wallets (личных кошельков типа MetaMask или Ledger) ситуация значительно сложнее: такой кошелёк не является зарегистрированным VASP и не может принять Travel Rule данные по протоколу. Большинство юрисдикций требует от VASP получить от клиента подтверждение того, что адрес принадлежит именно ему, прежде чем осуществить перевод. Это создаёт дополнительный барьер для россиян, активно использующих личные кошельки в схемах работы с криптовалютой. Подробнее о Travel Rule читайте в статье <a href="blog-travel-rule.html" class="text-primary hover:underline">Travel Rule 2026: как правило FATF влияет на переводы USDT</a>.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">VASP-определение: кто обязан соблюдать FATF</h2>
+    <p class="text-on-surface leading-relaxed mb-4">VASP (Virtual Asset Service Provider) по определению FATF: любое юридическое или физическое лицо, осуществляющее в коммерческих целях обмен виртуальных активов на фиатные деньги или другие активы, перевод виртуальных активов, хранение виртуальных активов, управление ими, а также участие и предоставление финансовых услуг в рамках предложений эмитентов (ICO/IEO). Централизованные биржи однозначно подпадают под это определение. С каждым годом под него попадает всё больше категорий участников рынка.</p>
+    <p class="text-on-surface leading-relaxed mb-4">DeFi-протоколы и DEX исторически находились в серой зоне: их сторонники утверждали, что смарт-контракты не являются юридическими лицами. Однако в 2024-2025 годах ряд юрисдикций начал применять VASP-определение к организациям, управляющим смарт-контрактами. P2P-платформы также могут быть VASP в зависимости от юрисдикции: Binance P2P является частью лицензированного VASP и подпадает под все требования, тогда как независимые P2P-группы в Telegram, как правило, не являются зарегистрированными VASP и выпадают из регулируемого периметра.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Серый и чёрный список FATF</h2>
+    <p class="text-on-surface leading-relaxed mb-4">FATF публикует два ключевых списка стран с повышенным риском. "Серый список" (Jurisdictions Under Increased Monitoring) включает страны, которые имеют стратегические недостатки в системе AML/CFT, признали эту проблему и работают с FATF над планом улучшений. Попадание в серый список не означает санкций, но является сигналом для финансовых институтов о необходимости усиленной проверки. "Чёрный список" (High-Risk Jurisdictions subject to a Call for Action) включает страны с критическими нарушениями, против которых вводятся международные контрмеры.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Финансовые учреждения в FATF-странах обязаны применять Enhanced Due Diligence (EDD) ко всем пользователям и транзакциям из стран серого и чёрного списков. Это напрямую влияет на возможность работы с криптовалютой: биржи автоматически присваивают повышенный риск-флаг клиентам из этих стран. Несмотря на то что Россия не внесена в серый список FATF как таковой, её исключение из организации привело к аналогичному практическому результату: западные биржи добровольно применяют к россиянам те же меры EDD.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Россия в "серой зоне": практические последствия</h2>
+    <p class="text-on-surface leading-relaxed mb-4">После исключения из FATF Россия не попала автоматически в серый список (это требует отдельного процесса оценки), однако западные биржи стали самостоятельно применять повышенные меры проверки к российским пользователям. Binance полностью ушёл из России в 2023 году, продав российский бизнес WEX. Coinbase и Kraken не обслуживают российских граждан с российским IP или российскими документами. OKX и Bybit формально не запрещают россиянам открывать счета, но применяют дополнительные проверки при значительных суммах или нестандартных транзакциях.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Это создаёт ситуацию, когда даже полностью легальная сделка может вызвать блокировку из-за географического риск-флага. Россиянин, получивший USDT в ходе обычной коммерческой операции, при попытке вывести средства на регулируемую биржу рискует столкнуться с запросом о происхождении средств, заморозкой до прояснения и потенциальным закрытием аккаунта. Решение этой проблемы: тщательная документация каждой операции с самого начала, а не постфактум при получении запроса от биржи.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как FATF-требования превращаются в блокировки USDT</h2>
+    <p class="text-on-surface leading-relaxed mb-4">Enhanced Due Diligence (EDD): это расширенная проверка, применяемая к клиентам повышенного риска. При EDD биржа может запросить: источник средств с документальным подтверждением (банковские выписки, договоры, счета), документы о деловой деятельности клиента, подтверждение легальности крипто-операций за предшествующий период, налоговые декларации или справки о доходах. Если клиент не может предоставить запрошенные документы или они вызывают сомнения в подлинности, биржа вправе заморозить средства на счету и инициировать дополнительное расследование. Подробнее о том как это работает с конкретными системами: <a href="blog-aml.html" class="text-primary hover:underline">AML в криптовалюте: как работает скоринг USDT</a>.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Россияне под EDD особенно уязвимы по нескольким причинам. Первая: многие используют P2P и обменники, которые не оставляют удобного документального следа, понятного западной compliance-службе. Вторая: банковские переводы из российских банков часто недоступны или недостаточны как доказательство происхождения крипто-активов. Третья: санкции OFAC против Garantex и других российских обменников означают, что USDT, прошедший через эти платформы, несёт дополнительный риск-флаг помимо общего FATF-статуса страны. Подробнее о санкционных рисках: <a href="blog-ofac.html" class="text-primary hover:underline">OFAC и USDT: санкционные списки США</a>.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Страны FATF в 2026: влияние на крипто-операции</h2>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">Страна</th>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">Статус в FATF</th>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">Влияние на пользователей</th>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">Уровень EDD</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="px-4 py-3 font-medium text-on-surface">Иран</td>
+            <td class="px-4 py-3 text-on-surface-variant">Чёрный список</td>
+            <td class="px-4 py-3 text-on-surface-variant">Полный запрет на большинстве бирж</td>
+            <td class="px-4 py-3 text-on-surface-variant">Максимальный</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="px-4 py-3 font-medium text-on-surface">КНДР</td>
+            <td class="px-4 py-3 text-on-surface-variant">Чёрный список</td>
+            <td class="px-4 py-3 text-on-surface-variant">Полный запрет, санкции OFAC</td>
+            <td class="px-4 py-3 text-on-surface-variant">Максимальный</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="px-4 py-3 font-medium text-on-surface">Мьянма</td>
+            <td class="px-4 py-3 text-on-surface-variant">Серый список</td>
+            <td class="px-4 py-3 text-on-surface-variant">Усиленная проверка, ограничения</td>
+            <td class="px-4 py-3 text-on-surface-variant">Высокий</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="px-4 py-3 font-medium text-on-surface">Пакистан</td>
+            <td class="px-4 py-3 text-on-surface-variant">Серый список (до 2024)</td>
+            <td class="px-4 py-3 text-on-surface-variant">Дополнительная проверка</td>
+            <td class="px-4 py-3 text-on-surface-variant">Средний</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="px-4 py-3 font-medium text-on-surface">Йемен</td>
+            <td class="px-4 py-3 text-on-surface-variant">Серый список</td>
+            <td class="px-4 py-3 text-on-surface-variant">Усиленная проверка</td>
+            <td class="px-4 py-3 text-on-surface-variant">Высокий</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="px-4 py-3 font-medium text-on-surface">Россия*</td>
+            <td class="px-4 py-3 text-on-surface-variant">Исключена (не член с 2023)</td>
+            <td class="px-4 py-3 text-on-surface-variant">EDD на усмотрение биржи</td>
+            <td class="px-4 py-3 text-on-surface-variant">Высокий</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-on-surface-variant text-xs mb-8">* Россия исключена из FATF, но формально не внесена в серый список. Биржи применяют EDD самостоятельно.</p>
+
+    <!-- FAQ -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы о FATF и USDT</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Что такое FATF простыми словами?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">FATF (Financial Action Task Force) создана в 1989 году при G7 как инструмент борьбы с отмыванием денег. Это межправительственная организация, которая разрабатывает стандарты и оценивает их выполнение государствами-членами. 40 рекомендаций FATF охватывают весь финансовый сектор: банки, страховые компании, рынок ценных бумаг, нотариусов, брокеров по недвижимости. С 2019 года в этот список попали провайдеры виртуальных активов (биржи, кошельки, обменники). Если страна не выполняет рекомендации, она попадает в серый или чёрный список. Это сигнал для всех финансовых институтов мира: клиенты из этой страны несут повышенный риск. Практически это означает дополнительные проверки, запросы документов и возможные отказы в обслуживании. Для владельцев USDT понимание FATF важно: именно эти стандарты определяют что именно проверяет биржа при каждой крупной транзакции.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Россия в FATF: что это значит для владельцев USDT?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Исключение России из FATF в феврале 2023 года имеет практические последствия для всех россиян, работающих с криптовалютой. Формально россияне не внесены в санкционные списки FATF, но биржи в FATF-юрисдикциях (ЕС, США, Великобритания, Сингапур, Япония) вправе применять повышенные меры проверки. На практике это означает: запрос документов при депозите от определённой суммы, более строгий мониторинг транзакций, повышенная вероятность автоматической блокировки при любых признаках риска. Дополнительно к этому санкции OFAC против Garantex и других российских обменников закрыли многие привычные каналы. Россияне, использующие P2P на нерегулируемых платформах, несут двойной риск: и от FATF-статуса страны, и от потенциальной связи токенов с санкционированными адресами. Это не означает невозможность работы, но требует более тщательной документации каждой операции.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Что такое Enhanced Due Diligence и когда биржа его применяет?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Enhanced Due Diligence (EDD): расширенная проверка клиента, применяемая к пользователям повышенного риска. Стандартная проверка (CDD) включает KYC-верификацию и базовый мониторинг транзакций. EDD идёт значительно дальше. Биржа может запросить: документальное подтверждение источника средств (банковские выписки, договоры, счета), документы о деловой деятельности клиента, подтверждение легальности крипто-операций за предыдущий период, налоговые декларации или справки. EDD применяется при нескольких триггерах: клиент из страны серого или чёрного списка FATF, крупные транзакции от суммы установленной биржей (обычно от $10,000-50,000), нестандартная активность по сравнению с историей аккаунта, связь транзакций с высокорисковыми адресами. Если клиент не проходит EDD или не предоставляет документы в срок, биржа вправе заморозить средства и закрыть аккаунт.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Как FATF Travel Rule влияет на P2P-переводы USDT?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Travel Rule создаёт существенные трудности именно для P2P-переводов. Суть проблемы: Travel Rule работает между двумя зарегистрированными VASP, которые обмениваются данными об отправителе и получателе по специальным протоколам. P2P-платформы, Telegram-боты и независимые обменники не являются зарегистрированными VASP в большинстве юрисдикций. Это означает, что при переводе USDT через P2P данные Travel Rule просто не передаются. Когда получатель пытается завести эти токены на регулируемую биржу, принимающая биржа фиксирует отсутствие Travel Rule информации. Это автоматический триггер для запроса документов. При суммах от $1000 биржа попросит объяснить источник средств. Если пользователь не может документально подтвердить P2P-сделку (нет переписки, нет истории ордеров, нет банковского следа), биржа может заморозить средства до прояснения ситуации.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div></div>
+</article>
+
+<!-- Author block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Следим за изменениями в регулировании FATF и их влиянием на работу с криптовалютой. Опыт работы с AML-блокировками и compliance-запросами на крупных биржах с 2021 года.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">AML-анализ</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="blog-travel-rule.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">rule</span>
+          <span class="text-xs text-on-surface-variant">AML и риски</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Travel Rule 2026: как правило FATF влияет на переводы USDT</h3>
+      </a>
+      <a href="blog-aml.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">policy</span>
+          <span class="text-xs text-on-surface-variant">AML и риски</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">AML в криптовалюте: как работает скоринг USDT</h3>
+      </a>
+      <a href="blog-ofac.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">gavel</span>
+          <span class="text-xs text-on-surface-variant">Санкции</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">OFAC и USDT: санкционные списки США и заморозка</h3>
+      </a>
+      <a href="blog-jurisdictions.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">public</span>
+          <span class="text-xs text-on-surface-variant">Юрисдикции</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Юрисдикции для крипты: где безопаснее хранить USDT</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">Блокировка из-за FATF-требований?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Поможем подготовить документы для прохождения Enhanced Due Diligence и разблокировки USDT на иностранных биржах.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="usdt-yurist.html" class="hover:text-white transition-colors">Юридическая помощь</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Биржи</p>
+          <ul class="space-y-1">
+            <li><a href="blog-binance.html" class="hover:text-white transition-colors">Binance</a></li>
+            <li><a href="blog-bybit.html" class="hover:text-white transition-colors">Bybit</a></li>
+            <li><a href="blog-okx.html" class="hover:text-white transition-colors">OKX</a></li>
+            <li><a href="blog-coinbase.html" class="hover:text-white transition-colors">Coinbase</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-sm">
+        <p class="text-white font-semibold mb-2">Контакты</p>
+        <a href="https://t.me/crypto_recon" class="hover:text-white transition-colors">Telegram: @crypto_recon</a>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-xs text-center">
+      <p>© <span id="year"></span> CryptoRecon. Информационный ресурс.</p>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Автоматические AML-фильтры: как работают системы блокировки USDT в 2026 | CryptoRecon</title>
+<meta name="description" content="Биржи используют Chainalysis, Elliptic и Crystal для автоматической проверки каждой транзакции. Разбираем как работают AML-алгоритмы, что они ищут и почему добросовестные пользователи попадают под блокировку."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-aml-avtomatizaciya.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-aml-avtomatizaciya.html"/>
+<meta property="og:title" content="Автоматические AML-фильтры: как работают системы блокировки USDT в 2026 | CryptoRecon"/>
+<meta property="og:description" content="Биржи используют Chainalysis, Elliptic и Crystal для автоматической проверки каждой транзакции. Разбираем как работают AML-алгоритмы, что они ищут и почему добросовестные пользователи попадают под блокировку."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta property="og:image:width" content="512"/>
+<meta property="og:image:height" content="512"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:published_time" content="2026-11-05T00:00:00+03:00"/>
+<meta property="article:modified_time" content="2026-11-05T00:00:00+03:00"/>
+<meta property="article:section" content="AML и риски"/>
+<meta property="article:author" content="https://cryptorecon.io"/>
+<meta name="twitter:title" content="Автоматические AML-фильтры: как работают системы блокировки USDT в 2026"/>
+<meta name="twitter:description" content="Биржи используют Chainalysis, Elliptic и Crystal для автоматической проверки каждой транзакции. Разбираем как работают AML-алгоритмы и почему добросовестные пользователи попадают под блокировку."/>
+<meta name="twitter:image" content="https://cryptorecon.io/assets/logo.png"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://cryptorecon.io/"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://cryptorecon.io/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "Автоматические AML-фильтры", "item": "https://cryptorecon.io/blog-aml-avtomatizaciya.html"}
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Автоматические AML-фильтры: как работают системы блокировки USDT в 2026",
+      "description": "Биржи используют Chainalysis, Elliptic и Crystal для автоматической проверки каждой транзакции. Разбираем как работают AML-алгоритмы, что они ищут и почему добросовестные пользователи попадают под блокировку.",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io", "sameAs": ["https://t.me/crypto_recon"]},
+      "publisher": {"@type": "Organization", "name": "CryptoRecon", "url": "https://cryptorecon.io", "logo": {"@type": "ImageObject", "url": "https://cryptorecon.io/assets/logo.png", "width": 512, "height": 512}},
+      "mainEntityOfPage": "https://cryptorecon.io/blog-aml-avtomatizaciya.html",
+      "image": "https://cryptorecon.io/assets/logo.png",
+      "inLanguage": "ru",
+      "wordCount": 2000
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как биржа узнаёт что мои USDT \"грязные\"?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Биржа не \"видит\" токены отдельно. При каждом депозите или транзакции AML-система автоматически запрашивает данные у своего провайдера аналитики (Chainalysis, Elliptic или Crystal). Провайдер анализирует blockchain-историю адреса, строит граф транзакций и возвращает риск-скор в течение секунд. Биржа получает ответ с числовым значением риска и набором категорий (например: Sanctions 3.2%, Mixer 1.1%). Если суммарный скор превышает внутренний порог биржи, транзакция флагируется. Система работает полностью автоматически, без участия человека на начальном этапе. Пользователь может не знать о проверке вплоть до момента блокировки. Именно поэтому профилактическая проверка через публичные AML-сервисы перед крупными транзакциями является лучшей защитой."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что такое риск-скор и от чего зависит его значение?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Риск-скор: это числовое значение от 0 до 100, показывающее какой процент входящих средств связан с высокорисковыми источниками. Значение зависит от нескольких факторов: прямые связи с опасными адресами дают максимальный вес, косвенные связи через 2-3 прыжка дают меньший вес. Категория источника также влияет: санкционированные адреса (OFAC) дают максимальный балл, нерегулируемые биржи дают меньший. Абсолютная сумма загрязнения в долларах иногда важнее процента: $500 из $1000 хуже чем $1000 из $100 000 по процентному соотношению, но разные системы используют разные весовые коэффициенты. Crystal Intelligence учитывает PageRank графа транзакций, Chainalysis использует собственную модель атрибуции. Итоговое значение никогда не публикуется методологически точно, что делает внешнюю оценку приблизительной."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Почему AML заблокировал меня через 6 месяцев после сделки?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Временной разрыв между транзакцией и блокировкой: частая ситуация с тремя основными причинами. Первая: база данных AML-провайдера обновляется непрерывно. Адрес, который в момент вашей сделки не был классифицирован как риск, мог получить эту классификацию позже: например, после расследования или судебного решения. Когда биржа запустила плановый ретроактивный скрининг кошельков, новая версия базы данных уже содержала этот адрес как опасный. Вторая причина: правоохранительный орган направил в Tether или биржу запрос о заморозке через несколько месяцев после начала расследования. Третья причина: биржа сменила AML-провайдера или ужесточила собственные пороги. Это не означает, что вы что-то сделали неправильно в момент сделки, но защищаться придётся исходя из текущей ситуации."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли самому проверить AML-скоринг своих USDT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, есть несколько публичных инструментов. AMLBot: наиболее популярный среди российских пользователей, платная проверка с детализацией по категориям риска. GetBlock AML предоставляет базовый скоринг бесплатно для небольшого количества запросов. MistTrack от SlowMist специализируется на DeFi и ERC-20 адресах. Важно понимать: публичные сервисы используют собственные базы данных, которые могут отличаться от данных Chainalysis или Elliptic, используемых вашей биржей. Поэтому \"зелёный\" результат в AMLBot не гарантирует, что Binance не заблокирует депозит. Проверка полезна для предварительной оценки риска, но не является 100% гарантией безопасности. Для точного понимания ситуации необходим профессиональный анализ с использованием тех же инструментов, что применяет конкретная биржа."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">Автоматические AML-фильтры</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">AML и риски</span>
+      <span class="text-on-surface-variant text-xs">5 ноября 2026</span>
+      <span class="text-on-surface-variant text-xs">9 мин.</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">Автоматические AML-фильтры: как работают системы блокировки USDT в 2026</h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">Каждый депозит USDT на крупную биржу проходит через автоматический AML-фильтр. Система анализирует историю транзакций за доли секунды и выносит вердикт. Разбираем как устроены Chainalysis KYT, Elliptic Navigator и Crystal Intelligence, какие сигналы запускают блокировку и почему добросовестные держатели всё чаще попадают под автоматическую заморозку.</p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">Автоматические AML-фильтры работают в реальном времени и анализируют каждую транзакцию с USDT. Chainalysis KYT используют Binance, Coinbase и Kraken: порог блокировки составляет около 15%. Elliptic Navigator работает на Bybit и HTX с порогом 20%. Crystal Intelligence используют OKX и MEXC с порогом 20-25%. Алгоритм строит граф транзакций и вычисляет риск-скор каждого входящего потока. Добросовестные пользователи попадают под блокировку из-за "guilt by association": достаточно одного загрязнённого контрагента в цепочке на 5-6 прыжков.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4"><div class="prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Что такое автоматический AML-фильтр</h2>
+    <p class="text-on-surface leading-relaxed mb-4">Автоматический AML-фильтр: это программный модуль, встроенный в инфраструктуру биржи, который проверяет каждую транзакцию с криптовалютой в режиме реального времени. В отличие от ручного compliance review, где сотрудник изучает конкретный кейс, автоматический фильтр обрабатывает 100% депозитов и выводов без исключений. Система обращается к внешнему AML-провайдеру по API, получает риск-скор адреса и сравнивает его с внутренним порогом биржи. Весь процесс занимает от 1 до 5 секунд. Если скор превышает порог, транзакция автоматически помечается как подозрительная или замораживается без участия человека.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Ручной compliance review подключается в двух случаях: при пограничных значениях риска (когда автомат не может вынести однозначный вердикт) и по прямому запросу регулятора или правоохранительных органов. Compliance-офицер изучает детали транзакции, историю аккаунта и при необходимости запрашивает у пользователя дополнительные документы. Важно понимать: к моменту ручной проверки средства уже заморожены. Ручной review может либо подтвердить блокировку, либо её снять, но никак не ускорить первичное решение автомата. Именно поэтому понимание логики автоматических фильтров критически важно для любого держателя USDT.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Три главных провайдера AML-аналитики</h2>
+    <p class="text-on-surface leading-relaxed mb-4">Рынок AML-аналитики для криптовалют фактически контролируется тремя компаниями. Chainalysis KYT (Know Your Transaction) занимает лидирующую позицию: его используют Binance, Coinbase, Kraken и большинство американских и европейских бирж. База данных Chainalysis содержит более 1 миллиарда классифицированных адресов и обновляется в режиме реального времени. Порог автоматической блокировки у большинства клиентов Chainalysis настроен на уровне около 15% риска. Elliptic Navigator используют Bybit, HTX и BingX: порог составляет около 20%, а сильная сторона платформы: экспертиза в области DeFi-протоколов и смарт-контрактов.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Crystal Intelligence занимает третье место и особенно популярен среди бирж СНГ-региона: его используют OKX, MEXC и ряд региональных платформ. Порог блокировки у Crystal обычно составляет 20-25%, что делает его несколько менее агрессивным по сравнению с Chainalysis. Crystal отличается сильной экспертизой в области OSINT (разведка на основе открытых источников) и лучше идентифицирует связи с конкретными криминальными группами на постсоветском пространстве. Пользователю важно знать, какой именно провайдер использует его биржа, поскольку это определяет, какой порог риска является критическим в его конкретной ситуации.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как работает граф транзакций</h2>
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Адрес как узел, транзакция как ребро</h3>
+    <p class="text-on-surface leading-relaxed mb-4">AML-система представляет всю историю блокчейна в виде направленного графа. Каждый адрес является узлом этого графа. Каждая транзакция: это ребро с направлением (от отправителя к получателю) и весом, равным сумме перевода. Когда система проверяет ваш адрес, она строит подграф, включающий все адреса, с которыми вы взаимодействовали напрямую или через несколько промежуточных адресов. Глубина анализа у Chainalysis составляет до 10 прыжков, у Elliptic до 8, у Crystal до 6. Это означает, что система "видит" цепочку передачи токенов на расстоянии до 10 транзакций от вашего адреса.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Весовая модель риска вычисляет, какой процент входящих средств прошёл через подозрительные источники с учётом расстояния. Прямой перевод с санкционированного адреса даёт максимальный вклад в риск-скор. Перевод через одного посредника даёт меньший вклад, через двух ещё меньше. Формула дисконтирования у каждого провайдера своя и не публикуется. На практике это означает: даже если вы лично никогда не взаимодействовали с Garantex или Tornado Cash, но ваш контрагент по P2P-сделке получил часть токенов через эти каналы три транзакции назад, ваш риск-скор вырастет. Именно так работает транзитивный риск.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Пять сигналов, которые запускают автоматическую блокировку</h2>
+    <p class="text-on-surface leading-relaxed mb-4">Первый сигнал: превышение порогового риск-скора. Каждая биржа настраивает внутренний порог в зависимости от провайдера и собственной compliance-политики: 15% для Chainalysis-клиентов, 20% для Elliptic, 20-25% для Crystal. Превышение порога запускает автоматическую заморозку. Второй сигнал: прямое совпадение адреса с SDN-листом OFAC. Любое взаимодействие с адресом из списка Specially Designated Nationals приводит к немедленной блокировке независимо от суммы и доли: это требование не программируемого порога, а прямого соответствия санкционным нормам. Третий сигнал: связь с криптомиксером. Tornado Cash заблокирован OFAC с 2022 года, ChipMixer ликвидирован Европолом в 2023-м, Sinbad попал под санкции в 2023-м. Любое взаимодействие с этими адресами автоматически присваивает максимальный риск-флаг.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Четвёртый сигнал: связь с санкционированными биржами. Garantex попал под санкции OFAC и ЕС в 2022 году, BTC-e был ликвидирован ещё в 2017-м. Токены, прошедшие через эти платформы, несут устойчивый риск-флаг вне зависимости от времени транзакции. Пятый сигнал: паттерн структурирования (structuring). Это намеренное дробление крупной суммы на множество мелких транзакций с целью обойти пороговые проверки. AML-системы научились распознавать structuring по характерным паттернам: несколько переводов на близкие суммы в короткий промежуток времени на одни и те же адреса или с одних и тех же адресов. Этот паттерн является самостоятельным основанием для блокировки даже при низком риск-скоре каждой отдельной транзакции. Подробнее о конкретных категориях риска: <a href="blog-aml.html" class="text-primary hover:underline">AML в криптовалюте</a> и <a href="blog-proverka-aml.html" class="text-primary hover:underline">проверка AML-рисков</a>.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Почему добросовестные пользователи попадают под блокировку</h2>
+    <p class="text-on-surface leading-relaxed mb-4">Принцип "guilt by association" (вина по ассоциации): главная причина, по которой под блокировку попадают люди, не совершавшие никаких нарушений. AML-алгоритм не оценивает намерения. Он оценивает факты: откуда пришли токены и через какие адреса прошли. Если в вашей транзакционной цепочке на расстоянии 5-6 прыжков окажется адрес, связанный с санкционированной биржей или миксером, ваш риск-скор вырастет. Вы не знали об этой связи. Контрагент по P2P-сделке тоже мог не знать. Но алгоритм не делает различий между незнанием и умыслом. Транзитивный риск распределяется по всей цепочке согласно весовой модели.</p>
+    <p class="text-on-surface leading-relaxed mb-4">При крупных объёмах транзакций даже 2-3% загрязнения через дальние связи может оказаться достаточным для флагирования. Это связано с тем, что абсолютная сумма "грязных" токенов в долларах выглядит существенной даже при низком процентном значении. Например, 2% от $50 000 составляют $1 000: и некоторые биржи настраивают абсолютные пороги в дополнение к процентным. Особенно уязвимы активные P2P-трейдеры, которые проводят десятки сделок с разными контрагентами: каждая сделка добавляет новые источники в граф транзакций, и накопленный риск может незаметно нарастать на протяжении месяцев. Читайте подробнее об <a href="usdt-aml.html" class="text-primary hover:underline">AML-блокировках USDT</a> и о системе <a href="blog-chainalysis.html" class="text-primary hover:underline">Chainalysis KYT</a>.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Временной разрыв при блокировках</h2>
+    <p class="text-on-surface leading-relaxed mb-4">Один из самых частых вопросов: "Я провёл сделку полгода назад, всё было нормально: почему меня заблокировали сейчас?" Ответ кроется в природе баз данных AML-провайдеров. Chainalysis, Elliptic и Crystal непрерывно обновляют классификации адресов. Адрес, который в момент вашей транзакции был помечен как "неизвестный" или даже "низкий риск", мог получить высокорисковый статус после расследования, судебного решения или ликвидации связанной платформы. Когда биржа проводит плановый ретроактивный скрининг существующих кошельков (это стандартная практика раз в квартал или полугодие), ваш адрес пересчитывается по актуальной версии базы данных.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Вторая причина временного разрыва: правоохранительный орган инициирует заморозку не мгновенно после инцидента. Расследование может занять 3-12 месяцев, после чего поступает официальный запрос в Tether или на биржу. Третья причина: биржа меняет AML-провайдера или ужесточает внутренние пороги в рамках обновления compliance-политики. Старые транзакции пересчитываются по новым правилам. Всё это означает, что "чистая история" в момент сделки не является пожизненной гарантией. Регулярная самостоятельная проверка адресов через публичные AML-сервисы позволяет отслеживать изменение риск-скора во времени.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Пороги риска и что они означают</h2>
+    <p class="text-on-surface leading-relaxed mb-4">AML-провайдеры используют цветовую систему зон риска. Зелёная зона (менее 5% риска): транзакция считается чистой, блокировки практически не происходят, мониторинг стандартный. Жёлтая зона (5-15%): повышенный мониторинг, возможен ручной compliance review при крупных суммах, но автоматической заморозки обычно нет. Оранжевая зона (15-25%): высокий риск автоматической блокировки, особенно у бирж-клиентов Chainalysis. Красная зона (более 25%): почти гарантированная заморозка на любой крупной регулируемой бирже. Важно понимать, что эти значения ориентировочные: биржи настраивают собственные пороги, которые могут отличаться от стандартных значений провайдера.</p>
+    <p class="text-on-surface leading-relaxed mb-4">Пороги различаются не только между провайдерами, но и между разными категориями риска. Sanctions-риск (прямая связь с SDN-листом) обрабатывается отдельно от общего скора и может заблокировать транзакцию даже при 0.1% прямого воздействия. Mixer-риск также обрабатывается жёстче обычного: биржи в юрисдикции США обязаны блокировать любое взаимодействие с санкционированными миксерами согласно нормативам FinCEN, независимо от процентного значения. Поэтому при анализе собственного риска-скора важно смотреть не только на итоговое число, но и на детализацию по категориям: именно в деталях часто скрывается реальная причина блокировки.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Взаимодействие автоматических фильтров с ручным compliance</h2>
+    <p class="text-on-surface leading-relaxed mb-4">Пограничная зона между 10% и 20% риска является наиболее сложной для автоматических систем. При таких значениях биржа не может вынести однозначный автоматический вердикт и эскалирует кейс compliance-офицеру. Офицер получает алерт с полным графом транзакций, категориями рисков и историей аккаунта. Финальное решение принимает он. Факторы, которые смягчают решение: большой срок работы аккаунта на бирже, стабильная история верификации, наличие документально подтверждённой легитимной деятельности, небольшая абсолютная сумма "загрязнения".</p>
+    <p class="text-on-surface leading-relaxed mb-4">Факторы, которые ужесточают решение: новый аккаунт без истории, юрисдикция с высоким страновым риском (серый список FATF), несоответствие заявленного источника средств реальной транзакционной истории, отказ предоставить документы по запросу. Ручной review может как смягчить решение автомата (разморозить при пограничном скоре), так и ужесточить (заблокировать дополнительные активы или закрыть аккаунт при выявлении новых обстоятельств). Именно поэтому при получении запроса от compliance-службы биржи крайне важно отвечать полно и своевременно, не игнорируя запросы и не давая односложных ответов без документального подтверждения.</p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Сравнение AML-провайдеров: Chainalysis, Elliptic, Crystal Intelligence</h2>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">Провайдер</th>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">Основные клиенты</th>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">Порог блокировки</th>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">Глубина анализа</th>
+            <th class="text-left px-4 py-3 font-semibold text-on-surface">Охват категорий</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="px-4 py-3 font-medium text-on-surface">Chainalysis KYT</td>
+            <td class="px-4 py-3 text-on-surface-variant">Binance, Coinbase, Kraken</td>
+            <td class="px-4 py-3 text-on-surface-variant">~15%</td>
+            <td class="px-4 py-3 text-on-surface-variant">10 прыжков</td>
+            <td class="px-4 py-3 text-on-surface-variant">150+ категорий риска</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="px-4 py-3 font-medium text-on-surface">Elliptic Navigator</td>
+            <td class="px-4 py-3 text-on-surface-variant">Bybit, HTX, BingX</td>
+            <td class="px-4 py-3 text-on-surface-variant">~20%</td>
+            <td class="px-4 py-3 text-on-surface-variant">8 прыжков</td>
+            <td class="px-4 py-3 text-on-surface-variant">100+ категорий, сильно в DeFi</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="px-4 py-3 font-medium text-on-surface">Crystal Intelligence</td>
+            <td class="px-4 py-3 text-on-surface-variant">OKX, MEXC, биржи СНГ</td>
+            <td class="px-4 py-3 text-on-surface-variant">20-25%</td>
+            <td class="px-4 py-3 text-on-surface-variant">6 прыжков</td>
+            <td class="px-4 py-3 text-on-surface-variant">80+ категорий, фокус на OSINT</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FAQ -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы об AML-фильтрах</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Как биржа узнаёт что мои USDT "грязные"?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Биржа не "видит" токены отдельно. При каждом депозите или транзакции AML-система автоматически запрашивает данные у своего провайдера аналитики: Chainalysis, Elliptic или Crystal. Провайдер анализирует blockchain-историю адреса, строит граф транзакций и возвращает риск-скор в течение секунд. Биржа получает ответ с числовым значением риска и набором категорий: например, Sanctions 3.2%, Mixer 1.1%. Если суммарный скор превышает внутренний порог биржи, транзакция флагируется. Система работает полностью автоматически, без участия человека на начальном этапе. Пользователь может не знать о проверке вплоть до момента блокировки. Именно поэтому профилактическая проверка через публичные AML-сервисы перед крупными транзакциями является лучшей защитой от неожиданных заморозок.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Что такое риск-скор и от чего зависит его значение?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Риск-скор: это числовое значение от 0 до 100, показывающее какой процент входящих средств связан с высокорисковыми источниками. Значение зависит от нескольких факторов: прямые связи с опасными адресами дают максимальный вес, косвенные связи через 2-3 прыжка дают меньший вес. Категория источника также влияет: санкционированные адреса (OFAC) дают максимальный балл, нерегулируемые биржи дают меньший. Абсолютная сумма загрязнения в долларах иногда важнее процента: $500 из $1000 хуже, чем $1000 из $100 000 по процентному соотношению, но разные системы используют разные весовые коэффициенты. Crystal Intelligence учитывает PageRank графа транзакций, Chainalysis использует собственную модель атрибуции. Итоговое значение никогда не публикуется методологически точно, что делает внешнюю оценку приблизительной.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Почему AML заблокировал меня через 6 месяцев после сделки?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Временной разрыв между транзакцией и блокировкой: частая ситуация с тремя основными причинами. Первая: база данных AML-провайдера обновляется непрерывно. Адрес, который в момент вашей сделки не был классифицирован как риск, мог получить эту классификацию позже, например после расследования или судебного решения. Когда биржа запустила плановый ретроактивный скрининг кошельков, новая версия базы данных уже содержала этот адрес как опасный. Вторая причина: правоохранительный орган направил в Tether или биржу запрос о заморозке через несколько месяцев после начала расследования. Третья причина: биржа сменила AML-провайдера или ужесточила собственные пороги. Это не означает, что вы что-то сделали неправильно в момент сделки, но защищаться придётся исходя из текущей ситуации и актуальных данных.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Можно ли самому проверить AML-скоринг своих USDT?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Да, есть несколько публичных инструментов. AMLBot: наиболее популярный среди российских пользователей, платная проверка с детализацией по категориям риска. GetBlock AML предоставляет базовый скоринг бесплатно для небольшого количества запросов. MistTrack от SlowMist специализируется на DeFi и ERC-20 адресах. Важно понимать: публичные сервисы используют собственные базы данных, которые могут отличаться от данных Chainalysis или Elliptic, используемых вашей биржей. Поэтому "зелёный" результат в AMLBot не гарантирует, что Binance не заблокирует депозит. Проверка полезна для предварительной оценки риска, но не является 100% гарантией безопасности. Для точного понимания ситуации необходим профессиональный анализ с использованием тех же инструментов, что применяет конкретная биржа.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div></div>
+</article>
+
+<!-- Author block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специализируемся на AML-анализе и разблокировке USDT. Работаем с кейсами Chainalysis, Elliptic и Crystal Intelligence с 2021 года.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">AML-анализ</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="blog-chainalysis.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">analytics</span>
+          <span class="text-xs text-on-surface-variant">AML и риски</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Chainalysis KYT: как работает система проверки криптотранзакций</h3>
+      </a>
+      <a href="blog-aml.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">policy</span>
+          <span class="text-xs text-on-surface-variant">AML и риски</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">AML в криптовалюте: как работает скоринг и что делать при блокировке</h3>
+      </a>
+      <a href="blog-proverka-aml.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">search</span>
+          <span class="text-xs text-on-surface-variant">AML и риски</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Как проверить USDT на AML-риски перед переводом</h3>
+      </a>
+      <a href="usdt-aml.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">lock</span>
+          <span class="text-xs text-on-surface-variant">Услуги</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Блокировка USDT по AML: причины и пути решения</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">USDT заблокирован по AML-фильтру?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Поможем определить причину блокировки и подготовить пакет документов для разморозки. Работаем с Chainalysis, Elliptic и Crystal Intelligence кейсами.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="usdt-yurist.html" class="hover:text-white transition-colors">Юридическая помощь</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Биржи</p>
+          <ul class="space-y-1">
+            <li><a href="blog-binance.html" class="hover:text-white transition-colors">Binance</a></li>
+            <li><a href="blog-bybit.html" class="hover:text-white transition-colors">Bybit</a></li>
+            <li><a href="blog-okx.html" class="hover:text-white transition-colors">OKX</a></li>
+            <li><a href="blog-coinbase.html" class="hover:text-white transition-colors">Coinbase</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Блог</p>
+          <ul class="space-y-1">
+            <li><a href="blog-aml.html" class="hover:text-white transition-colors">AML и USDT</a></li>
+            <li><a href="blog-chainalysis.html" class="hover:text-white transition-colors">Chainalysis KYT</a></li>
+            <li><a href="blog-travel-rule.html" class="hover:text-white transition-colors">Travel Rule</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-white/10 text-xs text-center">
+      © <span id="year"></span> CryptoRecon. Информационный ресурс. Не является финансовой или юридической консультацией.
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
