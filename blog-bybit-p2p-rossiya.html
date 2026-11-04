@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bybit P2P для россиян: как торговать безопасно и избежать AML-блокировки в 2026</title>
+<meta name="description" content="Bybit P2P -- главный P2P-рынок для россиян в 2026. Разбираем механику AML-рисков, правила безопасной торговли, документы при блокировке и пошаговые действия."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-bybit-p2p-rossiya.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-bybit-p2p-rossiya.html"/>
+<meta property="og:title" content="Bybit P2P для россиян: как торговать безопасно и избежать AML-блокировки в 2026 | CryptoRecon"/>
+<meta property="og:description" content="Bybit P2P -- главный P2P-рынок для россиян в 2026. Разбираем механику AML-рисков, правила безопасной торговли, документы при блокировке и пошаговые действия."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://cryptorecon.io/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Bybit P2P для россиян",
+          "item": "https://cryptorecon.io/blog-bybit-p2p-rossiya.html"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Bybit P2P для россиян: как торговать безопасно и избежать AML-блокировки в 2026",
+      "description": "Bybit P2P -- главный P2P-рынок для россиян в 2026. Разбираем механику AML-рисков, правила безопасной торговли, документы при блокировке и пошаговые действия.",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cryptorecon.io/assets/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "mainEntityOfPage": "https://cryptorecon.io/blog-bybit-p2p-rossiya.html",
+      "image": "https://cryptorecon.io/assets/logo.png"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как проверить AML-скоринг USDT до подтверждения P2P-сделки на Bybit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Алгоритм проверки перед подтверждением P2P-сделки на Bybit: после того как USDT прилетел в ваш Bybit-кошелёк (статус сделки Appealing или Paid), откройте историю транзакций и найдите TxID (хэш транзакции). Введите этот хэш или адрес отправителя в AMLBot (amlbot.com) или GetBlock AML API. Если риск-скор выше 20% по Elliptic или выше 15% по Chainalysis -- это красный флаг. Вы можете открыть диспут в Bybit и отказаться от сделки до нажатия кнопки Confirm payment received. После нажатия этой кнопки USDT зачисляются окончательно и оспорить их невозможно. Bybit предоставляет 15-30 минут на подтверждение -- используйте это время для проверки. Если аккаунт Bybit ограничен и вы не видите TxID в интерфейсе -- обратитесь в поддержку за выпиской."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как Bybit узнаёт, что USDT пришли с Garantex через P2P?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Garantex использует специфические on-chain паттерны, которые Elliptic Navigator идентифицирует с высокой точностью: характерная структура адресов, типичные суммы, частота транзакций. Когда вы получаете USDT через P2P от контрагента, который в свою очередь получил их от Garantex (даже через несколько промежуточных адресов), Elliptic отслеживает эту цепочку на 3-6 уровней вглубь. OFAC внёс Garantex в SDN-лист в апреле 2022 года, после чего все токены, прошедшие через Garantex, получили максимальный риск-скор у всех западных AML-провайдеров. По оценкам аналитиков, до 15% российского P2P-объёма на Bybit содержит Garantex-связанные токены. Bybit запускает AML-проверку не при получении токенов, а при попытке вывода -- именно поэтому блокировка происходит спустя недели или месяцы после P2P-сделки."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bybit заморозил USDT после P2P -- как написать апелляцию?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Апелляция при блокировке после P2P-сделки должна содержать следующее: полную историю P2P-сделок в формате CSV (скачивается в Bybit -> Orders -> P2P Orders -> Export), банковские выписки, подтверждающие источник рублей (легальный доход, сбережения), скриншоты переписки с контрагентом, TxID всех входящих транзакций USDT. Если вы провели AML-проверку через AMLBot и результаты показывают низкий риск -- приложите скриншот. В тексте апелляции объясните: цель P2P-торговли, откуда у вас рубли, что вы знаете о своих контрагентах. Не обвиняйте Bybit, не угрожайте судом в первом письме -- это снижает шансы на положительное решение. Bybit рассматривает апелляции 7-21 рабочий день. Профессиональный AML-отчёт от специалиста существенно повышает шансы."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Есть ли лимиты на P2P-торговлю для россиян на Bybit в 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bybit не устанавливает специфических лимитов для россиян по гражданству, но применяет общие лимиты для KYC-уровней: без верификации (KYC0) суточный лимит P2P составляет эквивалент 20,000 USDT. При KYC1 (базовая верификация с паспортом) лимит увеличивается до 50,000 USDT в сутки. KYC2 (расширенная верификация с proof of address) снимает суточный лимит. Отдельно: при суммах свыше 10,000 USDT за одну P2P-сделку Bybit автоматически запрашивает Enhanced Due Diligence, то есть источник средств. Это стандартная международная практика, не направленная специфически против россиян. Россияне могут проходить KYC1 на Bybit при наличии загранпаспорта и успешной верификации -- подробнее в отдельной статье о KYC на Bybit."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">Bybit P2P для россиян</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">AML и риски</span>
+      <span class="text-on-surface-variant text-xs">5 ноября 2026</span>
+      <span class="text-on-surface-variant text-xs">9 мин.</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">
+      Bybit P2P для россиян: как торговать безопасно и избежать AML-блокировки в 2026
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">
+      После ухода Binance из России Bybit P2P стал главной площадкой для обмена рублей на USDT. Ежедневный объём рублёвых сделок превышает 2 млрд руб. Но вместе с объёмом растёт и число AML-блокировок: 60% из них начинаются именно с P2P-операций. Разбираем механику рисков и правила безопасной торговли.
+    </p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">
+        Bybit P2P является крупнейшей P2P-площадкой для россиян после ухода Binance из России. Главный риск: получение USDT от контрагента с токсичной историей (Garantex, миксеры, тёмные P2P-цепочки). Проверяйте AML-скоринг каждой входящей транзакции через AMLBot до подтверждения сделки. 60% российских AML-блокировок начинаются с P2P.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4"><div class="prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Почему Bybit P2P стал главным рынком для россиян</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      После того как Binance ушёл из России в 2023 году, Bybit P2P занял доминирующую позицию на российском крипто-рынке. Платформа предлагает прямой обмен рублей на USDT без посредников, с широким выбором методов оплаты: Сбербанк, Т-Банк, ВТБ, СБП и наличные. Ежедневный объём рублёвых сделок стабильно превышает 2 млрд руб., что делает Bybit P2P безальтернативным инструментом для большинства российских пользователей крипты.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Однако высокий объём означает и высокую концентрацию рисков. P2P является самым частым каналом попадания токсичных USDT в чистые кошельки. Анонимность контрагентов, скорость сделок и отсутствие мгновенного AML-контроля на входе создают среду, в которой средства с токсичной историей распространяются через несколько рук. По данным аналитиков, 60% российских AML-блокировок на Bybit начинаются именно с P2P-операций.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как работает Bybit P2P</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Bybit P2P работает как маркетплейс: покупатели и продавцы встречаются напрямую для обмена рублей на USDT. Механизм escrow защищает обе стороны: Bybit удерживает USDT продавца до того момента, пока покупатель не подтвердит получение рублёвого перевода. Это исключает мошенничество на уровне самой биржи, но не решает проблему качества токенов, которые продавец передаёт покупателю.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      На платформе работают верифицированные мерчанты с высоким объёмом сделок и рейтингом 98% и выше. Работа с мерчантами снижает, но не устраняет AML-риск: даже добросовестный мерчант может непреднамеренно передать USDT, полученные из токсичного источника несколько звеньев назад в цепочке. Ключевой нюанс: Bybit проверяет историю токенов через Elliptic только при попытке вывести средства с биржи, а не в момент P2P-сделки.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Почему P2P создаёт AML-риск</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      P2P-цепочки работают как система передачи рисков: один "грязный" рубль или USDT проходит через 3-5 рук, прежде чем попасть к конечному пользователю. По оценкам аналитиков, до 15% российского P2P-объёма на Bybit содержит USDT, связанные с Garantex. Garantex внесён OFAC в SDN-лист в апреле 2022 года, и все токены, прошедшие через эту платформу, получили максимальный риск-скор у западных AML-провайдеров.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Система Bybit (Elliptic Navigator) проверяет историю токенов при попытке вывода на внешний адрес, а не при зачислении через P2P. Это создаёт временной разрыв: вы можете месяцами держать токсичные USDT на балансе без каких-либо ограничений, а блокировка произойдёт неожиданно при первом же запросе на вывод. Ретроактивный пересмотр позволяет Bybit заблокировать аккаунт через 6-18 месяцев после P2P-сделки, если при последующей проверке выявлена токсичная история.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">7 правил безопасного P2P на Bybit</h2>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Правило 1. Проверяйте AML-скоринг до подтверждения сделки</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      После того как USDT зачислились на ваш Bybit-кошелёк и статус сделки показывает "Paid", найдите TxID транзакции в истории. Введите хэш в AMLBot (amlbot.com) или аналогичный сервис. Если риск-скор превышает 20% по Elliptic, откройте диспут в Bybit до нажатия кнопки "Confirm payment received". После подтверждения оспорить сделку уже невозможно. Bybit даёт 15-30 минут на подтверждение: используйте это время для проверки, а не игнорируйте его.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Правило 2. Торгуйте только с верифицированными мерчантами</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Верифицированные мерчанты на Bybit имеют статус "Merchant", подтверждённый объём от 500 сделок и рейтинг не ниже 98%. Это не гарантия отсутствия токсичных токенов, но существенно снижает вероятность работы с недобросовестными участниками. Аккаунты без истории сделок или с нулевым рейтингом представляют повышенный риск: новые аккаунты на P2P часто создаются именно для распространения токсичных USDT через несколько транзакций.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Правило 3. Не принимайте частичные переводы от нескольких отправителей</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если контрагент предлагает разбить оплату на несколько переводов от разных отправителей или банков, это красный флаг. Такая схема типична для отмывания: каждый из плательщиков может иметь проблемный источник средств. Bybit это фиксирует и рассматривает как признак structuring. Настаивайте на едином переводе от одного человека, чьё имя совпадает с именем контрагента в P2P-сделке.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Правило 4. Контролируйте размер сделок</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Суммы свыше 500 000 руб. в одной P2P-сделке несут повышенный AML-риск по двум причинам. Во-первых, крупные сделки чаще попадают под ручную проверку Bybit compliance. Во-вторых, крупные объёмы привлекают контрагентов, работающих с токсичными токенами: им нужно быстро переместить большие суммы. Если вам нужно купить крупный объём USDT, лучше разбить покупку на несколько сделок в разные дни с разными контрагентами.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Правило 5. Храните документацию минимум 3 года</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Bybit может инициировать AML-проверку ретроактивно через 6-18 месяцев после сделки. Если к тому моменту у вас не будет скриншотов переписки, подтверждений платежей и банковских выписок, доказать легальность источника средств будет невозможно. Сохраняйте все документы по каждой P2P-сделке: скриншоты чата с контрагентом, подтверждение перевода из банка, TxID полученных USDT. Минимальный срок хранения составляет 3 года.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Правило 6. Имя плательщика должно совпадать с именем контрагента</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Это одно из базовых правил Bybit P2P, которое часто игнорируется. Если рублёвый перевод приходит от имени, не совпадающего с именем контрагента в сделке, это автоматически создаёт признаки третьестороннего платежа. Такие сделки помечаются системой. При последующей AML-проверке третьесторонние переводы расцениваются как признак структурирования или отмывания средств через подставных лиц.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Правило 7. Не торгуйте с аккаунтами без истории</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Нулевой рейтинг и отсутствие завершённых сделок у контрагента означают один из двух сценариев: новый добросовестный пользователь (редкость на крупных сумах) или свежесозданный аккаунт для работы с токсичными токенами. Мошенники регулярно создают новые аккаунты, отрабатывают несколько мелких легальных сделок для создания минимального рейтинга, а затем проводят крупные операции с проблемными средствами. Минимальный порог для безопасной работы: 100 сделок и рейтинг 95%.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Что делать если Bybit заблокировал аккаунт после P2P</h2>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 1. Зафиксируйте причину блокировки</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Получив уведомление от Bybit, определите тип ограничения: AML hold (заморозка конкретных средств) или account suspension (приостановка всего аккаунта). Это принципиально разные ситуации с разными путями решения. AML hold касается конкретной суммы и требует объяснения происхождения именно этих средств. Account suspension затрагивает весь аккаунт и требует более широкой документации. Bybit указывает тип ограничения в уведомлении, но если формулировка неясна, уточните в поддержке через live chat.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 2. Выгрузите историю P2P-сделок</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Пока у вас ещё есть доступ к аккаунту, немедленно скачайте полную историю P2P-сделок в формате CSV. Путь: Bybit -> Orders -> P2P Orders -> Export. Это критически важно: при полной блокировке доступ к истории транзакций может быть закрыт. Дополнительно сохраните скриншоты баланса на момент блокировки и TxID всех входящих USDT. Без этих данных апелляция будет построена на ваших словах, а не на документах.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 3. Проведите AML-анализ входящих адресов</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Используя TxID из истории P2P-сделок, проверьте каждый входящий адрес через AMLBot или Chainalysis Reactor. Это позволит самостоятельно выявить, какие именно сделки привели к блокировке, и подготовить аргументированный ответ для Bybit. Если проверка покажет низкий риск-скор по всем транзакциям, приложите скриншоты результатов к апелляции: это докажет добросовестность и отсутствие умысла.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 4. Напишите в Bybit Support с объяснением каждой сделки</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Апелляция должна содержать структурированное объяснение каждой P2P-сделки, указанной в претензии Bybit. Опишите: цель торговли, откуда у вас рубли для покупки USDT, кем были контрагенты с вашей точки зрения, какие меры предосторожности вы принимали. Не пишите общих фраз о том, что вы честный пользователь. Bybit compliance работает с конкретными фактами и документами, а не с декларациями о добросовестности.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 5. Предоставьте источник рублёвых средств</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Ключевой документ апелляции: банковские выписки, подтверждающие, что рубли, которые вы использовали для покупки USDT через P2P, имеют легальное происхождение. Это может быть справка о доходах с работы, выписка с зарплатного счёта, договор купли-продажи имущества или иные документы. Bybit должен убедиться, что вся цепочка чиста с вашей стороны, даже если контрагент передал токсичные токены. Читайте подробнее о разблокировке на <a href="blog-bybit-aml-istoriya.html" class="text-primary hover:underline">Bybit при AML-блокировке</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Bybit P2P vs OKX P2P vs Garantex: что выбрать для россиян</h2>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Параметр</th>
+            <th class="text-left p-4 font-semibold text-primary">Bybit P2P</th>
+            <th class="text-left p-4 font-semibold text-on-surface">OKX P2P</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Garantex</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Объём рублёвых сделок</td>
+            <td class="p-4 text-on-surface">Крупнейший (2+ млрд руб./день)</td>
+            <td class="p-4 text-on-surface">Средний</td>
+            <td class="p-4 text-on-surface">Средний (лицензированный RU)</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">AML-провайдер</td>
+            <td class="p-4 text-on-surface">Elliptic Navigator</td>
+            <td class="p-4 text-on-surface">Crystal Intelligence</td>
+            <td class="p-4 text-on-surface">Собственная система</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Строгость AML при выводе</td>
+            <td class="p-4 text-on-surface">Высокая</td>
+            <td class="p-4 text-on-surface">Средняя</td>
+            <td class="p-4 text-on-surface">Мягче для RU-пользователей</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Санкционный статус</td>
+            <td class="p-4 text-on-surface">Нет санкций</td>
+            <td class="p-4 text-on-surface">Нет санкций</td>
+            <td class="p-4 text-on-surface">Под санкциями OFAC (SDN)</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Токсичность для западных бирж</td>
+            <td class="p-4 text-on-surface">Зависит от истории токенов</td>
+            <td class="p-4 text-on-surface">Зависит от истории токенов</td>
+            <td class="p-4 text-on-surface">Максимальная (SDN-токены)</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Выгодность курса</td>
+            <td class="p-4 text-on-surface">Лучший курс (высокая ликвидность)</td>
+            <td class="p-4 text-on-surface">Выгодно для крупных сумм</td>
+            <td class="p-4 text-on-surface">Приемлемый</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Garantex предлагает более комфортный AML-режим для российских пользователей внутри страны, однако токены, прошедшие через Garantex, получают максимальный риск-скор у всех западных AML-провайдеров. Это означает, что работа через Garantex закрывает доступ к Bybit, OKX, Coinbase и другим международным биржам. OKX P2P может быть предпочтительнее для крупных сумм из-за более мягкой политики Crystal Intelligence. Подробнее о разблокировке на <a href="blog-bybit.html" class="text-primary hover:underline">Bybit</a> и работе с <a href="usdt-bybit.html" class="text-primary hover:underline">USDT на Bybit</a>.
+    </p>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы о Bybit P2P для россиян</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Как проверить AML-скоринг USDT до подтверждения P2P-сделки на Bybit?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Алгоритм проверки перед подтверждением P2P-сделки на Bybit: после того как USDT прилетел в ваш Bybit-кошелёк (статус сделки "Appealing" или "Paid"), откройте историю транзакций и найдите TxID (хэш транзакции). Введите этот хэш или адрес отправителя в AMLBot (amlbot.com) или GetBlock AML API. Если риск-скор выше 20% по Elliptic или выше 15% по Chainalysis -- это красный флаг. Вы можете открыть диспут в Bybit и отказаться от сделки до нажатия кнопки "Confirm payment received". После нажатия этой кнопки USDT зачисляются окончательно и оспорить их невозможно. Bybit предоставляет 15-30 минут на подтверждение -- используйте это время для проверки. Если аккаунт Bybit ограничен и вы не видите TxID в интерфейсе -- обратитесь в поддержку за выпиской.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Как Bybit узнаёт, что USDT пришли с Garantex через P2P?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Garantex использует специфические on-chain паттерны, которые Elliptic Navigator идентифицирует с высокой точностью: характерная структура адресов, типичные суммы, частота транзакций. Когда вы получаете USDT через P2P от контрагента, который в свою очередь получил их от Garantex (даже через несколько промежуточных адресов), Elliptic отслеживает эту цепочку на 3-6 уровней вглубь. OFAC внёс Garantex в SDN-лист в апреле 2022 года, после чего все токены, прошедшие через Garantex, получили максимальный риск-скор у всех западных AML-провайдеров. По оценкам аналитиков, до 15% российского P2P-объёма на Bybit содержит Garantex-связанные токены. Bybit запускает AML-проверку не при получении токенов, а при попытке вывода -- именно поэтому блокировка происходит спустя недели или месяцы после P2P-сделки.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Bybit заморозил USDT после P2P -- как написать апелляцию?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Апелляция при блокировке после P2P-сделки должна содержать следующее: полную историю P2P-сделок в формате CSV (скачивается в Bybit -> Orders -> P2P Orders -> Export), банковские выписки, подтверждающие источник рублей (легальный доход, сбережения), скриншоты переписки с контрагентом, TxID всех входящих транзакций USDT. Если вы провели AML-проверку через AMLBot и результаты показывают низкий риск -- приложите скриншот. В тексте апелляции объясните: цель P2P-торговли, откуда у вас рубли, что вы знаете о своих контрагентах. Не обвиняйте Bybit, не угрожайте судом в первом письме -- это снижает шансы на положительное решение. Bybit рассматривает апелляции 7-21 рабочий день. Профессиональный AML-отчёт от специалиста существенно повышает шансы.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Есть ли лимиты на P2P-торговлю для россиян на Bybit в 2026?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Bybit не устанавливает специфических лимитов для россиян по гражданству, но применяет общие лимиты для KYC-уровней: без верификации (KYC0) суточный лимит P2P составляет эквивалент 20,000 USDT. При KYC1 (базовая верификация с паспортом) лимит увеличивается до 50,000 USDT в сутки. KYC2 (расширенная верификация с proof of address) снимает суточный лимит. Отдельно: при суммах свыше 10,000 USDT за одну P2P-сделку Bybit автоматически запрашивает Enhanced Due Diligence, то есть источник средств. Это стандартная международная практика, не направленная специфически против россиян. Россияне могут проходить KYC1 на Bybit при наличии загранпаспорта и успешной верификации -- подробнее в отдельной статье о KYC на Bybit.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+</article>
+
+<!-- Author + YMYL block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специалисты по разблокировке USDT и аккаунтов криптобирж. Более 300 кейсов с 2021 года. Статья подготовлена на основе реальной практики работы с AML-блокировками на Bybit, возникшими после P2P-операций.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Bybit, OKX, Coinbase, Binance</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="blog-p2p-aml-blokirovka.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">security</span>
+          <span class="text-xs text-on-surface-variant">AML и риски</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">P2P и AML-блокировка: почему P2P -- главная причина заморозки USDT</h3>
+      </a>
+      <a href="blog-bybit-aml-istoriya.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">account_balance</span>
+          <span class="text-xs text-on-surface-variant">Биржи</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Bybit AML-история: как Bybit проверяет токены и блокирует аккаунты</h3>
+      </a>
+      <a href="blog-bybit.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">account_balance</span>
+          <span class="text-xs text-on-surface-variant">Биржи</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT на Bybit: пошаговое руководство для россиян</h3>
+      </a>
+      <a href="usdt-bybit.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">currency_exchange</span>
+          <span class="text-xs text-on-surface-variant">Услуги</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">USDT на Bybit: полное руководство по работе с USDT для россиян</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">Bybit заблокировал аккаунт после P2P?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Разберём ваш кейс бесплатно. Определим, какие P2P-сделки вызвали блокировку, оценим AML-скоринг токенов и предложим пошаговый план апелляции для вашей ситуации.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="usdt-yurist.html" class="hover:text-white transition-colors">Юридическая помощь</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Биржи</p>
+          <ul class="space-y-1">
+            <li><a href="blog-binance.html" class="hover:text-white transition-colors">Binance</a></li>
+            <li><a href="blog-bybit.html" class="hover:text-white transition-colors text-white">Bybit</a></li>
+            <li><a href="blog-okx.html" class="hover:text-white transition-colors">OKX</a></li>
+            <li><a href="blog-coinbase.html" class="hover:text-white transition-colors">Coinbase</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Контакт</p>
+          <ul class="space-y-1">
+            <li><a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @crypto_recon</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-xs text-center">
+      <p>© 2026 CryptoRecon. Сайт носит информационный характер.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

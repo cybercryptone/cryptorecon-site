@@ -30,6 +30,8 @@ CryptoRecon помогает физическим лицам и компания
 - [Разблокировка USDT OKX: профессиональная помощь](https://cryptorecon.io/usdt-okx.html)
 - [Разблокировка USDT Coinbase: профессиональная помощь](https://cryptorecon.io/usdt-coinbase.html)
 - [Разблокировка USDT Kraken: профессиональная помощь](https://cryptorecon.io/usdt-kraken.html)
+- [Разблокировка USDT BingX: профессиональная помощь](https://cryptorecon.io/usdt-bingx.html)
+- [Разблокировка USDT Phemex: профессиональная помощь](https://cryptorecon.io/usdt-phemex.html)
 
 ## Блог: полное руководство (пилотная статья)
 
@@ -44,6 +46,9 @@ CryptoRecon помогает физическим лицам и компания
 - [AML-заражение USDT: как чужие транзакции портят репутацию вашего кошелька](https://cryptorecon.io/blog-aml-zarazheniye.html)
 - [Bybit ретроактивный AML: почему блокируют за старые транзакции 2024-2026](https://cryptorecon.io/blog-bybit-aml-istoriya.html)
 - [P2P сделка и AML блокировка: механика и пошаговое восстановление](https://cryptorecon.io/blog-p2p-aml-blokirovka.html)
+- [Bybit P2P для россиян: 7 правил безопасной торговли без AML-блокировки](https://cryptorecon.io/blog-bybit-p2p-rossiya.html)
+- [OTC-сделки с USDT и AML-риски: как крупные суммы попадают под проверку](https://cryptorecon.io/blog-usdt-otc.html)
+- [Биржа обанкротилась и заблокировала USDT: уроки FTX и как защититься в 2026](https://cryptorecon.io/blog-ftx-bankrotstvo.html)
 
 ## Блог: типы блокировок по платформам и сетям
 
@@ -87,6 +92,9 @@ CryptoRecon помогает физическим лицам и компания
 - [Разблокировка USDT на BingX: причины блокировки и пошаговая апелляция](https://cryptorecon.io/blog-bingx.html)
 - [Phemex заблокировал аккаунт россиянина: причины и пошаговое восстановление](https://cryptorecon.io/blog-phemex.html)
 - [Какая биржа меньше всего блокирует USDT для россиян: сравнение 10 бирж 2026](https://cryptorecon.io/blog-birzhi-sravnenie-blok.html)
+- [Crypto.com заблокировал аккаунт россиянина: 3 волны блокировок и пошаговое восстановление](https://cryptorecon.io/blog-crypto-com.html)
+- [OKX для россиян в 2026: верификация, ограничения и риски заморозки USDT](https://cryptorecon.io/blog-okx-rossiya.html)
+- [Bybit KYC и россияне: почему отклоняют верификацию и как пройти с первого раза](https://cryptorecon.io/blog-bybit-kyc.html)
 - [Bybit заблокировал аккаунт россиянина: причины и восстановление доступа](https://cryptorecon.io/blog-bybit-blok.html)
 - [Сроки разблокировки USDT: сколько времени рассматривает Tether и биржи](https://cryptorecon.io/blog-sroki.html)
 - [Сколько стоит разблокировка USDT: цены, факторы и как не попасть на скамеров](https://cryptorecon.io/blog-stoimost.html)
@@ -110,12 +118,19 @@ CryptoRecon помогает физическим лицам и компания
 - [USDT в TON и Telegram Wallet: блокировки, заморозка и что делать](https://cryptorecon.io/blog-ton.html)
 - [Telegram Wallet заблокировал USDT: причины заморозки и что делать](https://cryptorecon.io/blog-telegram-wallet-blok.html)
 - [USDT в стейкинге и earn-программах: риски заморозки и как вывести заблокированные средства](https://cryptorecon.io/blog-usdt-steyking-blok.html)
+- [USDT на Polygon (Matic): заморозка, бридж-риски и что делать в 2026](https://cryptorecon.io/blog-polygon-usdt.html)
+- [Ledger и Trezor не защищают от заморозки USDT: почему аппаратный кошелёк не поможет](https://cryptorecon.io/blog-hardware-koshelek.html)
 - [USDT завис в обменнике: что делать, если платёж задержан или заблокирован](https://cryptorecon.io/blog-obmenniki.html)
 
 ## Блог: профилактика и экстренные действия
 
 - [Корпоративный аккаунт и заморозка USDT: полное руководство для юридических лиц](https://cryptorecon.io/blog-korporativnyy-usdt.html)
 - [Что делать в первые 24 часа после заморозки USDT: пошаговый чеклист](https://cryptorecon.io/blog-pervye-24-chasa.html)
+- [Вывод USDT в рубли в России 2026: 4 рабочих метода и налоги](https://cryptorecon.io/blog-usdt-vyvod-rossiya.html)
+- [Сравнение стейблкоинов 2026: USDT, USDC, FDUSD и PYUSD для россиян](https://cryptorecon.io/blog-steyblkoiny-sravnenie.html)
+- [VPN и биржа: почему использование VPN блокирует аккаунт и что с этим делать](https://cryptorecon.io/blog-vpn-birzha.html)
+- [IP-адрес и блокировка USDT: как геолокация влияет на ваш аккаунт в 2026](https://cryptorecon.io/blog-usdt-ip-adres.html)
+- [Налоги на заблокированный USDT в России: что платить и как декларировать в 2026](https://cryptorecon.io/blog-usdt-nalog.html)
 
 ## Контакты
 

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ledger и Trezor: почему заморозка USDT действует и на холодный кошелёк</title>
+<meta name="description" content="Холодный кошелёк Ledger или Trezor не защищает USDT от заморозки Tether. Объясняем механизм блокировки на уровне смарт-контракта и что делать при заморозке."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-hardware-koshelek.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-hardware-koshelek.html"/>
+<meta property="og:title" content="Ledger и Trezor: почему заморозка USDT действует и на холодный кошелёк | CryptoRecon"/>
+<meta property="og:description" content="Холодный кошелёк Ledger или Trezor не защищает USDT от заморозки Tether. Объясняем механизм блокировки на уровне смарт-контракта и что делать при заморозке."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://cryptorecon.io/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Ledger и Trezor: заморозка USDT и холодный кошелёк",
+          "item": "https://cryptorecon.io/blog-hardware-koshelek.html"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Ledger и Trezor: почему заморозка USDT действует и на холодный кошелёк",
+      "description": "Холодный кошелёк Ledger или Trezor не защищает USDT от заморозки Tether. Объясняем механизм блокировки на уровне смарт-контракта и что делать при заморозке.",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cryptorecon.io/assets/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "mainEntityOfPage": "https://cryptorecon.io/blog-hardware-koshelek.html",
+      "image": "https://cryptorecon.io/assets/logo.png"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Можно ли перевести USDT с заблокированного Ledger-адреса на другой адрес?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет, если адрес добавлен в blacklist Tether на уровне смарт-контракта -- любые исходящие транзакции USDT с этого адреса будут заблокированы независимо от типа кошелька. Ledger подпишет транзакцию корректно, она будет отправлена в сеть, но смарт-контракт Tether её отклонит с ошибкой. Газ (TRX или ETH) при этом сгорит. Важно понимать: заблокирован именно адрес, а не устройство Ledger. Если у вас в том же Ledger есть другой адрес (другой счёт), USDT на нём не затронуты. Также другие токены на заблокированном адресе -- ETH, TRON, BTC -- можно отправить без ограничений, так как Tether управляет только своим контрактом. Чтобы разблокировать USDT, необходимо подать апелляцию в Tether через compliance@tether.to."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли продать или обменять заблокированный адрес Ledger?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Технически адрес -- это пара из приватного и публичного ключей. Приватный ключ хранится в Ledger и теоретически может быть передан другому лицу (путём передачи seed-фразы). Однако это не решает проблему заморозки: новый владелец получит тот же заблокированный адрес с теми же ограничениями. Продажа seed-фразы также создаёт серьёзные юридические риски: если Tether проводит расследование, ваши личные данные связаны с этим адресом по KYC биржи или по апелляционным обращениям. Смена владельца кошелька не влияет на blacklist Tether -- компания добавляет и удаляет адреса на основании собственных процедур, независимо от того, кто контролирует приватный ключ. Единственный путь: апелляция в Tether от текущего задокументированного владельца."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Защищает ли Ledger от биржевой блокировки в отличие от протокольной?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, в этом случае Ledger имеет ключевое преимущество. Биржевая блокировка (например, Bybit или Binance заморозил аккаунт) действует только на активы, находящиеся непосредственно на балансе биржи. Если ваши USDT хранились на Ledger и вы лишь временно перевели их на биржу для торговли -- в момент перевода они попали под биржевой контроль. Если же USDT остаются на Ledger-адресе и вы никогда не переводили их на скомпрометированную биржу -- биржевая блокировка их не затрагивает. Именно поэтому практика хранения с личными ключами остаётся актуальной: хранение USDT на аппаратном кошельке защищает от биржевого банкротства, взлома биржи и биржевой блокировки, но не от протокольной заморозки Tether."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какую информацию требует Tether при апелляции от владельца Ledger-адреса?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "При апелляции по адресу, контролируемому hardware-кошельком, Tether стандартно запрашивает: доказательство владения адресом (подпись произвольного сообщения, которую можно сделать через Ledger Live), историю транзакций в формате CSV с TRONSCAN или Etherscan, паспорт и selfie, proof of address (банковская выписка или utility bill), источник средств (документы подтверждающие законность происхождения USDT). Дополнительное преимущество для владельцев hardware-кошельков: Ledger и Trezor не являются кастодиальными сервисами, то есть Tether не может получить информацию от провайдера кошелька. Это означает, что ответственность за доказательную базу полностью на вас, но также означает, что третья сторона не может дать показания против вас. Профессиональный AML-отчёт существенно повышает шансы."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">Ledger и Trezor: заморозка USDT и холодный кошелёк</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">DeFi и сети</span>
+      <span class="text-on-surface-variant text-xs">5 ноября 2026</span>
+      <span class="text-on-surface-variant text-xs">7 мин.</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">
+      Ledger и Trezor: почему заморозка USDT действует и на холодный кошелёк
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">
+      Распространённое заблуждение: "у меня Ledger, мои USDT в безопасности от любых блокировок". Это верно для взлома и кражи, но не для заморозки Tether. Разбираем, почему hardware-кошелёк не является защитой от смарт-контрактной блокировки и что делать, если ваш адрес уже заморожен.
+    </p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">
+        Ledger, Trezor и другие hardware-кошельки не защищают USDT от заморозки Tether. Смарт-контракт Tether блокирует адрес в блокчейне независимо от типа кошелька. Холодный кошелёк только хранит приватный ключ: он не влияет на смарт-контракт. При заморозке адреса на Ledger алгоритм апелляции тот же, что и для горячих кошельков.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4"><div class="prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как работает Ledger и Trezor: главное для понимания</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Hardware-кошелёк -- это устройство для хранения приватных ключей в изолированной среде, отрезанной от интернета. Он подписывает транзакции внутри чипа, не выходя из устройства, что защищает от удалённого взлома. Ledger Live и Trezor Suite -- это лишь интерфейс для взаимодействия: USDT физически находятся не внутри девайса, а в блокчейне на вашем адресе. Устройство хранит ключ, а не монеты.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Приватный ключ контролирует право подписать транзакцию -- и только это. Он не имеет никакого отношения к смарт-контракту USDT, который живёт в блокчейне как автономный код. Когда вы отправляете USDT, Ledger формирует криптографическую подпись, которая доказывает: именно владелец этого адреса инициировал транзакцию. Дальше транзакция попадает в сеть, где смарт-контракт Tether самостоятельно решает, разрешить её или отклонить.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Почему заморозка Tether работает на Ledger</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Tether работает на уровне <a href="/blog-smart-kontrakt.html" class="text-primary hover:underline">смарт-контракта</a> в блокчейне, а не на уровне кошелька. Функция <code>addBlackList</code> добавляет ваш адрес в реестр запрещённых прямо в коде контракта USDT. Когда вы пытаетесь отправить USDT, смарт-контракт проверяет: является ли отправитель адресом из blacklist? Это происходит на уровне самой сети, до любого взаимодействия с вашим кошельком.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если адрес в чёрном списке -- транзакция отклоняется контрактом, независимо от того, подписана она Ledger, MetaMask, Trust Wallet или любым другим инструментом. Аналогия: Ledger -- это дорогой замок на двери вашего дома. Он отлично защищает от взломщиков, которые хотят проникнуть внутрь. Но Tether перекрыл трубы снаружи, на уровне городских коммуникаций -- замок здесь бессилен. Тип кошелька для смарт-контракта не имеет значения вообще.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Что происходит технически при попытке отправить заблокированный USDT с Ledger</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Процесс разворачивается в пять шагов. Шаг первый: Ledger подписывает транзакцию приватным ключом -- устройство работает нормально, никаких ошибок на этом этапе нет. Шаг второй: подписанная транзакция отправляется в сеть TRON или Ethereum. Шаг третий: нода сети принимает транзакцию и пытается выполнить смарт-контракт Tether. Шаг четвёртый: смарт-контракт выполняет проверку, находится ли msg.sender в blacklist. Шаг пятый: результат -- revert с ошибкой "BLACKLISTED" или аналогичной, газ (TRX или ETH) при этом сгорает безвозвратно.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Итог: транзакция отклонена, Ledger Live показывает failed transaction. Устройство при этом полностью исправно: оно сделало всё правильно. Проблема находится не в кошельке, а в блокчейне. Именно поэтому смена устройства, сброс Ledger, переустановка Ledger Live или покупка нового Trezor не помогут: адрес заблокирован на уровне контракта, и это не зависит от того, каким инструментом вы управляете этим адресом.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Три сценария, когда Ledger помогает, и один когда нет</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Сценарий первый: хакер взломал ваш компьютер и пытается вывести средства. Здесь Ledger работает безупречно: без физического подтверждения на устройстве транзакция не пройдёт. Сценарий второй: фишинговый сайт пытается украсть приватный ключ. Ledger изолирован от интернета, ключ никогда не покидает устройство -- атака провалится. Сценарий третий: вирус-троян на компьютере пытается автоматически отправить токены без вашего ведома. Физическое подтверждение на экране Ledger блокирует такую попытку.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Сценарий четвёртый, когда Ledger не помогает: Tether заморозил адрес через функцию blacklist. Смарт-контракту абсолютно не интересно, каким кошельком вы управляете ключом от заблокированного адреса. Это принципиальное различие между угрозой безопасности (от которой Ledger защищает) и протокольным ограничением (которое Ledger не может обойти). Понимание этого различия критично для правильной оценки ситуации и выбора дальнейших действий.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как апеллировать при заморозке Ledger-адреса</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Алгоритм апелляции при заморозке адреса на Ledger идентичен процедуре для любого другого адреса. Tether не проводит различия между горячими и холодными кошельками при рассмотрении обращений. Ключевое отличие Ledger-адреса: это некастодиальный кошелёк, то есть Tether работает напрямую с вами, без участия биржи или сервиса-посредника, который мог бы предоставить дополнительную информацию. Вся доказательная база -- только на вас.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Преимущество hardware-кошелька в апелляции: у вас есть неоспоримое доказательство единоличного контроля над адресом. Вы можете подписать произвольное сообщение прямо через Ledger Live, что криптографически доказывает владение. Соберите полную историю транзакций через TRONSCAN или Etherscan, подготовьте документы о происхождении средств и напишите на <a href="/usdt.html" class="text-primary hover:underline">compliance@tether.to</a> с полным пакетом. Если причина заморозки связана с AML-флагом, закажите профессиональный AML-отчёт: он существенно повышает шансы на положительное решение. Подробнее о первых шагах читайте в статье <a href="/blog-pervye-24-chasa.html" class="text-primary hover:underline">что делать в первые 24 часа после заморозки</a>.
+    </p>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы о заморозке USDT на hardware-кошельках</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Можно ли перевести USDT с заблокированного Ledger-адреса на другой адрес?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Нет, если адрес добавлен в blacklist Tether на уровне смарт-контракта -- любые исходящие транзакции USDT с этого адреса будут заблокированы независимо от типа кошелька. Ledger подпишет транзакцию корректно, она будет отправлена в сеть, но смарт-контракт Tether её отклонит с ошибкой. Газ (TRX или ETH) при этом сгорит. Важно понимать: заблокирован именно адрес, а не устройство Ledger. Если у вас в том же Ledger есть другой адрес (другой счёт), USDT на нём не затронуты. Также другие токены на заблокированном адресе -- ETH, TRON, BTC -- можно отправить без ограничений, так как Tether управляет только своим контрактом. Чтобы разблокировать USDT, необходимо подать апелляцию в Tether через compliance@tether.to.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Можно ли продать или обменять заблокированный адрес Ledger?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Технически адрес -- это пара из приватного и публичного ключей. Приватный ключ хранится в Ledger и теоретически может быть передан другому лицу (путём передачи seed-фразы). Однако это не решает проблему заморозки: новый владелец получит тот же заблокированный адрес с теми же ограничениями. Продажа seed-фразы также создаёт серьёзные юридические риски: если Tether проводит расследование, ваши личные данные связаны с этим адресом по KYC биржи или по апелляционным обращениям. Смена владельца кошелька не влияет на blacklist Tether -- компания добавляет и удаляет адреса на основании собственных процедур, независимо от того, кто контролирует приватный ключ. Единственный путь: апелляция в Tether от текущего задокументированного владельца.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Защищает ли Ledger от биржевой блокировки в отличие от протокольной?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Да, в этом случае Ledger имеет ключевое преимущество. Биржевая блокировка (например, <a href="/blog-bybit-blok.html" class="text-primary hover:underline">Bybit</a> или Binance заморозил аккаунт) действует только на активы, находящиеся непосредственно на балансе биржи. Если ваши USDT хранились на Ledger и вы лишь временно перевели их на биржу для торговли -- в момент перевода они попали под биржевой контроль. Если же USDT остаются на Ledger-адресе и вы никогда не переводили их на скомпрометированную биржу -- биржевая блокировка их не затрагивает. Именно поэтому практика хранения с личными ключами остаётся актуальной: хранение USDT на аппаратном кошельке защищает от биржевого банкротства, взлома биржи и биржевой блокировки, но не от протокольной заморозки Tether.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Какую информацию требует Tether при апелляции от владельца Ledger-адреса?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">При апелляции по адресу, контролируемому hardware-кошельком, Tether стандартно запрашивает: доказательство владения адресом (подпись произвольного сообщения, которую можно сделать через Ledger Live), историю транзакций в формате CSV с TRONSCAN или Etherscan, паспорт и selfie, proof of address (банковская выписка или utility bill), источник средств (документы подтверждающие законность происхождения USDT). Дополнительное преимущество для владельцев hardware-кошельков: Ledger и Trezor не являются кастодиальными сервисами, то есть Tether не может получить информацию от провайдера кошелька. Это означает, что ответственность за доказательную базу полностью на вас, но также означает, что третья сторона не может дать показания против вас. Профессиональный AML-отчёт существенно повышает шансы.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+</article>
+
+<!-- Author + YMYL block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специалисты по разблокировке USDT и аккаунтов криптобирж. Более 300 кейсов с 2021 года. Статья подготовлена на основе реальной практики работы с заморозками Tether на адресах Ledger, Trezor и горячих кошельков.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Ledger, Trezor, горячие кошельки</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="blog-smart-kontrakt.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">code</span>
+          <span class="text-xs text-on-surface-variant">DeFi и сети</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Смарт-контракт USDT: как работает механизм заморозки адресов</h3>
+      </a>
+      <a href="blog-koshelek.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">account_balance_wallet</span>
+          <span class="text-xs text-on-surface-variant">DeFi и сети</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Типы кошельков для USDT: горячий, холодный и кастодиальный</h3>
+      </a>
+      <a href="usdt.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">lock_open</span>
+          <span class="text-xs text-on-surface-variant">Услуги</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT: полное руководство и профессиональная помощь</h3>
+      </a>
+      <a href="blog-pervye-24-chasa.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">schedule</span>
+          <span class="text-xs text-on-surface-variant">Инструкции</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Первые 24 часа после заморозки USDT: пошаговые действия</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">Заморозили USDT на Ledger или Trezor?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Разберём ваш кейс бесплатно. Определим причину заморозки, оценим реальные шансы и предложим пошаговый план апелляции в Tether для вашей ситуации.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="usdt-yurist.html" class="hover:text-white transition-colors">Юридическая помощь</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Биржи</p>
+          <ul class="space-y-1">
+            <li><a href="blog-binance.html" class="hover:text-white transition-colors">Binance</a></li>
+            <li><a href="blog-bybit-blok.html" class="hover:text-white transition-colors">Bybit</a></li>
+            <li><a href="blog-okx.html" class="hover:text-white transition-colors">OKX</a></li>
+            <li><a href="blog-coinbase.html" class="hover:text-white transition-colors">Coinbase</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Контакт</p>
+          <ul class="space-y-1">
+            <li><a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @crypto_recon</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-xs text-center">
+      <p>© 2026 CryptoRecon. Сайт носит информационный характер.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

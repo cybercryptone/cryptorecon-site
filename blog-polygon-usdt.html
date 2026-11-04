@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>USDT на Polygon (Matic): заморозка, бридж-риски и что делать в 2026</title>
+<meta name="description" content="USDT на Polygon заморожен? Разбираем механику заморозки Tether в сети Polygon PoS, бридж-риски при переводе между сетями и пошаговые действия при блокировке."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-polygon-usdt.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-polygon-usdt.html"/>
+<meta property="og:title" content="USDT на Polygon (Matic): заморозка, бридж-риски и что делать в 2026 | CryptoRecon"/>
+<meta property="og:description" content="USDT на Polygon заморожен? Разбираем механику заморозки Tether в сети Polygon PoS, бридж-риски при переводе между сетями и пошаговые действия при блокировке."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://cryptorecon.io/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "USDT на Polygon: заморозка и бридж-риски",
+          "item": "https://cryptorecon.io/blog-polygon-usdt.html"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "USDT на Polygon (Matic): заморозка, бридж-риски и что делать в 2026",
+      "description": "USDT на Polygon заморожен? Разбираем механику заморозки Tether в сети Polygon PoS, бридж-риски при переводе между сетями и пошаговые действия при блокировке.",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cryptorecon.io/assets/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "mainEntityOfPage": "https://cryptorecon.io/blog-polygon-usdt.html",
+      "image": "https://cryptorecon.io/assets/logo.png"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Если USDT заморожен на Polygon -- нужно ли обращаться в Tether или в Polygon Labs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Только в Tether. Polygon Labs (ныне AggLayer/Polygon Foundation) не имеет права управления токеном USDT -- они разработали сеть, но не контролируют контракт Tether. Смарт-контракт USDT на Polygon развёрнут и управляется Tether Limited точно так же, как ERC-20 контракт на Ethereum. Polygon Foundation не может разморозить USDT по вашему запросу, добавить или убрать адрес из blacklist. Любое обращение в Polygon Labs по вопросу заморозки USDT будет перенаправлено обратно в Tether. Правильный адресат: compliance@tether.to с темой [Polygon USDT] Account Unfreeze Request. В тексте укажите адрес в формате Polygon (0x...) и сумму заблокированных средств. Процесс апелляции идентичен ERC-20 заморозке."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли перевести замороженный USDT с Polygon на Tron и разблокировать там?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет, это невозможно. Перевод между сетями (Polygon -> Tron) требует использования кросс-чейн бриджа и конвертации токена, что является транзакцией исходящего USDT с заблокированного адреса. Смарт-контракт USDT на Polygon отклонит любую исходящую транзакцию с замороженного адреса, включая попытки бриджинга. Нет технической возможности перенести замороженный токен в другую сеть: мост работает через смарт-контракт Tether, который проверяет статус заморозки. Аналогично попытки через DEX на Polygon (QuickSwap, Uniswap v3) также будут заблокированы контрактом. Единственный путь разблокировки: апелляция в Tether с доказательной базой. После успешной разморозки токены можно будет использовать, переводить и конвертировать в любую сеть."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Почему комиссии в Polygon не помогают при заморозке USDT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Преимущество Polygon -- низкие комиссии в 0.001-0.01 USD за транзакцию -- нерелевантно в контексте заморозки. Когда смарт-контракт Tether блокирует исходящую транзакцию с замороженного адреса, это происходит на уровне выполнения кода контракта. Транзакция всё равно требует газ (MATIC для оплаты работы валидаторов), и этот газ сгорает даже при неудачной транзакции. Таким образом, попытки дешёвого тестирования заморозки через мелкие транзакции в Polygon не дешевле в абсолютном смысле -- просто сумма потраченного газа меньше, чем в Ethereum. Для диагностики заморозки используйте статические вызовы (staticcall) через блокчейн-эксплореры, которые бесплатны и не создают транзакций: PolygonScan предоставляет кнопку Read Contract для проверки blacklist статуса."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Работают ли DeFi-протоколы на Polygon с замороженным USDT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. DeFi-протоколы на Polygon (Aave v3, QuickSwap, Uniswap v3, Curve) используют стандартные ERC-20 transfer-функции для работы с USDT. Когда вы пытаетесь добавить замороженный USDT в пул ликвидности или предоставить его в качестве залога в Aave, контракт вызывает transferFrom на контракте Tether. Tether-контракт проверяет blacklist и возвращает ошибку, транзакция откатывается. Это означает, что замороженный USDT нельзя: внести в Aave как залог, добавить в пул ликвидности QuickSwap, обменять через Uniswap или любой DEX, использовать как collateral в любом другом DeFi-протоколе. Единственное действие, которое возможно: получение USDT на замороженный адрес (входящие транзакции работают), но это только увеличивает заблокированный баланс."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">USDT на Polygon: заморозка и бридж-риски</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">DeFi и сети</span>
+      <span class="text-on-surface-variant text-xs">5 ноября 2026</span>
+      <span class="text-on-surface-variant text-xs">7 мин.</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">
+      USDT на Polygon (Matic): заморозка, бридж-риски и что делать в 2026
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">
+      Polygon PoS (ранее Matic) популярен среди российских пользователей за низкие комиссии. Но механика заморозки USDT здесь имеет свои особенности, которые отличают её от Ethereum и Tron. Разбираем, как работает заморозка в сети Polygon, какие бридж-риски существуют и что делать, если ваш USDT заблокирован.
+    </p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">
+        USDT на Polygon (сеть Polygon PoS, Ethereum L2) использует тот же механизм заморозки, что и ERC-20, но с особенностями бриджинга. Если ваш адрес заморожен в Ethereum, токены также заморожены в Polygon после бриджа. Polygon нативного механизма заморозки не имеет: вся власть у Tether. Апелляция идентична ERC-20 процессу.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4"><div class="prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Что такое USDT на Polygon и почему его выбирают</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Polygon PoS (ранее Matic Network) является одним из наиболее распространённых L2-решений для Ethereum. Скорость транзакций достигает 2-5 секунд, а комиссии составляют от 0.001 до 0.01 USD за операцию. Это делает сеть привлекательной для пользователей, которым нужно регулярно перемещать USDT без больших затрат на газ. Среди российских пользователей Polygon занял устойчивую нишу: здесь хранят средства, используют DeFi-протоколы и проводят P2P-операции с минимальными издержками.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      USDT на Polygon широко интегрирован в экосистему DeFi: протоколы Aave v3, QuickSwap и Uniswap v3 активно используют его в пулах ликвидности. Несмотря на удобство, пользователи нередко сталкиваются с вопросом: что происходит с USDT на Polygon при блокировке адреса? Ответ требует понимания технической природы этого токена и его связи с базовой сетью Ethereum.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как работает USDT на Polygon технически</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      USDT на Polygon является bridged-токеном, то есть перенесённой копией оригинального ERC-20 USDT с Ethereum через официальный Polygon PoS bridge. Контракт USDT на Polygon развёрнут по адресу 0xc2132D05D31c914a87C6611C10748AEb04B58e8F. Эмитент остаётся тем же: Tether Limited управляет этим контрактом напрямую, так же, как управляет контрактом в Ethereum. Мост лишь обеспечивает перемещение токенов между цепочками, но не меняет структуру владения и управления смарт-контрактом.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Ключевой технический факт: Ethereum и Polygon используют одинаковый формат адресов (0x...). Это означает, что адрес кошелька в обеих сетях идентичен. Когда вы переносите USDT через мост, токены отправляются с вашего Ethereum-адреса и поступают на тот же адрес в Polygon. Эта архитектура имеет прямые последствия для механики заморозки: адрес существует в обеих сетях одновременно, и действия Tether могут затрагивать оба контракта.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Механизм заморозки USDT в сети Polygon</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Tether Limited имеет права администратора в смарт-контракте USDT на Polygon. Функция freeze() в этом контракте работает аналогично функции addBlackList, которая используется в оригинальном ERC-20 контракте на Ethereum. Когда Tether принимает решение о заморозке адреса, они выполняют транзакцию в контракте той сети, где хотят заблокировать средства. Polygon Foundation и другие участники экосистемы не имеют технической возможности вмешаться в этот процесс.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Существует важный нюанс: когда Tether замораживает адрес в Ethereum, тот же адрес автоматически считается затронутым в Polygon из-за идентичности формата адресов. Однако техническая заморозка в контракте Polygon происходит отдельной транзакцией. На практике Tether обычно замораживает адрес в обеих сетях одновременно при выявлении нарушений. Теоретически возможна заморозка только в одной из сетей, но такие изолированные случаи редки: как правило, санкционный адрес блокируется везде, где у него есть баланс.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Бридж-риски при переводе USDT между сетями</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если ваш адрес заморожен в Ethereum, попытка вывода USDT через Polygon bridge создаёт серьёзную проблему. Мост работает следующим образом: токены на Polygon сжигаются (burn), а соответствующая сумма разблокируется в Ethereum. Но исходящая транзакция burn с замороженного адреса будет отклонена контрактом Tether. Транзакция попадает в очередь моста и зависает. Для Polygon PoS bridge период выхода (exit period) составляет до 7 дней, после чего транзакция окончательно отклоняется.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Газ при неудачной попытке вывода через bridge сгорает, даже если транзакция не прошла. В Polygon это небольшие суммы в MATIC, но принцип остаётся: каждая попытка перевода замороженных токенов стоит денег и ничего не даёт. Правило диагностики перед действием критически важно именно здесь: необходимо сначала проверить статус заморозки через блокчейн-эксплорер, и только после подтверждения отсутствия заморозки совершать любые переводы. Не пытайтесь переводить средства через мост до получения однозначного ответа о статусе адреса.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">USDT на Polygon vs другие сети: что выбрать для хранения</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Сравнение основных сетей для хранения USDT помогает принять взвешенное решение. Polygon обеспечивает низкие комиссии и быстрые транзакции, но как bridged-токен зависит от Ethereum bridge: эта зависимость создаёт дополнительный уровень технического риска. Ethereum (ERC-20) является базовой сетью с максимальной совместимостью, однако комиссии ($5-50 за транзакцию в периоды нагрузки) делают его непрактичным для частых переводов. Tron (TRC-20) предлагает самые дешёвые комиссии и обрабатывает большинство российского P2P-объёма. <a href="/blog-solana.html" class="text-primary hover:underline">Solana (SPL)</a> быстрее и дешевле Ethereum, но использует отдельный контракт с другим механизмом и форматом адресов.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для долгосрочного хранения (не DeFi) TRC-20 или ERC-20 предпочтительнее как более проверенные основные сети с наибольшей поддержкой на биржах и обменниках. Polygon оптимален для активной работы в DeFi-экосистеме, когда вы регулярно используете Aave, QuickSwap или другие протоколы и цените скорость с низкими комиссиями. При выборе сети для хранения учитывайте: чем меньше бриджей между вами и базовым контрактом Tether, тем меньше технических рисков при управлении средствами.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Пошаговые действия при заморозке USDT на Polygon</h2>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 1. Проверьте статус адреса в Polygon</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Откройте polygonscan.com и введите ваш адрес в строку поиска. Перейдите в раздел контракта USDT (0xc2132D05D31c914a87C6611C10748AEb04B58e8F), выберите вкладку "Read Contract" и найдите функцию isBlacklisted. Введите ваш адрес и нажмите Query. Если результат возвращает true, адрес заморожен в Polygon. Эта операция является staticcall, она бесплатна и не создаёт транзакцию в блокчейне. Не пытайтесь тестировать заморозку реальными переводами до прохождения этой диагностики.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 2. Проверьте тот же адрес в Ethereum</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Откройте etherscan.io и выполните аналогичную проверку через контракт ERC-20 USDT (0xdAC17F958D2ee523a2206206994597C13D831ec7). Функция isBlacklisted доступна в том же разделе Read Contract. Если адрес заморожен в обеих сетях, это типичный сценарий санкционной блокировки Tether. Если заморожен только в Polygon, но не в Ethereum, это редкий случай, который требует отдельного анализа. Результаты обеих проверок сохраните в виде скриншотов с временными метками: они понадобятся при апелляции.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 3. Убедитесь, что другие адреса не затронуты</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если у вас есть другие адреса кошельков, проверьте их статус тем же способом. Это важно для двух целей: во-первых, убедиться, что незатронутые адреса безопасны и средства на них доступны; во-вторых, понять масштаб проблемы перед началом апелляции. Не переводите средства с незаблокированных адресов на заблокированный и наоборот до консультации со специалистом. Любые перемещения средств между адресами в период активного расследования могут усложнить апелляционный процесс.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 4. Не пробуйте переводы через мост до консультации</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если диагностика подтвердила заморозку, немедленно остановите любые попытки переводов. Тестовая транзакция в 0.1 USDT через bridge при замороженном адресе не "проверит" ситуацию, а просто сожжёт ваш MATIC на газ и создаст дополнительную запись в истории адреса. При необходимости проверить конкретную функцию контракта используйте исключительно staticcall через интерфейс блокчейн-эксплорера. Любые реальные транзакции на замороженном адресе не имеют смысла и несут только лишние расходы.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 5. Начните апелляцию в Tether</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Апелляция о разморозке USDT подаётся напрямую в Tether Limited по адресу compliance@tether.to. Тема письма: "[Polygon USDT] Account Unfreeze Request". В тексте укажите ваш адрес в формате Polygon (0x...), сумму заблокированных USDT, дату обнаружения заморозки и краткое описание происхождения средств. Приложите документальное подтверждение законного источника: выписки из банка, подтверждения сделок, налоговые документы. Процесс апелляции для Polygon USDT идентичен <a href="/blog-bridge.html" class="text-primary hover:underline">ERC-20 апелляции</a>: те же сроки (30-90 дней), те же требования к документам и та же низкая вероятность успеха без профессиональной поддержки.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Сравнение механики заморозки в разных сетях</h2>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Параметр</th>
+            <th class="text-left p-4 font-semibold text-primary">Polygon (PoS)</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Ethereum (ERC-20)</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Tron (TRC-20)</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Arbitrum</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Кто управляет заморозкой</td>
+            <td class="p-4 text-on-surface">Tether Limited</td>
+            <td class="p-4 text-on-surface">Tether Limited</td>
+            <td class="p-4 text-on-surface">Tether Limited</td>
+            <td class="p-4 text-on-surface">Tether Limited</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Тип токена</td>
+            <td class="p-4 text-on-surface">Bridged (от Ethereum)</td>
+            <td class="p-4 text-on-surface">Нативный</td>
+            <td class="p-4 text-on-surface">Нативный</td>
+            <td class="p-4 text-on-surface">Bridged (от Ethereum)</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Формат адреса</td>
+            <td class="p-4 text-on-surface">0x (как Ethereum)</td>
+            <td class="p-4 text-on-surface">0x</td>
+            <td class="p-4 text-on-surface">T... (отдельный)</td>
+            <td class="p-4 text-on-surface">0x (как Ethereum)</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Риск бридж-заморозки</td>
+            <td class="p-4 text-on-surface">Высокий (exit period 7 дней)</td>
+            <td class="p-4 text-on-surface">Нет бриджа</td>
+            <td class="p-4 text-on-surface">Нет бриджа</td>
+            <td class="p-4 text-on-surface">Высокий (exit period 7 дней)</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Комиссии за транзакцию</td>
+            <td class="p-4 text-on-surface">$0.001-0.01</td>
+            <td class="p-4 text-on-surface">$5-50</td>
+            <td class="p-4 text-on-surface">$0.001-0.005</td>
+            <td class="p-4 text-on-surface">$0.01-0.1</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Канал апелляции при заморозке</td>
+            <td class="p-4 text-on-surface">compliance@tether.to</td>
+            <td class="p-4 text-on-surface">compliance@tether.to</td>
+            <td class="p-4 text-on-surface">compliance@tether.to</td>
+            <td class="p-4 text-on-surface">compliance@tether.to</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для глубокого понимания механики бриджинга и связанных рисков читайте наш разбор <a href="/blog-arbitrum.html" class="text-primary hover:underline">заморозки USDT на Arbitrum</a>: архитектура похожа на Polygon и те же принципы применимы к обоим L2-решениям. Общие принципы апелляции описаны на странице <a href="/usdt.html" class="text-primary hover:underline">разблокировки USDT</a>.
+    </p>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы о заморозке USDT на Polygon</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Если USDT заморожен на Polygon, нужно ли обращаться в Tether или в Polygon Labs?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Только в Tether. Polygon Labs (ныне AggLayer/Polygon Foundation) не имеет права управления токеном USDT: они разработали сеть, но не контролируют контракт Tether. Смарт-контракт USDT на Polygon развёрнут и управляется Tether Limited точно так же, как ERC-20 контракт на Ethereum. Polygon Foundation не может разморозить USDT по вашему запросу, добавить или убрать адрес из blacklist. Любое обращение в Polygon Labs по вопросу заморозки USDT будет перенаправлено обратно в Tether. Правильный адресат: compliance@tether.to с темой [Polygon USDT] Account Unfreeze Request. В тексте укажите адрес в формате Polygon (0x...) и сумму заблокированных средств. Процесс апелляции идентичен ERC-20 заморозке.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Можно ли перевести замороженный USDT с Polygon на Tron и разблокировать там?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Нет, это невозможно. Перевод между сетями (Polygon -> Tron) требует использования кросс-чейн бриджа и конвертации токена, что является транзакцией исходящего USDT с заблокированного адреса. Смарт-контракт USDT на Polygon отклонит любую исходящую транзакцию с замороженного адреса, включая попытки бриджинга. Нет технической возможности перенести замороженный токен в другую сеть: мост работает через смарт-контракт Tether, который проверяет статус заморозки. Аналогично попытки через DEX на Polygon (QuickSwap, Uniswap v3) также будут заблокированы контрактом. Единственный путь разблокировки: апелляция в Tether с доказательной базой. После успешной разморозки токены можно будет использовать, переводить и конвертировать в любую сеть.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Почему низкие комиссии в Polygon не помогают при заморозке USDT?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Преимущество Polygon в виде низких комиссий (0.001-0.01 USD за транзакцию) нерелевантно в контексте заморозки. Когда смарт-контракт Tether блокирует исходящую транзакцию с замороженного адреса, это происходит на уровне выполнения кода контракта. Транзакция всё равно требует газ (MATIC для оплаты работы валидаторов), и этот газ сгорает даже при неудачной транзакции. Таким образом, попытки тестирования через мелкие транзакции в Polygon не дешевле в абсолютном смысле: просто сумма потраченного газа меньше, чем в Ethereum. Для диагностики заморозки используйте статические вызовы (staticcall) через блокчейн-эксплореры, которые бесплатны и не создают транзакций: PolygonScan предоставляет кнопку Read Contract для проверки blacklist статуса без каких-либо затрат.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Работают ли DeFi-протоколы на Polygon с замороженным USDT?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Нет. DeFi-протоколы на Polygon (Aave v3, QuickSwap, Uniswap v3, Curve) используют стандартные ERC-20 transfer-функции для работы с USDT. Когда вы пытаетесь добавить замороженный USDT в пул ликвидности или предоставить его в качестве залога в Aave, контракт вызывает transferFrom на контракте Tether. Tether-контракт проверяет blacklist и возвращает ошибку, транзакция откатывается. Это означает, что замороженный USDT нельзя: внести в Aave как залог, добавить в пул ликвидности QuickSwap, обменять через Uniswap или любой DEX, использовать как collateral в любом другом DeFi-протоколе. Единственное действие, которое возможно: получение USDT на замороженный адрес (входящие транзакции работают), но это только увеличивает заблокированный баланс.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+</article>
+
+<!-- Author + YMYL block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специалисты по разблокировке USDT и аккаунтов криптобирж. Более 300 кейсов с 2021 года. Статья подготовлена на основе реальной практики работы с блокировками Tether в сетях Ethereum, Polygon, Tron и Arbitrum.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Polygon, Ethereum, Tron, Arbitrum</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="blog-arbitrum.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">hub</span>
+          <span class="text-xs text-on-surface-variant">DeFi и сети</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">USDT на Arbitrum: заморозка и риски при бриджинге</h3>
+      </a>
+      <a href="blog-bridge.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">swap_horiz</span>
+          <span class="text-xs text-on-surface-variant">DeFi и сети</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Бридж-риски USDT: как не потерять средства при переводе между сетями</h3>
+      </a>
+      <a href="blog-solana.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">speed</span>
+          <span class="text-xs text-on-surface-variant">DeFi и сети</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">USDT на Solana: заморозка, SPL-токен и апелляция</h3>
+      </a>
+      <a href="usdt.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">security</span>
+          <span class="text-xs text-on-surface-variant">Услуги</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT: полное руководство и профессиональная помощь</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">USDT на Polygon заморожен?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Разберём ваш кейс бесплатно. Определим причину заморозки, проверим статус адреса в Polygon и Ethereum, оценим реальные шансы и предложим пошаговый план апелляции.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="usdt-yurist.html" class="hover:text-white transition-colors">Юридическая помощь</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Сети</p>
+          <ul class="space-y-1">
+            <li><a href="blog-arbitrum.html" class="hover:text-white transition-colors">Arbitrum</a></li>
+            <li><a href="blog-solana.html" class="hover:text-white transition-colors">Solana</a></li>
+            <li><a href="blog-bridge.html" class="hover:text-white transition-colors">Бридж-риски</a></li>
+            <li><a href="blog-polygon-usdt.html" class="hover:text-white transition-colors text-white">Polygon</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Контакт</p>
+          <ul class="space-y-1">
+            <li><a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @crypto_recon</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-xs text-center">
+      <p>© 2026 CryptoRecon. Сайт носит информационный характер.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
