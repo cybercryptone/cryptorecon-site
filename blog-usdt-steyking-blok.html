@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>USDT в стейкинге и earn-программах: риски заморозки и как вывести | CryptoRecon</title>
+<meta name="description" content="USDT в Binance Earn, Bybit Savings или DeFi-пулах создаёт двойной барьер при AML-блокировке. Разбираем механику, сроки вывода и что делать если средства недоступны."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-usdt-steyking-blok.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-usdt-steyking-blok.html"/>
+<meta property="og:title" content="USDT в стейкинге и earn-программах: риски заморозки | CryptoRecon"/>
+<meta property="og:description" content="USDT в Binance Earn, Bybit Savings или DeFi-пулах создаёт двойной барьер при AML-блокировке. Разбираем механику, сроки вывода и что делать если средства недоступны."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://cryptorecon.io/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "USDT в стейкинге и earn-программах",
+          "item": "https://cryptorecon.io/blog-usdt-steyking-blok.html"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "USDT в стейкинге и earn-программах: риски заморозки и как вывести заблокированные средства",
+      "description": "USDT в Binance Earn, Bybit Savings или DeFi-пулах создаёт двойной барьер при AML-блокировке. Разбираем механику, сроки вывода и что делать если средства недоступны.",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cryptorecon.io/assets/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "mainEntityOfPage": "https://cryptorecon.io/blog-usdt-steyking-blok.html",
+      "image": "https://cryptorecon.io/assets/logo.png"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "USDT в Binance Earn заморожен. Binance начисляет APY или нет?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "При блокировке аккаунта начисление APY продолжается в большинстве earn-продуктов Binance, так как это автоматизированный процесс, не зависящий от статуса аккаунта. Однако начисленные проценты недоступны для вывода до разблокировки. На практике это означает: за период блокировки ваш earn работает, но получить проценты вы сможете только после успешной апелляции. Исключение: если аккаунт переведён в статус terminated (полное закрытие), начисление APY прекращается и оставшийся баланс фиксируется. При статусе restricted withdrawal earn, как правило, продолжает работу. Уточните статус вашего аккаунта в support тикете: это влияет на расчёт итоговой суммы."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Могу ли я вывести USDT из Bybit Savings при заблокированном аккаунте?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "При блокировке вывода на Bybit (не при полной блокировке аккаунта, а только при withdrawal restriction) вывод из Savings в основной баланс обычно остаётся возможным. Это отдельная функция внутри платформы. Попробуйте: Bybit, затем Earn, затем Savings, затем Redeem. Если редемпция проходит и средства зачисляются на основной баланс, но вывод на внешний адрес всё равно недоступен, это означает, что блокировка затрагивает только внешний вывод. В этом случае апелляция проще: нужен только AML-документальный пакет без объяснения earn-специфики."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что безопаснее - держать USDT в earn или просто на балансе биржи?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "С точки зрения AML-риска разницы нет: оба варианта одинаково уязвимы к биржевой блокировке. С точки зрения Tether-риска (заморозка на уровне смарт-контракта): USDT на биржевом балансе хранится на биржевых адресах, которые Tether заморозит только по запросу правоохранительных органов. USDT в DeFi-пуле на вашем адресе может быть заморожен Tether напрямую при попадании вашего адреса в blacklist. Таким образом, для Tether-риска биржевое хранение (CEX earn) чуть безопаснее, чем DeFi. Но биржевой риск (AML-блокировка аккаунта) одинаков для обоих. Общий совет: не держите суммы выше разумного порога ни в одном кастодиальном сервисе."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">USDT в стейкинге и earn-программах</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">DeFi и сети</span>
+      <span class="text-on-surface-variant text-xs">5 ноября 2026</span>
+      <span class="text-on-surface-variant text-xs">8 мин.</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">
+      USDT в стейкинге и earn-программах: риски заморозки и как вывести заблокированные средства
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">
+      USDT в Binance Earn, Bybit Savings или DeFi-пулах создаёт двойной барьер при AML-блокировке. Разбираем механику, сроки вывода и что делать если средства недоступны.
+    </p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">
+        Если AML-блокировка произошла, когда ваш USDT находился в Binance Earn, Bybit Savings или DeFi-пуле, возникает двойная проблема: к стандартной блокировке аккаунта добавляется невозможность вывести средства из earn-продукта. Механика разморозки в этом случае иная.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4"><div class="prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Три типа earn-продуктов и их риски</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Earn-продукты существенно различаются по механике взаимодействия с AML-блокировкой. Централизованные биржевые программы, DeFi-пулы ликвидности и стейкинг-протоколы реагируют на заморозку по-разному, что определяет стратегию действий в каждом случае. Понимание этих различий критически важно для правильного порядка апелляции.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">1. Централизованные биржевые earn-программы (Binance Earn, Bybit Savings)</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      При блокировке аккаунта средства в earn-программе автоматически замораживаются вместе с остальным балансом. Дополнительный барьер: earn-продукты часто имеют lockup-период на 7, 30 или 90 дней. Даже если биржа одобрит апелляцию раньше окончания lockup, вывод средств из earn возможен только после его истечения или с штрафом за досрочный выход. Это означает, что разблокировка аккаунта и разблокировка earn-средств могут быть разнесены во времени.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">2. DeFi yield farming: пулы ликвидности Uniswap, PancakeSwap</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если USDT застрял в DeFi-пуле во время Tether-заморозки, ситуация иная: вы не можете вывести ликвидность потому что LP-токены связаны с заблокированным USDT. Пул продолжает начислять комиссионные, но вывод заморожен на уровне смарт-контракта Tether. При Tether-разморозке через успешную апелляцию LP-токены восстанавливают ликвидность автоматически без дополнительных действий с вашей стороны.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">3. Стейкинг-протоколы: Lido, Rocket Pool, нативный стейкинг</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      stUSDT или другие токены, обеспеченные USDT, не замораживаются напрямую Tether: их ценность падает, но токены остаются в обращении. Однако если биржа блокирует вывод stUSDT наравне с обычным USDT, дополнительно нужно дождаться unstaking-периода, обычно от 7 до 21 дня, после разблокировки аккаунта. Это создаёт очередь: сначала апелляция по аккаунту, затем ожидание unstaking.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Пошаговые действия при блокировке USDT в earn</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Правильная последовательность действий при блокировке earn-средств отличается от стандартной апелляции по аккаунту. Каждый шаг влияет на скорость и успех разморозки, поэтому важно не пропускать ни одного этапа и не менять их порядок. Ошибка на раннем шаге усложняет все последующие.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 1. Зафиксируйте баланс во всех earn-продуктах</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Сразу после обнаружения блокировки сделайте скриншоты всех earn-позиций: название продукта, сумма USDT, дата окончания lockup, текущий APY и тип продукта (flexible или fixed-term). При полной блокировке аккаунта доступ к этим данным может быть ограничен или полностью закрыт. Скриншоты, сделанные до полной блокировки интерфейса, будут вашим основным источником данных для апелляции.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 2. Определите тип earn-продукта</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Flexible (гибкий) продукт означает, что вывод возможен в любой момент после разблокировки аккаунта без дополнительного ожидания. Fixed-term (фиксированный срок) требует дождаться окончания срока или заплатить штраф за досрочный выход, который может составлять от нескольких процентов до полной потери накопленных процентов. Auto-compound периодически реинвестируется, поэтому определите итоговую сумму на момент блокировки и зафиксируйте её в документах.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 3. Укажите earn-позиции в апелляции</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      В апелляционном письме отдельно укажите: сумму на основном балансе; сумму в каждом earn-продукте с типом и датой окончания lockup. Это помогает compliance-офицеру видеть полный объём заблокированных средств и влияет на приоритет рассмотрения кейса. Апелляции с детальным описанием earn-позиций рассматриваются быстрее, чем заявки без этой информации. Смотрите подробный список документов в нашем руководстве по <a href="blog-guide.html" class="text-primary hover:underline">разблокировке USDT</a>.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Шаг 4. После разблокировки: немедленный вывод</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      После одобрения апелляции немедленно выведите USDT из earn-продуктов на основной баланс, а затем на <a href="blog-koshelek.html" class="text-primary hover:underline">некастодиальный кошелёк</a>. Не оставляйте средства в earn после разблокировки: повторная блокировка возможна при изменении AML-базы биржи. Временной разрыв между разблокировкой аккаунта и выводом из earn следует минимизировать, чтобы не попасть под новый цикл автоматической проверки.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">DeFi-специфика: что происходит с yield при заморозке</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      При Tether-заморозке адреса в DeFi-пуле накопленный yield (комиссионные LP) технически продолжает начисляться, но недоступен для вывода. При разморозке через успешную апелляцию весь накопленный yield восстанавливается вместе с основной суммой. При уничтожении USDT функцией destroyBlackFunds, что является крайней редкостью, yield теряется вместе с основной суммой. Таким образом, долгосрочное нахождение в DeFi-пуле во время заморозки не всегда является катастрофой, если апелляция проходит успешно. Подробнее о механике заморозки читайте в статье про <a href="blog-defi.html" class="text-primary hover:underline">DeFi и блокировки USDT</a>.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Ключевое отличие DeFi от CEX в контексте заморозки: в DeFi-протоколах нет комплаенс-отдела, которому можно написать апелляцию. Если ваш адрес попал в Tether blacklist напрямую, единственный путь разморозки - обращение в <a href="blog-aml.html" class="text-primary hover:underline">Tether через официальный канал</a>. Биржа в этом случае не может помочь: она сама не может разморозить смарт-контракт Tether.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если же USDT заморожен на уровне биржевого аккаунта (а не на уровне блокчейна), и средства при этом находятся в DeFi-пуле, подключённом через биржевой аккаунт, то апелляция идёт к <a href="blog-binance.html" class="text-primary hover:underline">Binance</a> или <a href="blog-bybit.html" class="text-primary hover:underline">Bybit</a>, а не к Tether. Это принципиальное различие, которое определяет стратегию действий.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Сроки и практика разблокировки earn-средств</h2>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Тип earn-продукта</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Доп. ожидание после апелляции</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Автоматический возврат</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Начисление APY при блокировке</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Binance Earn Flexible</td>
+            <td class="p-4 text-on-surface">Нет (мгновенно)</td>
+            <td class="p-4 text-on-surface">Нет, нужно вручную</td>
+            <td class="p-4 text-on-surface">Продолжается</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Binance Earn Fixed</td>
+            <td class="p-4 text-on-surface">До окончания срока</td>
+            <td class="p-4 text-on-surface">Нет, нужно вручную</td>
+            <td class="p-4 text-on-surface">Продолжается</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Bybit Savings</td>
+            <td class="p-4 text-on-surface">Нет (мгновенно)</td>
+            <td class="p-4 text-on-surface">Нет, нужно вручную</td>
+            <td class="p-4 text-on-surface">Продолжается</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">DeFi LP-пул</td>
+            <td class="p-4 text-on-surface">Нет (после Tether-разморозки)</td>
+            <td class="p-4 text-on-surface">Да, автоматически</td>
+            <td class="p-4 text-on-surface">Начисляется, недоступно</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 text-on-surface-variant">Staking (Lido, Rocket Pool)</td>
+            <td class="p-4 text-on-surface">7-21 день (unstaking)</td>
+            <td class="p-4 text-on-surface">Нет, нужно вручную</td>
+            <td class="p-4 text-on-surface">Начисляется, недоступно</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Важно понимать, что разблокировка earn-средств и разблокировка аккаунта - это два разных события, которые могут произойти в разное время. Планируйте действия с учётом обоих этапов, чтобы не оказаться в ситуации, когда аккаунт разблокирован, но средства всё ещё недоступны из-за lockup-периода.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как снизить риски earn при работе с USDT</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если вы активно используете earn-продукты, несколько практических правил существенно снижают риски. Прежде всего, проверяйте AML-скоринг USDT перед зачислением на биржевой earn: <a href="blog-mozhno-li-snyat.html" class="text-primary hover:underline">монеты с высоким риском</a> провоцируют блокировку быстрее. Не держите в earn более 50-60% от общего объёма USDT на конкретной бирже: это позволяет сохранить доступ к части средств при блокировке earn-позиций.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Предпочитайте flexible-продукты fixed-term при прочих равных: отсутствие lockup-периода радикально упрощает ситуацию при блокировке. Если вы всё же используете fixed-term продукты, сохраняйте подтверждение даты окончания lockup отдельно от биржевого интерфейса, так как при полной блокировке доступа к аккаунту эти данные могут стать недоступны.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Для DeFi отдельная рекомендация: регулярно проверяйте, не попал ли ваш адрес в Tether blacklist, до того как заводить в пул крупные суммы. Если вы не уверены в происхождении USDT, лучше использовать CEX earn через биржевой аккаунт, а не прямой DeFi: это добавляет прослойку между вашим адресом и смарт-контрактом Tether.
+    </p>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы о блокировке USDT в стейкинге и earn</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            USDT в Binance Earn заморожен. Binance начисляет APY или нет?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">При блокировке аккаунта начисление APY продолжается в большинстве earn-продуктов Binance, так как это автоматизированный процесс, не зависящий от статуса аккаунта. Однако начисленные проценты недоступны для вывода до разблокировки. На практике это означает: за период блокировки ваш earn работает, но получить проценты вы сможете только после успешной апелляции. Исключение: если аккаунт переведён в статус terminated (полное закрытие), начисление APY прекращается и оставшийся баланс фиксируется. При статусе restricted withdrawal earn, как правило, продолжает работу. Уточните статус вашего аккаунта в support тикете: это влияет на расчёт итоговой суммы.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Могу ли я вывести USDT из Bybit Savings при заблокированном аккаунте?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">При блокировке вывода на Bybit (не при полной блокировке аккаунта, а только при withdrawal restriction) вывод из Savings в основной баланс обычно остаётся возможным. Это отдельная функция внутри платформы. Попробуйте: Bybit, затем Earn, затем Savings, затем Redeem. Если редемпция проходит и средства зачисляются на основной баланс, но вывод на внешний адрес всё равно недоступен, это означает, что блокировка затрагивает только внешний вывод. В этом случае апелляция проще: нужен только AML-документальный пакет без объяснения earn-специфики.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Что безопаснее - держать USDT в earn или просто на балансе биржи?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">С точки зрения AML-риска разницы нет: оба варианта одинаково уязвимы к биржевой блокировке. С точки зрения Tether-риска (заморозка на уровне смарт-контракта): USDT на биржевом балансе хранится на биржевых адресах, которые Tether заморозит только по запросу правоохранительных органов. USDT в DeFi-пуле на вашем адресе может быть заморожен Tether напрямую при попадании вашего адреса в blacklist. Таким образом, для Tether-риска биржевое хранение (CEX earn) чуть безопаснее, чем DeFi. Но биржевой риск (AML-блокировка аккаунта) одинаков для обоих. Общий совет: не держите суммы выше разумного порога ни в одном кастодиальном сервисе.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+</article>
+
+<!-- Author + YMYL block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специалисты по разблокировке USDT и аккаунтов криптобирж. Более 300 кейсов с 2021 года. Статья подготовлена на основе реальной практики работы с блокировками на Binance Earn, Bybit Savings и DeFi-протоколах.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Binance, Bybit, DeFi</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="blog-binance.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">account_balance</span>
+          <span class="text-xs text-on-surface-variant">Биржи</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT на Binance: что делать и куда обращаться</h3>
+      </a>
+      <a href="blog-bybit.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">account_balance</span>
+          <span class="text-xs text-on-surface-variant">Биржи</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Разблокировка USDT на Bybit: пошаговое руководство</h3>
+      </a>
+      <a href="blog-defi.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">hub</span>
+          <span class="text-xs text-on-surface-variant">DeFi и сети</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">DeFi и блокировки USDT: как работает заморозка в смарт-контрактах</h3>
+      </a>
+      <a href="blog-aml.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">shield</span>
+          <span class="text-xs text-on-surface-variant">AML</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">AML и блокировка USDT: как работает система проверки транзакций</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">USDT заблокирован в earn или стейкинге?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Разберём ваш кейс бесплатно. Определим тип блокировки, оценим шансы и предложим алгоритм действий с учётом earn-специфики.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="usdt-yurist.html" class="hover:text-white transition-colors">Юридическая помощь</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Биржи</p>
+          <ul class="space-y-1">
+            <li><a href="blog-binance.html" class="hover:text-white transition-colors">Binance</a></li>
+            <li><a href="blog-bybit.html" class="hover:text-white transition-colors">Bybit</a></li>
+            <li><a href="blog-okx.html" class="hover:text-white transition-colors">OKX</a></li>
+            <li><a href="blog-kucoin.html" class="hover:text-white transition-colors">KuCoin</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Контакт</p>
+          <ul class="space-y-1">
+            <li><a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @crypto_recon</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-xs text-center">
+      <p>© 2026 CryptoRecon. Сайт носит информационный характер.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

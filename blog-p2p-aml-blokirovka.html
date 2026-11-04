@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-423Q1G2QTK');
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>P2P сделка → AML блокировка: механика, документы и восстановление аккаунта | CryptoRecon</title>
+<meta name="description" content="P2P торговля USDT — самый частый путь к AML-блокировке. Разбираем цепочку от сделки до заморозки, документы для апелляции и шансы восстановления."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-p2p-aml-blokirovka.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-p2p-aml-blokirovka.html"/>
+<meta property="og:title" content="P2P сделка и AML блокировка: механика и пошаговое восстановление | CryptoRecon"/>
+<meta property="og:description" content="P2P торговля USDT — самый частый путь к AML-блокировке. Разбираем цепочку от сделки до заморозки, документы для апелляции и шансы восстановления."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#495f84",
+        "on-primary": "#f6f7ff",
+        "primary-container": "#d9e2f3",
+        "on-primary-container": "#001b3d",
+        secondary: "#575e71",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dbe2f9",
+        "on-secondary-container": "#141b2c",
+        surface: "#f7f9fb",
+        "on-surface": "#181c22",
+        "surface-container-low": "#f0f4f7",
+        "surface-container": "#e8ecf1",
+        "on-surface-variant": "#42474f",
+        "outline-variant": "#c2c7cf",
+        error: "#ba1a1a",
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        display: ["Manrope", "ui-sans-serif"],
+      },
+    },
+  },
+};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://cryptorecon.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://cryptorecon.io/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "P2P сделка и AML блокировка",
+          "item": "https://cryptorecon.io/blog-p2p-aml-blokirovka.html"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "P2P сделка и AML блокировка: механика и пошаговое восстановление",
+      "description": "P2P торговля USDT — самый частый путь к AML-блокировке. Разбираем цепочку от сделки до заморозки, документы для апелляции и шансы восстановления.",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CryptoRecon",
+        "url": "https://cryptorecon.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cryptorecon.io/assets/logo.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "mainEntityOfPage": "https://cryptorecon.io/blog-p2p-aml-blokirovka.html",
+      "image": "https://cryptorecon.io/assets/logo.png"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как проверить AML-риск USDT перед зачислением на биржу?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Используйте AMLBot.com или crystal.chainalysis.com (бесплатная проверка до 3 адресов в день). Введите TxID или адрес отправителя USDT. Система покажет процент exposure к санкционированным источникам. Пороговые значения: Binance считает опасным exposure выше 10%; Bybit и HTX — выше 15-20%; OKX — выше 50%. Если проверка показывает score выше этих значений, не переводите USDT на биржевой аккаунт: это почти гарантированно вызовет блокировку. Альтернативно: переведите USDT на промежуточный некастодиальный кошелёк (MetaMask, Trust Wallet) и подождите несколько дней. Лучший подход: проверка до получения."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Биржа требует объяснить P2P-сделку. Что именно писать?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Апелляционное письмо при P2P-блокировке должно содержать: точные TxID сделки, дату и сумму; объяснение, кто был контрагент и зачем вы проводили сделку (обмен рублей на USDT для личного использования, торговля, сбережение); источник рублей или другой фиатной валюты (зарплата, продажа имущества, конкретный банковский счёт); заявление о добросовестности (вы не знали об AML-истории контрагента). Не пишите общих фраз вроде 'я ничего плохого не делал'. Compliance-офицер ищет конкретные факты, которые можно верифицировать. Прикрепите банковские выписки, подтверждение источника дохода и скриншот P2P-сделки из интерфейса биржи."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Мой USDT куплен через P2P на Binance, но блокировка произошла при попытке вывода на OKX. Как это работает?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AML-проверка происходит дважды: при зачислении на биржу и при выводе с неё. Если на Binance AML-система не поймала риск (например, из-за более мягкого порога), а OKX при получении применила более строгие правила, именно OKX заблокирует транзакцию. Это означает, что безопасность USDT на одной бирже не гарантирует безопасности на другой. При блокировке на OKX обращайтесь в OKX compliance, а не в Binance: именно OKX является держателем заблокированных средств."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Возможна ли уголовная ответственность при AML-блокировке после P2P?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AML-блокировка на бирже — это внутреннее compliance-решение, а не уголовное преследование. Сам факт блокировки не означает ни подозрений, ни обвинений. Однако если биржа обнаруживает признаки намеренного отмывания (систематические паттерны, крупные суммы, связь с известными нелегальными сервисами), она обязана направить SAR (Suspicious Activity Report) в соответствующий финансовый регулятор. В США это FinCEN, в ЕС — национальные FIU. Россиянам особенно важно: 115-ФЗ применяется к операциям через российские банки, но не к операциям на иностранных биржах. Однако при возврате средств в Россию через банковскую систему 115-ФЗ вступает в силу."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/>
+      <span class="font-display font-bold text-primary text-lg">CryptoRecon</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="/usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary transition-colors">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">P2P сделка и AML блокировка</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">AML и риски</span>
+      <span class="text-on-surface-variant text-xs">5 ноября 2026</span>
+      <span class="text-on-surface-variant text-xs">· 10 мин.</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">
+      P2P сделка и AML блокировка: механика и пошаговое восстановление
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">
+      P2P-торговля USDT — самый распространённый путь к AML-блокировке для россиян. Разбираем цепочку от сделки до заморозки, шесть этапов блокировки, документы для апелляции и шансы восстановления по каждой бирже.
+    </p>
+  </div>
+</section>
+
+<!-- Quick Answer Box -->
+<section class="py-6">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary">flash_on</span>
+        <span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span>
+      </div>
+      <p class="text-on-surface font-medium leading-relaxed">
+        P2P-торговля USDT — самый распространённый путь к AML-блокировке для россиян. Когда ваш контрагент по P2P-сделке оказывается под AML-флагом, биржа замораживает не только его аккаунт, но и ваш — как "получателя токсичных средств". Понять механику означает понять, как защититься и как апеллировать.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Article -->
+<article class="py-8">
+  <div class="max-w-4xl mx-auto px-4"><div class="prose prose-slate max-w-none">
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Почему P2P — главный источник AML-рисков</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      В P2P-торговле вы напрямую обмениваете USDT с другим пользователем. Биржа выступает посредником, но не контрагентом. Это означает, что риск вашего контрагента автоматически становится вашим риском. По данным CryptoRecon, более 60% кейсов заморозки USDT у россиян берут начало именно в P2P-операциях.
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Причина проста: P2P-маркетплейсы привлекают пользователей, которые используют их для обхода банковских ограничений, отмывания средств или нелегального обмена. Биржа не может проверить источник USDT до сделки, поэтому она проверяет его после и блокирует аккаунты обеих сторон при обнаружении риска. Подробнее о том, как работает система скоринга, читайте в нашей статье про <a href="blog-chainalysis.html" class="text-primary hover:underline">Chainalysis и AML-проверку транзакций</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Пошаговая цепочка: от P2P-сделки до блокировки аккаунта</h2>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Этап 1. Вы покупаете или продаёте USDT через P2P</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Сделка прошла успешно. USDT зачислен на ваш аккаунт. Биржа фиксирует TxID, адрес отправителя, сумму и время. На этом этапе ничего подозрительного не происходит — стандартная транзакция, которую система регистрирует в обычном режиме. Вы видите зачисление в истории операций, аккаунт работает в штатном режиме. Риск уже присутствует, но он ещё не активирован.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Этап 2. AML-система делает on-chain запрос</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Система Chainalysis KYT или Elliptic Navigator автоматически запрашивает данные о транзакции. Запрос происходит в течение нескольких минут или часов после зачисления. Если адрес контрагента имеет exposure к санкционированным адресам, система проставляет флаг "high risk" на вашем аккаунте. Это автоматический процесс без участия людей. Пользователь на этом этапе ничего не замечает.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Этап 3. Аккаунт переходит в enhanced review</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      В большинстве случаев пользователь не получает немедленного уведомления. Аккаунт остаётся в рабочем состоянии, но попадает в очередь на ручную проверку compliance-офицером. Статус "enhanced review" означает, что автоматика передала кейс человеку. Это может занять от нескольких часов до нескольких недель в зависимости от загруженности compliance-отдела биржи.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Этап 4. Вывод блокируется</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      При достижении порогового значения (Bybit: 15-20%, OKX: 50%, Binance: 10%) система автоматически блокирует вывод. Иногда блокировка наступает сразу, иногда — через несколько недель после сделки. Именно этот разрыв во времени сбивает пользователей с толку: они не понимают, какая конкретно транзакция стала причиной, потому что сделка прошла давно. Подробнее об AML-порогах читайте в статье <a href="blog-proverka-aml.html" class="text-primary hover:underline">проверка AML-score</a>.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Этап 5. Запрос документов</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Пользователь получает email с запросом объяснить происхождение конкретных USDT. Это критический момент: у вас есть 7-14 дней на ответ, после которого аккаунт блокируется полностью. Многие пользователи игнорируют такие письма, принимая их за спам или фишинг. Это самая дорогостоящая ошибка: не ответив на запрос, вы лишаетесь права на упрощённую апелляцию и переходите в категорию "отказ от сотрудничества".
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Этап 6. Полная блокировка или разблокировка</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      При отсутствии ответа или недостаточных документах наступает полная блокировка аккаунта. При предоставлении полного пакета и удовлетворительного объяснения происходит снятие ограничений. Итог полностью зависит от качества и полноты предоставленных материалов. Шансы на разблокировку при своевременной реакции и хорошей доказательной базе составляют 60-80% в зависимости от биржи. О механике заражения читайте в статье <a href="blog-aml-zarazheniye.html" class="text-primary hover:underline">AML-заражение аккаунта</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Три фактора, которые определяют риск P2P-сделки</h2>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Фактор 1: AML-история контрагента</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Вы не можете проверить AML-историю P2P-продавца заранее. Но можете снизить риск: проверяйте адрес контрагента в AMLBot.com или Chainalysis Free Check ПОСЛЕ получения USDT и ДО перевода на биржу. Если score выше 25% для Binance или 50% для OKX — не пополняйте этим USDT биржевой счёт. Такая проверка занимает две минуты, но может сэкономить недели апелляций и тысячи долларов заблокированных средств.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Фактор 2: Сумма и паттерн транзакций</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Нестандартные паттерны — несколько P2P-сделок подряд, круглые суммы, необычное время — повышают вероятность ручной проверки. Биржи отслеживают "structuring": дробление крупных сумм на несколько мелких сделок для обхода порогов автоматического мониторинга. Если вы проводите несколько P2P-сделок в течение короткого времени, каждая из которых формально ниже порога проверки, система всё равно объединит их в единый паттерн и применит повышенный контроль.
+    </p>
+
+    <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">Фактор 3: Скорость последующей транзакции</h3>
+    <p class="text-on-surface leading-relaxed mb-4">
+      USDT, немедленно выведенный с биржи после P2P-покупки, вызывает меньше подозрений, чем USDT, который "отлежал" на счёте и только потом выведен. Быстрые транзакции хуже поддаются мониторингу. Парадоксально, но медленное движение средств на биржевом счёте снижает риск флага. Это объясняется тем, что AML-системы ищут признаки "транзитного" использования биржи — когда площадка используется исключительно для конвертации средств без реальной торговой активности.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Документы для апелляции при P2P-блокировке</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Стандартный пакет документов при AML-блокировке после P2P включает несколько обязательных позиций. Первое: скриншот P2P-сделки с TxID, данными контрагента и суммой. Второе: скриншот банковского перевода контрагенту (при продаже USDT за рубли). Третье: объяснение источника дохода, на который были куплены USDT. Четвёртое: AML-отчёт с вашего адреса (AMLBot или Crystal). Пятое: документ KYC (паспорт, подтверждение адреса).
+    </p>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Если причина блокировки — конкретный контрагент, а не вы сами, добавьте заявление о добросовестности: вы не были осведомлены о рисках контрагента и провели сделку в полном соответствии с правилами платформы. Это принципиально важно для биржи: compliance-офицер должен понять, что вы жертва обстоятельств, а не соучастник. Подробный гайд по документам: <a href="blog-aml.html" class="text-primary hover:underline">документы для AML-апелляции</a>.
+    </p>
+
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Шансы и сроки по биржам</h2>
+    <p class="text-on-surface leading-relaxed mb-4">
+      Данные из практики CryptoRecon по P2P-кейсам 2024-2026 годов:
+    </p>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-container">
+          <tr>
+            <th class="text-left p-4 font-semibold text-on-surface">Биржа</th>
+            <th class="text-left p-4 font-semibold text-on-surface">AML-порог</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Срок апелляции</th>
+            <th class="text-left p-4 font-semibold text-on-surface">Шанс разблокировки</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/20">
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 font-medium text-on-surface">Binance</td>
+            <td class="p-4 text-on-surface">10%</td>
+            <td class="p-4 text-on-surface">14-45 раб. дней</td>
+            <td class="p-4 text-on-surface">55-65%</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 font-medium text-on-surface">Bybit</td>
+            <td class="p-4 text-on-surface">15-20%</td>
+            <td class="p-4 text-on-surface">7-21 раб. день</td>
+            <td class="p-4 text-on-surface">65-75%</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 font-medium text-on-surface">OKX</td>
+            <td class="p-4 text-on-surface">50%</td>
+            <td class="p-4 text-on-surface">14-45 раб. дней</td>
+            <td class="p-4 text-on-surface">70-80%</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 font-medium text-on-surface">Gate.io</td>
+            <td class="p-4 text-on-surface">25-30%</td>
+            <td class="p-4 text-on-surface">7-30 раб. дней</td>
+            <td class="p-4 text-on-surface">60-70%</td>
+          </tr>
+          <tr class="hover:bg-surface-container-low">
+            <td class="p-4 font-medium text-on-surface">HTX</td>
+            <td class="p-4 text-on-surface">15-20%</td>
+            <td class="p-4 text-on-surface">14-30 раб. дней</td>
+            <td class="p-4 text-on-surface">60-70%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-on-surface leading-relaxed mb-4">
+      OKX имеет самый высокий порог срабатывания (50%), что делает его относительно безопаснее для P2P. Binance с порогом 10% — наиболее строгая платформа, где даже незначительный AML-след контрагента может спровоцировать блокировку. Шанс разблокировки во всех случаях существенно зависит от качества предоставленных документов и скорости ответа на первичный запрос. О сервисе P2P и рисках читайте на странице <a href="usdt-p2p.html" class="text-primary hover:underline">P2P USDT</a>.
+    </p>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 border-t border-outline-variant/20 pt-10">
+      <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы о P2P и AML-блокировках</h2>
+      <div class="space-y-4">
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Как проверить AML-риск USDT перед зачислением на биржу?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Используйте AMLBot.com или crystal.chainalysis.com (бесплатная проверка до 3 адресов в день). Введите TxID или адрес отправителя USDT. Система покажет процент exposure к санкционированным источникам. Пороговые значения: Binance считает опасным exposure выше 10%; Bybit и HTX — выше 15-20%; OKX — выше 50%. Если проверка показывает score выше этих значений, не переводите USDT на биржевой аккаунт: это почти гарантированно вызовет блокировку. Альтернативно: переведите USDT на промежуточный некастодиальный кошелёк (MetaMask, Trust Wallet) и подождите несколько дней. "Старение" транзакции немного снижает видимость в некоторых системах, хотя это не является надёжным методом. Лучший подход: проверка до получения.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Биржа требует объяснить P2P-сделку. Что именно писать?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Апелляционное письмо при P2P-блокировке должно содержать: точные TxID сделки, дату и сумму; объяснение, кто был контрагент и зачем вы проводили сделку (обмен рублей на USDT для личного использования, торговля, сбережение); источник рублей или другой фиатной валюты (зарплата, продажа имущества, конкретный банковский счёт); заявление о добросовестности (вы не знали об AML-истории контрагента). Не пишите общих фраз вроде "я ничего плохого не делал". Compliance-офицер ищет конкретные факты, которые можно верифицировать. Прикрепите банковские выписки, подтверждение источника дохода и скриншот P2P-сделки из интерфейса биржи.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Мой USDT куплен через P2P на Binance, но блокировка произошла при попытке вывода на OKX. Как это работает?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">AML-проверка происходит дважды: при зачислении на биржу и при выводе с неё. Если на Binance AML-система не поймала риск (например, из-за более мягкого порога), а OKX при получении применила более строгие правила, именно OKX заблокирует транзакцию. Это означает, что "безопасность" USDT на одной бирже не гарантирует безопасности на другой. Решение: при переводе между биржами всегда предварительно проверяйте AML-score адреса на AMLBot. При блокировке на OKX обращайтесь в OKX compliance, а не в Binance: именно OKX является держателем заблокированных средств.</p>
+        </details>
+
+        <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+          <summary class="font-semibold text-on-surface list-none flex justify-between items-center">
+            Возможна ли уголовная ответственность при AML-блокировке после P2P?
+            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">AML-блокировка на бирже — это внутреннее compliance-решение, а не уголовное преследование. Сам факт блокировки не означает ни подозрений, ни обвинений. Однако если биржа обнаруживает признаки намеренного отмывания (систематические паттерны, крупные суммы, связь с известными нелегальными сервисами), она обязана направить SAR (Suspicious Activity Report) в соответствующий финансовый регулятор. В США это FinCEN, в ЕС — национальные FIU. Россиянам особенно важно: 115-ФЗ применяется к операциям через российские банки, но не к операциям на иностранных биржах. Однако при возврате средств в Россию через банковскую систему 115-ФЗ вступает в силу. Подробнее о 115-ФЗ читайте в статье <a href="blog-bank-blok.html" class="text-primary hover:underline">банковская блокировка и 115-ФЗ</a>.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+</article>
+
+<!-- Author + YMYL block -->
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+      </div>
+      <div>
+        <p class="font-semibold text-on-surface">Команда CryptoRecon</p>
+        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специалисты по разблокировке USDT и аккаунтов криптобирж. Более 300 кейсов с 2021 года. Статья подготовлена на основе реальной практики работы с P2P-блокировками на Binance, Bybit, OKX, Gate.io и HTX.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span>
+          <span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Binance, Bybit, OKX, Gate, HTX</span>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="blog-aml.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">security</span>
+          <span class="text-xs text-on-surface-variant">AML и риски</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">AML-блокировка USDT: причины, механика и апелляция</h3>
+      </a>
+      <a href="blog-chainalysis.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">analytics</span>
+          <span class="text-xs text-on-surface-variant">AML и риски</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Chainalysis и AML: как работает скоринг транзакций</h3>
+      </a>
+      <a href="blog-proverka-aml.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">search</span>
+          <span class="text-xs text-on-surface-variant">AML и риски</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Проверка AML-score USDT: инструменты и пороговые значения</h3>
+      </a>
+      <a href="blog-guide.html" class="group bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/30 transition-all">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-primary text-lg">menu_book</span>
+          <span class="text-xs text-on-surface-variant">Руководство</span>
+        </div>
+        <h3 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm leading-snug">Полное руководство по разблокировке USDT: с чего начать</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-black font-display text-on-primary mb-3">Заблокировали USDT после P2P?</h2>
+    <p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Разберём ваш кейс бесплатно. Определим причину блокировки, оценим шансы и предложим пошаговый алгоритм действий.</p>
+    <a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg">
+      <span class="material-symbols-outlined">send</span>
+      Написать в Telegram
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#001B3D] text-white/70 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/>
+          <span class="font-display font-bold text-white text-base">CryptoRecon</span>
+        </div>
+        <p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p>
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm">
+        <div>
+          <p class="text-white font-semibold mb-2">Услуги</p>
+          <ul class="space-y-1">
+            <li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li>
+            <li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li>
+            <li><a href="usdt-p2p.html" class="hover:text-white transition-colors">P2P USDT</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Биржи</p>
+          <ul class="space-y-1">
+            <li><a href="blog-binance.html" class="hover:text-white transition-colors">Binance</a></li>
+            <li><a href="blog-bybit.html" class="hover:text-white transition-colors">Bybit</a></li>
+            <li><a href="blog-okx.html" class="hover:text-white transition-colors">OKX</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-2">Контакт</p>
+          <ul class="space-y-1">
+            <li><a href="https://t.me/crypto_recon" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @crypto_recon</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-xs text-center">
+      <p>© 2026 CryptoRecon. Сайт носит информационный характер.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
