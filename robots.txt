@@ -4,7 +4,6 @@ Disallow: /backup-old-design-2026-04-01/
 Disallow: /qa-artifacts/
 
 Sitemap: https://cryptorecon.io/sitemap.xml
-Sitemap: https://cryptorecon.io/llms.txt
 
 # Search engines
 User-agent: Googlebot

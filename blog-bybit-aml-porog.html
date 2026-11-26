@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-423Q1G2QTK');</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bybit AML-пороги 2026: как Elliptic Navigator определяет риск и когда блокирует USDT | CryptoRecon</title>
+<meta name="description" content="Bybit использует Elliptic Navigator с порогом прямого риска 20% и косвенного 25%. Разбираем как Elliptic считает риск-скор, 5 категорий риска и что делать при блокировке USDT."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-bybit-aml-porog.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-bybit-aml-porog.html"/>
+<meta property="og:title" content="Bybit AML-пороги 2026: как Elliptic Navigator определяет риск и когда блокирует USDT | CryptoRecon"/>
+<meta property="og:description" content="Bybit использует Elliptic Navigator с порогом прямого риска 20% и косвенного 25%. Разбираем как Elliptic считает риск-скор, 5 категорий риска и что делать при блокировке USDT."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta property="og:image:width" content="512"/>
+<meta property="og:image:height" content="512"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:published_time" content="2026-11-05T00:00:00+03:00"/>
+<meta property="article:modified_time" content="2026-11-05T00:00:00+03:00"/>
+<meta property="article:section" content="AML и риски"/>
+<meta property="article:author" content="https://cryptorecon.io"/>
+<meta name="twitter:title" content="Bybit AML-пороги 2026: Elliptic Navigator и риск-скор"/>
+<meta name="twitter:description" content="Bybit использует Elliptic Navigator. Порог прямого риска 20%, косвенного 25%. 5 категорий риска и алгоритм действий при блокировке."/>
+<meta name="twitter:image" content="https://cryptorecon.io/assets/logo.png"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#495f84","on-primary":"#f6f7ff","primary-container":"#d9e2f3","on-primary-container":"#001b3d",secondary:"#575e71","on-secondary":"#ffffff","secondary-container":"#dbe2f9","on-secondary-container":"#141b2c",surface:"#f7f9fb","on-surface":"#181c22","surface-container-low":"#f0f4f7","surface-container":"#e8ecf1","on-surface-variant":"#42474f","outline-variant":"#c2c7cf",error:"#ba1a1a"},fontFamily:{sans:["Inter","ui-sans-serif","system-ui"],display:["Manrope","ui-sans-serif"]}}}};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://cryptorecon.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://cryptorecon.io/blog.html"},{"@type":"ListItem","position":3,"name":"Bybit AML-пороги 2026","item":"https://cryptorecon.io/blog-bybit-aml-porog.html"}]},
+    {"@type":"Article","headline":"Bybit AML-пороги 2026: как Elliptic Navigator определяет риск и когда блокирует USDT","description":"Bybit использует Elliptic Navigator с порогом прямого риска 20% и косвенного 25%. Разбираем как Elliptic считает риск-скор, 5 категорий риска и что делать при блокировке USDT.","datePublished":"2026-11-05","dateModified":"2026-11-05","author":{"@type":"Organization","name":"CryptoRecon","url":"https://cryptorecon.io","sameAs":["https://t.me/kkrkkk77"]},"publisher":{"@type":"Organization","name":"CryptoRecon","url":"https://cryptorecon.io","logo":{"@type":"ImageObject","url":"https://cryptorecon.io/assets/logo.png","width":512,"height":512}},"mainEntityOfPage":"https://cryptorecon.io/blog-bybit-aml-porog.html","image":"https://cryptorecon.io/assets/logo.png","inLanguage":"ru","wordCount":2000},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Какой AML-порог использует Bybit?","acceptedAnswer":{"@type":"Answer","text":"Bybit использует Elliptic Navigator для мониторинга транзакций. Система работает с двумя типами порогов: прямой риск и косвенный риск. Прямой риск: если транзакция напрямую связана с высокорисковым источником (например, USDT отправлены напрямую с кошелька Garantex), и доля таких средств превышает 20%, транзакция блокируется. Косвенный (экспозиционный) риск: если средства прошли через промежуточные адреса и суммарная доля высокорисковых средств в цепочке превышает 25%, транзакция также флагируется. Важно понимать: Elliptic анализирует не только текущую транзакцию, но и всю транзакционную историю кошелька на глубину до 10 хопов. Это означает, что монеты, полученные законным путём несколько месяцев назад, могут получить высокий риск-скор из-за ретроактивного обновления базы данных Elliptic. Это явление называют ретроактивным AML и оно является основной причиной неожиданных блокировок на Bybit."}},
+      {"@type":"Question","name":"Что такое прямой и косвенный риск в Elliptic?","acceptedAnswer":{"@type":"Answer","text":"Elliptic Navigator различает два типа экспозиции при оценке риска транзакции. Прямая экспозиция означает, что ваш кошелёк напрямую отправлял или получал средства от высокорискового адреса. Например, вы получили USDT напрямую с адреса, связанного с Garantex. В этом случае доля этих средств в текущей транзакции рассчитывается как прямой риск. Косвенная (экспозиционная) экспозиция означает, что ваш кошелёк не взаимодействовал с высокорисковым адресом напрямую, но в цепочке транзакций на глубине нескольких хопов присутствуют адреса с высоким риском. Система отслеживает до 10 хопов назад. Например, вы получили USDT от обменника, который в свою очередь получил их от P2P-трейдера, который когда-то торговал с Garantex-связанными адресами. Несмотря на то что вы лично никогда не взаимодействовали с проблемными адресами, система присвоит вашей транзакции косвенный риск. Порог косвенного риска у Bybit составляет 25%."}},
+      {"@type":"Question","name":"Как снизить риск-скор Elliptic?","acceptedAnswer":{"@type":"Answer","text":"Снизить уже присвоенный Elliptic риск-скор конкретному кошельку самостоятельно невозможно: это данные в базе Elliptic, обновляемые независимо от ваших действий. Однако есть несколько практических подходов. Первый: предоставить профессиональный AML-отчёт, объясняющий происхождение средств и демонстрирующий, что связи с высокорисковыми источниками являются косвенными и не отражают ваши действия. Второй: при подаче апелляции в Bybit запросить ручной пересмотр транзакции специалистом-комплаенс (не автоматической системой). Третий: для будущих транзакций использовать кошельки с чистой историей и проверять риск-скор входящих USDT перед их принятием через инструменты вроде AMLBot, GetBlock или Crystal. Четвёртый: после успешной апелляции рассмотреть замену кошелька на новый адрес с нулевой историей. Превентивная проверка USDT перед получением является единственным способом гарантированно избежать проблем с AML на Bybit."}},
+      {"@type":"Question","name":"Bybit заблокировал USDT из-за AML. Что делать первым?","acceptedAnswer":{"@type":"Answer","text":"При блокировке вывода или аккаунта на Bybit из-за AML-триггера первые действия таковы. Первое: не паникуйте и не пытайтесь срочно перевести оставшиеся средства на другой кошелёк. Это может быть расценено как попытка уклонения и усложнит апелляцию. Второе: зафиксируйте TxID всех подозрительных транзакций и точное время блокировки. Третье: напишите на compliance@bybit.com с темой «Account Compliance Review - UID [ваш номер]». В письме кратко опишите ситуацию: UID, заблокированная сумма, TxID, дата блокировки. Четвёртое: параллельно закажите профессиональный AML-отчёт по методологии Elliptic Navigator. Без него апелляция в большинстве случаев заканчивается отказом. CryptoRecon предоставляет бесплатную оценку кейса и работает по success fee 10-18% без предоплаты. Срок рассмотрения апелляций Bybit составляет 14-30 рабочих дней."}}
+    ]}
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2"><img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/><span class="font-display font-bold text-primary text-lg">CryptoRecon</span></a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/kkrkkk77" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="blog.html" class="hover:text-primary">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">Bybit AML-пороги 2026</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">AML и риски</span>
+      <span class="text-on-surface-variant text-xs">5 ноября 2026</span>
+      <span class="text-on-surface-variant text-xs">8 мин.</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">Bybit AML-пороги 2026: как Elliptic Navigator определяет риск и когда блокирует USDT</h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">Bybit использует Elliptic Navigator для AML-мониторинга с двумя типами порогов: прямой риск 20% и косвенный риск 25%. Понимание этих порогов и 5 категорий риска Elliptic критически важно для российских пользователей, работающих с USDT.</p>
+  </div>
+</section>
+<section class="py-6"><div class="max-w-4xl mx-auto px-4"><div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6"><div class="flex items-center gap-2 mb-3"><span class="material-symbols-outlined text-primary">flash_on</span><span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span></div><p class="text-on-surface font-medium leading-relaxed">Bybit использует Elliptic Navigator. Порог прямого риска: 20%. Порог косвенного (экспозиционного) риска: 25%. Система анализирует до 10 хопов назад. Апелляция: compliance@bybit.com. Срок рассмотрения: 14-30 рабочих дней.</p></div></div></section>
+<article class="py-8"><div class="max-w-4xl mx-auto px-4"><div class="prose prose-slate max-w-none">
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как Elliptic Navigator рассчитывает риск-скор</h2>
+  <p class="text-on-surface leading-relaxed mb-4">Elliptic Navigator является одной из ведущих платформ блокчейн-аналитики. Система строит граф транзакций для каждого кошелька, отслеживая происхождение средств на глубину до 10 хопов. Каждому узлу в этом графе присваивается метка на основе базы данных Elliptic: биржа, кошелёк частного лица, миксер, санкционированный адрес, darknet-маркет и т.д.</p>
+  <p class="text-on-surface leading-relaxed mb-4">Итоговый риск-скор транзакции рассчитывается как взвешенная сумма всех рисковых связей в цепочке, с учётом расстояния (хопов) от текущего кошелька до источника риска. Чем дальше источник риска от текущего кошелька, тем меньше его вес в итоговом скоре. При этом Elliptic постоянно обновляет базу данных: адрес, который год назад был чистым, может сегодня получить метку "высокого риска" после ретроактивного добавления в базу. Это объясняет феномен ретроактивных блокировок на Bybit. Подробнее об Elliptic Navigator читайте в статье <a href="blog-elliptic.html" class="text-primary hover:underline">Elliptic Navigator и блокировки USDT: как работает скоринг Bybit, HTX, BingX и Phemex</a>.</p>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Прямой риск vs косвенный риск: в чём разница</h2>
+  <p class="text-on-surface leading-relaxed mb-4">Elliptic Navigator различает два типа экспозиции, которые по-разному влияют на порог блокировки. Прямая экспозиция возникает, когда ваш кошелёк напрямую отправлял или получал средства от высокорискового адреса. Это наиболее серьёзный тип риска, и порог на Bybit установлен на уровне 20%. Если 20% и более средств в транзакции пришли напрямую из высокорискового источника, транзакция блокируется немедленно.</p>
+  <p class="text-on-surface leading-relaxed mb-4">Косвенная (экспозиционная) экспозиция возникает, когда в цепочке транзакций на глубине нескольких хопов присутствуют высокорисковые адреса, но ваш кошелёк с ними напрямую не взаимодействовал. Порог для косвенного риска на Bybit составляет 25%. На практике большинство блокировок россиян на Bybit связаны именно с косвенным риском: Garantex-связанные монеты проходят через несколько P2P-трейдеров и попадают к пользователю в "разбавленном" виде, но всё равно превышают порог Elliptic. Общий обзор работы скоринговых систем читайте в статье <a href="blog-aml.html" class="text-primary hover:underline">AML и USDT: как работает скоринг и почему блокируют</a>.</p>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">5 категорий риска в Elliptic Navigator</h2>
+
+  <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+    <table class="w-full text-sm">
+      <thead class="bg-surface-container">
+        <tr>
+          <th class="text-left px-4 py-3 font-semibold text-on-surface">Категория риска</th>
+          <th class="text-left px-4 py-3 font-semibold text-on-surface">Вес</th>
+          <th class="text-left px-4 py-3 font-semibold text-on-surface">Типичные источники</th>
+          <th class="text-left px-4 py-3 font-semibold text-on-surface">Реакция Bybit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium">Высокорисковые биржи</td>
+          <td class="px-4 py-3">Высокий</td>
+          <td class="px-4 py-3">Garantex, BTC-e, Suex и аффилированные</td>
+          <td class="px-4 py-3">Немедленная блокировка при прямом контакте</td>
+        </tr>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium">Darknet-рынки</td>
+          <td class="px-4 py-3">Критический</td>
+          <td class="px-4 py-3">Гидра (до 2022), OMG, Blacksprut</td>
+          <td class="px-4 py-3">Блокировка + передача данных регулятору</td>
+        </tr>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium">Сервисы микширования</td>
+          <td class="px-4 py-3">Высокий</td>
+          <td class="px-4 py-3">Tornado Cash, ChipMixer, Sinbad</td>
+          <td class="px-4 py-3">Блокировка вывода, запрос Enhanced KYC</td>
+        </tr>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium">Украденные средства</td>
+          <td class="px-4 py-3">Критический</td>
+          <td class="px-4 py-3">Взломы бирж, drainer-атаки, скамы</td>
+          <td class="px-4 py-3">Немедленная блокировка, возможное изъятие</td>
+        </tr>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium">Мошенничество и скам</td>
+          <td class="px-4 py-3">Средний</td>
+          <td class="px-4 py-3">Pig butchering, романтические скамы, фишинг</td>
+          <td class="px-4 py-3">Блокировка, запрос объяснений об источнике</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Какие транзакции вызывают блокировку на Bybit</h2>
+  <p class="text-on-surface leading-relaxed mb-4">На практике блокировка USDT на Bybit из-за Elliptic происходит в трёх основных сценариях. Первый: получение USDT от P2P-контрагента, который ранее торговал через Garantex или похожие платформы. Пользователь не подозревает о проблеме, так как сделка выглядит обычной, но Elliptic фиксирует косвенную связь. Второй: ретроактивная блокировка, когда ранее принятые USDT получают высокий риск-скор после обновления базы данных Elliptic. Пользователь не совершал никаких новых подозрительных операций, но биржа блокирует вывод без предупреждения.</p>
+  <p class="text-on-surface leading-relaxed mb-4">Третий сценарий: крупный вывод после длительного периода накопления USDT на аккаунте. При попытке вывести крупную сумму Elliptic анализирует всю историю транзакций, и накопленные косвенные риски из разных источников могут суммарно превысить порог 25%. О ретроактивных блокировках на Bybit читайте подробнее в статье <a href="blog-bybit-aml-istoriya.html" class="text-primary hover:underline">Bybit ретроактивный AML: почему блокируют за старые транзакции</a>.</p>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как оспорить оценку Elliptic при апелляции</h2>
+  <p class="text-on-surface leading-relaxed mb-4">Апелляция в Bybit по AML-блокировке подаётся через email compliance@bybit.com. Тема: «Account Compliance Review - UID [ваш номер]». В письме необходимо указать UID, заблокированную сумму, TxID подозрительных транзакций, дату блокировки. Критически важный элемент апелляции: профессиональный AML-отчёт по методологии Elliptic Navigator, объясняющий происхождение средств и демонстрирующий, что косвенные связи с высокорисковыми источниками отражают не ваши действия, а общую высокую концентрацию риска в российском P2P-сегменте.</p>
+  <p class="text-on-surface leading-relaxed mb-4">Без профессионального отчёта биржа, как правило, отклоняет апелляцию при автоматической проверке. Среди приложений к письму: паспорт, подтверждение адреса проживания не старше 3 месяцев, документы об источнике средств, профессиональный AML-отчёт. Если средства получены с P2P, добавьте переписку с контрагентом и скриншоты транзакций. Срок рассмотрения: 14-30 рабочих дней. Если ответа нет более 10 рабочих дней, направьте повторный запрос через форму поддержки на сайте Bybit.</p>
+
+  <div class="mt-12 border-t border-outline-variant/20 pt-10">
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы</h2>
+    <div class="space-y-4">
+      <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+        <summary class="font-semibold text-on-surface list-none flex justify-between items-center">Какой AML-порог использует Bybit?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span></summary>
+        <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Bybit использует Elliptic Navigator для мониторинга транзакций. Система работает с двумя типами порогов: прямой риск и косвенный риск. Прямой риск: если транзакция напрямую связана с высокорисковым источником (например, USDT отправлены напрямую с кошелька Garantex), и доля таких средств превышает 20%, транзакция блокируется. Косвенный (экспозиционный) риск: если средства прошли через промежуточные адреса и суммарная доля высокорисковых средств в цепочке превышает 25%, транзакция также флагируется. Важно понимать: Elliptic анализирует не только текущую транзакцию, но и всю транзакционную историю кошелька на глубину до 10 хопов. Это означает, что монеты, полученные законным путём несколько месяцев назад, могут получить высокий риск-скор из-за ретроактивного обновления базы данных Elliptic. Это явление называют ретроактивным AML и оно является основной причиной неожиданных блокировок на Bybit.</p>
+      </details>
+      <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+        <summary class="font-semibold text-on-surface list-none flex justify-between items-center">Что такое прямой и косвенный риск в Elliptic?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span></summary>
+        <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Elliptic Navigator различает два типа экспозиции при оценке риска транзакции. Прямая экспозиция означает, что ваш кошелёк напрямую отправлял или получал средства от высокорискового адреса. Например, вы получили USDT напрямую с адреса, связанного с Garantex. В этом случае доля этих средств в текущей транзакции рассчитывается как прямой риск. Косвенная (экспозиционная) экспозиция означает, что ваш кошелёк не взаимодействовал с высокорисковым адресом напрямую, но в цепочке транзакций на глубине нескольких хопов присутствуют адреса с высоким риском. Система отслеживает до 10 хопов назад. Например, вы получили USDT от обменника, который в свою очередь получил их от P2P-трейдера, который когда-то торговал с Garantex-связанными адресами. Несмотря на то что вы лично никогда не взаимодействовали с проблемными адресами, система присвоит вашей транзакции косвенный риск. Порог косвенного риска у Bybit составляет 25%.</p>
+      </details>
+      <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+        <summary class="font-semibold text-on-surface list-none flex justify-between items-center">Как снизить риск-скор Elliptic?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span></summary>
+        <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Снизить уже присвоенный Elliptic риск-скор конкретному кошельку самостоятельно невозможно: это данные в базе Elliptic, обновляемые независимо от ваших действий. Однако есть несколько практических подходов. Первый: предоставить профессиональный AML-отчёт, объясняющий происхождение средств и демонстрирующий, что связи с высокорисковыми источниками являются косвенными и не отражают ваши действия. Второй: при подаче апелляции в Bybit запросить ручной пересмотр транзакции специалистом-комплаенс (не автоматической системой). Третий: для будущих транзакций использовать кошельки с чистой историей и проверять риск-скор входящих USDT перед их принятием через инструменты вроде AMLBot, GetBlock или Crystal. Четвёртый: после успешной апелляции рассмотреть замену кошелька на новый адрес с нулевой историей.</p>
+      </details>
+      <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+        <summary class="font-semibold text-on-surface list-none flex justify-between items-center">Bybit заблокировал USDT из-за AML. Что делать первым?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span></summary>
+        <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">При блокировке вывода или аккаунта на Bybit из-за AML-триггера первые действия таковы. Первое: не паникуйте и не пытайтесь срочно перевести оставшиеся средства на другой кошелёк. Это может быть расценено как попытка уклонения и усложнит апелляцию. Второе: зафиксируйте TxID всех подозрительных транзакций и точное время блокировки. Третье: напишите на compliance@bybit.com с темой «Account Compliance Review - UID [ваш номер]». В письме кратко опишите ситуацию: UID, заблокированная сумма, TxID, дата блокировки. Четвёртое: параллельно закажите профессиональный AML-отчёт по методологии Elliptic Navigator. Без него апелляция в большинстве случаев заканчивается отказом. CryptoRecon предоставляет бесплатную оценку кейса и работает по success fee 10-18% без предоплаты.</p>
+      </details>
+    </div>
+  </div>
+
+</div></div></article>
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20"><div class="max-w-4xl mx-auto px-4"><div class="flex items-start gap-4"><div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-primary text-xl">verified_user</span></div><div><p class="font-semibold text-on-surface">Команда CryptoRecon</p><p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специализируемся на разблокировке USDT и криптоактивов на биржах с 2021 года. Имеем глубокую экспертизу в работе с Elliptic Navigator и подготовке AML-отчётов для апелляций на Bybit, HTX, BingX и Phemex.</p><div class="mt-2 flex flex-wrap gap-2"><span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span><span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span></div><p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p></div></div></div></section>
+<section class="py-10"><div class="max-w-4xl mx-auto px-4"><h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2><div class="grid sm:grid-cols-2 gap-4">
+  <a href="blog-elliptic.html" class="block bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-colors">
+    <span class="text-xs text-primary font-semibold">AML и риски</span>
+    <p class="font-semibold text-on-surface mt-1 text-sm leading-snug">Elliptic Navigator: скоринг Bybit, HTX, BingX и Phemex</p>
+  </a>
+  <a href="blog-bybit-blok.html" class="block bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-colors">
+    <span class="text-xs text-primary font-semibold">Биржи</span>
+    <p class="font-semibold text-on-surface mt-1 text-sm leading-snug">Bybit заблокировал аккаунт россиянина: причины и восстановление</p>
+  </a>
+  <a href="blog-bybit-aml-istoriya.html" class="block bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-colors">
+    <span class="text-xs text-primary font-semibold">AML и риски</span>
+    <p class="font-semibold text-on-surface mt-1 text-sm leading-snug">Bybit ретроактивный AML: блокировки за старые транзакции</p>
+  </a>
+  <a href="usdt-bybit.html" class="block bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-colors">
+    <span class="text-xs text-primary font-semibold">Услуга</span>
+    <p class="font-semibold text-on-surface mt-1 text-sm leading-snug">Разблокировка Bybit: профессиональная помощь</p>
+  </a>
+</div></div></section>
+<section class="py-12 bg-primary"><div class="max-w-4xl mx-auto px-4 text-center"><h2 class="text-2xl font-black font-display text-on-primary mb-3">Bybit заблокировал USDT из-за AML? Поможем с апелляцией</h2><p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Расскажите о вашей ситуации: сумма, TxID, причина блокировки. Оценим риск-скор по Elliptic и предложим стратегию возврата USDT.</p><a href="https://t.me/kkrkkk77" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg"><span class="material-symbols-outlined">send</span>Написать в Telegram</a></div></section>
+<footer class="bg-[#001B3D] text-white/70 py-10"><div class="max-w-6xl mx-auto px-4"><div class="flex flex-col md:flex-row justify-between gap-6"><div><div class="flex items-center gap-2 mb-3"><img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/><span class="font-display font-bold text-white text-base">CryptoRecon</span></div><p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p></div><div class="flex flex-wrap gap-8 text-sm"><div><p class="text-white font-semibold mb-2">Услуги</p><ul class="space-y-1"><li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li><li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li><li><a href="usdt-yurist.html" class="hover:text-white transition-colors">Юридическая помощь</a></li></ul></div><div><p class="text-white font-semibold mb-2">Биржи</p><ul class="space-y-1"><li><a href="blog-binance.html" class="hover:text-white transition-colors">Binance</a></li><li><a href="blog-bybit.html" class="hover:text-white transition-colors">Bybit</a></li><li><a href="blog-okx.html" class="hover:text-white transition-colors">OKX</a></li><li><a href="blog-coinbase.html" class="hover:text-white transition-colors">Coinbase</a></li></ul></div><div><p class="text-white font-semibold mb-2">Контакт</p><ul class="space-y-1"><li><a href="https://t.me/kkrkkk77" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @kkrkkk77</a></li></ul></div></div></div><div class="border-t border-white/10 mt-8 pt-6 text-xs text-center"><p>© 2026 CryptoRecon. Сайт носит информационный характер.</p></div></div></footer>
+</body></html>
