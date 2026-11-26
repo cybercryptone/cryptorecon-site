@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-423Q1G2QTK');</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Web3 и AML: DApps, MetaMask и on-chain риски для россиян 2026 | CryptoRecon</title>
+<meta name="description" content="Web3 DApps и DEX-торговля создают уникальные AML-риски. Разбираем как MetaMask, Uniswap и другие протоколы взаимодействуют с AML-системами бирж и что угрожает вашим USDT."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-web3-aml.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-web3-aml.html"/>
+<meta property="og:title" content="Web3 и AML: DApps, MetaMask и on-chain риски для россиян 2026 | CryptoRecon"/>
+<meta property="og:description" content="Web3 DApps и DEX-торговля создают уникальные AML-риски. Разбираем как MetaMask, Uniswap и другие протоколы взаимодействуют с AML-системами бирж и что угрожает вашим USDT."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta property="og:image:width" content="512"/>
+<meta property="og:image:height" content="512"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:published_time" content="2026-11-05T00:00:00+03:00"/>
+<meta property="article:modified_time" content="2026-11-05T00:00:00+03:00"/>
+<meta property="article:section" content="DeFi и сети"/>
+<meta property="article:author" content="https://cryptorecon.io"/>
+<meta name="twitter:title" content="Web3 и AML: DApps, MetaMask и on-chain риски 2026"/>
+<meta name="twitter:description" content="Web3 DApps и DEX создают уникальные AML-риски. Разбираем как MetaMask и Uniswap влияют на AML-скоринг бирж и что угрожает вашим USDT."/>
+<meta name="twitter:image" content="https://cryptorecon.io/assets/logo.png"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#495f84","on-primary":"#f6f7ff","primary-container":"#d9e2f3","on-primary-container":"#001b3d",secondary:"#575e71","on-secondary":"#ffffff","secondary-container":"#dbe2f9","on-secondary-container":"#141b2c",surface:"#f7f9fb","on-surface":"#181c22","surface-container-low":"#f0f4f7","surface-container":"#e8ecf1","on-surface-variant":"#42474f","outline-variant":"#c2c7cf",error:"#ba1a1a"},fontFamily:{sans:["Inter","ui-sans-serif","system-ui"],display:["Manrope","ui-sans-serif"]}}}};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://cryptorecon.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://cryptorecon.io/blog.html"},{"@type":"ListItem","position":3,"name":"Web3 и AML риски","item":"https://cryptorecon.io/blog-web3-aml.html"}]},
+    {"@type":"Article","headline":"Web3 и AML: DApps, MetaMask и on-chain риски для россиян 2026","description":"Web3 DApps и DEX-торговля создают уникальные AML-риски. Разбираем как MetaMask, Uniswap и другие протоколы взаимодействуют с AML-системами бирж и что угрожает вашим USDT.","datePublished":"2026-11-05","dateModified":"2026-11-05","author":{"@type":"Organization","name":"CryptoRecon","url":"https://cryptorecon.io","sameAs":["https://t.me/kkrkkk77"]},"publisher":{"@type":"Organization","name":"CryptoRecon","url":"https://cryptorecon.io","logo":{"@type":"ImageObject","url":"https://cryptorecon.io/assets/logo.png","width":512,"height":512}},"mainEntityOfPage":"https://cryptorecon.io/blog-web3-aml.html","image":"https://cryptorecon.io/assets/logo.png","inLanguage":"ru","wordCount":2000},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Влияет ли активность в DeFi на AML-скоринг биржи?","acceptedAnswer":{"@type":"Answer","text":"Да, активность в DeFi напрямую влияет на AML-скоринг при попытке вывести средства на централизованную биржу. AML-системы (Chainalysis, Elliptic, Crystal) анализируют полную историю кошелька, включая взаимодействие с DeFi-протоколами. Если кошелёк взаимодействовал с протоколами или адресами, входящими в группу риска, это повышает скоринг. Наиболее известный пример: Tornado Cash. OFAC внёс смарт-контракты Tornado Cash в санкционный список в августе 2022 года. Любое взаимодействие с этими адресами после этой даты считается нарушением санкций, а кошельки, взаимодействовавшие с Tornado Cash, получают высокий риск-скор во всех AML-системах. Аналогичная ситуация с другими privacy-протоколами: Aztec Network, Railgun. Простое использование MetaMask само по себе не создаёт риска: проблема возникает из-за конкретных адресов, с которыми кошелёк взаимодействовал, а не из-за типа кошелька."}},
+      {"@type":"Question","name":"MetaMask создаёт проблемы при пополнении биржи?","acceptedAnswer":{"@type":"Answer","text":"MetaMask сам по себе не создаёт AML-риска: это просто некастодиальный кошелёк. Проблема не в кошельке, а в истории транзакций адреса, который вы используете в MetaMask. AML-системы анализируют адрес, а не тип кошелька. Если адрес MetaMask участвовал в транзакциях с Tornado Cash, получал средства от хакерских кошельков или взаимодействовал с санкционными смарт-контрактами, биржа заблокирует пополнение с этого адреса. Характерная ловушка: пользователь создал кошелёк MetaMask несколько лет назад, активно торговал в DeFi, и не знал, что часть контрагентов имела высокий риск-скор. Когда он попытался вывести накопленные USDT на Binance, AML-система заблокировала транзакцию из-за истории кошелька. Решение: регулярно проверять AML-статус своих адресов через сервисы типа AMLBot или MistTrack. Проверка занимает 1-2 минуты и помогает выявить проблемы до попытки ввода на биржу."}},
+      {"@type":"Question","name":"Что такое on-chain заражение и как оно происходит?","acceptedAnswer":{"@type":"Answer","text":"On-chain заражение (contamination) означает ситуацию, когда ваш кошелёк получил монеты от источника с высоким риском-скором, и теперь ваш адрес считается связанным с рисковым контрагентом. Заражение может произойти несколькими способами. Первый: прямая P2P-сделка с контрагентом, у которого монеты из Garantex или миксера. Вы получаете чистые USDT на свой адрес, но история показывает, что они пришли от рискового источника. Второй: dust attack. Мошенники отправляют на ваш адрес крошечную сумму с санкционного кошелька. После этого ваш адрес формально связан с санкционными средствами. Третий: участие в пуле ликвидности DeFi, куда другой участник внёс заражённые монеты. Ваша доля в пуле смешалась с его средствами. Во всех случаях заражение не делает вас виновным в нарушении закона, но создаёт технические проблемы при работе с AML-системами бирж. Правильная документация позволяет объяснить происхождение средств."}},
+      {"@type":"Question","name":"DEX vs CEX: где выше AML-риск?","acceptedAnswer":{"@type":"Answer","text":"DEX (децентрализованные биржи) и CEX (централизованные биржи) создают принципиально разные AML-риски. На DEX (Uniswap, Curve, PancakeSwap) нет AML-проверки в момент транзакции: вы просто взаимодействуете со смарт-контрактом. Однако проблема возникает позже, когда вы попытаетесь перевести средства, заработанные на DEX, на централизованную биржу. Вся история транзакций на DEX видна в блокчейне, и AML-системы анализируют её ретроспективно. На CEX (Binance, Bybit, OKX) AML-проверка происходит в реальном времени при каждом вводе средств. Прямой риск: немедленная блокировка при срабатывании AML-триггера. Косвенный риск: биржа может ретроспективно заблокировать аккаунт, проанализировав всю историю переводов, включая источники на DEX. Итог: DEX создаёт иллюзию анонимности, но при переводе на CEX все транзакции DEX становятся видны AML-аналитикам. Работа через DEX не снижает AML-риск, а лишь откладывает его."}}
+    ]}
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2"><img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/><span class="font-display font-bold text-primary text-lg">CryptoRecon</span></a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/kkrkkk77" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="blog.html" class="hover:text-primary">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">Web3 и AML риски</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">DeFi и сети</span>
+      <span class="text-on-surface-variant text-xs">5 ноября 2026</span>
+      <span class="text-on-surface-variant text-xs">8 мин.</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">Web3 и AML: DApps, MetaMask и on-chain риски для россиян 2026</h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">Web3 создаёт иллюзию анонимности, но весь блокчейн-след виден AML-системам. Разбираем какие DeFi-операции повышают риск блокировки USDT при попытке вывести средства на централизованную биржу.</p>
+  </div>
+</section>
+<section class="py-6"><div class="max-w-4xl mx-auto px-4"><div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6"><div class="flex items-center gap-2 mb-3"><span class="material-symbols-outlined text-primary">flash_on</span><span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span></div><p class="text-on-surface font-medium leading-relaxed">Web3 DApps создают on-chain след, который AML-системы анализируют ретроспективно. Tornado Cash в санкционном списке OFAC с августа 2022 года. MetaMask безопасен сам по себе, проблема в истории конкретных адресов.</p></div></div></section>
+<article class="py-8"><div class="max-w-4xl mx-auto px-4"><div class="prose prose-slate max-w-none">
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Web3 и централизованные биржи: невидимая связь</h2>
+  <p class="text-on-surface leading-relaxed mb-4">Многие пользователи считают, что торговля на DEX или использование некастодиальных кошельков защищает их от проблем с AML. Это опасное заблуждение. Когда вы переводите USDT, заработанные или полученные через Web3-активность, на централизованную биржу (Binance, Bybit, OKX), биржа запускает полный анализ истории этих средств. AML-системы не ограничиваются проверкой последней транзакции: они прослеживают цепочку на 5-10 хопов назад, охватывая все взаимодействия кошелька включая DeFi-протоколы.</p>
+  <p class="text-on-surface leading-relaxed mb-4">Блокчейн по своей природе является публичным реестром. Каждая транзакция, каждое взаимодействие со смарт-контрактом, каждый обмен на DEX записаны навсегда. Chainalysis Reactor, Elliptic Navigator и Crystal Intelligence используют эти данные для построения графов рисков. Если ваш адрес появляется в одном из таких графов рядом с санкционными или высокорисковыми адресами, биржа увидит это в момент ввода средств.</p>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как AML-системы анализируют DeFi-активность</h2>
+  <p class="text-on-surface leading-relaxed mb-4">Анализ DeFi-активности строится на нескольких уровнях. Первый уровень: прямые взаимодействия. AML-система проверяет, с какими смарт-контрактами взаимодействовал адрес. Если контракт входит в санкционный список (например, Tornado Cash по решению OFAC 2022 года), взаимодействие с ним само по себе является красным флагом. Второй уровень: косвенные связи. Если ваш адрес получил средства от другого адреса, который в прошлом взаимодействовал с проблемным протоколом, AML-система зафиксирует косвенную связь.</p>
+  <p class="text-on-surface leading-relaxed mb-4">Третий уровень: паттерны поведения. AML-системы обучены распознавать характерные паттерны: многократный оборот через DEX, использование бриджей между сетями для разрыва трейса, дробление крупных сумм. Эти паттерны могут повысить риск-скор даже при отсутствии прямых связей с санкционными адресами. Подробнее о механизме работы AML-алгоритмов читайте в статье <a href="blog-aml.html" class="text-primary hover:underline">как работают AML-проверки на биржах</a>.</p>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Tornado Cash: почему одно взаимодействие создаёт проблему</h2>
+  <p class="text-on-surface leading-relaxed mb-4">В августе 2022 года Министерство финансов США (OFAC) внесло смарт-контракты Tornado Cash в список SDN (Specially Designated Nationals). Tornado Cash был популярным миксером на Ethereum: пользователи отправляли ETH или токены в пул, а затем выводили через другой адрес, разрывая видимую цепочку транзакций. После санкций любое взаимодействие с этими смарт-контрактами после даты введения санкций рассматривается как нарушение американского санкционного законодательства.</p>
+  <p class="text-on-surface leading-relaxed mb-4">Последствия для пользователей оказались неожиданными. Даже те, кто использовал Tornado Cash до санкций по законным соображениям конфиденциальности, обнаружили, что их адреса теперь имеют высокий риск-скор во всех AML-системах. Биржи автоматически блокируют вводы с адресов, имеющих связь с Tornado Cash. Аналогичная ситуация назревает с Railgun и Aztec Network: эти протоколы также используют privacy-технологии и находятся под пристальным вниманием регуляторов.</p>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">5 DeFi-паттернов с высоким AML-риском</h2>
+
+  <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">1. Tornado Cash и privacy-миксеры</h3>
+  <p class="text-on-surface leading-relaxed mb-4">Любое взаимодействие с Tornado Cash после августа 2022 года создаёт критический AML-флаг. Даже получение средств от адреса, который когда-либо использовал Tornado Cash, повышает риск-скор. Проверить статус адреса можно через Etherscan: если транзакция проходила через смарт-контракт Tornado Cash, это видно в истории. Другие privacy-миксеры (Blender.io, ChipMixer, Sinbad) также в санкционных списках OFAC. Использование любого миксера или получение средств от его пользователей формирует высокорисковый профиль кошелька.</p>
+
+  <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">2. Пулы ликвидности с заражёнными участниками</h3>
+  <p class="text-on-surface leading-relaxed mb-4">Участие в пулах ликвидности DeFi (Uniswap, Curve, Balancer) теоретически безопасно, если пул сам по себе легитимен. Однако если другой участник пула внёс заражённые монеты, а ваша доля была рассчитана с учётом этих средств, AML-система может зафиксировать косвенную связь. Это редкий, но реальный кейс. Защита: предпочитайте крупные ликвидные пулы с высоким TVL, где доля потенциально заражённых средств минимальна по сравнению с общим объёмом.</p>
+
+  <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">3. Кросс-чейн бриджи и потеря трейса</h3>
+  <p class="text-on-surface leading-relaxed mb-4">Кросс-чейн бриджи (Arbitrum Bridge, Polygon Bridge, LayerZero) используются для перемещения активов между сетями. Это легальная практика, однако AML-системы относятся к бриджам с повышенным вниманием: они являются естественными точками разрыва трейса транзакций. Если средства появляются в одной сети без чёткой связи с происхождением в другой, это может повысить риск-скор. Решение: сохранять документацию об использовании бриджей и исходных транзакциях.</p>
+
+  <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">4. NFT wash trading на OpenSea</h3>
+  <p class="text-on-surface leading-relaxed mb-4">NFT wash trading (искусственное накручивание объёма торгов NFT) является известной схемой отмывания денег. AML-системы научились выявлять паттерны wash trading: один и тот же NFT перепродаётся между связанными адресами по завышенным ценам. Если ваш адрес случайно купил NFT у участника схемы wash trading, это может быть зафиксировано как косвенная связь с подозрительной деятельностью. При выводе крупных сумм на биржу такая история NFT-транзакций может спровоцировать ручную проверку.</p>
+
+  <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">5. Аирдропы от неизвестных проектов</h3>
+  <p class="text-on-surface leading-relaxed mb-4">Аирдропы токенов от неизвестных проектов могут быть частью dust attack или мошеннической схемы. Получение незапрошенных токенов на адрес само по себе не создаёт AML-риска, если вы не взаимодействуете с ними. Опасность возникает когда пользователь пытается продать полученные токены или взаимодействует с вредоносным смарт-контрактом, который притворяется легитимным проектом. Такое взаимодействие может связать ваш адрес с мошеннической схемой.</p>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">AML-риски DeFi-протоколов по сетям</h2>
+
+  <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+    <table class="w-full text-sm">
+      <thead class="bg-surface-container">
+        <tr>
+          <th class="text-left px-4 py-3 font-semibold text-on-surface">Протокол</th>
+          <th class="text-left px-4 py-3 font-semibold text-on-surface">Сеть</th>
+          <th class="text-left px-4 py-3 font-semibold text-on-surface">AML-риск</th>
+          <th class="text-left px-4 py-3 font-semibold text-on-surface">Причина</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium text-on-surface">Tornado Cash</td>
+          <td class="px-4 py-3 text-on-surface-variant">Ethereum</td>
+          <td class="px-4 py-3 text-red-600 font-semibold">Критический</td>
+          <td class="px-4 py-3 text-on-surface-variant">Санкции OFAC август 2022</td>
+        </tr>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium text-on-surface">Uniswap v3</td>
+          <td class="px-4 py-3 text-on-surface-variant">Ethereum</td>
+          <td class="px-4 py-3 text-green-600 font-semibold">Низкий</td>
+          <td class="px-4 py-3 text-on-surface-variant">Легальный DEX</td>
+        </tr>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium text-on-surface">PancakeSwap</td>
+          <td class="px-4 py-3 text-on-surface-variant">BNB Chain</td>
+          <td class="px-4 py-3 text-green-600 font-semibold">Низкий</td>
+          <td class="px-4 py-3 text-on-surface-variant">Легальный DEX</td>
+        </tr>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium text-on-surface">Aztec Network</td>
+          <td class="px-4 py-3 text-on-surface-variant">Ethereum</td>
+          <td class="px-4 py-3 text-orange-600 font-semibold">Высокий</td>
+          <td class="px-4 py-3 text-on-surface-variant">Privacy протокол</td>
+        </tr>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium text-on-surface">Любой кросс-чейн bridge</td>
+          <td class="px-4 py-3 text-on-surface-variant">Multi</td>
+          <td class="px-4 py-3 text-yellow-600 font-semibold">Средний</td>
+          <td class="px-4 py-3 text-on-surface-variant">Трейс теряется между сетями</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как проверить AML-статус DeFi-кошелька</h2>
+  <p class="text-on-surface leading-relaxed mb-4">Перед отправкой крупной суммы на централизованную биржу рекомендуется проверить AML-статус отправляющего адреса. Несколько инструментов для этого. AMLBot (@amlbot в Telegram): принимает адрес кошелька и выдаёт риск-скор с разбивкой по источникам. MistTrack (misttrack.io): бесплатный сервис с детальным анализом цепочки транзакций. Crystal Intelligence: профессиональный инструмент, который используют сами биржи. Доступен платно для частных пользователей. Etherscan и Tronscan: позволяют вручную изучить историю транзакций и выявить взаимодействия с известными рисковыми адресами.</p>
+  <p class="text-on-surface leading-relaxed mb-4">Если проверка выявила высокий риск-скор, не стоит паниковать. Высокий скоринг не означает, что вы виновны в чём-либо. Он означает, что при попытке ввода на биржу система запросит дополнительные документы или временно заблокирует операцию. В большинстве случаев ситуацию решает грамотно составленная документация о происхождении средств. Как это работает, описано в статье <a href="blog-appeal.html" class="text-primary hover:underline">апелляция на криптобирже: полное руководство</a>. О рисках DEX-торговли подробнее в материале <a href="blog-usdt-dex.html" class="text-primary hover:underline">USDT на DEX: AML-риски и особенности</a>.</p>
+
+  <div class="mt-12 border-t border-outline-variant/20 pt-10">
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы</h2>
+    <div class="space-y-4">
+      <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+        <summary class="font-semibold text-on-surface list-none flex justify-between items-center">Влияет ли активность в DeFi на AML-скоринг биржи?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span></summary>
+        <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Да, активность в DeFi напрямую влияет на AML-скоринг при попытке вывести средства на централизованную биржу. AML-системы (Chainalysis, Elliptic, Crystal) анализируют полную историю кошелька, включая взаимодействие с DeFi-протоколами. Если кошелёк взаимодействовал с протоколами или адресами, входящими в группу риска, это повышает скоринг. Наиболее известный пример: Tornado Cash. OFAC внёс смарт-контракты Tornado Cash в санкционный список в августе 2022 года. Любое взаимодействие с этими адресами после этой даты считается нарушением санкций, а кошельки, взаимодействовавшие с Tornado Cash, получают высокий риск-скор во всех AML-системах. Аналогичная ситуация с другими privacy-протоколами: Aztec Network, Railgun. Простое использование MetaMask само по себе не создаёт риска: проблема возникает из-за конкретных адресов, с которыми кошелёк взаимодействовал, а не из-за типа кошелька.</p>
+      </details>
+      <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+        <summary class="font-semibold text-on-surface list-none flex justify-between items-center">MetaMask создаёт проблемы при пополнении биржи?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span></summary>
+        <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">MetaMask сам по себе не создаёт AML-риска: это просто некастодиальный кошелёк. Проблема не в кошельке, а в истории транзакций адреса, который вы используете в MetaMask. AML-системы анализируют адрес, а не тип кошелька. Если адрес MetaMask участвовал в транзакциях с Tornado Cash, получал средства от хакерских кошельков или взаимодействовал с санкционными смарт-контрактами, биржа заблокирует пополнение с этого адреса. Характерная ловушка: пользователь создал кошелёк MetaMask несколько лет назад, активно торговал в DeFi, и не знал, что часть контрагентов имела высокий риск-скор. Когда он попытался вывести накопленные USDT на Binance, AML-система заблокировала транзакцию из-за истории кошелька. Решение: регулярно проверять AML-статус своих адресов через сервисы типа AMLBot или MistTrack. Проверка занимает 1-2 минуты и помогает выявить проблемы до попытки ввода на биржу.</p>
+      </details>
+      <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+        <summary class="font-semibold text-on-surface list-none flex justify-between items-center">Что такое on-chain заражение и как оно происходит?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span></summary>
+        <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">On-chain заражение (contamination) означает ситуацию, когда ваш кошелёк получил монеты от источника с высоким риском-скором, и теперь ваш адрес считается связанным с рисковым контрагентом. Заражение может произойти несколькими способами. Первый: прямая P2P-сделка с контрагентом, у которого монеты из Garantex или миксера. Вы получаете чистые USDT на свой адрес, но история показывает, что они пришли от рискового источника. Второй: dust attack. Мошенники отправляют на ваш адрес крошечную сумму с санкционного кошелька. После этого ваш адрес формально связан с санкционными средствами. Третий: участие в пуле ликвидности DeFi, куда другой участник внёс заражённые монеты. Ваша доля в пуле смешалась с его средствами. Во всех случаях заражение не делает вас виновным в нарушении закона, но создаёт технические проблемы при работе с AML-системами бирж. Правильная документация позволяет объяснить происхождение средств.</p>
+      </details>
+      <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+        <summary class="font-semibold text-on-surface list-none flex justify-between items-center">DEX vs CEX: где выше AML-риск?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span></summary>
+        <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">DEX (децентрализованные биржи) и CEX (централизованные биржи) создают принципиально разные AML-риски. На DEX (Uniswap, Curve, PancakeSwap) нет AML-проверки в момент транзакции: вы просто взаимодействуете со смарт-контрактом. Однако проблема возникает позже, когда вы попытаетесь перевести средства, заработанные на DEX, на централизованную биржу. Вся история транзакций на DEX видна в блокчейне, и AML-системы анализируют её ретроспективно. На CEX (Binance, Bybit, OKX) AML-проверка происходит в реальном времени при каждом вводе средств. Прямой риск: немедленная блокировка при срабатывании AML-триггера. Косвенный риск: биржа может ретроспективно заблокировать аккаунт, проанализировав всю историю переводов, включая источники на DEX. Итог: DEX создаёт иллюзию анонимности, но при переводе на CEX все транзакции DEX становятся видны AML-аналитикам. Работа через DEX не снижает AML-риск, а лишь откладывает его.</p>
+      </details>
+    </div>
+  </div>
+
+</div></div></article>
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20"><div class="max-w-4xl mx-auto px-4"><div class="flex items-start gap-4"><div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-primary text-xl">verified_user</span></div><div><p class="font-semibold text-on-surface">Команда CryptoRecon</p><p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специализируемся на разблокировке USDT и криптоактивов на биржах с 2021 года. Работаем с кейсами связанными с DeFi-активностью, DEX-торговлей и on-chain заражением. Знаем специфику AML-систем Chainalysis, Elliptic и Crystal.</p><div class="mt-2 flex flex-wrap gap-2"><span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span><span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span></div><p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p></div></div></div></section>
+<section class="py-10"><div class="max-w-4xl mx-auto px-4"><h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2><div class="grid sm:grid-cols-2 gap-4">
+  <a href="blog-defi.html" class="block bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-colors">
+    <span class="text-xs text-primary font-semibold">DeFi и сети</span>
+    <p class="font-semibold text-on-surface mt-1 text-sm leading-snug">DeFi и USDT: риски децентрализованных протоколов</p>
+  </a>
+  <a href="blog-usdt-dex.html" class="block bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-colors">
+    <span class="text-xs text-primary font-semibold">DeFi и сети</span>
+    <p class="font-semibold text-on-surface mt-1 text-sm leading-snug">USDT на DEX: AML-риски и особенности</p>
+  </a>
+  <a href="blog-mixer.html" class="block bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-colors">
+    <span class="text-xs text-primary font-semibold">AML и риски</span>
+    <p class="font-semibold text-on-surface mt-1 text-sm leading-snug">Криптомиксеры и USDT: почему это опасно</p>
+  </a>
+  <a href="blog-blacklist-usdt.html" class="block bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-colors">
+    <span class="text-xs text-primary font-semibold">AML и риски</span>
+    <p class="font-semibold text-on-surface mt-1 text-sm leading-snug">Blacklist USDT: как Tether замораживает адреса</p>
+  </a>
+</div></div></section>
+<section class="py-12 bg-primary"><div class="max-w-4xl mx-auto px-4 text-center"><h2 class="text-2xl font-black font-display text-on-primary mb-3">DeFi-активность создала проблемы? Поможем разобраться.</h2><p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Расскажите о вашей ситуации: адрес кошелька, биржа, сумма. Оценим AML-историю и предложим стратегию возврата USDT.</p><a href="https://t.me/kkrkkk77" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg"><span class="material-symbols-outlined">send</span>Написать в Telegram</a></div></section>
+<footer class="bg-[#001B3D] text-white/70 py-10"><div class="max-w-6xl mx-auto px-4"><div class="flex flex-col md:flex-row justify-between gap-6"><div><div class="flex items-center gap-2 mb-3"><img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/><span class="font-display font-bold text-white text-base">CryptoRecon</span></div><p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p></div><div class="flex flex-wrap gap-8 text-sm"><div><p class="text-white font-semibold mb-2">Услуги</p><ul class="space-y-1"><li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li><li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li><li><a href="usdt-yurist.html" class="hover:text-white transition-colors">Юридическая помощь</a></li></ul></div><div><p class="text-white font-semibold mb-2">Биржи</p><ul class="space-y-1"><li><a href="blog-binance.html" class="hover:text-white transition-colors">Binance</a></li><li><a href="blog-bybit.html" class="hover:text-white transition-colors">Bybit</a></li><li><a href="blog-okx.html" class="hover:text-white transition-colors">OKX</a></li><li><a href="blog-coinbase.html" class="hover:text-white transition-colors">Coinbase</a></li></ul></div><div><p class="text-white font-semibold mb-2">Контакт</p><ul class="space-y-1"><li><a href="https://t.me/kkrkkk77" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @kkrkkk77</a></li></ul></div></div></div><div class="border-t border-white/10 mt-8 pt-6 text-xs text-center"><p>© 2026 CryptoRecon. Сайт носит информационный характер.</p></div></div></footer>
+</body></html>

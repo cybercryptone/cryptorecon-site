@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-423Q1G2QTK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-423Q1G2QTK');</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elliptic Navigator: как работает AML-система для крипторынка 2026 | CryptoRecon</title>
+<meta name="description" content="Elliptic Navigator используют Bybit, HTX, BingX и Phemex. Разбираем как работает алгоритм скоринга, пороги риска 15-20%, категории угроз и что делать при срабатывании триггера."/>
+<link rel="canonical" href="https://cryptorecon.io/blog-elliptic.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://cryptorecon.io/blog-elliptic.html"/>
+<meta property="og:title" content="Elliptic Navigator: как работает AML-система для крипторынка 2026 | CryptoRecon"/>
+<meta property="og:description" content="Elliptic Navigator используют Bybit, HTX, BingX и Phemex. Разбираем как работает алгоритм скоринга, пороги риска 15-20%, категории угроз и что делать при срабатывании триггера."/>
+<meta property="og:image" content="https://cryptorecon.io/assets/logo.png"/>
+<meta property="og:image:width" content="512"/>
+<meta property="og:image:height" content="512"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:published_time" content="2026-11-05T00:00:00+03:00"/>
+<meta property="article:modified_time" content="2026-11-05T00:00:00+03:00"/>
+<meta property="article:section" content="AML и риски"/>
+<meta property="article:author" content="https://cryptorecon.io"/>
+<meta name="twitter:title" content="Elliptic Navigator: AML-система бирж 2026"/>
+<meta name="twitter:description" content="Bybit, HTX, BingX используют Elliptic Navigator. Как работает скоринг, пороги 15-20% и что делать при блокировке USDT."/>
+<meta name="twitter:image" content="https://cryptorecon.io/assets/logo.png"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#495f84","on-primary":"#f6f7ff","primary-container":"#d9e2f3","on-primary-container":"#001b3d",secondary:"#575e71","on-secondary":"#ffffff","secondary-container":"#dbe2f9","on-secondary-container":"#141b2c",surface:"#f7f9fb","on-surface":"#181c22","surface-container-low":"#f0f4f7","surface-container":"#e8ecf1","on-surface-variant":"#42474f","outline-variant":"#c2c7cf",error:"#ba1a1a"},fontFamily:{sans:["Inter","ui-sans-serif","system-ui"],display:["Manrope","ui-sans-serif"]}}}};
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://cryptorecon.io/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://cryptorecon.io/blog.html"},{"@type":"ListItem","position":3,"name":"Elliptic Navigator","item":"https://cryptorecon.io/blog-elliptic.html"}]},
+    {"@type":"Article","headline":"Elliptic Navigator: как работает AML-система для крипторынка 2026","description":"Elliptic Navigator используют Bybit, HTX, BingX и Phemex. Разбираем как работает алгоритм скоринга, пороги риска 15-20%, категории угроз и что делать при срабатывании триггера.","datePublished":"2026-11-05","dateModified":"2026-11-05","author":{"@type":"Organization","name":"CryptoRecon","url":"https://cryptorecon.io","sameAs":["https://t.me/kkrkkk77"]},"publisher":{"@type":"Organization","name":"CryptoRecon","url":"https://cryptorecon.io","logo":{"@type":"ImageObject","url":"https://cryptorecon.io/assets/logo.png","width":512,"height":512}},"mainEntityOfPage":"https://cryptorecon.io/blog-elliptic.html","image":"https://cryptorecon.io/assets/logo.png","inLanguage":"ru","wordCount":2000},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Какие биржи используют Elliptic Navigator?","acceptedAnswer":{"@type":"Answer","text":"Elliptic Navigator используют несколько крупных централизованных бирж. Среди наиболее известных платформ, работающих с этой системой: Bybit (Dubai VARA, порог 15-20%), HTX (Seychelles FSA, порог 20%), BingX (Dubai регуляция, порог 20-25%), Phemex (Singapore MAS, порог 20%). Кроме бирж, Elliptic применяют платёжные процессоры, кастодиальные сервисы и крупные OTC-дески. Компания Elliptic была основана в 2013 году в Великобритании и работает с более чем 900 организациями в 60 странах. В отличие от Chainalysis, которая преобладает на американском рынке, Elliptic сильнее представлена среди европейских и азиатских платформ. Это важно учитывать при планировании транзакций: одни и те же монеты могут проходить проверку по-разному в зависимости от того, какую AML-систему использует конкретная биржа. Если ваши средства заблокировала биржа на базе Elliptic, подход к апелляции отличается от работы с Chainalysis-платформами."}},
+      {"@type":"Question","name":"Как Elliptic оценивает риск транзакции?","acceptedAnswer":{"@type":"Answer","text":"Elliptic Navigator работает по принципу графового анализа блокчейна. Система строит граф транзакций, отслеживая движение средств на несколько хопов назад в истории. Каждому кошельку и транзакции присваивается риск-скор от 0 до 100% на основе нескольких факторов. Первый фактор: прямые связи с известными рисковыми объектами - санкционными адресами OFAC, миксерами (Tornado Cash, Chipmixer), тёмными маркетами (Hydra, Silk Road). Второй фактор: косвенные связи через цепочку транзакций, причём вклад каждого хопа убывает по мере удаления. Третий фактор: паттерны поведения адреса - structuring, rapid cycling, peel chain. Четвёртый фактор: принадлежность к известным кластерам высокорискового трафика. Итоговый скор усредняется по всем факторам с весовыми коэффициентами. Если результат превышает порог биржи (обычно 15-25%), транзакция флагируется. Порог устанавливается каждой биржей самостоятельно в настройках платформы."}},
+      {"@type":"Question","name":"Что делать если Elliptic заблокировал мои USDT?","acceptedAnswer":{"@type":"Answer","text":"Если биржа на базе Elliptic Navigator заблокировала ваш аккаунт или вывод, первым шагом нужно понять конкретный триггер. Самостоятельно это сложно: Elliptic не раскрывает детали скоринга конечным пользователям. Однако по характеру блокировки можно предположить причину: если заблокирован именно вывод конкретной суммы, вероятно проблема в исходящей транзакции, если аккаунт заблокирован целиком, причина скорее в совокупной истории входящих переводов. Следующий шаг: собрать полный пакет документов для апелляции. Он включает KYC-документы, подтверждение источника средств, TxID проблемных транзакций и профессиональный AML-отчёт с оценкой риск-скора. Апелляция подаётся в compliance-отдел биржи. Срок рассмотрения зависит от платформы: Bybit рассматривает 7-21 день, HTX 14-30 дней. Без профессионального AML-отчёта шансы на положительный исход существенно ниже."}},
+      {"@type":"Question","name":"Чем Elliptic отличается от Chainalysis?","acceptedAnswer":{"@type":"Answer","text":"Elliptic и Chainalysis - два крупнейших игрока на рынке блокчейн-аналитики, но у них разные сильные стороны. Chainalysis занимает доминирующее положение на американском рынке и активно сотрудничает с государственными структурами: ФБР, DEA, налоговой службой США. Elliptic исторически сильнее в Европе и Азии, что объясняет его выбор биржами вроде Bybit, HTX и Phemex. С технической точки зрения обе системы используют графовый анализ блокчейна, но различаются методологией кластеризации адресов и набором источников данных. Chainalysis традиционно имеет более обширную базу по американским субъектам (OFAC, FinCEN), Elliptic лучше покрывает европейские санкционные списки. Пороги риска у разных бирж тоже отличаются: Binance настраивает Chainalysis на 10-15%, тогда как HTX работает с Elliptic на пороге 20%. Это означает, что одни и те же монеты могут пройти проверку на HTX, но быть заблокированы на Binance."}}
+    ]}
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+<nav class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur border-b border-outline-variant/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2"><img src="assets/favicon.svg" alt="CryptoRecon" class="w-8 h-8"/><span class="font-display font-bold text-primary text-lg">CryptoRecon</span></a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
+      <a href="usdt.html" class="hover:text-primary transition-colors">Услуги</a>
+      <a href="blog.html" class="hover:text-primary transition-colors">Блог</a>
+      <a href="https://t.me/kkrkkk77" target="_blank" rel="noopener" class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Консультация</a>
+    </div>
+  </div>
+</nav>
+<section class="pt-24 pb-10 bg-gradient-to-b from-primary-container/30 to-surface">
+  <div class="max-w-4xl mx-auto px-4">
+    <nav class="text-xs text-on-surface-variant mb-4 flex items-center gap-1 flex-wrap">
+      <a href="/" class="hover:text-primary">Главная</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <a href="blog.html" class="hover:text-primary">Блог</a>
+      <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+      <span class="text-on-surface">Elliptic Navigator</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">AML и риски</span>
+      <span class="text-on-surface-variant text-xs">5 ноября 2026</span>
+      <span class="text-on-surface-variant text-xs">9 мин.</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black font-display text-[#001B3D] leading-tight mb-4">Elliptic Navigator: как работает AML-система для крипторынка 2026</h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed">Bybit, HTX, BingX и Phemex используют Elliptic Navigator для мониторинга транзакций. Если ваш USDT заблокирован на одной из этих бирж, причина почти наверняка в скоринге Elliptic. Разбираем как работает система, какие пороги установлены и что делать при срабатывании триггера.</p>
+  </div>
+</section>
+<section class="py-6"><div class="max-w-4xl mx-auto px-4"><div class="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6"><div class="flex items-center gap-2 mb-3"><span class="material-symbols-outlined text-primary">flash_on</span><span class="font-display font-bold text-primary text-sm uppercase tracking-wide">Коротко</span></div><p class="text-on-surface font-medium leading-relaxed">Elliptic Navigator используют Bybit, HTX, BingX, Phemex. Порог 15-25% в зависимости от биржи. Система строит граф транзакций и оценивает каждый хоп. При срабатывании триггера аккаунт блокируется автоматически без предупреждения.</p></div></div></section>
+<article class="py-8"><div class="max-w-4xl mx-auto px-4"><div class="prose prose-slate max-w-none">
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Что такое Elliptic Navigator и кто его использует</h2>
+  <p class="text-on-surface leading-relaxed mb-4">Elliptic Navigator - это платформа блокчейн-аналитики, разработанная британской компанией Elliptic Enterprises Ltd, основанной в 2013 году. Компания входит в тройку мировых лидеров по анализу криптотранзакций наряду с Chainalysis и Crystal Intelligence. Elliptic работает с более чем 900 организациями в 60 странах: биржами, банками, платёжными системами, страховыми компаниями и государственными структурами. Штаб-квартира компании находится в Лондоне, дополнительные офисы открыты в Нью-Йорке, Вашингтоне и Сингапуре.</p>
+  <p class="text-on-surface leading-relaxed mb-4">Среди крупных криптобирж Elliptic Navigator используют Bybit (лицензия Dubai VARA), HTX (ребрендинг Huobi, Seychelles FSA), BingX (Dubai регуляция) и Phemex (Singapore MAS). Эти биржи выбрали Elliptic потому, что система хорошо покрывает европейские и азиатские санкционные списки и имеет широкую партнёрскую сеть с регуляторами за пределами США. Подробнее о том, почему биржи блокируют аккаунты, читайте в материале <a href="blog-aml.html" class="text-primary hover:underline">как работают AML-проверки на биржах</a>.</p>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Как работает алгоритм скоринга Elliptic</h2>
+  <p class="text-on-surface leading-relaxed mb-4">Elliptic Navigator строит граф транзакций для каждого проверяемого адреса или транзакции. Система анализирует историю движения средств на несколько хопов назад, присваивая каждому узлу графа определённый вес риска. Итоговый риск-скор транзакции рассчитывается как взвешенная сумма рисков по всему пути средств: чем дальше находится рисковый объект в цепочке, тем меньше его вклад в итоговый показатель.</p>
+  <p class="text-on-surface leading-relaxed mb-4">Алгоритм учитывает четыре класса сигналов. Первый: прямые связи с объектами из базы данных Elliptic - санкционными адресами, миксерами, тёмными маркетами. Второй: косвенные связи через промежуточные кошельки с затухающим весом риска. Третий: поведенческие паттерны адреса (structuring, rapid cycling, peel chain). Четвёртый: принадлежность к известным рисковым кластерам. Итоговый скор выражается в процентах. Если он превышает порог, установленный конкретной биржей, транзакция флагируется для ручной проверки или автоматически блокируется. Технические детали алгоритмов AML-систем описаны в статье <a href="blog-aml-avtomatizaciya.html" class="text-primary hover:underline">автоматизация AML-проверок на биржах</a>.</p>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Пороги риска на биржах с Elliptic</h2>
+  <p class="text-on-surface leading-relaxed mb-4">Каждая биржа самостоятельно устанавливает пороговое значение риска в настройках Elliptic Navigator. Это означает, что одни и те же монеты с одинаковым скором могут пройти на HTX (порог 20%), но быть заблокированы на Bybit (порог 15-20%). Пороговые значения не публикуются официально и получены на основе практики работы с кейсами клиентов. Биржи могут менять пороги в зависимости от требований регулятора, числа расследований и внутренней политики рисков.</p>
+  <p class="text-on-surface leading-relaxed mb-4">Важно понимать: низкий порог не означает, что биржа заблокирует любого пользователя с малейшим риском. Порог - это лишь граница для автоматического флагирования. После флагирования compliance-специалист вручную оценивает кейс и принимает решение. На практике биржи с более высоким порогом (BingX 20-25%) реже инициируют проверки, но при срабатывании запрашивают более детальную документацию.</p>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">5 категорий риска которые Elliptic отслеживает</h2>
+
+  <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">1. Санкционные адреса OFAC и SDN-лист</h3>
+  <p class="text-on-surface leading-relaxed mb-4">Elliptic поддерживает актуальную базу адресов из санкционных списков OFAC SDN, EU Sanctions, UK OFSI и других международных реестров. Любая транзакция с прямой или косвенной связью с санкционным адресом автоматически получает высокий риск-скор. Для российских пользователей это критически важно: Garantex, Tornado Cash и ряд других адресов, активно использовавшихся на российском P2P-рынке, внесены в списки OFAC и имеют максимальный вес риска в базе Elliptic.</p>
+
+  <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">2. Крипто-миксеры и privacy tools</h3>
+  <p class="text-on-surface leading-relaxed mb-4">Tornado Cash (Ethereum), Chipmixer (Bitcoin), Blender.io и другие миксеры занесены в базу Elliptic как объекты с максимальным риском. Даже если пользователь не использовал миксер лично, но получил монеты от контрагента, который прошёл через микшер несколькими шагами ранее, Elliptic зафиксирует косвенную связь. Tornado Cash получил санкции OFAC в 2022 году, что сделало любую связь с этим адресом потенциально фатальной для прохождения AML-проверки.</p>
+
+  <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">3. Тёмные маркеты и скам-проекты</h3>
+  <p class="text-on-surface leading-relaxed mb-4">Hydra Market, Silk Road, Evolution, AlphaBay и их преемники присутствуют в базе Elliptic с момента основания компании. Скам-проекты, мошеннические схемы и взломанные биржи также попадают в базу оперативно: Elliptic работает с несколькими источниками разведывательных данных о новых мошеннических схемах. Монеты жертв мошенничеств нередко получают высокий риск-скор именно из-за связи с адресами, идентифицированными как скам.</p>
+
+  <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">4. Garantex и санкционные биржи</h3>
+  <p class="text-on-surface leading-relaxed mb-4">Garantex попал под санкции OFAC в апреле 2022 года и был принудительно закрыт в марте 2024 года. Elliptic имеет обширную базу адресов, аффилированных с Garantex, включая тысячи пользовательских кошельков, которые когда-либо взаимодействовали с биржей. Для россиян, активно торговавших на P2P-рынке до 2024 года, риск косвенной связи с Garantex-адресами крайне высок. Даже транзакции через 3-4 хопа могут вызвать срабатывание.</p>
+
+  <h3 class="text-xl font-bold text-[#001B3D] font-display mt-8 mb-3">5. Паттерны structuring и peel chain</h3>
+  <p class="text-on-surface leading-relaxed mb-4">Structuring - это намеренное дробление крупных сумм на мелкие транзакции для обхода пороговых значений AML. Peel chain - цепочка последовательных переводов, где каждый раз отщипывается небольшая сумма. Elliptic умеет распознавать оба паттерна, даже если промежуточные кошельки используются один раз. Пользователи, которые не имели злого умысла, но случайно создали подобный паттерн (например, при автоматизации P2P-торговли), могут получить повышенный скор.</p>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Сравнение порогов Elliptic на разных биржах</h2>
+
+  <div class="overflow-x-auto rounded-xl border border-outline-variant/30 mb-8">
+    <table class="w-full text-sm">
+      <thead class="bg-surface-container">
+        <tr>
+          <th class="text-left px-4 py-3 font-semibold text-on-surface">Биржа</th>
+          <th class="text-left px-4 py-3 font-semibold text-on-surface">AML-система</th>
+          <th class="text-left px-4 py-3 font-semibold text-on-surface">Порог</th>
+          <th class="text-left px-4 py-3 font-semibold text-on-surface">Юрисдикция</th>
+          <th class="text-left px-4 py-3 font-semibold text-on-surface">Срок апелляции</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium">Bybit</td>
+          <td class="px-4 py-3 text-on-surface-variant">Elliptic Navigator</td>
+          <td class="px-4 py-3">15-20%</td>
+          <td class="px-4 py-3 text-on-surface-variant">Dubai VARA</td>
+          <td class="px-4 py-3">7-21 день</td>
+        </tr>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium">HTX</td>
+          <td class="px-4 py-3 text-on-surface-variant">Elliptic Navigator</td>
+          <td class="px-4 py-3">20%</td>
+          <td class="px-4 py-3 text-on-surface-variant">Seychelles FSA</td>
+          <td class="px-4 py-3">14-30 дней</td>
+        </tr>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium">BingX</td>
+          <td class="px-4 py-3 text-on-surface-variant">Elliptic Navigator</td>
+          <td class="px-4 py-3">20-25%</td>
+          <td class="px-4 py-3 text-on-surface-variant">Dubai</td>
+          <td class="px-4 py-3">7-21 день</td>
+        </tr>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium">Phemex</td>
+          <td class="px-4 py-3 text-on-surface-variant">Elliptic Navigator</td>
+          <td class="px-4 py-3">20%</td>
+          <td class="px-4 py-3 text-on-surface-variant">Singapore MAS</td>
+          <td class="px-4 py-3">14-21 день</td>
+        </tr>
+        <tr class="border-t border-outline-variant/20 hover:bg-surface-container-low">
+          <td class="px-4 py-3 font-medium">Binance</td>
+          <td class="px-4 py-3 text-on-surface-variant">Chainalysis KYT</td>
+          <td class="px-4 py-3">10-15%</td>
+          <td class="px-4 py-3 text-on-surface-variant">Multiple</td>
+          <td class="px-4 py-3">14-45 дней</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="text-2xl font-black text-[#001B3D] font-display mt-10 mb-4">Что делать при срабатывании Elliptic</h2>
+  <p class="text-on-surface leading-relaxed mb-4">Первый шаг после блокировки: не паниковать и не пытаться вывести средства обходными методами. Любая попытка обойти AML-систему будет зафиксирована и существенно осложнит апелляцию. Второй шаг: определить, какая транзакция могла вызвать срабатывание. Для этого нужно проверить историю входящих переводов через блокчейн-эксплореры и оценить связи кошельков-источников с рисковыми объектами.</p>
+  <p class="text-on-surface leading-relaxed mb-4">Третий шаг: подготовить пакет документов для апелляции. Он включает: KYC-документы (паспорт, proof of address), подтверждение источника средств, TxID проблемных транзакций, профессиональный AML-отчёт с оценкой риск-скора. Четвёртый шаг: подать апелляцию в compliance-отдел биржи с чётким описанием ситуации и приложением всех документов. О том как правильно составить апелляцию, читайте в материале <a href="blog-appeal.html" class="text-primary hover:underline">апелляция на криптобирже: полное руководство</a>. Информация о конкретных блокировках Bybit - в статье <a href="blog-bybit-blok.html" class="text-primary hover:underline">Bybit заблокировал аккаунт: причины и апелляция</a>.</p>
+
+  <div class="mt-12 border-t border-outline-variant/20 pt-10">
+    <h2 class="text-2xl font-black text-[#001B3D] font-display mb-6">Частые вопросы</h2>
+    <div class="space-y-4">
+      <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+        <summary class="font-semibold text-on-surface list-none flex justify-between items-center">Какие биржи используют Elliptic Navigator?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span></summary>
+        <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Elliptic Navigator используют несколько крупных централизованных бирж. Среди наиболее известных платформ, работающих с этой системой: Bybit (Dubai VARA, порог 15-20%), HTX (Seychelles FSA, порог 20%), BingX (Dubai регуляция, порог 20-25%), Phemex (Singapore MAS, порог 20%). Кроме бирж, Elliptic применяют платёжные процессоры, кастодиальные сервисы и крупные OTC-дески. Компания Elliptic была основана в 2013 году в Великобритании и работает с более чем 900 организациями в 60 странах. В отличие от Chainalysis, которая преобладает на американском рынке, Elliptic сильнее представлена среди европейских и азиатских платформ. Это важно учитывать при планировании транзакций: одни и те же монеты могут проходить проверку по-разному в зависимости от того, какую AML-систему использует конкретная биржа. Если ваши средства заблокировала биржа на базе Elliptic, подход к апелляции отличается от работы с Chainalysis-платформами.</p>
+      </details>
+      <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+        <summary class="font-semibold text-on-surface list-none flex justify-between items-center">Как Elliptic оценивает риск транзакции?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span></summary>
+        <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Elliptic Navigator работает по принципу графового анализа блокчейна. Система строит граф транзакций, отслеживая движение средств на несколько хопов назад в истории. Каждому кошельку и транзакции присваивается риск-скор от 0 до 100% на основе нескольких факторов. Первый фактор: прямые связи с известными рисковыми объектами - санкционными адресами OFAC, миксерами (Tornado Cash, Chipmixer), тёмными маркетами (Hydra, Silk Road). Второй фактор: косвенные связи через цепочку транзакций, причём вклад каждого хопа убывает по мере удаления. Третий фактор: паттерны поведения адреса - structuring, rapid cycling, peel chain. Четвёртый фактор: принадлежность к известным кластерам высокорискового трафика. Итоговый скор усредняется по всем факторам с весовыми коэффициентами. Если результат превышает порог биржи (обычно 15-25%), транзакция флагируется. Порог устанавливается каждой биржей самостоятельно в настройках платформы.</p>
+      </details>
+      <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+        <summary class="font-semibold text-on-surface list-none flex justify-between items-center">Что делать если Elliptic заблокировал мои USDT?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span></summary>
+        <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Если биржа на базе Elliptic Navigator заблокировала ваш аккаунт или вывод, первым шагом нужно понять конкретный триггер. Самостоятельно это сложно: Elliptic не раскрывает детали скоринга конечным пользователям. Однако по характеру блокировки можно предположить причину: если заблокирован именно вывод конкретной суммы, вероятно проблема в исходящей транзакции, если аккаунт заблокирован целиком, причина скорее в совокупной истории входящих переводов. Следующий шаг: собрать полный пакет документов для апелляции. Он включает KYC-документы, подтверждение источника средств, TxID проблемных транзакций и профессиональный AML-отчёт с оценкой риск-скора. Апелляция подаётся в compliance-отдел биржи. Срок рассмотрения зависит от платформы: Bybit рассматривает 7-21 день, HTX 14-30 дней. Без профессионального AML-отчёта шансы на положительный исход существенно ниже.</p>
+      </details>
+      <details class="bg-surface-container-low rounded-xl p-5 cursor-pointer group">
+        <summary class="font-semibold text-on-surface list-none flex justify-between items-center">Чем Elliptic отличается от Chainalysis?<span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span></summary>
+        <p class="mt-3 text-on-surface-variant text-sm leading-relaxed">Elliptic и Chainalysis - два крупнейших игрока на рынке блокчейн-аналитики, но у них разные сильные стороны. Chainalysis занимает доминирующее положение на американском рынке и активно сотрудничает с государственными структурами: ФБР, DEA, налоговой службой США. Elliptic исторически сильнее в Европе и Азии, что объясняет его выбор биржами вроде Bybit, HTX и Phemex. С технической точки зрения обе системы используют графовый анализ блокчейна, но различаются методологией кластеризации адресов и набором источников данных. Chainalysis традиционно имеет более обширную базу по американским субъектам (OFAC, FinCEN), Elliptic лучше покрывает европейские санкционные списки. Пороги риска у разных бирж тоже отличаются: Binance настраивает Chainalysis на 10-15%, тогда как HTX работает с Elliptic на пороге 20%. Это означает, что одни и те же монеты могут пройти проверку на HTX, но быть заблокированы на Binance.</p>
+      </details>
+    </div>
+  </div>
+
+</div></div></article>
+<section class="py-8 bg-surface-container-low border-t border-outline-variant/20"><div class="max-w-4xl mx-auto px-4"><div class="flex items-start gap-4"><div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-primary text-xl">verified_user</span></div><div><p class="font-semibold text-on-surface">Команда CryptoRecon</p><p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Специализируемся на разблокировке USDT и криптоактивов на биржах с 2021 года. Работаем с кейсами на Bybit, HTX, BingX, Phemex и других Elliptic-платформах.</p><div class="mt-2 flex flex-wrap gap-2"><span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">Опыт с 2021 года</span><span class="text-xs bg-surface-container border border-outline-variant/30 text-on-surface-variant px-2 py-1 rounded-md">300+ кейсов</span></div><p class="text-xs text-on-surface-variant mt-2">Это информационный материал. Для оценки вашего кейса обратитесь за индивидуальной консультацией.</p></div></div></div></section>
+<section class="py-10"><div class="max-w-4xl mx-auto px-4"><h2 class="text-xl font-black font-display text-[#001B3D] mb-6">Читайте также</h2><div class="grid sm:grid-cols-2 gap-4">
+  <a href="blog-aml.html" class="block bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-colors">
+    <span class="text-xs text-primary font-semibold">AML и риски</span>
+    <p class="font-semibold text-on-surface mt-1 text-sm leading-snug">Как работают AML-проверки на биржах</p>
+  </a>
+  <a href="blog-aml-avtomatizaciya.html" class="block bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-colors">
+    <span class="text-xs text-primary font-semibold">AML и риски</span>
+    <p class="font-semibold text-on-surface mt-1 text-sm leading-snug">Автоматизация AML: как биржи проверяют транзакции</p>
+  </a>
+  <a href="blog-bybit-blok.html" class="block bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-colors">
+    <span class="text-xs text-primary font-semibold">Биржи</span>
+    <p class="font-semibold text-on-surface mt-1 text-sm leading-snug">Bybit заблокировал аккаунт: причины и апелляция</p>
+  </a>
+  <a href="blog-htx-blok.html" class="block bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 hover:border-primary/40 transition-colors">
+    <span class="text-xs text-primary font-semibold">Биржи</span>
+    <p class="font-semibold text-on-surface mt-1 text-sm leading-snug">HTX заблокировал аккаунт: AML-причины и апелляция</p>
+  </a>
+</div></div></section>
+<section class="py-12 bg-primary"><div class="max-w-4xl mx-auto px-4 text-center"><h2 class="text-2xl font-black font-display text-on-primary mb-3">Bybit, HTX или BingX заблокировали USDT? Поможем.</h2><p class="text-on-primary/80 mb-6 max-w-xl mx-auto">Расскажите о вашей ситуации: биржа, сумма, TxID. Оценим риск-скор Elliptic и предложим стратегию возврата средств.</p><a href="https://t.me/kkrkkk77" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-on-primary text-primary font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg"><span class="material-symbols-outlined">send</span>Написать в Telegram</a></div></section>
+<footer class="bg-[#001B3D] text-white/70 py-10"><div class="max-w-6xl mx-auto px-4"><div class="flex flex-col md:flex-row justify-between gap-6"><div><div class="flex items-center gap-2 mb-3"><img src="assets/favicon.svg" alt="CryptoRecon" class="w-7 h-7"/><span class="font-display font-bold text-white text-base">CryptoRecon</span></div><p class="text-sm max-w-xs">Разблокировка USDT и криптоаккаунтов. Работаем с 2021 года.</p></div><div class="flex flex-wrap gap-8 text-sm"><div><p class="text-white font-semibold mb-2">Услуги</p><ul class="space-y-1"><li><a href="usdt.html" class="hover:text-white transition-colors">Разблокировка USDT</a></li><li><a href="usdt-aml.html" class="hover:text-white transition-colors">Блокировка по AML</a></li><li><a href="usdt-yurist.html" class="hover:text-white transition-colors">Юридическая помощь</a></li></ul></div><div><p class="text-white font-semibold mb-2">Биржи</p><ul class="space-y-1"><li><a href="blog-bybit.html" class="hover:text-white transition-colors">Bybit</a></li><li><a href="blog-htx.html" class="hover:text-white transition-colors">HTX</a></li><li><a href="blog-bingx.html" class="hover:text-white transition-colors">BingX</a></li></ul></div><div><p class="text-white font-semibold mb-2">Контакт</p><ul class="space-y-1"><li><a href="https://t.me/kkrkkk77" target="_blank" rel="noopener" class="hover:text-white transition-colors">Telegram @kkrkkk77</a></li></ul></div></div></div><div class="border-t border-white/10 mt-8 pt-6 text-xs text-center"><p>© 2026 CryptoRecon. Сайт носит информационный характер.</p></div></div></footer>
+</body></html>
